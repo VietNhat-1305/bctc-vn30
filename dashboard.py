@@ -64,8 +64,6 @@ def build_cards(results: dict) -> list[dict]:
     companies = {c["ticker"]: c for c in
                  json.loads((ROOT / "companies.json").read_text(encoding="utf-8"))["companies"]}
     urls = _file_urls()
-    vc_path = phan_tich.OUT / "doi_chieu.json"
-    vc = json.loads(vc_path.read_text(encoding="utf-8")).get("ma", {}) if vc_path.exists() else {}
     cards = []
     for tk in sorted(results):
         lt = phan_tich.latest(results[tk])
@@ -88,9 +86,9 @@ def build_cards(results: dict) -> list[dict]:
             "diem": s["diem"], "xep_loai": s["xep_loai"], "thieu": s["thieu"],
             "tieu_chi": [list(t) for t in s["tieu_chi"]],
             "m": {k: (round(x, 6) if isinstance(x, float) else x) for k, x in m.items()},
-            "canh_bao": n["warn"], "thong_tin": n["info"], "file": r.get("file"),
+            "canh_bao": n["warn"], "file": r.get("file"),
             "file_url": urls.get(r.get("file") or ""), "ir": co.get("bctc_url"),
-            "vietcap": vc.get(tk), "ai": r.get("model", ""),
+            "ai": r.get("model", ""),
         })
     return cards
 
@@ -585,18 +583,13 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
       ];
       if (!bank) rows.push([`LCTT kinh doanh ${c.ky_lk[0]}`, m.cfo, m.cfo == null ? '<span class="d flat">–</span>' :
         `<span class="d ${m.cfo > 0 ? 'up' : 'down'}">${m.cfo > 0 ? 'dương' : 'âm'}</span>`]);
-      const vc = c.vietcap && c.vietcap.tong ? `<div class="vc" title="${esc(c.vietcap.lech.map(x => `${x.ky} ${x.chi_tieu}: ${x.pct}%`).join('\n'))}">`
-        + `Đối chiếu Vietcap: <b>${c.vietcap.khop}/${c.vietcap.tong}</b> chỉ tiêu khớp`
-        + (c.vietcap.lech.length ? ` · lệch: ${esc(c.vietcap.lech.slice(0, 3).map(x => x.chi_tieu + ' ' + x.ky).join(', '))}${c.vietcap.lech.length > 3 ? '…' : ''}` : '')
-        + `</div>` : '';
       const crit = c.tieu_chi.map(([t, p, mx, d]) =>
         `<li><span aria-hidden="true">${p === mx ? '✓' : p > 0 ? '◐' : '✗'}</span><span>${esc(t)}</span><span class="pt">${p}/${mx}</span><span class="dt">${esc(d)}</span></li>`).join('');
       body = `<div class="meter" role="img" aria-label="${c.diem} trên 10 điểm"><i style="width:${c.diem * 10}%;background:${tierVar(c.diem)}"></i></div>
         <div class="rows">${rows.map(([k, v, d]) => d === undefined ? `<span class="sec">${esc(k)}</span>`
           : `<span class="k">${k}</span><span class="v">${v == null ? '' : ty(v)}</span>${d}`).join('')}</div>
         <details><summary>Chi tiết điểm${c.thieu ? ` · thiếu dữ liệu ${c.thieu}đ` : ''}</summary><ul class="crit">${crit}</ul></details>
-        ${c.canh_bao.length ? `<div class="warn">⚠ ${c.canh_bao.map(esc).join('<br>⚠ ')}</div>` : ''}
-        ${c.thong_tin && c.thong_tin.length ? `<details class="info"><summary>Cách lấy số (${c.thong_tin.length} ghi chú)</summary>${c.thong_tin.map(esc).join('<br>')}</details>` : ''}${vc}`;
+        ${c.canh_bao.length ? `<div class="warn">⚠ ${c.canh_bao.map(esc).join('<br>⚠ ')}</div>` : ''}`;
     }
     return `<article class="card" aria-label="${esc(it.ma)}">
       <div class="card-top"><div><div class="tk">${esc(it.ma)}</div><div class="name">${esc(it.ten)}</div>
@@ -769,7 +762,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     $('aiNote').hidden = false;
     $('aiNote').textContent = `Số liệu do AI ${D.ai.ten} đọc từ 1 BCTC quý mới nhất của mỗi công ty, tải trên web công ty (${kys}). `
       + `Kết quả kinh doanh so với cùng kỳ năm trước, bảng cân đối so với đầu năm, lưu chuyển tiền lũy kế. Đã kiểm tra cân đối `
-      + `Tổng tài sản = Nợ + Vốn chủ sở hữu và tự đối chiếu với Vietcap IQ. Bấm "Mở PDF" trên thẻ để xem báo cáo gốc.`;
+      + `Tổng tài sản = Nợ + Vốn chủ sở hữu. Bấm "Mở PDF" trên thẻ để xem báo cáo gốc.`;
     $('aiFlow').textContent = `${D.ai.ten}, model ${D.ai.model}`;
   }
   kpis(); renderScores(); renderLib(); renderSrc(); renderTd(); showTab();
