@@ -1,0 +1,402 @@
+{
+ "_about": "Rổ VN30 (HOSE) hiệu lực từ 03/08/2026 (kỳ review 7/2026: +MCH +TCX, -PLX -TPB; kỳ 1/2026: +VPL -BCM; 5/2026: +BSR -DGC). Kiểm tra lại link: 15/10/2026. fetch_mode: static_html | json_api | two_step | custom (ir_adapters.py); fetcher: http (mặc định) | curl | browser (Chrome headless, cho trang có Cloudflare). Kiểm tra cả 30 trang: python kiem_tra_ir.py",
+ "companies": [
+  {
+   "ticker": "ACB",
+   "name": "Ngân hàng TMCP Á Châu",
+   "website": "https://acb.com.vn",
+   "bctc_url": "https://acb.com.vn/nha-dau-tu/bao-cao-tai-chinh",
+   "bctc_url_en": "https://acb.com.vn/en/investors/financial-statements",
+   "fetch_mode": "custom",
+   "note": "Next.js; trang năm chỉ có 9 bài đầu -> ir_adapters.acb gọi API posts theo mã danh mục năm (limit=all). Mỗi BCTC có bản ký số và bản tra cứu.",
+   "adapter": "acb"
+  },
+  {
+   "ticker": "BID",
+   "name": "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (BIDV)",
+   "website": "https://bidv.com.vn",
+   "bctc_url": "https://bidv.com.vn/vn/quan-he-nha-dau-tu/thong-tin-tai-chinh/",
+   "bctc_url_en": "https://bidv.com.vn/en/quan-he-nha-dau-tu/thong-tin-tai-chinh/",
+   "fetch_mode": "static_html",
+   "link_regex": "formatTitle\\('(/wps/wcm/connect/[^']+?\\.pdf\\?MOD=AJPERES[^']*)'\\)",
+   "note": "IBM WCM; 1 trang ~3,4MB chứa mọi năm 2013-2026 dưới dạng object JS. Bắt buộc giữ ?MOD=AJPERES khi tải."
+  },
+  {
+   "ticker": "BSR",
+   "name": "Tổng Công ty Lọc hóa dầu Việt Nam (Lọc hóa dầu Bình Sơn)",
+   "website": "https://bsr.com.vn",
+   "bctc_url": "https://bsr.com.vn/vi/bao-cao-tai-chinh",
+   "bctc_url_en": "https://bsr.com.vn/en/bao-cao-tai-chinh",
+   "fetch_mode": "static_html",
+   "page_is_bctc": true,
+   "title_from_row": true,
+   "link_regex": "href=\"(/c/document_library/get_file\\?uuid=[0-9a-f-]+&(?:amp;)?groupId=\\d+&(?:amp;)?download=true)\"",
+   "note": "Liferay; toàn bộ 2017-2026 trong 1 trang; link get_file?uuid=..., tiêu đề lấy theo hàng."
+  },
+  {
+   "ticker": "CTG",
+   "name": "Ngân hàng TMCP Công Thương Việt Nam (VietinBank)",
+   "website": "https://investor.vietinbank.vn",
+   "bctc_url": "https://investor.vietinbank.vn/vi/financialreports.aspx",
+   "bctc_url_en": "https://investor.vietinbank.vn/en/financialreports.aspx",
+   "fetch_mode": "static_html",
+   "page_is_bctc": true,
+   "link_regex": "href=\"(/documents/20126/\\d+/[^\"]+?\\?download=true)\"",
+   "note": "Cổng IR Liferay mới (2026); redirect sang /vi/download.aspx, 40 file 2023-2026 trên 1 trang. Tên file dạng '...pdf.pdf/<uuid>'."
+  },
+  {
+   "ticker": "FPT",
+   "name": "Công ty Cổ phần FPT",
+   "website": "https://fpt.com",
+   "bctc_url": "https://fpt.com/vi/nha-dau-tu/bao-cao-thuong-nien#tai-chinh",
+   "bctc_url_en": null,
+   "fetch_mode": "static_html",
+   "bctc_pages": [
+    "https://fpt.com/vi/nha-dau-tu/bao-cao-thuong-nien"
+   ],
+   "link_regex": "(/api/media/[^\"\\\\\\s]+?\\.pdf)",
+   "note": "Tab 'Báo cáo tài chính' render bằng JS nhưng toàn bộ cây năm/kỳ/file nằm sẵn trong payload RSC của HTML."
+  },
+  {
+   "ticker": "GAS",
+   "name": "Tổng Công ty Khí Việt Nam - CTCP (PV GAS)",
+   "website": "https://www.pvgas.com.vn",
+   "bctc_url": "https://www.pvgas.com.vn/quan-he-co-%C4%91ong/tai-lieu-co-%C4%91ong",
+   "bctc_url_en": null,
+   "fetch_mode": "two_step",
+   "note": "DNN/EasyDNNnews: API danh sách (contentKey=76 = BCTC) -> trang bài -> DocumentDownload.ashx.",
+   "bctc_pages": [
+    "https://www.pvgas.com.vn/DesktopModules/EasyDNNnews/ListContentHtml.ashx?portalId=0&moduleId=1239&tabId=153&contentKey=76&contentPage=1&getPaginationMeta=true"
+   ],
+   "follow_regex": "href=\"([^\"]*/quan-he-co-[^/\"]+/bao-cao-tai-chinh-[^\"#?]+)\"",
+   "href_regex": "DocumentDownload\\.ashx",
+   "max_follow": 8,
+   "page_is_bctc": true
+  },
+  {
+   "ticker": "GVR",
+   "name": "Tập đoàn Công nghiệp Cao su Việt Nam - CTCP",
+   "website": "https://vrg.vn",
+   "bctc_url": "https://vrg.vn/quan-he-co-dong/bao-cao-tai-chinh/",
+   "bctc_url_en": "https://vrg.vn/en/investor-relations/financial-statements/",
+   "fetch_mode": "static_html",
+   "page_is_bctc": true,
+   "bctc_pages": [
+    "https://vrg.vn/quan-he-co-dong/bao-cao-tai-chinh/",
+    "https://vrg.vn/quan-he-co-dong/bao-cao-tai-chinh/page/2/"
+   ],
+   "note": "WordPress, phân trang /page/N/. rubbergroup.vn không còn phân giải DNS."
+  },
+  {
+   "ticker": "HDB",
+   "name": "Ngân hàng TMCP Phát triển TP. Hồ Chí Minh (HDBank)",
+   "website": "https://hdbank.com.vn",
+   "bctc_url": "https://hdbank.com.vn/vi/investor/thong-tin-nha-dau-tu/bao-cao-tai-chinh",
+   "bctc_url_en": "https://hdbank.com.vn/en/investor/thong-tin-nha-dau-tu/bao-cao-tai-chinh",
+   "fetch_mode": "custom",
+   "note": "API trả JSON mã hoá AES-192-ECB (khoá trong _app.js) -> ir_adapters.hdb giải mã.",
+   "adapter": "hdb"
+  },
+  {
+   "ticker": "HPG",
+   "name": "Công ty Cổ phần Tập đoàn Hòa Phát",
+   "website": "https://www.hoaphat.com.vn",
+   "bctc_url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+   "bctc_url_en": null,
+   "fetch_mode": "static_html",
+   "year_url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?sort_year={year}",
+   "note": "Server-render; lọc năm ?sort_year=YYYY, phân trang ?page=N. File trên file.hoaphat.com.vn. Có lẫn file 'tổng quan tình hình kinh doanh'."
+  },
+  {
+   "ticker": "LPB",
+   "name": "Ngân hàng TMCP Lộc Phát Việt Nam (LPBank)",
+   "website": "https://lpbank.com.vn",
+   "bctc_url": "https://lpbank.com.vn/nha-dau-tu/bao-cao",
+   "bctc_url_en": null,
+   "fetch_mode": "json_api",
+   "note": "Angular SPA; API POST findAllInvestor theo năm; link file /file/view/<uuid> không có đuôi.",
+   "href_regex": "/api/content-file/public/file/view/[0-9a-f-]{36}",
+   "api": {
+    "url": "https://lpbank.com.vn/api/content-service/public/findAllInvestor",
+    "method": "POST",
+    "json": {
+     "category": "BAO_CAO",
+     "subCategory": "BAO_CAO.BAO_CAO_TAI_CHINH",
+     "year": "{year}",
+     "page": 0,
+     "size": 30
+    },
+    "base": "https://lpbank.com.vn/"
+   }
+  },
+  {
+   "ticker": "MBB",
+   "name": "Ngân hàng TMCP Quân đội (MB)",
+   "website": "https://www.mbbank.com.vn",
+   "bctc_url": "https://www.mbbank.com.vn/Investor/bao-cao-tai-chinh/0/0/0",
+   "bctc_url_en": "https://www.mbbank.com.vn/en/Investor/bao-cao-tai-chinh/0/0/0",
+   "fetch_mode": "custom",
+   "note": "API GetListFinance cần cookie phiên + token XSRF từ trang danh sách -> ir_adapters.mbb.",
+   "adapter": "mbb"
+  },
+  {
+   "ticker": "MCH",
+   "name": "Công ty Cổ phần Hàng tiêu dùng Masan (Masan Consumer)",
+   "website": "https://masanconsumer.com",
+   "bctc_url": "https://masanconsumer.com/quan-he-co-dong/thong-tin-tai-chinh/",
+   "bctc_url_en": "https://masanconsumer.com/en/financial-information/",
+   "fetch_mode": "static_html",
+   "note": "WordPress; mỗi trang ~10 bài (BCTC lẫn giải trình, slide) -> đọc 3 trang đầu. Cloudflare chặn TLS Python -> curl.",
+   "fetcher": "curl",
+   "bctc_pages": [
+    "https://masanconsumer.com/quan-he-co-dong/thong-tin-tai-chinh/",
+    "https://masanconsumer.com/quan-he-co-dong/thong-tin-tai-chinh/page/2/",
+    "https://masanconsumer.com/quan-he-co-dong/thong-tin-tai-chinh/page/3/"
+   ]
+  },
+  {
+   "ticker": "MSN",
+   "name": "Công ty Cổ phần Tập đoàn Masan",
+   "website": "https://www.masangroup.com",
+   "bctc_url": "https://www.masangroup.com/vi/investor-relations/",
+   "bctc_url_en": "https://www.masangroup.com/investor-relations/",
+   "fetch_mode": "static_html",
+   "note": "WordPress; mỗi năm chỉ hiện 3 mục đầu -> thêm API load-more-shareholders (term 58 = BCTC quý, 57 = BCTC năm). Cloudflare chặn TLS Python -> đọc bằng curl.",
+   "fetcher": "curl",
+   "bctc_pages": [
+    "https://www.masangroup.com/vi/investor-relations/",
+    "https://www.masangroup.com/vi/wp-json/masangroup/v1/load-more-shareholders?taxonomy=category-shareholder&year={year}&term_id=58&offset=3",
+    "https://www.masangroup.com/vi/wp-json/masangroup/v1/load-more-shareholders?taxonomy=category-shareholder&year={year}&term_id=58&offset=6",
+    "https://www.masangroup.com/vi/wp-json/masangroup/v1/load-more-shareholders?taxonomy=category-shareholder&year={year}&term_id=57&offset=3"
+   ]
+  },
+  {
+   "ticker": "MWG",
+   "name": "Công ty Cổ phần Đầu tư Thế Giới Di Động",
+   "website": "https://mwg.vn",
+   "bctc_url": "https://mwg.vn/bao-cao",
+   "bctc_url_en": "https://mwg.vn/en/bao-cao",
+   "fetch_mode": "custom",
+   "note": "API danh mục động theo năm (api.mwgshop.vn) -> ir_adapters.mwg.",
+   "adapter": "mwg"
+  },
+  {
+   "ticker": "SAB",
+   "name": "Tổng Công ty CP Bia - Rượu - Nước giải khát Sài Gòn (Sabeco)",
+   "website": "https://www.sabeco.com.vn",
+   "bctc_url": "https://www.sabeco.com.vn/co-dong/bao-cao-tai-chinh/2026-2",
+   "bctc_url_en": "https://sabeco.com.vn/en-US/2026-3",
+   "fetch_mode": "static_html",
+   "page_is_bctc": true,
+   "note": "Mỗi năm 1 trang, slug không đều (2026-2, 2019-5...) -> tự tìm link năm trên menu.",
+   "year_links": "href=\"([^\"]*/co-dong/bao-cao-tai-chinh/(20\\d\\d)(?:-\\d+)?)\""
+  },
+  {
+   "ticker": "SHB",
+   "name": "Ngân hàng TMCP Sài Gòn - Hà Nội",
+   "website": "https://www.shb.com.vn",
+   "bctc_url": "https://www.shb.com.vn/category/nha-dau-tu/bao-cao-tai-chinh/",
+   "bctc_url_en": "https://www.shb.com.vn/language/en/category/investor/financial-statements/",
+   "fetch_mode": "json_api",
+   "note": "Cloudflare chặn mọi request thường (kể cả wp-json) -> đọc WP REST API qua Chrome headless.",
+   "fetcher": "browser",
+   "api": {
+    "url": "https://www.shb.com.vn/wp-json/wp/v2/posts",
+    "params": {
+     "categories": "38",
+     "per_page": "20",
+     "_fields": "date,link,title,content"
+    },
+    "base": "https://www.shb.com.vn/"
+   }
+  },
+  {
+   "ticker": "SSB",
+   "name": "Ngân hàng TMCP Đông Nam Á (SeABank)",
+   "website": "https://www.seabank.com.vn",
+   "bctc_url": "https://www.seabank.com.vn/nha-dau-tu/bao-cao-tai-chinh",
+   "bctc_url_en": "https://www.seabank.com.vn/en/nha-dau-tu/bao-cao-tai-chinh",
+   "fetch_mode": "two_step",
+   "note": "Next.js: trang danh sách (10 mục mới nhất, SSR) -> trang bài -> PDF trên cloud-cdn.",
+   "follow_regex": "href=\"(/nha-dau-tu/bao-cao-tai-chinh/[^\"#?]+)\"",
+   "link_regex": "(https://cloud-cdn\\.seabank\\.com\\.vn/seabank-web/[^\\\"\\\\<>]+?\\.pdf)",
+   "max_follow": 10
+  },
+  {
+   "ticker": "SSI",
+   "name": "Công ty Cổ phần Chứng khoán SSI",
+   "website": "https://www.ssi.com.vn",
+   "bctc_url": "https://www.ssi.com.vn/quan-he-nha-dau-tu/bao-cao-tai-chinh",
+   "bctc_url_en": null,
+   "fetch_mode": "static_html",
+   "year_url": "https://www.ssi.com.vn/quan-he-nha-dau-tu/bao-cao-tai-chinh?year={year}",
+   "note": "Server-render; ?year=YYYY&page=N (10 file/trang). Có lẫn báo cáo tỷ lệ an toàn tài chính."
+  },
+  {
+   "ticker": "STB",
+   "name": "Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank)",
+   "website": "https://www.sacombank.com.vn",
+   "bctc_url": "https://www.sacombank.com.vn/trang-chu/nha-dau-tu/bao-cao.html/cf/nha-dau-tu/bao-cao-tai-chinh.html",
+   "bctc_url_en": "https://www.sacombank.com.vn/en/home/investor/report.html",
+   "fetch_mode": "json_api",
+   "api": {
+    "url": "https://www.sacombank.com.vn/trang-chu/nha-dau-tu/bao-cao/_jcr_content/root/container/container/reportlisting.sacom.reportlisting.financial.json",
+    "method": "GET",
+    "params": {
+     "year": "{year}"
+    },
+    "base": "https://www.sacombank.com.vn"
+   },
+   "note": "AEM servlet JSON, lọc ?year=YYYY."
+  },
+  {
+   "ticker": "TCB",
+   "name": "Ngân hàng TMCP Kỹ Thương Việt Nam (Techcombank)",
+   "website": "https://techcombank.com",
+   "bctc_url": "https://techcombank.com/nha-dau-tu/thong-tin-tai-chinh/bao-cao-tai-chinh-vas",
+   "bctc_url_en": "https://techcombank.com/en/investors/financial-information/financial-statements-vas",
+   "fetch_mode": "json_api",
+   "api": {
+    "url": "https://techcombank.com/graphql/execute.json/techcombank/viewDocumentList%3BcfPath%3D/content/dam/techcombank/master-data/vi/list-view-document/bao-cao-tai-chinh-vas/",
+    "method": "GET",
+    "base": "https://techcombank.com"
+   },
+   "note": "AEM persisted GraphQL, 1 lần gọi trả mọi kỳ (~269 file)."
+  },
+  {
+   "ticker": "TCX",
+   "name": "Công ty Cổ phần Chứng khoán Kỹ Thương (Techcom Securities - TCBS)",
+   "website": "https://www.tcbs.com.vn",
+   "bctc_url": "https://www.tcbs.com.vn/nha-dau-tu/thong-tin-tai-chinh/bao-cao-ket-qua-kinh-doanh/",
+   "bctc_url_en": "https://www.tcbs.com.vn/en/investors/financial-information/earning-reports/",
+   "fetch_mode": "static_html",
+   "note": "WordPress; 2024-2026 trên 1 trang, lẫn thông cáo, slide, file Excel. Cloudflare chặn TLS của Python -> tool đọc/tải bằng curl.",
+   "fetcher": "curl"
+  },
+  {
+   "ticker": "VCB",
+   "name": "Ngân hàng TMCP Ngoại thương Việt Nam (Vietcombank)",
+   "website": "https://www.vietcombank.com.vn",
+   "bctc_url": "https://www.vietcombank.com.vn/vi-VN/Nha-dau-tu/Chi-tiet-nha-dau-tu",
+   "bctc_url_en": "https://www.vietcombank.com.vn/en/Nha-dau-tu/Chi-tiet-nha-dau-tu",
+   "fetch_mode": "json_api",
+   "api": {
+    "url": "https://www.vietcombank.com.vn/sxa/InvestmentApi/InvestmentDetailResults/",
+    "method": "GET",
+    "params": {
+     "l": "vi-VN",
+     "s": "{3B4CF33A-7B38-431C-B2C5-42EBBE48896A}",
+     "itemid": "{158CFC95-E771-4FC2-B6EA-1D93BCD69E70}",
+     "sig": "investment-detail",
+     "o": "SortOrder,Descending",
+     "v": "{93B61FD8-B8A6-48CA-B2B0-1C9494F79C93}",
+     "investmentFacetSource": "{2B981AA6-1CC7-4C36-8A64-85D2F82E21A5}",
+     "investmentdocumentchip": "Báo cáo định kỳ",
+     "investmentdocumentmenu": "Báo cáo Tài chính",
+     "investmentdocumentyear": "Năm {year}",
+     "p": "200",
+     "e": "0"
+    },
+    "base": "https://www.vietcombank.com.vn"
+   },
+   "note": "Sitecore SXA search; năm phải ghi 'Năm YYYY'; link nằm trong trường Html."
+  },
+  {
+   "ticker": "VHM",
+   "name": "Công ty Cổ phần Vinhomes",
+   "website": "https://vinhomes.vn",
+   "bctc_url": "https://vinhomes.vn/vi/bao-cao-tai-chinh",
+   "bctc_url_en": "https://vinhomes.vn/en/bao-cao-tai-chinh",
+   "fetch_mode": "static_html",
+   "note": "Cloudflare challenge -> Chrome headless; mọi năm trong 1 trang; file trên storage.googleapis.com.",
+   "fetcher": "browser"
+  },
+  {
+   "ticker": "VIB",
+   "name": "Ngân hàng TMCP Quốc tế Việt Nam (VIB)",
+   "website": "https://www.vib.com.vn",
+   "bctc_url": "https://www.vib.com.vn/vn/nha-dau-tu/ket-qua-kinh-doanh",
+   "bctc_url_en": "https://www.vib.com.vn/en/investor/business-results",
+   "fetch_mode": "static_html",
+   "note": "Akamai trả trang thử thách cho UA trình duyệt, UA curl thì không; fragment WCM theo năm/quý (BCTC bán niên nằm trong bao-cao-quy-2).",
+   "ua": "curl/8.4.0",
+   "year_url": "https://www.vib.com.vn/wps/wcm/connect/vib-vevib-vn/sa-homepage/shareholder/thong-tin-tai-chinh/{year}/bao-cao-quy-{q}?source=library&srv=cmpnt&cmpntid=242afeb3-0b0e-4413-a11a-86ab453adc26"
+  },
+  {
+   "ticker": "VIC",
+   "name": "Tập đoàn Vingroup - Công ty CP",
+   "website": "https://vingroup.net",
+   "bctc_url": "https://vingroup.net/quan-he-co-dong/bao-cao-tai-chinh",
+   "bctc_url_en": "https://vingroup.net/en/investor-relations/financial-statement",
+   "fetch_mode": "static_html",
+   "note": "Cloudflare challenge -> Chrome headless; link dạng /viewer.html?file=<url PDF trên ircdn>.",
+   "fetcher": "browser",
+   "year_url": "https://vingroup.net/quan-he-co-dong/bao-cao-tai-chinh/{year}"
+  },
+  {
+   "ticker": "VJC",
+   "name": "Công ty Cổ phần Hàng không Vietjet",
+   "website": "https://ir.vietjetair.com",
+   "bctc_url": "https://ir.vietjetair.com/Home/Menu/bao-cao-tai-chinh-quy",
+   "bctc_url_en": null,
+   "fetch_mode": "static_html",
+   "page_is_bctc": true,
+   "bctc_pages": [
+    "https://ir.vietjetair.com/Home/Menu/bao-cao-tai-chinh-quy",
+    "https://ir.vietjetair.com/Home/Menu/bao-cao-tai-chinh-kiem-toan"
+   ],
+   "link_regex": "(/File_Upload/thong-tin-tai-chinh/[^\"'<>]+?\\.pdf)",
+   "note": "ASP.NET MVC; mọi năm trong 1 trang; BCTC kiểm toán/soát xét ở trang thứ 2."
+  },
+  {
+   "ticker": "VNM",
+   "name": "Công ty Cổ phần Sữa Việt Nam (Vinamilk)",
+   "website": "https://www.vinamilk.com.vn",
+   "bctc_url": "https://www.vinamilk.com.vn/investor/reports/financial",
+   "bctc_url_en": "https://www.vinamilk.com.vn/en/investor/reports/financial",
+   "fetch_mode": "static_html",
+   "year_url": "https://www.vinamilk.com.vn/investor/reports/financial?year={year}",
+   "note": "Next.js SSR, link có sẵn trong HTML; chọn năm ?year=YYYY. File trên CloudFront."
+  },
+  {
+   "ticker": "VPB",
+   "name": "Ngân hàng TMCP Việt Nam Thịnh Vượng (VPBank)",
+   "website": "https://www.vpbank.com.vn",
+   "bctc_url": "https://www.vpbank.com.vn/quan-he-nha-dau-tu/bao-cao-tai-chinh",
+   "bctc_url_en": null,
+   "fetch_mode": "json_api",
+   "api": {
+    "url": "https://www.vpbank.com.vn/uiux-api/api/document",
+    "method": "GET",
+    "params": {
+     "categoryPath": "/quan-he-nha-dau-tu/bao-cao-tai-chinh",
+     "lang": "vi",
+     "pageIndex": "1",
+     "pageSize": "20"
+    },
+    "base": "https://www.vpbank.com.vn"
+   },
+   "note": "JSON công khai uiux-api (1 lần gọi = 20 mục mới nhất, publishYear không có tác dụng); pageSize > 20 trả lỗi 500. Mỗi mục có bản hợp nhất, riêng lẻ, bản tra cứu."
+  },
+  {
+   "ticker": "VPL",
+   "name": "Công ty Cổ phần Vinpearl",
+   "website": "https://vinpearl.com",
+   "bctc_url": "https://vinpearl.com/vi/bao-cao-tai-chinh",
+   "bctc_url_en": "https://vinpearl.com/en/bao-cao-tai-chinh",
+   "fetch_mode": "static_html",
+   "note": "Cloudflare challenge -> Chrome headless; file trên statics.vinpearl.com.",
+   "fetcher": "browser"
+  },
+  {
+   "ticker": "VRE",
+   "name": "Công ty Cổ phần Vincom Retail",
+   "website": "https://ir.vincom.com.vn",
+   "bctc_url": "https://ir.vincom.com.vn/bao-cao-tai-chinh-va-tom-tat-ket-qua-kinh-doanh/",
+   "bctc_url_en": "https://ir.vincom.com.vn/en/financial-statements-presentations/",
+   "fetch_mode": "static_html",
+   "note": "WordPress; trang chính = năm hiện tại, năm cũ ở /{YYYY}-2/ -> tự tìm link năm.",
+   "year_links": "href=\"((?:https://ir\\.vincom\\.com\\.vn)?/(20\\d\\d)-2/)\""
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+# Bí mật - KHÔNG đưa lên GitHub
+.env
+.chrome/
+
+# Dữ liệu lớn / sinh lại được
+data/
+txt/
+ket_qua/debug/
+ket_qua/*.html
+ket_qua/*.csv
+ket_qua/so_sanh_quy.xlsx
+website_kiemtra_tam.xlsx
+.probe_*.bin
+*.part
+
+# Python
+__pycache__/
+*.pyc

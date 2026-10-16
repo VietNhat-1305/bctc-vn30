@@ -1,0 +1,6 @@
+aiohttp>=3.9          # bctc.py: tải BCTC
+pymupdf>=1.24         # pdf2txt.py: đọc PDF + OCR (Tesseract tích hợp sẵn, chỉ cần tessdata/)
+google-genai>=1.50    # phan_tich.py: Gemini API
+pydantic>=2
+openpyxl>=3.1         # xuất Excel
+cryptography>=41      # ir_adapters.hdb: giải mã API HDBank
