@@ -5,6 +5,7 @@
     python dang_web.py --kiem-tra   # chạy kiem_tra_ir.py trước (cập nhật tab Nguồn dữ liệu, BCTC mới nhất)
 
 Mỗi quý: python phan_tich.py  (tải BCTC + Gemini + chấm điểm)  ->  python dang_web.py
+Sửa từ điển: python tu_dien.py  ->  python dang_web.py
 """
 from __future__ import annotations
 
@@ -32,8 +33,10 @@ def main() -> int:
         kiem_tra_ir.main([])
     import dashboard
     dashboard.build()
-    git("add", "docs", "ket_qua/ir_check.json", "website_30cty.xlsx", "LINKS.md")
-    if not git("status", "--porcelain", "--", "docs", "ket_qua", "website_30cty.xlsx", "LINKS.md"):
+    paths = ["docs", "ket_qua/ir_check.json", "website_30cty.xlsx", "LINKS.md", "tu_dien", "tu_dien_500.xlsx"]
+    paths = [x for x in paths if (ROOT / x).exists()]
+    git("add", *paths)
+    if not git("status", "--porcelain", "--", *paths):
         print("Web không có gì mới.")
         return 0
     git("commit", "-m", f"Cập nhật web BCTC VN30 {datetime.now():%d/%m/%Y %H:%M}")

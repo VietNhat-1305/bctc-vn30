@@ -167,6 +167,21 @@ Dashboard gồm:
 - Đây là điểm sức khỏe của **một quý BCTC**, chưa phải khuyến nghị đầu tư. Nên xem kèm định giá và xu hướng nhiều quý.
 - Muốn đổi ngưỡng hay trọng số thì sửa `cham_diem.py`.
 
+## Từ điển 500 thuật ngữ (tu_dien.py)
+
+Gồm 500 thuật ngữ thuộc 5 nhóm, mỗi nhóm khoảng 100: kinh tế vĩ mô, kế toán và BCTC, phân tích tài chính và định giá, ngân hàng và tín dụng, chứng khoán và đầu tư. Mỗi thuật ngữ có:
+- Tên tiếng Việt, viết tắt, tên tiếng Anh, nhóm.
+- **Định nghĩa biên soạn**: 2–3 câu, gắn với BCTC Việt Nam, có công thức nếu là chỉ số.
+- **Đoạn trích Wikipedia tiếng Việt** nếu có bài phù hợp. Tool đi theo trang chuyển hướng, bỏ trang định hướng, và kiểm tra đúng chủ đề (ví dụ "CAR" dẫn sang bài Cộng hòa Trung Phi thì bị loại). Mỗi đoạn trích ghi nguồn và giấy phép CC BY-SA 4.0.
+- **Các định nghĩa liên quan**: bấm vào là nhảy sang thuật ngữ đó.
+
+```bash
+python tu_dien.py          # gộp tu_dien/nguon/*.json + tra Wikipedia (có cache) -> tu_dien/tu_dien.json + tu_dien_500.xlsx
+python dang_web.py         # đưa lên tab "Từ điển" của web
+```
+
+Muốn sửa hoặc thêm thuật ngữ thì sửa file trong `tu_dien/nguon/` rồi chạy lại 2 lệnh trên.
+
 ## Thêm hoặc sửa nguồn web của một công ty (companies.json)
 
 ```jsonc

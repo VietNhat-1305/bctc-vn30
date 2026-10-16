@@ -1,0 +1,310 @@
+[
+{
+"thuat_ngu": "Hệ số an toàn vốn",
+"tieng_anh": "Capital adequacy ratio",
+"viet_tat": "CAR",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "CAR = Vốn tự có / Tổng tài sản có rủi ro (gồm rủi ro tín dụng, thị trường, hoạt động). Theo Thông tư 41/2016/TT-NHNN (chuẩn Basel II), ngân hàng thương mại phải duy trì CAR tối thiểu 8%; CAR càng cao thì bộ đệm vốn chống đỡ tổn thất càng dày.",
+"lien_quan": [
+"Vốn tự có",
+"Tài sản có rủi ro",
+"Basel II"
+]
+},
+{
+"thuat_ngu": "Hiệp ước Basel",
+"tieng_anh": "Basel Accords",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Bộ chuẩn mực quốc tế về quản trị rủi ro và an toàn vốn ngân hàng do Ủy ban Basel về Giám sát Ngân hàng (BCBS, đặt tại BIS) ban hành, gồm Basel I (1988), Basel II (2004) và Basel III (2010). Việt Nam áp dụng dần qua các thông tư của NHNN.",
+"lien_quan": [
+"Basel II",
+"Basel III",
+"Hệ số an toàn vốn"
+]
+},
+{
+"thuat_ngu": "Basel II",
+"tieng_anh": "Basel II",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Hiệp ước Basel thứ hai dựa trên ba trụ cột: yêu cầu vốn tối thiểu (tính cho rủi ro tín dụng, thị trường và hoạt động), giám sát của cơ quan quản lý và công bố thông tin thị trường. Tại Việt Nam, Basel II được áp dụng bắt buộc từ năm 2020 qua Thông tư 41/2016/TT-NHNN.",
+"lien_quan": [
+"Hiệp ước Basel",
+"Basel III",
+"Hệ số an toàn vốn"
+]
+},
+{
+"thuat_ngu": "Basel III",
+"tieng_anh": "Basel III",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Bộ chuẩn mực ra đời sau khủng hoảng tài chính 2008, nâng chất lượng và số lượng vốn (đặc biệt vốn cấp 1), bổ sung bộ đệm vốn, tỷ lệ đòn bẩy và hai chuẩn thanh khoản LCR, NSFR. Một số ngân hàng Việt Nam như VCB, TCB, VIB, ACB đã chủ động áp dụng sớm.",
+"lien_quan": [
+"Basel II",
+"Tỷ lệ khả năng chi trả",
+"Tỷ lệ nguồn vốn ổn định ròng"
+]
+},
+{
+"thuat_ngu": "Vốn tự có",
+"tieng_anh": "Regulatory capital",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Vốn dùng để tính các tỷ lệ an toàn của ngân hàng, gồm vốn cấp 1 và vốn cấp 2 trừ đi các khoản giảm trừ theo quy định. Vốn tự có khác vốn chủ sở hữu kế toán và là tử số của hệ số CAR.",
+"lien_quan": [
+"Vốn cấp 1",
+"Vốn cấp 2",
+"Hệ số an toàn vốn"
+]
+},
+{
+"thuat_ngu": "Vốn cấp 1",
+"tieng_anh": "Tier 1 capital",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Vốn cốt lõi của ngân hàng, chủ yếu gồm vốn điều lệ, thặng dư vốn cổ phần, các quỹ dự trữ và lợi nhuận chưa phân phối, sau khi trừ lợi thế thương mại và một số khoản giảm trừ. Đây là phần vốn hấp thụ tổn thất trong khi ngân hàng vẫn hoạt động bình thường.",
+"lien_quan": [
+"Vốn tự có",
+"Vốn cấp 2",
+"Basel III"
+]
+},
+{
+"thuat_ngu": "Vốn cấp 2",
+"tieng_anh": "Tier 2 capital",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Vốn bổ sung của ngân hàng, gồm trái phiếu chuyển đổi, nợ thứ cấp đủ điều kiện, một phần dự phòng chung và chênh lệch đánh giá lại tài sản. Vốn cấp 2 chỉ được tính tối đa bằng mức quy định so với vốn cấp 1.",
+"lien_quan": [
+"Vốn tự có",
+"Vốn cấp 1",
+"Phát hành giấy tờ có giá"
+]
+},
+{
+"thuat_ngu": "Tài sản có rủi ro",
+"tieng_anh": "Risk-weighted assets",
+"viet_tat": "RWA",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Tổng tài sản của ngân hàng sau khi nhân với hệ số rủi ro tương ứng (ví dụ tiền mặt 0%, cho vay mua nhà có thế chấp hệ số thấp hơn cho vay bất động sản kinh doanh), cộng thêm phần vốn yêu cầu cho rủi ro thị trường và rủi ro hoạt động quy đổi. RWA là mẫu số của hệ số CAR.",
+"lien_quan": [
+"Hệ số an toàn vốn",
+"Rủi ro tín dụng",
+"Rủi ro hoạt động"
+]
+},
+{
+"thuat_ngu": "Rủi ro thanh khoản",
+"tieng_anh": "Liquidity risk",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Rủi ro ngân hàng không đủ tiền để chi trả các nghĩa vụ đến hạn (như rút tiền gửi) hoặc phải huy động/bán tài sản với chi phí cao. Rủi ro này tăng khi ngân hàng dùng vốn ngắn hạn cho vay trung dài hạn quá nhiều.",
+"lien_quan": [
+"Tỷ lệ khả năng chi trả",
+"Tỷ lệ dự trữ thanh khoản",
+"Tỷ lệ cho vay trên tiền gửi"
+]
+},
+{
+"thuat_ngu": "Tỷ lệ dự trữ thanh khoản",
+"tieng_anh": "Liquidity reserve ratio",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Tỷ lệ tài sản có tính thanh khoản cao (tiền mặt, tiền gửi tại NHNN, giấy tờ có giá chất lượng cao) trên tổng nợ phải trả. Theo Thông tư 22/2019/TT-NHNN, ngân hàng phải duy trì tỷ lệ này tối thiểu 10%.",
+"lien_quan": [
+"Rủi ro thanh khoản",
+"Tỷ lệ khả năng chi trả"
+]
+},
+{
+"thuat_ngu": "Tỷ lệ khả năng chi trả",
+"tieng_anh": "Liquidity coverage ratio",
+"viet_tat": "LCR",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Tỷ lệ tài sản có tính thanh khoản cao trên dòng tiền ra ròng dự kiến trong 30 ngày tới. Thông tư 22/2019/TT-NHNN yêu cầu tỷ lệ khả năng chi trả 30 ngày bằng đồng Việt Nam tối thiểu 50%; chuẩn LCR của Basel III yêu cầu tối thiểu 100%.",
+"lien_quan": [
+"Rủi ro thanh khoản",
+"Basel III",
+"Tỷ lệ nguồn vốn ổn định ròng"
+]
+},
+{
+"thuat_ngu": "Tỷ lệ nguồn vốn ổn định ròng",
+"tieng_anh": "Net stable funding ratio",
+"viet_tat": "NSFR",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Chuẩn thanh khoản dài hạn của Basel III: NSFR = Nguồn vốn ổn định sẵn có / Nguồn vốn ổn định yêu cầu, phải đạt tối thiểu 100%. Chỉ số này buộc ngân hàng tài trợ tài sản dài hạn bằng nguồn vốn ổn định trong khoảng thời gian một năm.",
+"lien_quan": [
+"Basel III",
+"Tỷ lệ khả năng chi trả",
+"Tỷ lệ vốn ngắn hạn cho vay trung dài hạn"
+]
+},
+{
+"thuat_ngu": "Rủi ro hoạt động",
+"tieng_anh": "Operational risk",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Rủi ro tổn thất do quy trình nội bộ không đầy đủ hoặc sai sót, do con người, hệ thống hoặc sự kiện bên ngoài (gian lận, lỗi công nghệ, thiên tai). Theo Basel II, ngân hàng phải giữ vốn cho cả rủi ro hoạt động.",
+"lien_quan": [
+"Tài sản có rủi ro",
+"Basel II",
+"Rủi ro thị trường"
+]
+},
+{
+"thuat_ngu": "Rủi ro thị trường",
+"tieng_anh": "Market risk",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Rủi ro tổn thất do biến động của lãi suất, tỷ giá, giá chứng khoán và giá hàng hóa ảnh hưởng đến giá trị các trạng thái ngân hàng nắm giữ, chủ yếu trên sổ kinh doanh.",
+"lien_quan": [
+"Rủi ro hoạt động",
+"Tài sản có rủi ro",
+"Lãi thuần từ kinh doanh ngoại hối"
+]
+},
+{
+"thuat_ngu": "Thị trường liên ngân hàng",
+"tieng_anh": "Interbank market",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Thị trường nơi các tổ chức tín dụng vay và cho vay lẫn nhau (chủ yếu kỳ hạn ngắn như qua đêm, 1 tuần) để điều hòa thanh khoản, cùng với giao dịch ngoại tệ giữa các ngân hàng. Diễn biến lãi suất trên thị trường này phản ánh trạng thái thanh khoản của hệ thống.",
+"lien_quan": [
+"Lãi suất liên ngân hàng",
+"Rủi ro thanh khoản",
+"Nghiệp vụ thị trường mở"
+]
+},
+{
+"thuat_ngu": "Lãi suất liên ngân hàng",
+"tieng_anh": "Interbank rate",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Lãi suất các ngân hàng áp dụng khi vay mượn lẫn nhau trên thị trường liên ngân hàng; lãi suất bình quân liên ngân hàng VND được NHNN công bố hằng ngày. Lãi suất qua đêm tăng vọt thường là dấu hiệu hệ thống đang thiếu thanh khoản.",
+"lien_quan": [
+"Thị trường liên ngân hàng",
+"Lãi suất điều hành",
+"Lãi suất huy động"
+]
+},
+{
+"thuat_ngu": "Lãi suất cho vay",
+"tieng_anh": "Lending rate",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Lãi suất ngân hàng thu từ khách hàng vay vốn, thường bằng chi phí vốn cộng biên lợi nhuận và phần bù rủi ro theo khách hàng. Một số lĩnh vực ưu tiên có trần lãi suất cho vay ngắn hạn VND do NHNN quy định.",
+"lien_quan": [
+"Lãi suất huy động",
+"Biên lãi ròng",
+"Lãi suất thả nổi"
+]
+},
+{
+"thuat_ngu": "Lãi suất huy động",
+"tieng_anh": "Deposit rate",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Lãi suất ngân hàng trả cho người gửi tiền. NHNN quy định trần lãi suất cho tiền gửi không kỳ hạn và kỳ hạn dưới 6 tháng; kỳ hạn dài hơn do ngân hàng tự quyết theo cung cầu vốn.",
+"lien_quan": [
+"Lãi suất cho vay",
+"Chi phí vốn huy động",
+"Tiền gửi có kỳ hạn"
+]
+},
+{
+"thuat_ngu": "Bảo hiểm tiền gửi",
+"tieng_anh": "Deposit insurance",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Cơ chế bảo vệ người gửi tiền khi tổ chức tín dụng mất khả năng chi trả, do Bảo hiểm tiền gửi Việt Nam (DIV) thực hiện. Theo Quyết định 32/2021/QĐ-TTg, hạn mức chi trả tối đa là 125 triệu đồng cho mỗi người tại một tổ chức tham gia bảo hiểm tiền gửi.",
+"lien_quan": [
+"Tổ chức tín dụng",
+"Tiền gửi có kỳ hạn"
+]
+},
+{
+"thuat_ngu": "Tổ chức tín dụng",
+"tieng_anh": "Credit institution",
+"viet_tat": "TCTD",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Doanh nghiệp được cấp phép thực hiện hoạt động ngân hàng, gồm ngân hàng (thương mại, chính sách, hợp tác xã) và tổ chức tín dụng phi ngân hàng (công ty tài chính, công ty cho thuê tài chính), quỹ tín dụng nhân dân và tổ chức tài chính vi mô. Hoạt động theo Luật Các tổ chức tín dụng số 32/2024/QH15, hiệu lực từ 1/7/2024.",
+"lien_quan": [
+"Ngân hàng thương mại",
+"Công ty tài chính",
+"Bảo hiểm tiền gửi"
+]
+},
+{
+"thuat_ngu": "Ngân hàng thương mại",
+"tieng_anh": "Commercial bank",
+"viet_tat": "NHTM",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Loại hình ngân hàng được thực hiện tất cả các hoạt động ngân hàng (nhận tiền gửi, cấp tín dụng, cung ứng dịch vụ thanh toán) và kinh doanh khác vì mục tiêu lợi nhuận. Rổ VN30 có nhiều ngân hàng thương mại như VCB, BID, CTG, TCB, MBB, ACB, VPB.",
+"lien_quan": [
+"Ngân hàng thương mại nhà nước",
+"Ngân hàng thương mại cổ phần",
+"Tổ chức tín dụng"
+]
+},
+{
+"thuat_ngu": "Ngân hàng thương mại nhà nước",
+"tieng_anh": "State-owned commercial bank",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Ngân hàng thương mại do Nhà nước sở hữu toàn bộ hoặc nắm cổ phần chi phối. Nhóm “Big 4” gồm Vietcombank, VietinBank, BIDV (Nhà nước nắm đa số) và Agribank (100% vốn nhà nước); nhóm này có lợi thế nguồn vốn rẻ nhưng tăng vốn phụ thuộc phê duyệt của Nhà nước.",
+"lien_quan": [
+"Ngân hàng thương mại",
+"Ngân hàng thương mại cổ phần"
+]
+},
+{
+"thuat_ngu": "Ngân hàng thương mại cổ phần",
+"tieng_anh": "Joint-stock commercial bank",
+"viet_tat": "NHTMCP",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Ngân hàng thương mại được tổ chức dưới hình thức công ty cổ phần; thông thường chỉ khối ngân hàng tư nhân (Techcombank, ACB, MB, VPBank…) được gọi chung là ngân hàng TMCP. Luật Các TCTD 2024 giới hạn tỷ lệ sở hữu của cổ đông cá nhân và tổ chức tại ngân hàng TMCP.",
+"lien_quan": [
+"Ngân hàng thương mại",
+"Ngân hàng thương mại nhà nước"
+]
+},
+{
+"thuat_ngu": "Công ty tài chính",
+"tieng_anh": "Finance company",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Tổ chức tín dụng phi ngân hàng, không được nhận tiền gửi không kỳ hạn từ cá nhân, chủ yếu cho vay tiêu dùng tín chấp với lãi suất cao. Ví dụ FE Credit (thuộc VPBank), HD Saison (thuộc HDBank).",
+"lien_quan": [
+"Tổ chức tín dụng",
+"Cho vay tiêu dùng",
+"Cho vay tín chấp"
+]
+},
+{
+"thuat_ngu": "Ngân hàng số",
+"tieng_anh": "Digital banking",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Mô hình cung cấp dịch vụ ngân hàng chủ yếu qua kênh điện tử (ứng dụng di động, internet banking), từ mở tài khoản định danh điện tử (eKYC) đến vay vốn trực tuyến. Ngân hàng số giúp giảm chi phí vận hành, tăng tỷ lệ CASA và thu phí dịch vụ.",
+"lien_quan": [
+"Tỷ lệ tiền gửi không kỳ hạn",
+"Lãi thuần từ hoạt động dịch vụ",
+"Tỷ lệ chi phí trên thu nhập"
+]
+},
+{
+"thuat_ngu": "Lãi suất thả nổi",
+"tieng_anh": "Floating interest rate",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Lãi suất cho vay được điều chỉnh định kỳ (thường 3 hoặc 6 tháng) theo lãi suất cơ sở cộng một biên độ cố định, lãi suất cơ sở thường là bình quân lãi suất tiết kiệm 12 hoặc 13 tháng của một nhóm ngân hàng. Các khoản vay mua nhà dài hạn thường có lãi suất ưu đãi cố định vài năm đầu rồi chuyển sang thả nổi.",
+"lien_quan": [
+"Lãi suất cho vay",
+"Lãi suất huy động",
+"Rủi ro lãi suất"
+]
+}
+]

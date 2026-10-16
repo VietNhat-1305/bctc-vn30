@@ -126,6 +126,19 @@ def library(since: int) -> list[list]:
     return rows
 
 
+def tu_dien_rows() -> list[list]:
+    """Từ điển (tu_dien.py): [thuật ngữ, viết tắt, tiếng Anh, nhóm, định nghĩa, tiêu đề wiki, url wiki, trích wiki, liên quan]."""
+    path = ROOT / "tu_dien" / "tu_dien.json"
+    if not path.exists():
+        return []
+    out = []
+    for it in json.loads(path.read_text(encoding="utf-8")):
+        w = it.get("wiki") or {}
+        out.append([it["thuat_ngu"], it.get("viet_tat") or "", it.get("tieng_anh", ""), it.get("nhom", ""),
+                    it["dinh_nghia"], w.get("title", ""), w.get("url", ""), w.get("extract", ""), it.get("lien_quan", [])])
+    return out
+
+
 def build(results: dict | None = None, outs: list[Path] | None = None) -> Path:
     results = results if results is not None else load_results()
     companies = json.loads((ROOT / "companies.json").read_text(encoding="utf-8"))["companies"]
@@ -138,6 +151,7 @@ def build(results: dict | None = None, outs: list[Path] | None = None) -> Path:
                       for c in companies],
         "ir": ir["cong_ty"], "ir_luc": ir["kiem_tra_luc"],
         "lib": library(date.today().year - 2),
+        "tu_dien": tu_dien_rows(),
         "tao_luc": datetime.now().strftime("%d/%m/%Y %H:%M"),
         "criteria": cham_diem.CRITERIA_DOC,
         "repo": REPO_URL,
@@ -275,6 +289,30 @@ tr:last-child td { border-bottom: 0; }
 .methods td:last-child { text-align: right; white-space: nowrap; }
 ol.flow { padding-left: 20px; display: grid; gap: 6px; }
 .more { margin: 12px auto; display: block; }
+.az { display: flex; flex-wrap: wrap; gap: 4px; margin: 10px 0 2px; }
+.az button { font: inherit; font-size: 12.5px; min-width: 30px; padding: 3px 7px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--ring); background: var(--surface); color: var(--ink); }
+.az button[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+.td-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 12px; }
+@media (max-width: 560px) { .td-list { grid-template-columns: 1fr; } }
+.td { background: var(--surface); border: 1px solid var(--ring); border-radius: 14px; padding: 14px 16px;
+  display: flex; flex-direction: column; gap: 8px; scroll-margin-top: 80px; }
+.td.hl { box-shadow: 0 0 0 2px var(--accent); }
+.td-src { display: flex; gap: 10px; align-items: center; }
+.td-ico { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; flex: none;
+  background: var(--surface-2); border: 1px solid var(--ring); font: 600 15px Georgia, "Times New Roman", serif; color: var(--ink); }
+.td-src .s1 { font-size: 14px; color: var(--ink); line-height: 1.2; }
+.td-src .s2 { font-size: 12.5px; color: var(--muted); word-break: break-all; line-height: 1.2; }
+.td h3 { margin: 2px 0 0; font-size: 21px; font-weight: 500; color: var(--accent); line-height: 1.25; }
+.td h3 small { font-size: 14px; color: var(--ink-2); font-weight: 400; }
+.td .def { color: var(--ink); }
+.td .wq { color: var(--ink-2); border-left: 3px solid var(--line); padding-left: 10px; font-size: 13.5px; }
+.td .wq .lic { color: var(--muted); font-size: 11.5px; }
+.td .rel { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 2px; }
+.td .rel span { font-size: 12px; color: var(--muted); margin-right: 2px; }
+.td .rel button { font: inherit; font-size: 13px; padding: 5px 12px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--ring); background: var(--surface); color: var(--ink); }
+.td .rel button:hover { background: var(--surface-2); }
 footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1px solid var(--line); padding-top: 12px; }
 @media (max-width: 560px) { .f input[type=search] { width: 100%; } .f { flex: 1 1 140px; } h1 { font-size: 19px; } }
 </style>
@@ -291,6 +329,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
   <nav class="tabs" aria-label="Mục">
     <a href="#bang-diem" data-tab="bang-diem">Bảng điểm</a>
     <a href="#thu-vien" data-tab="thu-vien">Thư viện BCTC</a>
+    <a href="#tu-dien" data-tab="tu-dien">Từ điển</a>
     <a href="#nguon" data-tab="nguon">Nguồn dữ liệu</a>
     <a href="#phuong-phap" data-tab="phuong-phap">Phương pháp</a>
   </nav>
@@ -346,6 +385,20 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     </div>
     <p class="count" id="lCount"></p>
     <div id="lib"></div>
+  </section>
+
+  <!-- ============ TỪ ĐIỂN ============ -->
+  <section id="tab-tu-dien" hidden>
+    <p class="sub" style="margin-top:14px"><span id="tdTotal"></span> thuật ngữ kinh tế, kế toán, phân tích tài chính, ngân hàng,
+      chứng khoán. Mỗi thuật ngữ có định nghĩa ngắn gắn với BCTC Việt Nam, kèm đoạn trích Wikipedia tiếng Việt khi có bài phù hợp.</p>
+    <div class="filters">
+      <label class="f">Tìm thuật ngữ (gõ không dấu cũng được)<input type="search" id="tdQ" placeholder="lạm phát, ROE, nợ xấu..." style="width:260px"></label>
+      <label class="f">Nhóm<select id="tdNhom"><option value="">Tất cả</option></select></label>
+      <label class="f check"><input type="checkbox" id="tdWiki"> Chỉ thuật ngữ có bài Wikipedia</label>
+    </div>
+    <div class="az" id="tdAz" aria-label="Lọc theo chữ cái đầu"></div>
+    <p class="count" id="tdCount" aria-live="polite"></p>
+    <div id="tdList" class="td-list"></div>
   </section>
 
   <!-- ============ NGUỒN ============ -->
@@ -413,12 +466,15 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
   $('sub').textContent = (hasScore ? `Kỳ ${D.cards[0].ky} so với ${D.cards[0].ky_truoc} · ` : '') +
     `30 mã VN30 · dữ liệu lấy trực tiếp từ web công ty · cập nhật ${D.tao_luc}`;
   $('footer').innerHTML = `Số liệu tỷ đồng. Nguồn: web quan hệ nhà đầu tư của từng công ty. Không phải khuyến nghị đầu tư. ` +
-    `Mã nguồn: <a href="${esc(D.repo)}" target="_blank" rel="noopener">${esc(D.repo.replace('https://', ''))}</a>`;
+    `Mã nguồn: <a href="${esc(D.repo)}" target="_blank" rel="noopener">${esc(D.repo.replace('https://', ''))}</a>. ` +
+    `Đoạn trích Wikipedia trong Từ điển theo giấy phép <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.vi" target="_blank" rel="noopener">CC BY-SA 4.0</a>.`;
 
   // ---------- tab ----------
-  const TABS = ['bang-diem', 'thu-vien', 'nguon', 'phuong-phap'];
+  const TABS = ['bang-diem', 'thu-vien', 'tu-dien', 'nguon', 'phuong-phap'];
   function showTab() {
-    const t = TABS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'bang-diem';
+    const [h, arg] = decodeURIComponent(location.hash.slice(1)).split('/');
+    const t = TABS.includes(h) ? h : 'bang-diem';
+    if (t === 'tu-dien' && arg) openTerm(arg);
     TABS.forEach(x => { $('tab-' + x).hidden = x !== t; });
     document.querySelectorAll('nav.tabs a').forEach(a => {
       if (a.dataset.tab === t) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
@@ -568,6 +624,66 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
   }
   ['lMa', 'lNam', 'lKy', 'lPv', 'lQ'].forEach(id => $(id).addEventListener('input', () => { libLimit = 200; renderLib(); }));
 
+  // ---------- TỪ ĐIỂN ----------
+  // [thuật ngữ, viết tắt, tiếng Anh, nhóm, định nghĩa, tiêu đề wiki, url wiki, trích wiki, liên quan]
+  const T = D.tu_dien || [];
+  const plain = s => String(s || '').toLowerCase().replace(/đ/g, 'd').normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const tIdx = T.map(r => plain([r[0], r[1], r[2]].join(' ')));
+  const tDef = T.map(r => plain(r[4]));
+  const tByName = Object.fromEntries(T.map((r, i) => [r[0], i]));
+  let tdLetter = '', tdLimit = 60, tdFocus = null;
+  $('tdTotal').textContent = T.length;
+  [...new Set(T.map(r => r[3]))].forEach(n => $('tdNhom').insertAdjacentHTML('beforeend', `<option>${esc(n)}</option>`));
+  const letters = [...new Set(T.map(r => plain(r[0])[0].toUpperCase()))].sort();
+  $('tdAz').innerHTML = ['Tất cả', ...letters].map(l => `<button data-l="${l === 'Tất cả' ? '' : l}" aria-pressed="${l === 'Tất cả'}">${l}</button>`).join('');
+  $('tdAz').onclick = e => { const b = e.target.closest('button'); if (!b) return;
+    tdLetter = b.dataset.l; $('tdAz').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    tdLimit = 60; tdFocus = null; renderTd(); };
+  function tdCard(r, i) {
+    const wiki = r[6];
+    const host = wiki ? 'https://vi.wikipedia.org' : '';
+    const src = wiki
+      ? `<div class="td-src"><div class="td-ico" aria-hidden="true">W</div><div><div class="s1">Wikipedia</div><div class="s2">${host}</div></div></div>`
+      : `<div class="td-src"><div class="td-ico" aria-hidden="true" style="font-family:inherit;font-size:13px">VN30</div><div><div class="s1">Biên soạn</div><div class="s2">BCTC VN30</div></div></div>`;
+    const title = `${esc(r[0])}${wiki ? ' – Wikipedia tiếng Việt' : ''}`;
+    const sub = [r[1], r[2]].filter(Boolean).map(esc).join(' · ');
+    return `<article class="td${tdFocus === i ? ' hl' : ''}" id="td-${i}">
+      ${src}
+      <h3>${wiki ? `<a href="${esc(wiki)}" target="_blank" rel="noopener">${title}</a>` : title}${sub ? ` <small>(${sub})</small>` : ''}</h3>
+      <span class="tag" style="align-self:flex-start">${esc(r[3])}</span>
+      <div class="def">${esc(r[4])}</div>
+      ${r[7] ? `<div class="wq">${esc(r[7])} <a href="${esc(wiki)}" target="_blank" rel="noopener">Đọc tiếp trên Wikipedia</a>
+        <div class="lic">Trích bài “${esc(r[5])}”, Wikipedia tiếng Việt, giấy phép CC BY-SA 4.0</div></div>` : ''}
+      ${r[8].length ? `<div class="rel"><span>Các định nghĩa liên quan:</span>${r[8].map(x => `<button data-t="${esc(x)}">${esc(x)}</button>`).join('')}</div>` : ''}
+    </article>`;
+  }
+  function renderTd() {
+    const q = plain($('tdQ').value.trim()), nhom = $('tdNhom').value, onlyWiki = $('tdWiki').checked;
+    let rows = T.map((r, i) => i).filter(i =>
+      (!nhom || T[i][3] === nhom) && (!onlyWiki || T[i][6]) && (!tdLetter || plain(T[i][0])[0].toUpperCase() === tdLetter) &&
+      (!q || tIdx[i].includes(q) || tDef[i].includes(q)));
+    if (q) rows.sort((a, b) => (tIdx[b].includes(q) - tIdx[a].includes(q)) || (plain(T[a][0]).startsWith(q) ? -1 : 0));
+    if (tdFocus != null) rows = [tdFocus, ...rows.filter(i => i !== tdFocus)];
+    $('tdCount').textContent = `${rows.length} thuật ngữ` + (rows.length > tdLimit ? ` · đang hiện ${tdLimit}` : '');
+    $('tdList').innerHTML = rows.length ? rows.slice(0, tdLimit).map(i => tdCard(T[i], i)).join('')
+      : '<div class="empty" style="grid-column:1/-1">Không có thuật ngữ nào khớp.</div>';
+    $('tdMore')?.remove();
+    if (rows.length > tdLimit) {
+      $('tdList').insertAdjacentHTML('afterend', '<button class="btn more" id="tdMore">Hiện thêm</button>');
+      $('tdMore').onclick = () => { tdLimit += 120; renderTd(); };
+    }
+  }
+  function openTerm(name) {                 // mở 1 thuật ngữ: đưa lên đầu, tô viền, cuộn tới
+    const i = tByName[name];
+    if (i == null) { $('tdQ').value = name; tdFocus = null; renderTd(); return; }
+    $('tdQ').value = ''; $('tdNhom').value = ''; tdLetter = ''; tdFocus = i;
+    $('tdAz').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x.dataset.l === ''));
+    renderTd();
+    requestAnimationFrame(() => $('td-' + i)?.scrollIntoView({behavior: 'smooth', block: 'start'}));
+  }
+  $('tdList').onclick = e => { const b = e.target.closest('button[data-t]'); if (b) location.hash = 'tu-dien/' + encodeURIComponent(b.dataset.t); };
+  ['tdQ', 'tdNhom', 'tdWiki'].forEach(id => $(id).addEventListener('input', () => { tdLimit = 60; tdFocus = null; renderTd(); }));
+
   // ---------- NGUỒN ----------
   function renderSrc() {
     const ok = D.ir.filter(r => r.kiem_tra === 'PASS').length;
@@ -611,7 +727,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     $('sort').value = 'ma';
     [...$('sort').options].forEach(o => { if (o.value !== 'ma') o.hidden = true; });
   }
-  kpis(); renderScores(); renderLib(); renderSrc(); showTab();
+  kpis(); renderScores(); renderLib(); renderSrc(); renderTd(); showTab();
 })();
 </script>
 </body>
