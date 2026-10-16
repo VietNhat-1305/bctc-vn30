@@ -576,9 +576,18 @@ def main(argv=None) -> int:
     ap.add_argument("--no-download", action="store_true", help="Không gọi bctc.py tải BCTC thiếu")
     ap.add_argument("--dry-run", action="store_true", help="Không gọi Gemini: chỉ tải, OCR, chọn trang")
     ap.add_argument("--force", action="store_true", help="Bỏ cache, hỏi Gemini lại")
+    ap.add_argument("--tong-hop", action="store_true",
+                    help="Không tải, không gọi AI: chỉ so sánh + chấm điểm + dựng web từ ket_qua/json (VD số do claude_trich.py ghi)")
     args = ap.parse_args(argv)
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if args.tong_hop:
+        import dashboard
+        results = dashboard.load_results()
+        long_rows, raw_rows = compare(results)
+        path = write_outputs(long_rows, raw_rows, dashboard.score_rows(dashboard.build_cards(results)))
+        print(f"{len(results)} mã | {len(long_rows)} dòng so sánh -> {path}\nDashboard: {dashboard.build(results)}")
+        return 0
 
     companies = json.loads((ROOT / "companies.json").read_text(encoding="utf-8"))["companies"]
     tickers = args.tickers or [c["ticker"] for c in companies]

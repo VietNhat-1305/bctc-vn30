@@ -127,7 +127,7 @@ def library(since: int) -> list[list]:
 
 
 def tu_dien_rows() -> list[list]:
-    """Từ điển (tu_dien.py): [thuật ngữ, viết tắt, tiếng Anh, nhóm, định nghĩa, tiêu đề wiki, url wiki, trích wiki, liên quan]."""
+    """Từ điển (tu_dien.py): [thuật ngữ, viết tắt, tiếng Anh, nhóm, định nghĩa, tiêu đề wiki, url wiki, trích wiki, liên quan, ngôn ngữ wiki]."""
     path = ROOT / "tu_dien" / "tu_dien.json"
     if not path.exists():
         return []
@@ -135,8 +135,19 @@ def tu_dien_rows() -> list[list]:
     for it in json.loads(path.read_text(encoding="utf-8")):
         w = it.get("wiki") or {}
         out.append([it["thuat_ngu"], it.get("viet_tat") or "", it.get("tieng_anh", ""), it.get("nhom", ""),
-                    it["dinh_nghia"], w.get("title", ""), w.get("url", ""), w.get("extract", ""), it.get("lien_quan", [])])
+                    it["dinh_nghia"], w.get("title", ""), w.get("url", ""), w.get("extract", ""), it.get("lien_quan", []),
+                    w.get("lang", "vi") if w else ""])
     return out
+
+
+AI_TEN = {"claude": "Claude (Anthropic)", "gemini": "Gemini (Google)"}
+
+
+def ai_used(results: dict) -> dict:
+    """AI nào đã đọc số liệu + kỳ so sánh, để web ghi rõ nguồn."""
+    models = sorted({r.get("model", "") for v in results.values() for r in v.values() if r.get("data")})
+    names = sorted({next((t for k, t in AI_TEN.items() if m.startswith(k)), m) for m in models if m})
+    return {"ten": ", ".join(names), "model": ", ".join(models)}
 
 
 def build(results: dict | None = None, outs: list[Path] | None = None) -> Path:
@@ -155,6 +166,7 @@ def build(results: dict | None = None, outs: list[Path] | None = None) -> Path:
         "tao_luc": datetime.now().strftime("%d/%m/%Y %H:%M"),
         "criteria": cham_diem.CRITERIA_DOC,
         "repo": REPO_URL,
+        "ai": ai_used(results),
     }
     data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     html = TEMPLATE.replace("__DATA__", data)
@@ -341,6 +353,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
       lấy trực tiếp từ web từng công ty; điểm và chỉ số sẽ tự xuất hiện sau khi chạy <code>python phan_tich.py</code>.
     </div>
     <div class="kpis" id="kpis"></div>
+    <div class="notice" id="aiNote" hidden style="margin-top:12px"></div>
     <div class="filters" role="search">
       <label class="f">Tìm mã / tên<input type="search" id="q" placeholder="VNM, ngân hàng..."></label>
       <label class="f">Loại hình
@@ -390,7 +403,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
   <!-- ============ TỪ ĐIỂN ============ -->
   <section id="tab-tu-dien" hidden>
     <p class="sub" style="margin-top:14px"><span id="tdTotal"></span> thuật ngữ kinh tế, kế toán, phân tích tài chính, ngân hàng,
-      chứng khoán. Mỗi thuật ngữ có định nghĩa ngắn gắn với BCTC Việt Nam, kèm đoạn trích Wikipedia tiếng Việt khi có bài phù hợp.</p>
+      chứng khoán. Mỗi thuật ngữ có định nghĩa ngắn gắn với BCTC Việt Nam, kèm đoạn trích Wikipedia (ưu tiên bài tiếng Việt, không có thì bài tiếng Anh) khi có bài phù hợp.</p>
     <div class="filters">
       <label class="f">Tìm thuật ngữ (gõ không dấu cũng được)<input type="search" id="tdQ" placeholder="lạm phát, ROE, nợ xấu..." style="width:260px"></label>
       <label class="f">Nhóm<select id="tdNhom"><option value="">Tất cả</option></select></label>
@@ -416,8 +429,8 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
       <li><b>Thu thập:</b> đọc trang BCTC trên web của 30 công ty (HTML, API, trang chặn bot thì mở bằng trình duyệt thật).
         CafeF chỉ để dự phòng khi web công ty không có hoặc link hỏng.</li>
       <li><b>Chuyển chữ:</b> khoảng 90% BCTC là PDF scan → OCR tiếng Việt, tự xoay trang scan nằm ngang.</li>
-      <li><b>Đọc số liệu:</b> chỉ các trang Bảng cân đối, Kết quả kinh doanh, Lưu chuyển tiền tệ được gửi cho
-        Gemini (3.5 Flash-Lite), trả về theo mẫu cố định.</li>
+      <li><b>Đọc số liệu:</b> chỉ các trang Bảng cân đối, Kết quả kinh doanh, Lưu chuyển tiền tệ được đưa cho AI
+        (<span id="aiFlow">Gemini 3.5 Flash-Lite</span>) đọc ảnh trang + chữ OCR, trả về theo mẫu cố định.</li>
       <li><b>Kiểm tra chéo:</b> Tổng tài sản = Nợ + Vốn chủ sở hữu; lưu chuyển tiền thuần = kinh doanh + đầu tư + tài chính;
         đúng kỳ, đúng đơn vị. Sai lệch hiện thành cảnh báo trên thẻ.</li>
       <li><b>So sánh và chấm điểm:</b> quý này so với quý trước (và cùng kỳ năm trước), lưu chuyển tiền quy về số trong quý.</li>
@@ -641,11 +654,12 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     tdLimit = 60; tdFocus = null; renderTd(); };
   function tdCard(r, i) {
     const wiki = r[6];
-    const host = wiki ? 'https://vi.wikipedia.org' : '';
+    const en = r[9] === 'en', host = wiki ? (en ? 'https://en.wikipedia.org' : 'https://vi.wikipedia.org') : '';
+    const wname = en ? 'Wikipedia tiếng Anh' : 'Wikipedia tiếng Việt';
     const src = wiki
       ? `<div class="td-src"><div class="td-ico" aria-hidden="true">W</div><div><div class="s1">Wikipedia</div><div class="s2">${host}</div></div></div>`
       : `<div class="td-src"><div class="td-ico" aria-hidden="true" style="font-family:inherit;font-size:13px">VN30</div><div><div class="s1">Biên soạn</div><div class="s2">BCTC VN30</div></div></div>`;
-    const title = `${esc(r[0])}${wiki ? ' – Wikipedia tiếng Việt' : ''}`;
+    const title = `${esc(r[0])}${wiki ? (en ? ` – ${esc(r[5])} – Wikipedia` : ' – Wikipedia tiếng Việt') : ''}`;
     const sub = [r[1], r[2]].filter(Boolean).map(esc).join(' · ');
     return `<article class="td${tdFocus === i ? ' hl' : ''}" id="td-${i}">
       ${src}
@@ -653,7 +667,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
       <span class="tag" style="align-self:flex-start">${esc(r[3])}</span>
       <div class="def">${esc(r[4])}</div>
       ${r[7] ? `<div class="wq">${esc(r[7])} <a href="${esc(wiki)}" target="_blank" rel="noopener">Đọc tiếp trên Wikipedia</a>
-        <div class="lic">Trích bài “${esc(r[5])}”, Wikipedia tiếng Việt, giấy phép CC BY-SA 4.0</div></div>` : ''}
+        <div class="lic">Trích bài “${esc(r[5])}”, ${wname}${en ? ' (nguyên văn)' : ''}, giấy phép CC BY-SA 4.0</div></div>` : ''}
       ${r[8].length ? `<div class="rel"><span>Các định nghĩa liên quan:</span>${r[8].map(x => `<button data-t="${esc(x)}">${esc(x)}</button>`).join('')}</div>` : ''}
     </article>`;
   }
@@ -726,6 +740,12 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     document.querySelectorAll('.sc').forEach(el => el.hidden = true);
     $('sort').value = 'ma';
     [...$('sort').options].forEach(o => { if (o.value !== 'ma') o.hidden = true; });
+  }
+  if (hasScore && D.ai && D.ai.ten) {
+    const kys = [...new Set(D.cards.map(c => `${c.ky} so với ${c.ky_truoc}`))].join('; ');
+    $('aiNote').hidden = false;
+    $('aiNote').textContent = `Số liệu do AI ${D.ai.ten} đọc trực tiếp từ BCTC gốc trên web công ty (${kys}), đã kiểm tra cân đối Tổng tài sản = Nợ + Vốn chủ sở hữu. Bấm "Mở PDF" trên thẻ để đối chiếu.`;
+    $('aiFlow').textContent = `${D.ai.ten}, model ${D.ai.model}`;
   }
   kpis(); renderScores(); renderLib(); renderSrc(); renderTd(); showTab();
 })();

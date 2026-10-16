@@ -132,6 +132,20 @@ BCTC chỉ ghi lưu chuyển tiền lũy kế từ đầu năm, nên tool tự t
 
 Đo bằng `--dry-run` trên 60 BCTC lấy từ web công ty: khâu chuẩn bị (quét tiêu đề, dò trang scan nằm ngang, OCR) mất 572 giây, khoảng 9,5 giây/BCTC. Mỗi BCTC gửi Gemini 4–16 trang, khoảng 9k token với bản có sẵn chữ và 15–35k token với bản scan. Lần chạy đầu cho 30 mã cần 60 request, mất khoảng 10 phút vì khâu chuẩn bị và Gemini chạy chồng lên nhau. Các quý sau chỉ còn khoảng 30 BCTC mới, mất khoảng 5 phút. Quota miễn phí khoảng 15 request/phút và 500 request/ngày (Google không công bố chính thức), tool tự giới hạn ở 12 request/phút.
 
+### Khi chưa có Gemini key: Claude trích số (claude_trich.py)
+
+Số liệu Q2/2026 so với Q1/2026 đang có trên web do Claude (Anthropic) đọc. Cách làm như sau:
+1. `python phan_tich.py --dry-run` cắt riêng các trang 3 báo cáo ra `ket_qua/debug/`.
+2. Claude đọc ảnh trang cùng chữ OCR, rồi ghi kết quả theo đúng schema `BCTC` ở trên:
+   `python claude_trich.py ghi <MÃ> 2026 <QUÝ> file.json`. Lệnh này kiểm tra cân đối (Tổng TS = Nợ + VCSH, LCTT thuần = KD + ĐT + TC) rồi mới lưu vào `ket_qua/json/`.
+3. `python phan_tich.py --tong-hop` so sánh hai quý, chấm điểm và dựng web từ `ket_qua/json/`, không gọi AI.
+
+Đợt 16/10/2026 có 60/60 BCTC qua kiểm tra cân đối. Chỗ nào OCR đọc sai số thì đã sửa theo ảnh trang. Có vài điểm cần biết khi đọc số:
+- Phần lớn ngân hàng không in dòng "Tổng thu nhập hoạt động". Số này được tính bằng tổng các mục I–VII, và đã đối chiếu với LN trước dự phòng + chi phí hoạt động.
+- Từ năm 2026, BCTC dùng mẫu mới (Thông tư 99/2025), nên chỉ tiêu được nhận theo tên chứ không theo mã số.
+
+Có Gemini key thì chạy `python phan_tich.py` như bình thường. Kết quả Gemini sẽ ghi đè các quý mới.
+
 ## Bước 5: Chấm điểm và dashboard
 
 `phan_tich.py` chạy xong sẽ tự tạo:
@@ -172,7 +186,7 @@ Dashboard gồm:
 Gồm 500 thuật ngữ thuộc 5 nhóm, mỗi nhóm khoảng 100: kinh tế vĩ mô, kế toán và BCTC, phân tích tài chính và định giá, ngân hàng và tín dụng, chứng khoán và đầu tư. Mỗi thuật ngữ có:
 - Tên tiếng Việt, viết tắt, tên tiếng Anh, nhóm.
 - **Định nghĩa biên soạn**: 2–3 câu, gắn với BCTC Việt Nam, có công thức nếu là chỉ số.
-- **Đoạn trích Wikipedia tiếng Việt** nếu có bài phù hợp. Tool đi theo trang chuyển hướng, bỏ trang định hướng, và kiểm tra đúng chủ đề (ví dụ "CAR" dẫn sang bài Cộng hòa Trung Phi thì bị loại). Mỗi đoạn trích ghi nguồn và giấy phép CC BY-SA 4.0.
+- **Đoạn trích Wikipedia** nếu có bài phù hợp: ưu tiên vi.wikipedia; nếu không có thì tra tên tiếng Anh trên en.wikipedia, theo liên kết sang bài tiếng Việt nếu có, còn không thì trích nguyên văn bài tiếng Anh. Hiện có 292/500 thuật ngữ có nguồn Wikipedia; các bài khớp tên nhưng sai nghĩa đã được loại thủ công (`WIKI_BO_QUA`, `WIKI_BO_QUA_EN`). Tool đi theo trang chuyển hướng, bỏ trang định hướng, và kiểm tra đúng chủ đề (ví dụ "CAR" dẫn sang bài Cộng hòa Trung Phi thì bị loại). Mỗi đoạn trích ghi nguồn và giấy phép CC BY-SA 4.0.
 - **Các định nghĩa liên quan**: bấm vào là nhảy sang thuật ngữ đó.
 
 ```bash

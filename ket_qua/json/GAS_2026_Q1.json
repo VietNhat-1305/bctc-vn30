@@ -1,0 +1,43 @@
+{
+ "ticker": "GAS",
+ "ky": "Q1/2026",
+ "file": "GAS/2026/GAS_2026_Q1_HN.pdf",
+ "sha256": "853ad22dfe045d2477d9e027fa3d161a9eb2bed37c2a37bec8942fa815008deb",
+ "scope": "HN",
+ "pages_sent": [
+  4,
+  5,
+  6,
+  7
+ ],
+ "prompt_version": 2,
+ "model": "claude-opus-5-5",
+ "extracted_at": "2026-10-16T16:07:24",
+ "data": {
+  "ma_ck": "GAS",
+  "ky_bao_cao": "Q1/2026",
+  "loai_hinh": "doanh_nghiep",
+  "don_vi": "dong",
+  "doanh_thu_thuan": 38019609031268.0,
+  "doanh_thu_thuan_cung_ky": 25675428574505.0,
+  "gia_von": 33511417706493.0,
+  "loi_nhuan_gop": 4508191324775.0,
+  "loi_nhuan_gop_cung_ky": 4089510371416.0,
+  "lnst": 2994115272577.0,
+  "lnst_cung_ky": 2762782490472.0,
+  "lnst_cong_ty_me": 2944603136328.0,
+  "tong_tai_san": 92923423491919.0,
+  "no_phai_tra": 22333645606660.0,
+  "vay_no": 3283452726077.0,
+  "von_chu_so_huu": 70589777885259.0,
+  "so_thang_luy_ke": 3,
+  "lctt_hdkd": -468939629618.0,
+  "lctt_hddt": 599484606752.0,
+  "lctt_hdtc": 314542385295.0,
+  "lctt_thuan": 445087362429.0,
+  "trang_cdkt": 1,
+  "trang_kqkd": 3,
+  "trang_lctt": 4,
+  "ghi_chu": ""
+ }
+}

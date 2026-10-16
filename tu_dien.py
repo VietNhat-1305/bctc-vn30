@@ -23,6 +23,7 @@ import httpx
 ROOT = Path(__file__).resolve().parent
 DIR = ROOT / "tu_dien"
 API = "https://vi.wikipedia.org/w/api.php"
+API_EN = "https://en.wikipedia.org/w/api.php"
 # Wikimedia yêu cầu User-Agent mô tả rõ công cụ + liên hệ
 UA = "BCTC-VN30-glossary/1.0 (https://github.com/VietNhat-1305/bctc-vn30; educational use)"   # header phải là ASCII
 NHOM_THU_TU = ["Kinh tế vĩ mô & chính sách", "Kế toán & Báo cáo tài chính", "Phân tích tài chính & Định giá",
@@ -31,6 +32,14 @@ STOP = {"va", "cua", "cac", "trong", "theo", "tren", "duoc", "mot", "nhung", "vo
 # Đã soát tay: Wikipedia trả về bài sai khái niệm (chữ cái Beta/G, giao thức FTP, Viện PMI...) hoặc quá chung chung
 WIKI_BO_QUA = {"Hệ số beta", "Tốc độ tăng trưởng dài hạn", "Định giá điều chuyển vốn nội bộ", "Chỉ số nhà quản trị mua hàng",
                "Cho vay tiêu dùng", "Công ty tài chính", "Hệ thống KRX"}
+# Bước tra tên tiếng Anh: bài sai nghĩa (VD "Rủi ro phi hệ thống" -> Systematic risk, "Giá trần" -> giá trần do nhà nước áp)
+# hoặc quá chung (Tài sản, Nợ, Lãi suất...) - soát tay sau mỗi lần thêm thuật ngữ
+WIKI_BO_QUA_EN = {"Doanh thu thuần", "Hệ số thanh toán tiền mặt", "Nguyên tắc thận trọng", "Khoản mục bất thường",
+                  "Nợ vay ròng", "Khối ngoại", "Lãi suất cho vay", "Lãi suất huy động", "Thị trường liên ngân hàng",
+                  "Rủi ro phi hệ thống", "Tỷ lệ khả năng chi trả", "Tỷ lệ nguồn vốn ổn định ròng", "Tài sản ngắn hạn",
+                  "Tài sản dài hạn", "Thuyết minh báo cáo tài chính", "Lợi nhuận thuần từ hoạt động kinh doanh",
+                  "Lợi nhuận trước thuế", "Bất động sản đầu tư", "Chi phí nợ", "Vốn tự có", "Lợi suất trái phiếu",
+                  "Giá trần", "Giá sàn", "Phân bổ chi phí"}
 
 
 def norm(s: str) -> str:
@@ -63,17 +72,31 @@ def first_sentences(text: str, limit: int = 600) -> str:
     return cut[: m[-1].end()] if m else cut.rsplit(" ", 1)[0] + "…"
 
 
-def wiki_lookup(titles: list[str], client: httpx.Client) -> dict[str, dict]:
-    """{tiêu đề hỏi: {title, url, extract}} cho các bài tồn tại, không phải trang định hướng. 20 tiêu đề/lần."""
+def en_names(it: dict) -> list[str]:
+    """Tên tiếng Anh để tra en.wikipedia: tách 'A / B', thêm bản bỏ ngoặc và phần trong ngoặc."""
+    out = []
+    for part in re.split(r"\s+/\s+|;\s*", it["tieng_anh"]):
+        for p in (part, re.sub(r"\s*\(.*?\)", "", part), *re.findall(r"\((.*?)\)", part)):
+            p = p.strip()
+            if p and p not in out:
+                out.append(p)
+    return out
+
+
+def wiki_lookup(titles: list[str], client: httpx.Client, api: str = API, langlinks: bool = False) -> dict[str, dict]:
+    """{tiêu đề hỏi: {title, url, extract[, vi_title]}} cho các bài tồn tại, không phải trang định hướng. 20 tiêu đề/lần.
+    langlinks=True (dùng với en.wikipedia): kèm tên bài tiếng Việt tương ứng nếu có."""
     out = {}
     for i in range(0, len(titles), 20):
         chunk = titles[i:i + 20]
         params = {"action": "query", "format": "json", "formatversion": "2", "redirects": "1",
                   "prop": "extracts|pageprops|info", "inprop": "url", "exintro": "1", "explaintext": "1",
                   "exlimit": "20", "ppprop": "disambiguation", "titles": "|".join(chunk)}
+        if langlinks:
+            params.update(prop=params["prop"] + "|langlinks", lllang="vi", lllimit="500")
         for attempt in range(4):
             try:
-                r = client.get(API, params=params, timeout=30)
+                r = client.get(api, params=params, timeout=30)
                 r.raise_for_status()
                 data = r.json()["query"]
                 break
@@ -99,6 +122,9 @@ def wiki_lookup(titles: list[str], client: httpx.Client) -> dict[str, dict]:
             ext = (p.get("extract") or "").strip()
             if len(ext) >= 60:
                 out[asked] = {"title": p["title"], "url": p["fullurl"], "extract": first_sentences(ext)}
+                vi = [x["title"] for x in p.get("langlinks") or [] if x.get("lang") == "vi"]
+                if vi:
+                    out[asked]["vi_title"] = vi[0]
         time.sleep(0.3)
     return out
 
@@ -132,7 +158,32 @@ def enrich(items: list[dict], refresh: bool = False) -> None:
             w = cache.get(it["viet_tat"])
             if w and not relevant(it, w):
                 w = None
-        it["wiki"] = None if it["thuat_ngu"] in WIKI_BO_QUA else w
+        it["wiki"] = None if it["thuat_ngu"] in WIKI_BO_QUA or not w else {**w, "lang": "vi"}
+
+    # Bước 2: chưa có bài tiếng Việt -> tra tên tiếng Anh trên en.wikipedia (tên chuẩn quốc tế, khớp chính xác hơn);
+    # bài tiếng Anh có bản tiếng Việt thì lấy bản tiếng Việt, không thì trích bài tiếng Anh.
+    need = [it for it in items if not it["wiki"] and it["thuat_ngu"] not in WIKI_BO_QUA_EN]
+    asks = list(dict.fromkeys(n for it in need for n in en_names(it) if "en:" + n not in cache))
+    if asks:
+        print(f"Tra Wikipedia tiếng Anh: {len(asks)} tiêu đề ({(len(asks) + 19) // 20} lần gọi API)...")
+        with httpx.Client(headers={"User-Agent": UA}, follow_redirects=True) as client:
+            found = wiki_lookup(asks, client, api=API_EN, langlinks=True)
+            for t in asks:
+                cache["en:" + t] = found.get(t)
+            vi_asks = list(dict.fromkeys(w["vi_title"] for w in found.values()
+                                         if w.get("vi_title") and w["vi_title"] not in cache))
+            if vi_asks:
+                found_vi = wiki_lookup(vi_asks, client)
+                for t in vi_asks:
+                    cache[t] = found_vi.get(t)
+        cache_path.write_text(json.dumps(cache, ensure_ascii=False, indent=1), encoding="utf-8")
+    for it in need:
+        for n in en_names(it):
+            w = cache.get("en:" + n)
+            if w:
+                vi = cache.get(w.get("vi_title") or "")
+                it["wiki"] = {**vi, "lang": "vi"} if vi else {**w, "lang": "en"}
+                break
 
 
 def link_related(items: list[dict]) -> None:
@@ -159,29 +210,30 @@ def write_excel(items: list[dict], path: Path) -> None:
     ws = wb.active
     ws.title = "Từ điển"
     head = ["STT", "Thuật ngữ", "Viết tắt", "Tiếng Anh", "Nhóm", "Định nghĩa (biên soạn)",
-            "Theo Wikipedia tiếng Việt", "Bài Wikipedia", "Thuật ngữ liên quan"]
+            "Trích Wikipedia", "Bài Wikipedia", "Ngôn ngữ bài", "Thuật ngữ liên quan"]
     ws.append(head)
     for i, it in enumerate(items, 1):
         w = it.get("wiki") or {}
         ws.append([i, it["thuat_ngu"], it["viet_tat"] or "", it["tieng_anh"], it["nhom"], it["dinh_nghia"],
-                   w.get("extract", ""), w.get("url", ""), ", ".join(it["lien_quan"])])
+                   w.get("extract", ""), w.get("url", ""), {"vi": "Tiếng Việt", "en": "Tiếng Anh"}.get(w.get("lang"), ""),
+                   ", ".join(it["lien_quan"])])
     for c in ws[1]:
         c.font = Font(bold=True, color="FFFFFF")
         c.fill = PatternFill("solid", fgColor="1F4E78")
         c.alignment = Alignment(vertical="center", wrap_text=True)
     for row in ws.iter_rows(min_row=2):
         for c in row:
-            c.alignment = Alignment(vertical="top", wrap_text=c.column in (6, 7, 9))
+            c.alignment = Alignment(vertical="top", wrap_text=c.column in (6, 7, 10))
         if row[7].value:
             row[7].hyperlink = row[7].value
             row[7].font = Font(color="0563C1", underline="single")
-    for col, w in zip("ABCDEFGHI", (5, 30, 10, 28, 24, 70, 70, 34, 40)):
+    for col, w in zip("ABCDEFGHIJ", (5, 30, 10, 28, 24, 70, 70, 34, 12, 40)):
         ws.column_dimensions[col].width = w
     ws.freeze_panes = "C2"
     ws.auto_filter.ref = ws.dimensions
     ws2 = wb.create_sheet("Nguồn & giấy phép")
     for line in ["Định nghĩa (biên soạn): viết cho dự án BCTC VN30 (https://github.com/VietNhat-1305/bctc-vn30).",
-                 "Cột 'Theo Wikipedia tiếng Việt': đoạn mở đầu bài viết tương ứng trên vi.wikipedia.org,",
+                 "Cột 'Trích Wikipedia': đoạn mở đầu bài viết tương ứng trên vi.wikipedia.org (không có thì en.wikipedia.org, nguyên văn),",
                  "giấy phép Creative Commons Ghi công - Chia sẻ tương tự 4.0 (CC BY-SA 4.0):",
                  "https://creativecommons.org/licenses/by-sa/4.0/deed.vi - xem tác giả trong lịch sử từng bài (cột 'Bài Wikipedia')."]:
         ws2.append([line])

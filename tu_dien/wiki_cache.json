@@ -1349,5 +1349,1360 @@
  "Tỷ suất sinh lời": null,
  "Trái phiếu Chính phủ": null,
  "TPCP": null,
- "Tỷ lệ tự do chuyển nhượng": null
+ "Tỷ lệ tự do chuyển nhượng": null,
+ "en:Exchange rate band": null,
+ "en:Demand": {
+  "title": "Demand",
+  "url": "https://en.wikipedia.org/wiki/Demand",
+  "extract": "In economics, demand is the quantity of a good consumers are willing and able to purchase at various prices over a given period. In economics, \"demand\" for a commodity is not the same thing as \"desire\" for it. It refers to both the desire to purchase and the ability to pay for a commodity. Demand is always expressed in relation to a range of prices and a particular time period since demand is a flow concept. A flow is any variable expressed per unit of time. Demand refers not to a single isolated purchase, but to a continuous flow of purchases."
+ },
+ "en:Purchasing Managers' Index": {
+  "title": "Purchasing Managers' Index",
+  "url": "https://en.wikipedia.org/wiki/Purchasing_Managers%27_Index",
+  "extract": "Purchasing managers' indexes (PMI) are economic indicators derived from monthly surveys of private sector companies. The three principal producers of PMIs are S&P Global (from 2022 merger with IHS Markit), which produces PMIs for over 30 countries worldwide and developed the first service sector PMIs, and the Institute for Supply Management (ISM), which originated the manufacturing surveys produced for the United States."
+ },
+ "en:Index of Industrial Production": null,
+ "en:Expansionary fiscal policy": {
+  "title": "Fiscal policy",
+  "url": "https://en.wikipedia.org/wiki/Fiscal_policy",
+  "extract": "In economics and political science, fiscal policy is the use of government revenue collection (taxes or tax cuts) and expenditure to influence a country's economy. The use of government revenue expenditures to influence macroeconomic variables developed in reaction to the Great Depression of the 1930s, when the previous laissez-faire approach to economic management became unworkable.",
+  "vi_title": "Chính sách tài khóa"
+ },
+ "en:Contractionary fiscal policy": {
+  "title": "Fiscal policy",
+  "url": "https://en.wikipedia.org/wiki/Fiscal_policy",
+  "extract": "In economics and political science, fiscal policy is the use of government revenue collection (taxes or tax cuts) and expenditure to influence a country's economy. The use of government revenue expenditures to influence macroeconomic variables developed in reaction to the Great Depression of the 1930s, when the previous laissez-faire approach to economic management became unworkable.",
+  "vi_title": "Chính sách tài khóa"
+ },
+ "en:Expansionary (loose) monetary policy": null,
+ "en:Expansionary monetary policy": {
+  "title": "Monetary policy",
+  "url": "https://en.wikipedia.org/wiki/Monetary_policy",
+  "extract": "Monetary policy is the policy adopted by the monetary authority of a nation to affect monetary and other financial conditions to accomplish broader objectives like high employment and price stability (normally interpreted as a low and stable rate of inflation). Further purposes of a monetary policy may be to contribute to economic stability or to maintain predictable exchange rates with other currencies.",
+  "vi_title": "Chính sách tiền tệ"
+ },
+ "en:loose": null,
+ "en:Contractionary (tight) monetary policy": null,
+ "en:Contractionary monetary policy": {
+  "title": "Monetary policy",
+  "url": "https://en.wikipedia.org/wiki/Monetary_policy",
+  "extract": "Monetary policy is the policy adopted by the monetary authority of a nation to affect monetary and other financial conditions to accomplish broader objectives like high employment and price stability (normally interpreted as a low and stable rate of inflation). Further purposes of a monetary policy may be to contribute to economic stability or to maintain predictable exchange rates with other currencies.",
+  "vi_title": "Chính sách tiền tệ"
+ },
+ "en:tight": null,
+ "en:Supply": null,
+ "en:Price elasticity of demand": {
+  "title": "Price elasticity of demand",
+  "url": "https://en.wikipedia.org/wiki/Price_elasticity_of_demand",
+  "extract": "A good's price elasticity of demand ( E d {\\displaystyle E_{d}} , PED) is a measure of how sensitive the quantity demanded is to its price. When the price rises, quantity demanded falls for almost any good (law of demand), but it falls more for some than for others. The price elasticity gives the percentage change in quantity demanded when there is a one percent increase in price, holding everything else constant. If the elasticity is −2, that means a one percent price rise leads to a two percent decline in quantity demanded."
+ },
+ "en:Oligopoly": {
+  "title": "Oligopoly",
+  "url": "https://en.wikipedia.org/wiki/Oligopoly",
+  "extract": "An oligopoly (from Ancient Greek ὀλίγος (olígos) 'few' and πωλέω (pōléō) 'to sell') is a market in which pricing control lies in the hands of a few sellers. As a result of their significant market power, firms in oligopolistic markets can influence prices through manipulating the supply function. Firms in an oligopoly are mutually interdependent, as any action by one firm is expected to affect other firms in the market and evoke a reaction or consequential action. As a result, firms in oligopolistic markets often resort to collusion as means of maximising profits."
+ },
+ "en:Equilibrium price": {
+  "title": "Economic equilibrium",
+  "url": "https://en.wikipedia.org/wiki/Economic_equilibrium",
+  "extract": "In economics, economic equilibrium is a situation in which the economic forces of supply and demand are balanced, meaning that economic variables will no longer change. Market equilibrium in this case is a condition where a market price is established through competition such that the amount of goods or services sought by buyers is equal to the amount of goods or services produced by sellers.",
+  "vi_title": "Điểm cân bằng thị trường"
+ },
+ "en:Public investment disbursement": null,
+ "en:Economic stimulus package": {
+  "title": "Stimulus package",
+  "url": "https://en.wikipedia.org/wiki/Stimulus_package",
+  "extract": "A stimulus package is most often a government program providing economic stimulus. Examples in the United States include the Economic Stimulus Appropriations Act of 1977; the Economic Stimulus Act of 2008; the American Recovery and Reinvestment Act of 2009; the CARES Act in 2020 and American Rescue Plan Act of 2021."
+ },
+ "en:Credit growth quota": null,
+ "en:Crowding-out effect": {
+  "title": "Crowding out (economics)",
+  "url": "https://en.wikipedia.org/wiki/Crowding_out_(economics)",
+  "extract": "In economics, crowding out is a phenomenon that occurs when increased government involvement in a sector of the market economy substantially affects the remainder of the market, either on the supply or demand side of the market. The most common example of the crowding out effect is when expansionary fiscal policy (involving deficit spending) reduces investment spending by the private sector.",
+  "vi_title": "Hiệu ứng lấn át (kinh tế học)"
+ },
+ "en:M1 money supply": null,
+ "en:M2 money supply": null,
+ "en:Policy rate": null,
+ "en:Refinancing rate": null,
+ "en:Rediscount rate": {
+  "title": "Bank rate",
+  "url": "https://en.wikipedia.org/wiki/Bank_rate",
+  "extract": "Bank rate, also known as discount rate in American English, and (familiarly) the base rate in European English, is the rate of interest which a central bank charges on its loans and advances to a commercial bank. The bank rate is known by a number of different terms depending on the country, and has changed over time in some countries as the mechanisms used to manage the rate have changed. Whenever a bank has a shortage of funds, they can typically borrow from the central bank based on the monetary policy of the country.",
+  "vi_title": "Lãi suất chiết khấu"
+ },
+ "en:Real interest rate": {
+  "title": "Real interest rate",
+  "url": "https://en.wikipedia.org/wiki/Real_interest_rate",
+  "extract": "The real interest rate is the rate of interest an investor, saver or lender receives (or expects to receive) after allowing for inflation. It can be described more formally by the Fisher equation, which states that the real interest rate is approximately the nominal interest rate minus the inflation rate. If, for example, an investor were able to lock in a 5% interest rate for the coming year and anticipated a 2% rise in prices, they would expect to earn a real interest rate of 3%.",
+  "vi_title": "Lãi suất thực tế"
+ },
+ "en:Demand-pull inflation": {
+  "title": "Demand-pull inflation",
+  "url": "https://en.wikipedia.org/wiki/Demand-pull_inflation",
+  "extract": "Demand-pull inflation occurs when aggregate demand in an economy is more than aggregate supply. It involves inflation rising as real gross domestic product rises and unemployment falls, as the economy moves along the Phillips curve. This is commonly described as \"too much money chasing too few goods\". More accurately, it should be described as involving \"too much money spent chasing too few goods\", since only money that is spent on goods and services can cause inflation. This would not be expected to happen, unless the economy is already at a full employment level."
+ },
+ "en:Cost-push inflation": {
+  "title": "Cost-push inflation",
+  "url": "https://en.wikipedia.org/wiki/Cost-push_inflation",
+  "extract": "Cost-push inflation is a purported type of inflation caused by increases in the cost of important goods or services where no suitable alternative is available."
+ },
+ "en:Inflation target": {
+  "title": "Inflation targeting",
+  "url": "https://en.wikipedia.org/wiki/Inflation_targeting",
+  "extract": "In macroeconomics, inflation targeting is a monetary policy where a central bank follows an explicit target for the inflation rate for the medium-term and announces this inflation target to the public. The assumption is that the best that monetary policy can do to support long-term growth of the economy is to maintain price stability, and price stability is achieved by controlling inflation. The central bank uses short-term interest rates as its main monetary instrument."
+ },
+ "en:Regional minimum wage": null,
+ "en:Money multiplier": {
+  "title": "Money multiplier",
+  "url": "https://en.wikipedia.org/wiki/Money_multiplier",
+  "extract": "In monetary economics, the money multiplier is the ratio of the money supply to the monetary base (i.e. central bank money). In some simplified expositions, the monetary multiplier is presented as simply the reciprocal of the reserve ratio, if any, required by the central bank. More generally, the multiplier will depend on the preferences of households, the legal regulation and the business policies of commercial banks – factors which the central bank can influence, but not control completely.",
+  "vi_title": "Số nhân tiền tệ"
+ },
+ "en:State budget revenue": null,
+ "en:State Bank bills": null,
+ "en:Total retail sales of goods and consumer services": null,
+ "en:Real exchange rate": {
+  "title": "Exchange rate",
+  "url": "https://en.wikipedia.org/wiki/Exchange_rate",
+  "extract": "In finance, an exchange rate is the rate at which one currency will be exchanged for another currency. Currencies are most commonly national currencies, but may be sub-national as in the case of Hong Kong or supra-national as in the case of the euro. The exchange rate is also regarded as the value of one country's currency in relation to another currency. For example, an interbank exchange rate of 141 Japanese yen to the United States dollar means that ¥141 will be exchanged for US$1 or that US$1 will be exchanged for ¥141.",
+  "vi_title": "Tỷ giá hối đoái"
+ },
+ "en:Central exchange rate": null,
+ "en:Total social investment": null,
+ "en:Sovereign credit rating": {
+  "title": "Credit rating",
+  "url": "https://en.wikipedia.org/wiki/Credit_rating",
+  "extract": "A credit rating is an evaluation of the credit risk of a prospective debtor (an individual, a business, company or a government). It is the practice of predicting or forecasting the ability of a supposed debtor to pay back the debt or default. The credit rating represents an evaluation from a credit rating agency of the qualitative and quantitative information for the prospective debtor, including information provided by the prospective debtor and other non-public information obtained by the credit rating agency's analysts. Credit reporting (or credit score) is a subset of credit rating."
+ },
+ "en:Trade surplus": {
+  "title": "Balance of trade",
+  "url": "https://en.wikipedia.org/wiki/Balance_of_trade",
+  "extract": "Balance of trade is the difference between the monetary value of a nation's exports and imports of goods over a certain time period. Sometimes, trade in services is also included in the balance of trade but the official IMF definition only considers goods. The balance of trade measures a flow variable of exports and imports over a given period of time. The notion of the balance of trade does not mean that exports and imports are \"in balance\" with each other.",
+  "vi_title": "Cán cân thương mại"
+ },
+ "en:Income statement (Statement of profit or loss)": null,
+ "en:Income statement": {
+  "title": "Income statement",
+  "url": "https://en.wikipedia.org/wiki/Income_statement",
+  "extract": "An income statement or profit and loss (P&L) account is one of the financial statements of a company and shows the company's revenues and expenses during a particular period. It indicates how the revenues (also known as the “top line”) are transformed into the net income or net profit (the result after all revenues and expenses have been accounted for). The purpose of the income statement is to show managers and investors whether the company made money (profit) or lost money (loss) during the period being reported.",
+  "vi_title": "Báo cáo kết quả kinh doanh"
+ },
+ "en:Statement of profit or loss": null,
+ "en:Semi-annual financial statements": null,
+ "en:Interim financial statements": null,
+ "en:Separate financial statements": null,
+ "en:Investment property": {
+  "title": "Real estate investing",
+  "url": "https://en.wikipedia.org/wiki/Real_estate_investing",
+  "extract": "Real estate investing involves purchasing, owning, managing, renting, or selling real estate to generate profit or long-term wealth. A real estate investor or entrepreneur may participate actively or passively in real estate transactions. The primary goal of real estate investing is to increase value or generate a profit through strategic decision-making and market analysis. Investors analyze real estate projects by identifying property types, as each type requires a unique investment strategy.",
+  "vi_title": "Đầu tư bất động sản"
+ },
+ "en:Revenue deductions": null,
+ "en:Selling expenses": null,
+ "en:Other expenses": null,
+ "en:Interest expense": {
+  "title": "Interest expense",
+  "url": "https://en.wikipedia.org/wiki/Interest_expense",
+  "extract": "Interest expense relates to the cost of borrowing money. It is the price that a lender charges a borrower for the use of the lender's money. On the income statement, interest expense can represent the cost of borrowing money from banks, bond investors, and other sources. Interest expense is different from operating expense and capital expense, for it relates to the capital structure of a company, and it is usually tax-deductible."
+ },
+ "en:General and administrative expenses": null,
+ "en:Financial expenses": null,
+ "en:Current corporate income tax expense": null,
+ "en:Deferred corporate income tax expense": null,
+ "en:Prepaid expenses": {
+  "title": "Deferral",
+  "url": "https://en.wikipedia.org/wiki/Deferral",
+  "extract": "In accounting, a deferral is any account where the income or expense is not recognised until a future date. In accounting, deferral refers to the recognition of revenue or expenses at a later time than when the cash transaction occurs. This concept is used to align the reporting of financial transactions with the periods in which they are earned or incurred, according to the matching principle and revenue recognition principle. Deferrals are recorded as either assets or liabilities on the balance sheet until they are recognized in the appropriate accounting period."
+ },
+ "en:International Financial Reporting Standards": {
+  "title": "International Financial Reporting Standards",
+  "url": "https://en.wikipedia.org/wiki/International_Financial_Reporting_Standards",
+  "extract": "International Financial Reporting Standards (IFRS) are accounting standards issued by the IFRS Foundation and the International Accounting Standards Board (IASB). They constitute a standardised way of describing a company's financial performance and position so that company financial statements are understandable and comparable across international boundaries. They are particularly relevant for companies with publicly listed shares or securities."
+ },
+ "en:Vietnamese Accounting Standards": null,
+ "en:Accrual basis": {
+  "title": "Accrual",
+  "url": "https://en.wikipedia.org/wiki/Accrual",
+  "extract": "In accounting and finance, an accrual is an asset or liability that represents revenue or expenses that are receivable or payable but which have not yet been paid. In accrual accounting, the term accrued revenue refers to income that is recognized at the time a company delivers a service or good, even though the company has not yet been paid. Likewise, the term accrued expense refers to liabilities that are recognized when a company receives services or goods, even though the company has not yet paid the provider."
+ },
+ "en:Information disclosure": null,
+ "en:Associate": null,
+ "en:Short-term financial investments": null,
+ "en:Retrospective restatement": null,
+ "en:Revenue from sales of goods and rendering of services": null,
+ "en:Financial income": null,
+ "en:Net revenue": {
+  "title": "Net income",
+  "url": "https://en.wikipedia.org/wiki/Net_income",
+  "extract": "In business and accounting, net income is an entity's income minus cost of goods sold, expenses, depreciation and amortization, interest, and taxes, and other expenses for an accounting period. It is computed as the residual of all revenues and gains less all expenses and losses for the period, and has also been defined as the net increase in shareholders' equity that results from a company's operations. It is different from gross income, which only deducts the cost of goods sold from revenue.",
+  "vi_title": "Lợi nhuận ròng"
+ },
+ "en:Allowance for inventory write-down": null,
+ "en:Allowance for doubtful debts": null,
+ "en:Revenue recognition": {
+  "title": "Revenue recognition",
+  "url": "https://en.wikipedia.org/wiki/Revenue_recognition",
+  "extract": "In accounting, the revenue recognition principle states that revenues are earned and recognized when they are realized or realizable, no matter when cash is received. It is a cornerstone of accrual accounting together with the matching principle. Together, they determine the accounting period in which revenues and expenses are recognized. In contrast, the cash accounting recognizes revenues when cash is received, no matter when goods or services are sold."
+ },
+ "en:Related party transactions": null,
+ "en:Accumulated depreciation": {
+  "title": "Depreciation",
+  "url": "https://en.wikipedia.org/wiki/Depreciation",
+  "extract": "In accountancy, depreciation refers to two aspects of the same concept: first, an actual reduction in the fair value of an asset, such as the decrease in value of factory equipment each year as it is used and wears, and second, the allocation in accounting statements of the original cost of the assets to periods in which the assets are used (depreciation with the matching principle). Depreciation is thus the decrease in the value of assets and the method used to reallocate, or \"write down\" the cost of a tangible asset (such as equipment) over its useful life span.",
+  "vi_title": "Khấu hao tài sản cố định"
+ },
+ "en:Going concern": {
+  "title": "Going concern",
+  "url": "https://en.wikipedia.org/wiki/Going_concern",
+  "extract": "A going concern is an accounting term for a business that is assumed will meet its financial obligations when they become due. It functions without the threat of liquidation for the foreseeable future, which is usually regarded as at least the next 12 months or the specified accounting period (the longer of the two). The presumption of going concern for the business implies the basic declaration of intention to keep operating its activities at least for the next year, which is a basic assumption for preparing financial statements that comprehend the conceptual framework of the IFRS."
+ },
+ "en:Business combination": {
+  "title": "Consolidation (business)",
+  "url": "https://en.wikipedia.org/wiki/Consolidation_(business)",
+  "extract": "In business, consolidation or amalgamation is the merger and acquisition of many smaller companies into a few much larger ones. In the context of financial accounting, consolidation refers to the aggregation of financial statements of a group company as consolidated financial statements. The taxation term of consolidation refers to the treatment of a group of companies and other entities as one entity for tax purposes."
+ },
+ "en:Straight-line depreciation": {
+  "title": "Depreciation",
+  "url": "https://en.wikipedia.org/wiki/Depreciation",
+  "extract": "In accountancy, depreciation refers to two aspects of the same concept: first, an actual reduction in the fair value of an asset, such as the decrease in value of factory equipment each year as it is used and wears, and second, the allocation in accounting statements of the original cost of the assets to periods in which the assets are used (depreciation with the matching principle). Depreciation is thus the decrease in the value of assets and the method used to reallocate, or \"write down\" the cost of a tangible asset (such as equipment) over its useful life span.",
+  "vi_title": "Khấu hao tài sản cố định"
+ },
+ "en:Declining balance depreciation": null,
+ "en:Internal control": {
+  "title": "Internal control",
+  "url": "https://en.wikipedia.org/wiki/Internal_control",
+  "extract": "Internal control, as defined by accounting and auditing, is a process for assuring of an organization's objectives in operational effectiveness and efficiency, reliable financial reporting, and compliance with laws, regulations and policies. A broad concept, internal control involves everything that controls risks to an organization. It is a means by which an organization's resources are directed, monitored, and measured."
+ },
+ "en:Independent audit": null,
+ "en:Auditor": {
+  "title": "Auditor",
+  "url": "https://en.wikipedia.org/wiki/Auditor",
+  "extract": "An auditor is a person or a firm appointed by a company to execute an audit. To act as an auditor, a person should be certified by the regulatory authority of accounting and auditing or possess certain specified qualifications. Generally, to act as an external auditor of the company, a person should have a certificate of practice from the regulatory authority. Audit firms are generally required to obtain official authorisation, registration, or recognition from a competent authority."
+ },
+ "en:Non-controlling interests": null,
+ "en:Net profit after tax": null,
+ "en:Undistributed earnings (Retained earnings)": null,
+ "en:Undistributed earnings": null,
+ "en:Retained earnings": {
+  "title": "Retained earnings",
+  "url": "https://en.wikipedia.org/wiki/Retained_earnings",
+  "extract": "The retained earnings (also known as plowback) of a corporation is the accumulated net income of the corporation that is retained by the corporation at a particular point in time, such as at the end of the reporting period. At the end of that period, the net income (or net loss) at that point is transferred from the Profit and Loss Account to the retained earnings account. If the balance of the retained earnings account is negative it may be called accumulated losses, retained losses, accumulated deficit, or similar terminology."
+ },
+ "en:Operating profit (Net operating profit)": null,
+ "en:Operating profit": {
+  "title": "Earnings before interest and taxes",
+  "url": "https://en.wikipedia.org/wiki/Earnings_before_interest_and_taxes",
+  "extract": "In accounting and finance, earnings before interest and taxes (EBIT) is a measure of a firm's profit that includes all incomes and expenses (operating and non-operating) except interest expenses and income tax expenses. Operating income and operating profit are sometimes used as a synonym for EBIT when a firm does not have non-operating income and non-operating expenses.",
+  "vi_title": "Lợi nhuận trước thuế và lãi"
+ },
+ "en:Net operating profit": null,
+ "en:Profit before tax": {
+  "title": "Earnings before interest and taxes",
+  "url": "https://en.wikipedia.org/wiki/Earnings_before_interest_and_taxes",
+  "extract": "In accounting and finance, earnings before interest and taxes (EBIT) is a measure of a firm's profit that includes all incomes and expenses (operating and non-operating) except interest expenses and income tax expenses. Operating income and operating profit are sometimes used as a synonym for EBIT when a firm does not have non-operating income and non-operating expenses.",
+  "vi_title": "Lợi nhuận trước thuế và lãi"
+ },
+ "en:Goodwill": null,
+ "en:Net cash flow from investing activities": null,
+ "en:Net cash flow from operating activities": null,
+ "en:Net cash flow from financing activities": null,
+ "en:Advances from customers": null,
+ "en:Historical cost (of fixed assets)": null,
+ "en:Historical cost": {
+  "title": "Historical cost",
+  "url": "https://en.wikipedia.org/wiki/Historical_cost",
+  "extract": "The historical cost of an asset at the time it is acquired or created is the value of the costs incurred in acquiring or creating the asset, comprising the consideration paid to acquire or create the asset plus transaction costs. Historical cost accounting involves reporting assets and liabilities at their historical costs, which are not updated for changes in the items' values. Consequently, the amounts reported for these balance sheet items often differ from their current economic or market values."
+ },
+ "en:of fixed assets": null,
+ "en:Historical cost principle": null,
+ "en:Consistency principle": null,
+ "en:Matching principle": {
+  "title": "Matching principle",
+  "url": "https://en.wikipedia.org/wiki/Matching_principle",
+  "extract": "In accrual basis accounting, the matching principle (or expense recognition principle) dictates that an expense should be reported in the same period as the corresponding revenue is earned. The revenue recognition principle states that revenues should be recorded in the period in which they are earned, regardless of when the cash is transferred. By recognising costs in the period they are incurred, a business can determine how much was spent to generate revenue, thereby reducing discrepancies between when costs are incurred and when revenue is realised."
+ },
+ "en:Prudence principle": {
+  "title": "Prudence",
+  "url": "https://en.wikipedia.org/wiki/Prudence",
+  "extract": "Prudence (Latin: prudentia, contracted from providentia meaning \"seeing ahead, sagacity\") is the ability to govern and discipline oneself by the use of reason. It is classically considered to be a virtue—in particular, one of the four cardinal virtues of Ancient Greek philosophy and one of the seven heavenly virtues of Christianity. Prudentia is an allegorical female personification of the virtue, whose attributes are a mirror and snake, and who is frequently depicted as a pair with Justitia, the Roman goddess of Justice.",
+  "vi_title": "Sự khôn ngoan"
+ },
+ "en:Non-current liabilities": {
+  "title": "Long-term liabilities",
+  "url": "https://en.wikipedia.org/wiki/Long-term_liabilities",
+  "extract": "Long-term liabilities, or non-current liabilities, are liabilities that are due beyond a year or the normal operation period of the company. The normal operation period is the amount of time it takes for a company to turn inventory into cash. On a classified balance sheet, liabilities are separated between current and long-term liabilities to help users assess the company's financial standing in short-term and long-term periods."
+ },
+ "en:Current liabilities": {
+  "title": "Current liability",
+  "url": "https://en.wikipedia.org/wiki/Current_liability",
+  "extract": "Current liabilities in accounting refer to the liabilities of a business that are expected to be settled in cash within one fiscal year or the firm's operating cycle, whichever is longer. These liabilities are typically settled using current assets or by incurring new current liabilities. Key examples of current liabilities include accounts payable, which are generally due within 30 to 60 days, though in some cases payments may be delayed. Current liabilities also include the portion of long-term loans or other debt obligations that are due within the current fiscal year."
+ },
+ "en:Debit and Credit": {
+  "title": "Debit and Credit",
+  "url": "https://en.wikipedia.org/wiki/Debit_and_Credit",
+  "extract": "Debit and Credit (German: Soll und Haben, 1855) is a novel in six volumes by Gustav Freytag. It was one of the most popular and widely read German novels of the 19th century."
+ },
+ "en:Trade receivables (Accounts receivable)": null,
+ "en:Trade receivables": null,
+ "en:Accounts receivable": {
+  "title": "Accounts receivable",
+  "url": "https://en.wikipedia.org/wiki/Accounts_receivable",
+  "extract": "Accounts receivable (AR or A/R) are legally enforceable claims for payment held by a business for goods supplied or services rendered that customers have ordered but not paid for. The accounts receivable process involves customer onboarding, invoicing, collections, deductions, exception management, and finally, cash posting after the payment is collected. Accounts receivable are generally in the form of invoices raised by a business and delivered to the customer for payment within an agreed time frame. Accounts receivable is shown in a balance sheet as an asset.",
+  "vi_title": "Các khoản phải thu"
+ },
+ "en:Trade payables (Accounts payable)": null,
+ "en:Trade payables": null,
+ "en:Accounts payable": {
+  "title": "Accounts payable",
+  "url": "https://en.wikipedia.org/wiki/Accounts_payable",
+  "extract": "Accounts payable (AP) is money owed by a business to its suppliers, shown as a liability on a company's balance sheet. It is distinct from notes payable liabilities, which are debts created by formal legal instrument documents. An accounts payable department's main responsibility is to process and review transactions between the company and its suppliers and to make sure that all outstanding invoices from their suppliers are approved, processed, and paid."
+ },
+ "en:Cost allocation (Amortisation)": null,
+ "en:Cost allocation": {
+  "title": "Cost allocation",
+  "url": "https://en.wikipedia.org/wiki/Cost_allocation",
+  "extract": "Cost allocation is a process of providing relief to shared service organization's cost centers that provide a product or service. In turn, the associated expense is assigned to internal clients' cost centers that consume the products and services. For example, the CIO may provide all IT services within the company and assign the costs back to the business units that consume each offering."
+ },
+ "en:Amortisation": null,
+ "en:Indirect method": null,
+ "en:Direct method": null,
+ "en:Equity method": {
+  "title": "Equity method",
+  "url": "https://en.wikipedia.org/wiki/Equity_method",
+  "extract": "Equity method in accounting is the process of treating investments in associate companies. Equity accounting is usually applied where an investor entity holds 20–50% of the voting shares of the associate company, and therefore has significant influence on the latter's management. Under International Financial Reporting Standards, equity method is also required in accounting for joint ventures. The investor records such investments as an asset on its balance sheet."
+ },
+ "en:Investment and development fund": null,
+ "en:Accounting books (Ledgers)": null,
+ "en:Accounting books": null,
+ "en:Ledgers": {
+  "title": "Ledger",
+  "url": "https://en.wikipedia.org/wiki/Ledger",
+  "extract": "A ledger is a book or collection of accounts in which accounting transactions are recorded. Each account has: an opening or brought-forward balance; a list of transactions, each recorded as either a debit or credit in separate columns (usually with a counter-entry on another page) and an ending or closing, or carry-forward, balance."
+ },
+ "en:Review of financial statements": null,
+ "en:Events after the reporting period": null,
+ "en:Account (Chart of accounts)": null,
+ "en:Account": null,
+ "en:Chart of accounts": {
+  "title": "Chart of accounts",
+  "url": "https://en.wikipedia.org/wiki/Chart_of_accounts",
+  "extract": "A chart of accounts (COA) is a list of financial accounts and reference numbers, grouped into categories, such as assets, liabilities, equity, revenue and expenses, and used for recording transactions in the organization's general ledger. Accounts may be associated with an identifier (account number) and a caption or header and are coded by account type. In computerized accounting systems with computable quantity accounting, the accounts can have a quantity measure definition."
+ },
+ "en:Intangible fixed assets": null,
+ "en:Non-current assets": {
+  "title": "Fixed asset",
+  "url": "https://en.wikipedia.org/wiki/Fixed_asset",
+  "extract": "Fixed assets (also known as long-lived assets or property, plant and equipment; PP&E) is a term used in accounting for assets and property that may not easily be converted into cash. They are contrasted with current assets, such as cash, bank accounts, and short-term debts receivable. In most cases, only tangible assets are referred to as fixed. While IAS 16 (International Accounting Standard) does not define the term fixed asset, it is often colloquially considered a synonym for property, plant and equipment.",
+  "vi_title": "Tài sản cố định"
+ },
+ "en:Current assets": {
+  "title": "Asset",
+  "url": "https://en.wikipedia.org/wiki/Asset",
+  "extract": "In financial accounting, an asset is any resource owned or controlled by a business or an economic entity. It is anything (tangible or intangible) that can be used to produce positive economic value. Assets represent the ownership of value that can be converted into cash (although cash itself is also considered an asset). The balance sheet of a firm records the monetary value of the assets owned by that firm. It covers money and other valuables belonging to an individual or to a business. Total assets can also be called the balance sheet total.",
+  "vi_title": "Tài sản"
+ },
+ "en:Share premium": {
+  "title": "Capital surplus",
+  "url": "https://en.wikipedia.org/wiki/Capital_surplus",
+  "extract": "Capital surplus, also called share premium, is an account which may appear on a corporation's balance sheet, as a component of shareholders' equity, which represents the amount the corporation raises on the issue of shares in excess of their par value (nominal value) of the shares (common stock). This is called Additional paid in capital in US GAAP terminology but, additional paid in capital is not limited to share premium. It is a very broad concept and includes tax related and conversion related adjustments."
+ },
+ "en:Circular 200/2014/TT-BTC": null,
+ "en:Other income": null,
+ "en:Notes to the financial statements": {
+  "title": "Financial statement",
+  "url": "https://en.wikipedia.org/wiki/Financial_statement",
+  "extract": "In finance and accounting, financial statements (or financial reports) are formal records of the financial activities and position of a business, person, or other entity. Relevant financial information is presented in a structured manner and in a form which is easy to understand. They typically include four basic financial statements accompanied by a management discussion and analysis: A balance sheet reports on a company's assets, liabilities, and owners' equity at a given point in time. An income statement reports on a company's income, expenses, and profits over a stated period.",
+  "vi_title": "Báo cáo tài chính"
+ },
+ "en:Cash and cash equivalents": {
+  "title": "Cash and cash equivalents",
+  "url": "https://en.wikipedia.org/wiki/Cash_and_cash_equivalents",
+  "extract": "Cash and cash equivalents (CCE) are the most liquid current assets found on a business's balance sheet. Cash equivalents are short-term commitments \"with temporarily idle cash and easily convertible into a known cash amount\". An investment normally counts as a cash equivalent when it has a short maturity period of 90 days or less, and can be included in the cash and cash equivalents balance from the date of acquisition when it carries an insignificant risk of changes in the asset value. If it has a maturity of more than 90 days, it is not considered a cash equivalent."
+ },
+ "en:Materiality": null,
+ "en:Disclaimer of opinion": null,
+ "en:Emphasis of matter": {
+  "title": "Emphasis of matter",
+  "url": "https://en.wikipedia.org/wiki/Emphasis_of_matter",
+  "extract": "Emphasis of matter is a type of paragraph in an auditors' report on financial statements. Such a paragraph is added to indicate a matter which is disclosed appropriately in the notes forming part of the financial statements that the auditor considers is fundamental to the users' understanding of the financial statements. An emphasis of matter paragraph indicates that the auditor's opinion is not modified with respect to the matter emphasized."
+ },
+ "en:Borrowings and finance lease liabilities": null,
+ "en:Owners' contributed capital (Share capital)": null,
+ "en:Owners' contributed capital": null,
+ "en:Share capital": {
+  "title": "Share capital",
+  "url": "https://en.wikipedia.org/wiki/Share_capital",
+  "extract": "A corporation's share capital, commonly referred to as capital stock in the United States, is the portion of a corporation's equity that has been derived by the issue of shares in the corporation to a shareholder, usually for cash."
+ },
+ "en:Construction in progress": {
+  "title": "Construction in progress",
+  "url": "https://en.wikipedia.org/wiki/Construction_in_progress",
+  "extract": "An accountancy term, construction in progress (CIP) asset or capital work in progress entry records the cost of construction work, which is not yet completed (typically, applied to capital budget items). A CIP item is not depreciated until the asset is placed in service. Normally, upon completion, a CIP item is reclassified, and the reclassified asset is capitalized and depreciated. While costs are added to the construction in progress, related CIP account is debited with corresponding credits to accounts payable, accrued expenses, inventory, cash, and others."
+ },
+ "en:Unqualified (unmodified) opinion": null,
+ "en:Unqualified opinion": null,
+ "en:unmodified": null,
+ "en:Qualified opinion": null,
+ "en:Adverse opinion": null,
+ "en:Altman Z-score": {
+  "title": "Altman Z-score",
+  "url": "https://en.wikipedia.org/wiki/Altman_Z-score",
+  "extract": "The Z-score formula for predicting bankruptcy was published in 1968 by Edward I. Altman, who was, at the time, an Assistant Professor of Finance at New York University. The formula may be used to determine the probability that a firm will go into bankruptcy within two years. Z-scores are used to predict corporate defaults and an easy-to-calculate control measure for the financial distress status of companies in academic studies. The Z-score uses multiple corporate income and balance sheet values to measure the financial health of a company."
+ },
+ "en:Beneish M-score": {
+  "title": "Beneish M-score",
+  "url": "https://en.wikipedia.org/wiki/Beneish_M-score",
+  "extract": "The Beneish model is a statistical model that uses financial ratios calculated with accounting data of a specific company in order to check if it is likely (high probability) that the reported earnings of the company have been manipulated."
+ },
+ "en:Margin of safety": null,
+ "en:EBITDA margin": {
+  "title": "Earnings before interest, taxes, depreciation and amortization",
+  "url": "https://en.wikipedia.org/wiki/Earnings_before_interest,_taxes,_depreciation_and_amortization",
+  "extract": "Earnings before interest, taxes, depreciation, and amortization, commonly known as EBITDA ( EE-bit-dah, EB-it-dah), is a measure of a company's profitability of the operating business only, before any effects of indebtedness, state-mandated payments, and costs required to maintain its asset base. It is derived by subtracting from revenues all costs of the operating business (e.g., wages, costs of raw materials, and services) but not decline in asset value, cost of borrowing and obligations to governments.",
+  "vi_title": "Lợi nhuận trước lãi vay, thuế, khấu hao và khấu trừ dần"
+ },
+ "en:Net profit margin": {
+  "title": "Profit margin",
+  "url": "https://en.wikipedia.org/wiki/Profit_margin",
+  "extract": "Profit margin is a financial ratio that measures the percentage of profit earned by a company in relation to its revenue. Expressed as a percentage, it indicates how much profit the company makes for every dollar of revenue generated. Profit margin is important because this percentage provides a comprehensive picture of the operating efficiency of a business or an industry. All margin changes provide useful indicators for assessing growth potential, investment viability and the financial stability of a company relative to its competitors."
+ },
+ "en:Pre-tax profit margin": null,
+ "en:Earnings quality": {
+  "title": "Earnings quality",
+  "url": "https://en.wikipedia.org/wiki/Earnings_quality",
+  "extract": "In accounting, earnings quality, also known as quality of earnings (QoE), refers to the ability of a firm's reported earnings (net profit/income) to predict its future cash flows. It is an assessment criterion for how \"repeatable, controllable and bankable\" a firm's earnings are, amongst other factors, and has variously been defined as the degree to which earnings reflect underlying economic effects, are better estimates of cash flows, are conservative, or are predictable."
+ },
+ "en:Cost of debt": {
+  "title": "Cost of capital",
+  "url": "https://en.wikipedia.org/wiki/Cost_of_capital",
+  "extract": "In economics and accounting, the cost of capital is the cost of a company's funds (both debt and equity), or from an investor's point of view is \"the required rate of return on a portfolio company's existing securities\". It is used to evaluate new projects of a company. It is the minimum return that investors expect for providing capital to the company, thus setting a benchmark that a new project has to meet.",
+  "vi_title": "Chi phí sử dụng vốn"
+ },
+ "en:Cost of equity": {
+  "title": "Cost of equity",
+  "url": "https://en.wikipedia.org/wiki/Cost_of_equity",
+  "extract": "In finance, the cost of equity is the return (often expressed as a rate of return) a firm theoretically pays to its equity investors, i.e., shareholders, to compensate for the risk they undertake by investing their capital. Firms need to acquire capital from others to operate and grow. Individuals and organizations who are willing to provide their funds to others naturally desire to be rewarded. Just as landlords seek rents on their property, capital providers seek returns on their funds, which must be commensurate with the risk undertaken."
+ },
+ "en:Capital expenditure": {
+  "title": "Capital expenditure",
+  "url": "https://en.wikipedia.org/wiki/Capital_expenditure",
+  "extract": "Capital expenditure or capital expense (abbreviated capex, CAPEX, or CapEx) is the money an organization or corporate entity spends to buy, maintain, or improve its fixed assets, such as buildings, vehicles, equipment or land. It is considered a capital expenditure when funds are spent to purchase a new asset or to extend the useful life of existing assets, such as major structural repairs or upgrades. Capital expenditures contrast with operating expenses (opex)—ongoing expenses that are inherent to the operation of the asset. Opex includes items like electricity or cleaning.",
+  "vi_title": "Chi phí tài sản cố định"
+ },
+ "en:Relative valuation (comparable companies)": null,
+ "en:Relative valuation": {
+  "title": "Relative valuation",
+  "url": "https://en.wikipedia.org/wiki/Relative_valuation",
+  "extract": "Relative valuation also called valuation using multiples is the notion of comparing the price of an asset to the market value of similar assets. In the field of securities investment, the idea has led to important practical tools, which could presumably spot pricing anomalies. These tools have subsequently become instrumental in enabling analysts and investors to make vital decisions on asset allocation."
+ },
+ "en:comparable companies": null,
+ "en:Sum-of-the-parts valuation": null,
+ "en:Degree of operating leverage": null,
+ "en:Degree of financial leverage": null,
+ "en:Degree of total leverage": null,
+ "en:Free cash flow": {
+  "title": "Free cash flow",
+  "url": "https://en.wikipedia.org/wiki/Free_cash_flow",
+  "extract": "In financial accounting, free cash flow (FCF) or free cash flow to firm (FCFF) is the amount by which a business's operating cash flow exceeds its working capital needs and expenditures on fixed assets (known as capital expenditures). It is that portion of cash flow that can be extracted from a company and distributed to creditors and securities holders without causing issues in its operations."
+ },
+ "en:Free cash flow to equity": {
+  "title": "Free cash flow to equity",
+  "url": "https://en.wikipedia.org/wiki/Free_cash_flow_to_equity",
+  "extract": "In corporate finance, free cash flow to equity (FCFE) is a metric of how much cash can be distributed to the equity shareholders of the company as dividends or stock buybacks—after all expenses, reinvestments, and debt repayments are taken care of. It is also referred to as the levered free cash flow or the flow to equity (FTE). Whereas dividends are the cash flows actually paid to shareholders, the FCFE is the cash flow simply available to shareholders. The FCFE is usually calculated as a part of DCF or LBO modelling and valuation."
+ },
+ "en:Free cash flow to the firm": null,
+ "en:Target price": null,
+ "en:Terminal value": null,
+ "en:Enterprise value": {
+  "title": "Enterprise value",
+  "url": "https://en.wikipedia.org/wiki/Enterprise_value",
+  "extract": "Enterprise value (EV), total enterprise value (TEV), or firm value (FV) is an economic measure reflecting the market value of a business (i.e. as distinct from market price). It is a sum of claims by all claimants: creditors (secured and unsecured) and shareholders (preferred and common). Enterprise value is one of the fundamental metrics used in business valuation, financial analysis, accounting, portfolio analysis, and risk analysis. Enterprise value is more comprehensive than market capitalization, which only reflects common equity."
+ },
+ "en:Fair value": {
+  "title": "Fair value",
+  "url": "https://en.wikipedia.org/wiki/Fair_value",
+  "extract": "In economics and accounting, fair value is a rational and unbiased estimate of the potential market price of a good, service, or asset. The derivation takes into account such objective factors as the costs associated with production or replacement, market conditions and matters of supply and demand. Subjective factors may also be considered such as the risk characteristics, the cost of and return on capital, and individually perceived utility."
+ },
+ "en:Economic value added": {
+  "title": "Economic value added",
+  "url": "https://en.wikipedia.org/wiki/Economic_value_added",
+  "extract": "In accounting, as part of financial statements analysis, economic value added (EVA) is an estimate of a firm's economic profit, or the value created in excess of the required return of the company's shareholders. EVA is the net profit less the capital charge ($) for raising the firm's capital. The idea is that value is created when the return on the firm's economic capital employed exceeds the cost of that capital, and equally if the return is less than the cost of capital, the firm is operating at a loss. The value of EVA can be determined by making adjustments to GAAP accounting."
+ },
+ "en:Intrinsic value": null,
+ "en:Book value per share": null,
+ "en:Beta coefficient": {
+  "title": "Beta (finance)",
+  "url": "https://en.wikipedia.org/wiki/Beta_(finance)",
+  "extract": "In finance, the beta (β or market beta or beta coefficient) is a statistic that measures the expected increase or decrease of an individual stock price in proportion to movements of the stock market as a whole. Beta can be used to indicate the contribution of an individual asset to the market risk of a portfolio when it is added in small quantity. It refers to an asset's non-diversifiable risk, systematic risk, or market risk. Beta is not a measure of idiosyncratic risk. Beta is the hedge ratio of an investment with respect to the stock market."
+ },
+ "en:Equity multiplier": {
+  "title": "Leverage (finance)",
+  "url": "https://en.wikipedia.org/wiki/Leverage_(finance)",
+  "extract": "In finance, leverage, also known as gearing, is any technique involving borrowing funds to buy an investment. Financial leverage is named after a lever in physics, which amplifies a small input force into a greater output force. Financial leverage uses borrowed money to augment the available capital, thus increasing the funds available for (perhaps risky) investment. If successful this may generate large amounts of profit. However, if unsuccessful, there is a risk of not being able to pay back the borrowed money.",
+  "vi_title": "Đòn bẩy (tài chính)"
+ },
+ "en:EV/Sales multiple": null,
+ "en:EV/EBITDA multiple": null,
+ "en:Price-to-sales ratio": null,
+ "en:Price-to-book ratio": {
+  "title": "P/B ratio",
+  "url": "https://en.wikipedia.org/wiki/P/B_ratio",
+  "extract": "The price-to-book ratio, or P/B ratio, (also PBR) is a financial ratio used to compare a company's current market value to its book value (where book value is the value of all assets minus liabilities owned by a company). The calculation can be performed in two ways, but the result should be the same. In the first way, the company's market capitalization can be divided by the company's total book value from its balance sheet."
+ },
+ "en:Interest coverage ratio": {
+  "title": "Times interest earned",
+  "url": "https://en.wikipedia.org/wiki/Times_interest_earned",
+  "extract": "Times interest earned (TIE) or interest coverage ratio is a measure of a company's ability to honor its debt payments. It may be calculated as either EBIT or EBITDA divided by the total interest expense. Times-Interest-Earned = ⁠EBIT or EBITDA/Interest Expense⁠ When the interest coverage ratio is smaller than one, the company is not generating enough cash from its operations EBIT to meet its interest obligations. The company would then have to either use cash on hand to make up the difference or borrow funds. Typically, it is a warning sign when interest coverage falls below 2.5x.",
+  "vi_title": "Tỷ số khả năng trả lãi"
+ },
+ "en:Forward P/E ratio": null,
+ "en:Price/earnings-to-growth ratio": null,
+ "en:Quick ratio": {
+  "title": "Quick ratio",
+  "url": "https://en.wikipedia.org/wiki/Quick_ratio",
+  "extract": "In finance, the quick ratio, also known as the acid-test ratio, is a liquidity ratio that measures the ability of a company to use near-cash assets (or 'quick' assets) to extinguish or retire current liabilities immediately. It is the ratio between quick assets and current liabilities. A normal liquid ratio is considered to be 1:1. A company with a quick ratio of less than 1 cannot currently fully pay back its current liabilities.",
+  "vi_title": "Tỷ số thanh khoản nhanh"
+ },
+ "en:Cash ratio": {
+  "title": "Reserve requirement",
+  "url": "https://en.wikipedia.org/wiki/Reserve_requirement",
+  "extract": "Reserve requirements are central bank regulations that set the minimum amount that a commercial bank must hold in liquid assets. This minimum amount, commonly referred to as the commercial bank's reserve, is generally determined by the central bank on the basis of a specified proportion of deposit liabilities of the bank. This rate is commonly referred to as the cash reserve ratio or shortened as reserve ratio.",
+  "vi_title": "Dự trữ bắt buộc"
+ },
+ "en:Non-recurring items": {
+  "title": "Income statement",
+  "url": "https://en.wikipedia.org/wiki/Income_statement",
+  "extract": "An income statement or profit and loss (P&L) account is one of the financial statements of a company and shows the company's revenues and expenses during a particular period. It indicates how the revenues (also known as the “top line”) are transformed into the net income or net profit (the result after all revenues and expenses have been accounted for). The purpose of the income statement is to show managers and investors whether the company made money (profit) or lost money (loss) during the period being reported.",
+  "vi_title": "Báo cáo kết quả kinh doanh"
+ },
+ "en:Days payable outstanding": {
+  "title": "Days payable outstanding",
+  "url": "https://en.wikipedia.org/wiki/Days_payable_outstanding",
+  "extract": "Days payable outstanding (DPO) is an efficiency ratio that measures the average number of days a company takes to pay its suppliers. The formula is DPO = (ending AP)/(purchase per day), where ending AP is the accounts payable balance at the end of the accounting period being considered and purchase per day is calculated by dividing the total cost of goods sold per year by 365 days. DPO provides one measure of how long a business holds onto its cash. DPO can also be used to compare one company's payment policies to another."
+ },
+ "en:Risk-free rate": {
+  "title": "Risk-free rate",
+  "url": "https://en.wikipedia.org/wiki/Risk-free_rate",
+  "extract": "The risk-free rate of return, usually shortened to the risk-free rate, is the rate of return of a hypothetical investment with scheduled payments over a fixed period of time that is assumed to meet all payment obligations. Since the risk-free rate can be obtained with no risk, any other investment having some risk will have to have a higher rate of return in order to induce any investors to hold it."
+ },
+ "en:Core earnings": null,
+ "en:Net operating profit after tax": {
+  "title": "Net operating profit after taxes",
+  "url": "https://en.wikipedia.org/wiki/Net_operating_profit_after_taxes",
+  "extract": "In corporate finance, net operating profit after tax (NOPAT) is a company's after-tax operating profit for all investors, including shareholders and debt holders. NOPAT is used by analysts and investors as a precise and accurate measurement of profitability to compare a company's financial results across its history and against competitors. When calculating NOPAT, one removes Interest Expense and the effects of other non-operating activities (non-recurring gains and losses) from Net Income to arrive at a value that approximates the value of a firm's annual earnings."
+ },
+ "en:Earnings before interest, taxes, depreciation and amortization": {
+  "title": "Earnings before interest, taxes, depreciation and amortization",
+  "url": "https://en.wikipedia.org/wiki/Earnings_before_interest,_taxes,_depreciation_and_amortization",
+  "extract": "Earnings before interest, taxes, depreciation, and amortization, commonly known as EBITDA ( EE-bit-dah, EB-it-dah), is a measure of a company's profitability of the operating business only, before any effects of indebtedness, state-mandated payments, and costs required to maintain its asset base. It is derived by subtracting from revenues all costs of the operating business (e.g., wages, costs of raw materials, and services) but not decline in asset value, cost of borrowing and obligations to governments.",
+  "vi_title": "Lợi nhuận trước lãi vay, thuế, khấu hao và khấu trừ dần"
+ },
+ "en:Dividend discount model": {
+  "title": "Dividend discount model",
+  "url": "https://en.wikipedia.org/wiki/Dividend_discount_model",
+  "extract": "In financial economics, the dividend discount model (DDM) is a method of valuing the price of a company's capital stock or business value based on the assertion that intrinsic value is determined by the sum of future cash flows from dividend payments to shareholders, discounted back to their present value. The constant-growth form of the DDM is sometimes referred to as the Gordon growth model (GGM), after Myron J."
+ },
+ "en:Discounted cash flow model": null,
+ "en:Gordon growth model": {
+  "title": "Dividend discount model",
+  "url": "https://en.wikipedia.org/wiki/Dividend_discount_model",
+  "extract": "In financial economics, the dividend discount model (DDM) is a method of valuing the price of a company's capital stock or business value based on the assertion that intrinsic value is determined by the sum of future cash flows from dividend payments to shareholders, discounted back to their present value. The constant-growth form of the DDM is sometimes referred to as the Gordon growth model (GGM), after Myron J."
+ },
+ "en:Residual income model": null,
+ "en:Working capital requirement": null,
+ "en:Net debt": {
+  "title": "Debt",
+  "url": "https://en.wikipedia.org/wiki/Debt",
+  "extract": "Debt is an obligation that requires one party, the debtor, to pay money borrowed or otherwise withheld from another party, the creditor. Debt may be owed by a sovereign state or country, local government, company, or an individual. Commercial debt is generally subject to contractual terms regarding the amount and timing of repayments of principal and interest. Loans, bonds, notes, and mortgages are all types of debt. The term can also be used metaphorically to cover moral obligations and other interactions not based on a monetary value.",
+  "vi_title": "Nợ"
+ },
+ "en:Net debt to EBITDA": null,
+ "en:Country risk premium": null,
+ "en:Market risk premium": null,
+ "en:DuPont analysis": {
+  "title": "DuPont analysis",
+  "url": "https://en.wikipedia.org/wiki/DuPont_analysis",
+  "extract": "Dupont analysis is a tool used in financial analysis, where return on equity (ROE) is separated into its component parts. Useful in several contexts, this \"decomposition\" of ROE allows financial managers to focus on the key metrics of financial performance individually, and thereby to identify strengths and weaknesses within the company that should be addressed. Similarly, it allows investors to compare the operational efficiency of two comparable firms."
+ },
+ "en:Five-step DuPont analysis": null,
+ "en:Scenario analysis": {
+  "title": "Scenario planning",
+  "url": "https://en.wikipedia.org/wiki/Scenario_planning",
+  "extract": "Scenario planning, scenario thinking, scenario analysis, scenario prediction and the scenario method all describe a strategic planning method that some organizations use to make flexible long-term plans. It is in large part an adaptation and generalization of classic methods used by military intelligence. In the most common application of the method, analysts generate simulation games for policy makers."
+ },
+ "en:Vertical analysis (common-size analysis)": null,
+ "en:Vertical analysis": null,
+ "en:common-size analysis": null,
+ "en:Horizontal analysis": null,
+ "en:Trend analysis": {
+  "title": "Trend analysis",
+  "url": "https://en.wikipedia.org/wiki/Trend_analysis",
+  "extract": "Trend analysis is the practice of collecting information and attempting to spot a pattern. In some fields of study, the term has more formally defined meanings. Although trend analysis is often used to predict future events, it could be used to estimate uncertain events in the past, such as how many ancient kings probably ruled between two dates, based on data such as the average years which other known kings reigned."
+ },
+ "en:Piotroski F-score": {
+  "title": "Piotroski F-score",
+  "url": "https://en.wikipedia.org/wiki/Piotroski_F-score",
+  "extract": "Piotroski F-score is a number between 0 and 9 which is used to assess strength of company's financial position. The score is used by financial investors in order to find the best value stocks (nine being the best). The score is named after Stanford accounting professor Joseph Piotroski."
+ },
+ "en:Trailing twelve months": {
+  "title": "Trailing twelve months",
+  "url": "https://en.wikipedia.org/wiki/Trailing_twelve_months",
+  "extract": "Trailing twelve months (TTM) is a measurement of a company's financial performance (income and expenses) used in finance. It is measured by using the income statements from a company's reports (such as interim, quarterly or annual reports), to calculate the income for the twelve-month period immediately prior to the date of the report."
+ },
+ "en:Year-to-date": {
+  "title": "Year-to-date",
+  "url": "https://en.wikipedia.org/wiki/Year-to-date",
+  "extract": "Year-to-date (YTD) is the period starting from the beginning of the current year (either the calendar year or fiscal year) and continuing up to the present day."
+ },
+ "en:Days inventory outstanding": null,
+ "en:Year-on-year growth": null,
+ "en:Quarter-on-quarter growth": null,
+ "en:Earnings per share": {
+  "title": "Earnings per share",
+  "url": "https://en.wikipedia.org/wiki/Earnings_per_share",
+  "extract": "Earnings per share (EPS) is the monetary value of earnings per outstanding share of common stock for a company during a defined period of time, often a year. It is a key measure of corporate profitability, focusing on the interests of the company's owners (shareholders), and is commonly used to price stocks. In the United States, the Financial Accounting Standards Board (FASB) requires EPS information for the four major categories of the income statement: continuing operations, discontinued operations, extraordinary items, and net income.",
+  "vi_title": "Tỉ suất lợi nhuận trên cổ phần"
+ },
+ "en:Diluted earnings per share": {
+  "title": "Earnings per share",
+  "url": "https://en.wikipedia.org/wiki/Earnings_per_share",
+  "extract": "Earnings per share (EPS) is the monetary value of earnings per outstanding share of common stock for a company during a defined period of time, often a year. It is a key measure of corporate profitability, focusing on the interests of the company's owners (shareholders), and is commonly used to price stocks. In the United States, the Financial Accounting Standards Board (FASB) requires EPS information for the four major categories of the income statement: continuing operations, discontinued operations, extraordinary items, and net income.",
+  "vi_title": "Tỉ suất lợi nhuận trên cổ phần"
+ },
+ "en:Sustainable growth rate": {
+  "title": "Sustainable growth rate",
+  "url": "https://en.wikipedia.org/wiki/Sustainable_growth_rate",
+  "extract": "According to PIMS (profit impact of marketing strategy), an important lever of business success is growth. Among 37 variables, growth is mentioned as one of the most important variables for success: market share, market growth, marketing expense to sales ratio or a strong market position. The question how much growth is sustainable is answered by two concepts with different perspectives: The sustainable growth rate (SGR) concept by Robert C. Higgins, describes optimal growth from a financial perspective assuming a given strategy with clear defined financial frame conditions/ limitations.",
+  "vi_title": "Tỷ số tăng trưởng bền vững"
+ },
+ "en:Terminal growth rate": null,
+ "en:Compound annual growth rate": {
+  "title": "Compound annual growth rate",
+  "url": "https://en.wikipedia.org/wiki/Compound_annual_growth_rate",
+  "extract": "Compound annual growth rate (CAGR) is a business, economics and investing term representing the mean annualized growth rate for compounding values over a given time period. CAGR smooths the effect of volatility of periodic values that can render arithmetic means less meaningful. It is particularly useful to compare growth rates of various data values, such as revenue growth of companies, or of economic values, over time.",
+  "vi_title": "Tỷ lệ tăng trưởng hàng năm kép"
+ },
+ "en:Dividend payout ratio": {
+  "title": "Dividend payout ratio",
+  "url": "https://en.wikipedia.org/wiki/Dividend_payout_ratio",
+  "extract": "The dividend payout ratio is the fraction of net income a firm pays to its stockholders in dividends: Dividend payout ratio = Dividends Net Income for the same period {\\textstyle {\\mbox{Dividend payout ratio}}={\\frac {\\mbox{Dividends}}{\\mbox{Net Income for the same period}}}} The part of earnings not paid to investors is left for investment to provide for future earnings growth. Investors seeking high current income and limited capital growth prefer companies with a high dividend payout ratio."
+ },
+ "en:Accruals ratio": null,
+ "en:Operating cash flow to net income ratio": null,
+ "en:Business plan completion rate": null,
+ "en:Retention ratio": {
+  "title": "Retention ratio",
+  "url": "https://en.wikipedia.org/wiki/Retention_ratio",
+  "extract": "In corporate finance, the retention ratio indicates the percentage of a company's earnings that are not paid out in dividends to shareholders but credited to retained earnings. It is the opposite of the dividend payout ratio, and is a key indicator of how much profit a company is keeping to fund its operations, growth, and development."
+ },
+ "en:Debt ratio": {
+  "title": "Debt ratio",
+  "url": "https://en.wikipedia.org/wiki/Debt_ratio",
+  "extract": "The debt ratio or debt to assets ratio is a financial ratio which indicates the percentage of a company's assets which are funded by debt. It is measured as the ratio of total debt to total assets, which is also equal to the ratio of total liabilities and total assets: Debt ratio = ⁠Total Debts/Total Assets⁠ = ⁠Total Liabilities/Total Assets⁠ Financial analysts and financial managers use the ratio in assessing the financial position of the firm. Companies with high debt to asset ratios are said to be highly leveraged, and are associated with greater risk.",
+  "vi_title": "Tỷ số nợ trên tài sản"
+ },
+ "en:Interest-bearing debt to equity": null,
+ "en:Dividend yield": {
+  "title": "Dividend yield",
+  "url": "https://en.wikipedia.org/wiki/Dividend_yield",
+  "extract": "The dividend yield of a share is the ratio of annualised cash dividends to the share's current market price. It is usually expressed as a percentage and is commonly calculated by dividing the annual dividend per share by the current share price. Closely related measures compare dividends to price and are often referred to as the dividend–price ratio. At the company level, the same idea can be expressed as total annual dividends divided by the company’s market capitalisation, assuming the number of shares remains unchanged."
+ },
+ "en:Return on invested capital": {
+  "title": "Return on capital",
+  "url": "https://en.wikipedia.org/wiki/Return_on_capital",
+  "extract": "Return on capital (ROC), or return on invested capital (ROIC), is a ratio used in finance, valuation and accounting, as a measure of the profitability and value-creating potential of companies relative to the amount of capital invested by shareholders and other debtholders. It indicates how effective a company is at turning capital into profits. The ratio is calculated by dividing the after tax operating income (NOPAT) by the average book-value of the invested capital (IC)."
+ },
+ "en:Return on capital employed": {
+  "title": "Return on capital employed",
+  "url": "https://en.wikipedia.org/wiki/Return_on_capital_employed",
+  "extract": "Return on capital employed is an accounting ratio used in finance, valuation, and accounting. It is a useful measure for comparing the relative profitability of companies after taking into account the amount of capital used."
+ },
+ "en:Net working capital": {
+  "title": "Working capital",
+  "url": "https://en.wikipedia.org/wiki/Working_capital",
+  "extract": "Working capital (WC) is a financial metric which represents operating liquidity available to a business, organization, or other entity, including governmental entities. Along with fixed assets such as plant and equipment, working capital is considered a part of operating capital. Gross working capital is equal to current assets. Working capital is calculated as current assets minus current liabilities. If current assets are less than current liabilities, an entity has a working capital deficiency, also called a working capital deficit and negative working capital.",
+  "vi_title": "Vốn lưu động"
+ },
+ "en:Inventory turnover": {
+  "title": "Inventory turnover",
+  "url": "https://en.wikipedia.org/wiki/Inventory_turnover",
+  "extract": "In accounting, the inventory turnover is a measure of the number of times inventory is sold or used in a time period such as a year. It is calculated to see if a business has an excessive inventory in comparison to its sales level. The equation for inventory turnover equals the cost of goods sold divided by the average inventory. Inventory turnover is also known as inventory turns, merchandise turnover, stockturn, stock turns, turns, and stock turnover.",
+  "vi_title": "Số vòng quay hàng tồn kho"
+ },
+ "en:Receivables turnover": null,
+ "en:Payables turnover": null,
+ "en:Fixed asset turnover": {
+  "title": "Fixed-asset turnover",
+  "url": "https://en.wikipedia.org/wiki/Fixed-asset_turnover",
+  "extract": "Fixed-asset turnover is the ratio of sales (on the profit and loss account) to the value of fixed assets (on the balance sheet). It indicates how well the business is using its fixed assets to generate sales. Fixed Asset Turnover = Net sales Average net fixed assets {\\displaystyle {\\text{Fixed Asset Turnover}}={\\frac {\\text{Net sales}}{\\text{Average net fixed assets}}}} Generally speaking, the higher the ratio, the better, because a high ratio indicates the business has less money tied up in fixed assets for each unit of currency of sales revenue.",
+  "vi_title": "Số vòng quay tài sản cố định"
+ },
+ "en:Total asset turnover": {
+  "title": "Asset turnover",
+  "url": "https://en.wikipedia.org/wiki/Asset_turnover",
+  "extract": "In finance, asset turnover (ATO), total asset turnover, or asset turns is a financial ratio that measures the efficiency of a company's use of its assets in generating sales revenue or sales income to the company. Asset turnover is considered to be a profitability ratio, which is a group of financial ratios that measure how efficiently a company uses assets.",
+  "vi_title": "Số vòng quay tổng tài sản"
+ },
+ "en:Deposit insurance": {
+  "title": "Deposit insurance",
+  "url": "https://en.wikipedia.org/wiki/Deposit_insurance",
+  "extract": "Deposit insurance, deposit protection or deposit guarantee is a measure implemented in many countries to protect bank depositors, in full or in part, from losses caused by a bank's inability to pay its debts when due. Deposit insurance or deposit guarantee systems are one component of a financial system safety net that promotes financial stability, and are typically integrated with bank regulation and supervision."
+ },
+ "en:Bank guarantee": {
+  "title": "Bank guarantee",
+  "url": "https://en.wikipedia.org/wiki/Bank_guarantee",
+  "extract": "A bank guarantee is a kind of guarantee from a lending organization. The bank guarantee also signifies that the lending institution ensures that the liabilities of a debtor are going to be met. In other words, if the debtor fails to perform the obligation, the bank will cover it. A bank guarantee allows the customer, or debtor, to acquire goods, purchase equipment or draw down a loan. A bank guarantee is a promise from a bank or other lending institution that if a particular borrower defaults, the bank will cover the loss. A bank guarantee is similar to, but not the same as a letter of credit."
+ },
+ "en:Basel III": {
+  "title": "Basel III",
+  "url": "https://en.wikipedia.org/wiki/Basel_III",
+  "extract": "Basel III is a framework published by the Basel Committee on Banking Supervision (BCBS) in response to the deficiencies in financial regulation revealed by the 2008 financial crisis. It sets international standards and recommendations for bank capital requirements, stress tests, liquidity regulations, and leverage, with the goal of mitigating the risk of bank runs and bank failures. Basel III builds upon the standards of Basel II, introduced in 2004, and Basel I, introduced in 1988."
+ },
+ "en:Net interest margin": {
+  "title": "Net interest margin",
+  "url": "https://en.wikipedia.org/wiki/Net_interest_margin",
+  "extract": "Net interest margin (NIM) is a measure of the difference between the interest income generated by banks or other financial institutions and the amount of interest paid out to their lenders (for example, deposits), relative to the amount of their (interest-earning) assets. It is similar to the gross margin (or gross profit margin) of non-financial companies."
+ },
+ "en:Credit extension": null,
+ "en:Credit scoring": {
+  "title": "Credit score",
+  "url": "https://en.wikipedia.org/wiki/Credit_score",
+  "extract": "A credit score is a numerical expression based on a level analysis of a person's credit files, to represent the creditworthiness of an individual. A credit score is primarily based on a credit report, information typically sourced from credit bureaus. Lenders, such as banks and credit card companies, use credit scores to evaluate the potential risk posed by lending money to consumers and to mitigate losses due to bad debt. Lenders use credit scores to determine who qualifies for a loan, at what interest rate, and what credit limits."
+ },
+ "en:Interest rate spread": null,
+ "en:Credit loss provision expense": null,
+ "en:Bank operating expenses": null,
+ "en:Credit cost": null,
+ "en:Cost of funds": null,
+ "en:Retail lending": null,
+ "en:Real estate lending": null,
+ "en:Secured lending": null,
+ "en:Corporate lending": null,
+ "en:Loans to customers": null,
+ "en:Consumer lending": {
+  "title": "Credit",
+  "url": "https://en.wikipedia.org/wiki/Credit",
+  "extract": "Credit (from Latin creditum, \"loan\") is the trust which allows one party to provide money or resources to another party wherein the second party does not reimburse the first party immediately (thereby generating a debt), but promises either to repay or return those resources (or other materials of equal value) at a later date. The resources provided by the first party can be either property, fulfillment of promises, or performances. In other words, credit is a method of making reciprocity formal, legally enforceable, and extensible to a large group of unrelated people.",
+  "vi_title": "Tín dụng"
+ },
+ "en:Unsecured lending": null,
+ "en:Debt rescheduling": {
+  "title": "Debt rescheduling",
+  "url": "https://en.wikipedia.org/wiki/Debt_rescheduling",
+  "extract": "Debt rescheduling is the lengthening of the time of debt repayment by restructuring the terms of an existing loan."
+ },
+ "en:Vietnam Asset Management Company": null,
+ "en:Finance company": {
+  "title": "Financial institution",
+  "url": "https://en.wikipedia.org/wiki/Financial_institution",
+  "extract": "A financial institution, sometimes called a banking institution, is a business entity that provides service as an intermediary for different types of financial monetary transactions.",
+  "vi_title": "Tổ chức tài chính"
+ },
+ "en:Funds transfer pricing": {
+  "title": "Funds transfer pricing",
+  "url": "https://en.wikipedia.org/wiki/Funds_transfer_pricing",
+  "extract": "The Fund Transfer Pricing (FTP) measures the contribution by each source of funding to the overall profitability in a financial institution. Funds that go toward lending products are charged to asset-generating businesses whereas funds generated by deposit and other funding products are credited to liability-generating businesses."
+ },
+ "en:Outstanding credit": null,
+ "en:General provision": null,
+ "en:Specific provision": null,
+ "en:Credit exposure limit": null,
+ "en:Capital adequacy ratio": {
+  "title": "Capital adequacy ratio",
+  "url": "https://en.wikipedia.org/wiki/Capital_adequacy_ratio",
+  "extract": "Capital Adequacy Ratio (CAR) also known as Capital to Risk (Weighted) Assets Ratio (CRAR), is the ratio of a bank's capital to its risk-weighted assets (or credit exposure). National regulators track a bank's CAR and ensure it complies with statutory capital requirements to verify it can absorb a reasonable amount of loss (default of loans) without collapsing. The enforcement of regulated levels of this CAR is intended to protect depositors and promote stability and efficiency of financial systems around the world."
+ },
+ "en:Basel Accords": {
+  "title": "Basel Committee on Banking Supervision",
+  "url": "https://en.wikipedia.org/wiki/Basel_Committee_on_Banking_Supervision",
+  "extract": "The Basel Committee on Banking Supervision (BCBS, often shortened as Basel Committee) is a body that brings together bank supervisory authorities to set common prudential standards and policy. It relies on a permanent secretariat hosted by the Bank for International Settlements in Basel, Switzerland. The Basel Committee sets global standards for the prudential regulation and supervision of banks. It has no formal supranational authority, and its decisions do not have legal force; members commit to implementing and applying its standards in their domestic jurisdictions.",
+  "vi_title": "Ủy ban Basel về Giám sát Ngân hàng"
+ },
+ "en:Provision reversal": null,
+ "en:Interest rate repricing gap": null,
+ "en:Lending rate": {
+  "title": "Interest (economics)",
+  "url": "https://en.wikipedia.org/wiki/Interest_(economics)",
+  "extract": "In finance and economics, interest is payment from a debtor or deposit-taking financial institution to a lender or depositor of an amount above repayment of the principal sum (that is, the amount borrowed), at a particular rate. It is distinct from a fee which the borrower may pay to the lender or some third party."
+ },
+ "en:Deposit rate": {
+  "title": "Interest (economics)",
+  "url": "https://en.wikipedia.org/wiki/Interest_(economics)",
+  "extract": "In finance and economics, interest is payment from a debtor or deposit-taking financial institution to a lender or depositor of an amount above repayment of the principal sum (that is, the amount borrowed), at a particular rate. It is distinct from a fee which the borrower may pay to the lender or some third party."
+ },
+ "en:Interbank rate": {
+  "title": "Interbank lending market",
+  "url": "https://en.wikipedia.org/wiki/Interbank_lending_market",
+  "extract": "The interbank lending market is a market in which banks lend funds to one another for a specified term. Most interbank loans are for maturities of one week or less, the majority being overnight. Such loans are made at the interbank rate (also called the overnight rate if the term of the loan is overnight). A sharp decline in transaction volume in this market was a major contributing factor to the collapse of several financial institutions during the 2008 financial crisis."
+ },
+ "en:Floating interest rate": {
+  "title": "Floating interest rate",
+  "url": "https://en.wikipedia.org/wiki/Floating_interest_rate",
+  "extract": "A floating interest rate, also known as a variable or adjustable rate, refers to any type of debt instrument, such as a loan, bond, mortgage, or credit, that does not have a fixed rate of interest over the life of the instrument. Floating interest rates typically change based on a reference rate (a benchmark of any financial factor, such as the Consumer Price Index). One of the most common reference rates to use as the basis for applying floating interest rates is the Secure Overnight Financing Rate, or SOFR."
+ },
+ "en:Net gain from investment securities": null,
+ "en:Net fee and commission income": null,
+ "en:Net gain from foreign exchange trading": null,
+ "en:Pre-provision operating profit": null,
+ "en:Yield on earning assets": null,
+ "en:Digital banking": {
+  "title": "Digital banking",
+  "url": "https://en.wikipedia.org/wiki/Digital_banking",
+  "extract": "Digital banking is part of the broader context for the move to online banking, where banking services are delivered over the internet. The shift from traditional to digital banking has been gradual, remains ongoing, and is constituted by differing degrees of banking service digitization. Digital banking involves high levels of process automation and web-based services and may include APIs enabling cross-institutional service composition to deliver banking products and provide transactions. It provides the ability for users to access financial data through desktop, mobile and ATM services."
+ },
+ "en:State-owned commercial bank": null,
+ "en:Special mention loans": null,
+ "en:Loss loans": null,
+ "en:Standard loans": null,
+ "en:Substandard loans": null,
+ "en:Doubtful loans": null,
+ "en:Overdue loans": null,
+ "en:Restructured loans": null,
+ "en:Potential non-performing loans": null,
+ "en:Loan classification": null,
+ "en:Valuable papers issued": null,
+ "en:Collateral liquidation": null,
+ "en:Operational risk": {
+  "title": "Operational risk",
+  "url": "https://en.wikipedia.org/wiki/Operational_risk",
+  "extract": "Operational risk is the risk of losses caused by flawed or failed processes, policies, systems or events that disrupt business operations. Employee errors, criminal activity such as fraud, and physical events are among the factors that can trigger operational risk. The process to manage operational risk is known as operational risk management."
+ },
+ "en:Interest rate risk": {
+  "title": "Interest rate risk",
+  "url": "https://en.wikipedia.org/wiki/Interest_rate_risk",
+  "extract": "Interest rate risk refers to the potential for financial loss due to fluctuations in interest rates. It will, in turn, impact differently re market risk, i.e. impacting instruments such as Bonds, re banks and re insurers."
+ },
+ "en:Credit concentration risk": null,
+ "en:Market risk": {
+  "title": "Market risk",
+  "url": "https://en.wikipedia.org/wiki/Market_risk",
+  "extract": "Market risk is the risk of losses in positions arising from movements in market variables like prices and volatility. There is no unique classification as each classification may refer to different aspects of market risk. Nevertheless, the most commonly used types of market risk are: Equity risk, the risk that stock or stock indices (e.g. Euro Stoxx 50, etc.) prices or their implied volatility will change. Interest rate risk, the risk that interest rates (e.g. Libor, Euribor, etc.) or their implied volatility will change. Currency risk, the risk that foreign exchange rates (e.g."
+ },
+ "en:Risk-weighted assets": {
+  "title": "Risk-weighted asset",
+  "url": "https://en.wikipedia.org/wiki/Risk-weighted_asset",
+  "extract": "Risk-weighted asset (RWA) is a bank's assets which includes retained tranches or off-balance-sheet exposures, weighted according to risk. This sort of asset calculation is used in determining the capital requirement or Capital Adequacy Ratio (CAR) for a financial institution."
+ },
+ "en:Interest-earning assets": null,
+ "en:Credit growth": null,
+ "en:Interbank market": {
+  "title": "Interbank foreign exchange market",
+  "url": "https://en.wikipedia.org/wiki/Interbank_foreign_exchange_market",
+  "extract": "The interbank market is the top-level foreign exchange market where banks exchange different currencies. The banks can either deal with one another directly, or through electronic brokering platforms. The Electronic Broking Services (EBS) and Thomson Reuters Dealing are the two competitors in the electronic brokering platform business and together connect over 1000 banks. The currencies of most developed countries have floating exchange rates. These currencies do not have fixed values but, rather, values that fluctuate relative to other currencies."
+ },
+ "en:Recovery of written-off debts": null,
+ "en:Net interest income": {
+  "title": "Net interest income",
+  "url": "https://en.wikipedia.org/wiki/Net_interest_income",
+  "extract": "Net interest income (NII) is the difference between revenues generated by interest-bearing assets and the cost of servicing (interest-burdened) liabilities. For banks, the assets typically include commercial and personal loans, mortgages, construction loans and investment securities. The liabilities consist primarily of customers' deposits. NII is the difference between (a) interest payments the bank receives on outstanding loans and (b) interest payments the bank makes to customers on their deposits."
+ },
+ "en:Non-interest income": null,
+ "en:Income from capital contributions and equity investments": null,
+ "en:Term deposits": {
+  "title": "Time deposit",
+  "url": "https://en.wikipedia.org/wiki/Time_deposit",
+  "extract": "A time deposit or term deposit (also known as a certificate of deposit in the United States, and as a guaranteed investment certificate in Canada) is a deposit in a financial institution with a specific maturity date or a period to maturity, commonly referred to as its \"term\". Time deposits differ from at call deposits, such as savings or checking accounts, which can be withdrawn at any time, without any notice or penalty. Deposits that require notice of withdrawal to be given are effectively time deposits, though they do not have a fixed maturity date."
+ },
+ "en:Customer deposits": null,
+ "en:Demand deposits": {
+  "title": "Demand deposit",
+  "url": "https://en.wikipedia.org/wiki/Demand_deposit",
+  "extract": "Demand deposits or checkbook money are funds held in demand accounts in commercial banks. These account balances are usually considered money and form the greater part of the narrowly defined money supply of a country. Simply put, these are deposits in the bank that can be withdrawn on demand, without any prior notice."
+ },
+ "en:Savings deposits": {
+  "title": "Savings account",
+  "url": "https://en.wikipedia.org/wiki/Savings_account",
+  "extract": "A savings account is a bank account at a retail bank. Common features include a limited number of withdrawals, a lack of checks and linked debit card facilities, limited transfer options and the inability to be overdrawn. Traditionally, transactions on savings accounts were widely recorded in a passbook, and were sometimes called passbook savings accounts, and bank statements were not provided; however, currently such transactions are commonly recorded electronically and accessible online.",
+  "vi_title": "Tài khoản tiết kiệm"
+ },
+ "en:Total operating income": null,
+ "en:VAMC special bonds": null,
+ "en:National Credit Information Center": null,
+ "en:Loan loss reserve ratio": null,
+ "en:Cost-to-income ratio": null,
+ "en:Loan-to-deposit ratio": {
+  "title": "Loan-to-deposit ratio",
+  "url": "https://en.wikipedia.org/wiki/Loan-to-deposit_ratio",
+  "extract": "Loan-to-deposit ratio (LTD ratio or LDR) is a ratio between the banks total loans and total deposits. The ratio is generally expressed in percentage terms If the ratio is lower than one, the bank relied on its own deposits to make loans to its customers, without any outside borrowing. If on the other hand the ratio is greater than one, the bank borrowed money which it reloaned at higher rates, rather than relying entirely on its own deposits. Banks may not be earning an optimal return if the ratio is too low."
+ },
+ "en:Liquidity reserve ratio": null,
+ "en:New NPL formation rate": null,
+ "en:Liquidity coverage ratio": {
+  "title": "Basel III",
+  "url": "https://en.wikipedia.org/wiki/Basel_III",
+  "extract": "Basel III is a framework published by the Basel Committee on Banking Supervision (BCBS) in response to the deficiencies in financial regulation revealed by the 2008 financial crisis. It sets international standards and recommendations for bank capital requirements, stress tests, liquidity regulations, and leverage, with the goal of mitigating the risk of bank runs and bank failures. Basel III builds upon the standards of Basel II, introduced in 2004, and Basel I, introduced in 1988."
+ },
+ "en:Net stable funding ratio": {
+  "title": "Basel III",
+  "url": "https://en.wikipedia.org/wiki/Basel_III",
+  "extract": "Basel III is a framework published by the Basel Committee on Banking Supervision (BCBS) in response to the deficiencies in financial regulation revealed by the 2008 financial crisis. It sets international standards and recommendations for bank capital requirements, stress tests, liquidity regulations, and leverage, with the goal of mitigating the risk of bank runs and bank failures. Basel III builds upon the standards of Basel II, introduced in 2004, and Basel I, introduced in 1988."
+ },
+ "en:Special mention loan ratio": null,
+ "en:Non-performing loan ratio": null,
+ "en:Current account savings account ratio": null,
+ "en:Short-term funds used for medium and long-term loans ratio": null,
+ "en:Tier 2 capital": {
+  "title": "Tier 2 capital",
+  "url": "https://en.wikipedia.org/wiki/Tier_2_capital",
+  "extract": "Tier 2 capital, or supplementary capital, includes a number of important and legitimate constituents of a bank's capital requirement. These forms of banking capital were largely standardized in the Basel I accord, issued by the Basel Committee on Banking Supervision and left untouched by the Basel II accord. National regulators of most countries around the world have implemented these standards in local legislation. In the calculation of regulatory capital, Tier 2 is limited to 100% of Tier 1 capital."
+ },
+ "en:Mobilized funds": null,
+ "en:Regulatory capital": {
+  "title": "Capital requirement",
+  "url": "https://en.wikipedia.org/wiki/Capital_requirement",
+  "extract": "Capital requirements (or capital adequacy requirements) refer to the set of rules and guidance that banks must observe in most current bank prudential frameworks as exist in individual jurisdictions. They form a central component of bank regulation and supervision. Since the 1980s, capital requirements have typically been expressed as ratios of capital to assets, including a so-called solvency ratio or capital adequacy ratio in which the assets on the denominator are weighted by risk coefficients (\"risk-weighted\"), and a leverage ratio in which they are not."
+ },
+ "en:Write-off": {
+  "title": "Write-off",
+  "url": "https://en.wikipedia.org/wiki/Write-off",
+  "extract": "A write-off is a reduction of the recognized value of something. In accounting, this is a recognition of the reduced or zero value of an asset. In income tax statements, this is a reduction of taxable income, as a recognition of certain expenses required to produce the income."
+ },
+ "en:Forced selling": null,
+ "en:Margin liquidation": null,
+ "en:Daily price limit": null,
+ "en:Trading band": {
+  "title": "Trading band",
+  "url": "https://en.wikipedia.org/wiki/Trading_band",
+  "extract": "In finance, a trading band is a range of prices for a commodity or currency, including: Currency trading band, a range of prices within which currency exchange rates are controlled Keltner channel, a technical indicator, a range of prices above or below a commodity's average price that may signal a changing trend Bollinger bands, another technical indicator, a range of prices above and below a commodity's average price that may signal a changing trend"
+ },
+ "en:Tick size": {
+  "title": "Tick size",
+  "url": "https://en.wikipedia.org/wiki/Tick_size",
+  "extract": "In financial markets, the tick size is the smallest price increment in which the prices are quoted. The meaning of the term varies depending on whether stocks, bonds, or futures are being quoted."
+ },
+ "en:Margin call": {
+  "title": "Margin (finance)",
+  "url": "https://en.wikipedia.org/wiki/Margin_(finance)",
+  "extract": "In finance, margin is the collateral that a holder of a financial instrument has to deposit with a counterparty (most often a broker or an exchange) to cover some or all of the credit risk the holder poses for the counterparty. This risk can arise if the holder has done any of the following: Borrowed cash from the counterparty to buy financial instruments, Borrowed financial instruments to sell them short, Entered into a derivative contract.",
+  "vi_title": "Giao dịch ký quỹ"
+ },
+ "en:Warning, control and trading restriction status": null,
+ "en:HNX-Index": null,
+ "en:VN100 Index": null,
+ "en:VN30 Index": null,
+ "en:VNDiamond Index": null,
+ "en:VNFinLead Index": null,
+ "en:Stock split": {
+  "title": "Stock split",
+  "url": "https://en.wikipedia.org/wiki/Stock_split",
+  "extract": "A stock split or stock divide increases the number of shares in a company. For example, after a 2-for-1 split, each investor will own double the number of shares, and each share will be worth half as much. A stock split causes a decrease of market price of individual shares, but does not change the total market capitalization of the company: stock dilution does not occur. A company may split its stock when the market price per share is so high that it becomes unwieldy when traded. One of the reasons is that a very high share price may deter small investors from buying the shares."
+ },
+ "en:Major shareholder": null,
+ "en:Blue-chip stock": {
+  "title": "Blue chip (stock market)",
+  "url": "https://en.wikipedia.org/wiki/Blue_chip_(stock_market)",
+  "extract": "A blue chip is capital stock of a joint-stock company with a national reputation for quality, reliability, and the ability to operate profitably in both good and bad times.",
+  "vi_title": "Blue chip"
+ },
+ "en:Cyclical stock": null,
+ "en:Penny stock": {
+  "title": "Penny stock",
+  "url": "https://en.wikipedia.org/wiki/Penny_stock",
+  "extract": "In American economics, penny stocks are common shares of small public companies that trade for less than $5 per share. The U.S. Securities and Exchange Commission (SEC) uses the term \"penny stock\" to refer to a security, a financial instrument which represents a given financial value, issued by small public companies that trade at less than $5 per share. Prior to the SEC's classification, penny stocks referred to shares that traded for \"pennies on the dollar\"."
+ },
+ "en:Defensive stock": null,
+ "en:Bonus share": {
+  "title": "Bonus share",
+  "url": "https://en.wikipedia.org/wiki/Bonus_share",
+  "extract": "Bonus shares are shares distributed by a company to its current shareholders as fully paid shares free of charge. to capitalise a part of the company's retained earnings for conversion of its share premium account, or distribution of treasury shares. An issue of bonus shares is referred to as a bonus share issue."
+ },
+ "en:Large-cap stock": null,
+ "en:Stock dividend": {
+  "title": "Dividend",
+  "url": "https://en.wikipedia.org/wiki/Dividend",
+  "extract": "A dividend is the distribution of profits by a corporation to its shareholders. When a corporation earns a profit or surplus, it is able to pay a portion of the profit as a dividend to shareholders. Any amount not distributed is taken to be re-invested in the business (called retained earnings). The current year's profit as well as the retained earnings of previous years are available for distribution; a corporation is usually prohibited from paying a dividend out of its capital.",
+  "vi_title": "Cổ tức"
+ },
+ "en:Cash dividend": {
+  "title": "Dividend",
+  "url": "https://en.wikipedia.org/wiki/Dividend",
+  "extract": "A dividend is the distribution of profits by a corporation to its shareholders. When a corporation earns a profit or surplus, it is able to pay a portion of the profit as a dividend to shareholders. Any amount not distributed is taken to be re-invested in the business (called retained earnings). The current year's profit as well as the retained earnings of previous years are available for distribution; a corporation is usually prohibited from paying a dividend out of its capital.",
+  "vi_title": "Cổ tức"
+ },
+ "en:Fund management company": null,
+ "en:Portfolio diversification": {
+  "title": "Diversification (finance)",
+  "url": "https://en.wikipedia.org/wiki/Diversification_(finance)",
+  "extract": "In finance, diversification is the process of allocating capital in a way that reduces the exposure to any one particular asset or risk. A common path towards diversification is to reduce risk or volatility by investing in a variety of assets. If asset prices do not change in perfect synchrony, a diversified portfolio will have less variance than the weighted average variance of its constituent assets, and often less volatility than the least volatile of its constituents. Diversification is one of two general techniques for reducing investment risk. The other is hedging.",
+  "vi_title": "Đa dạng hóa (đầu tư)"
+ },
+ "en:Growth investing": {
+  "title": "Growth investing",
+  "url": "https://en.wikipedia.org/wiki/Growth_investing",
+  "extract": "Growth investing is a type of investment strategy focused on capital appreciation. Those who follow this style, known as growth investors, invest in companies that exhibit signs of above-average growth, even if the share price appears expensive in terms of metrics such as price-to-earnings or price-to-book ratios. In typical usage, the term \"growth investing\" contrasts with the strategy known as value investing."
+ },
+ "en:Passive investing": {
+  "title": "Passive management",
+  "url": "https://en.wikipedia.org/wiki/Passive_management",
+  "extract": "Passive management (also called passive investing) is an investing strategy that tracks a market-weighted index or portfolio. Passive management is most common on the equity market, where index funds track a stock market index, but it is becoming more common in other investment types, including bonds, commodities and hedge funds. There has been a substantial increase in passive investing over the last twenty years. The most popular method is to mimic the performance of an externally specified index by buying an index fund."
+ },
+ "en:Floor price": {
+  "title": "Price floor",
+  "url": "https://en.wikipedia.org/wiki/Price_floor",
+  "extract": "A price floor is a government- or group-imposed price control or limit on how low a price can be charged for a product, good, commodity, or service. It is one type of price support; other types include supply regulation and guarantee government purchase price. A price floor must be higher than the equilibrium price in order to be effective."
+ },
+ "en:Reference price": {
+  "title": "Reference price",
+  "url": "https://en.wikipedia.org/wiki/Reference_price",
+  "extract": "A reference price (RP) is the price that a purchaser announces that it is willing to pay for a good or service. It is used by high-volume purchasers to inform suppliers. RP requires consumers to have access to price and quality information, which is not general practice in many industries. Further, it does not help consumers with urgent needs, cognitive and/or other impairments. Reference pricing requires sufficient competition. Otherwise, consumers have no choice about providers, who in turn face less pricing pressure."
+ },
+ "en:Ceiling price": {
+  "title": "Price ceiling",
+  "url": "https://en.wikipedia.org/wiki/Price_ceiling",
+  "extract": "A price ceiling or price cap is a government- or group-imposed price control, or limit, on how high a price is charged for a product, commodity, or service. Governments impose price ceilings to protect consumers from conditions that could make commodities prohibitively expensive. Economists generally agree that consumer price controls do not accomplish what they intend to in market economies, and many economists instead recommend such controls should be avoided."
+ },
+ "en:Put-through": null,
+ "en:Negotiated trade": null,
+ "en:KRX trading system": null,
+ "en:Index futures": {
+  "title": "Stock market index future",
+  "url": "https://en.wikipedia.org/wiki/Stock_market_index_future",
+  "extract": "In finance, a stock market index future is a cash-settled futures contract on the value of a particular stock market index. The turnover for the global market in exchange-traded equity index futures is notionally valued, for 2008, by the Bank for International Settlements at US$130 trillion."
+ },
+ "en:Delisting": null,
+ "en:Matched volume": null,
+ "en:Foreign investors": {
+  "title": "Investment",
+  "url": "https://en.wikipedia.org/wiki/Investment",
+  "extract": "Investment is traditionally defined as the \"commitment of resources into something expected to gain value over time\". If an investment involves money, then it can be defined as a \"commitment of money to receive more money later\". From a broader viewpoint, an investment can be defined as \"to tailor the pattern of expenditure and receipt of resources to optimise the desirable patterns of these flows\".",
+  "vi_title": "Đầu tư"
+ },
+ "en:Continuous order matching": null,
+ "en:At-the-close order": null,
+ "en:At-the-opening order": null,
+ "en:Limit order": {
+  "title": "Order (exchange)",
+  "url": "https://en.wikipedia.org/wiki/Order_(exchange)",
+  "extract": "An order is an instruction to buy or sell on a trading venue such as a stock market, bond market, commodity market, financial derivative market or cryptocurrency exchange. These instructions can be simple or complicated, and can be sent to either a broker or directly to a trading venue via direct market access. There are some standard instructions for such orders.",
+  "vi_title": "Lệnh giao dịch chứng khoán"
+ },
+ "en:Market order": {
+  "title": "Order (exchange)",
+  "url": "https://en.wikipedia.org/wiki/Order_(exchange)",
+  "extract": "An order is an instruction to buy or sell on a trading venue such as a stock market, bond market, commodity market, financial derivative market or cryptocurrency exchange. These instructions can be simple or complicated, and can be sent to either a broker or directly to a trading venue via direct market access. There are some standard instructions for such orders.",
+  "vi_title": "Lệnh giao dịch chứng khoán"
+ },
+ "en:Board lot and odd lot": null,
+ "en:Bond yield": {
+  "title": "Bond (finance)",
+  "url": "https://en.wikipedia.org/wiki/Bond_(finance)",
+  "extract": "In finance, a bond is a type of security under which the issuer (debtor) owes the holder (creditor) a debt, and is obliged – depending on the terms – to provide cash flow to the creditor; which usually consists of repaying the principal (the amount borrowed) of the bond at the maturity date, as well as interest (called the coupon) over a specified amount of time. The timing and the amount of cash flow provided varies, depending on the economic value that is emphasized upon, thus giving rise to different types of bonds.",
+  "vi_title": "Trái phiếu"
+ },
+ "en:Net buying": null,
+ "en:Net selling": null,
+ "en:Market upgrade": null,
+ "en:Market reclassification": null,
+ "en:Record date": {
+  "title": "Ex-dividend date",
+  "url": "https://en.wikipedia.org/wiki/Ex-dividend_date",
+  "extract": "The ex-dividend date is an investment term involving the timing of payment of dividends on stocks of corporations, income trusts, and other financial holdings, both publicly and privately held. It coincides with the reinvestment date for shares held subject to a dividend reinvestment plan. The ex-date or ex-dividend date or ex-div day represents the date on or after which a security is traded without a previously declared dividend or distribution."
+ },
+ "en:Ex-rights date": null,
+ "en:Ex-dividend date": {
+  "title": "Ex-dividend date",
+  "url": "https://en.wikipedia.org/wiki/Ex-dividend_date",
+  "extract": "The ex-dividend date is an investment term involving the timing of payment of dividends on stocks of corporations, income trusts, and other financial holdings, both publicly and privately held. It coincides with the reinvestment date for shares held subject to a dividend reinvestment plan. The ex-date or ex-dividend date or ex-div day represents the date on or after which a security is traded without a previously declared dividend or distribution."
+ },
+ "en:Insider": null,
+ "en:Support and resistance": {
+  "title": "Support and resistance",
+  "url": "https://en.wikipedia.org/wiki/Support_and_resistance",
+  "extract": "In stock market technical analysis, support and resistance are certain predetermined levels of the price of a security at which it is thought that the price will tend to stop and reverse. These levels are denoted by multiple touches of price without a breakthrough of the level."
+ },
+ "en:Professional securities investor": null,
+ "en:Institutional investor": {
+  "title": "Institutional investor",
+  "url": "https://en.wikipedia.org/wiki/Institutional_investor",
+  "extract": "An institutional investor is an entity that pools money to purchase securities, real property, and other investment assets or originate loans. Institutional investors include commercial banks, central banks, credit unions, government-linked companies, insurers, pension funds, sovereign wealth funds, charities, hedge funds, real estate investment trusts, investment advisors, endowments, and mutual funds. Operating companies which invest excess capital in these types of assets may also be included in the term."
+ },
+ "en:Private placement": {
+  "title": "Private placement",
+  "url": "https://en.wikipedia.org/wiki/Private_placement",
+  "extract": "Private placement or non-public offering is a funding round of securities which are sold not through a public offering, but rather through a private offering, mostly to a small number of chosen investors. Generally, these investors include friends and family, accredited investors, and institutional investors. Placement agents help find investors. PIPE (Private Investment in Public Equity) deals are one type of private placement. SEDA (Standby Equity Distribution Agreement) is also a form of private placement."
+ },
+ "en:Seasoned equity offering": {
+  "title": "Seasoned equity offering",
+  "url": "https://en.wikipedia.org/wiki/Seasoned_equity_offering",
+  "extract": "A seasoned equity offering (SEO) or capital increase is a new equity issued by an already publicly traded company. Seasoned offerings may involve shares sold by existing shareholders (non-dilutive), new shares (dilutive), or both. If the seasoned equity offering is made by an issuer that meets certain regulatory criteria, it may be a shelf offering."
+ },
+ "en:Additional share issuance": null,
+ "en:Brokerage fee": null,
+ "en:Trading fee": null,
+ "en:Periodic call auction": null,
+ "en:Exchange-Traded Fund": {
+  "title": "Exchange-traded fund",
+  "url": "https://en.wikipedia.org/wiki/Exchange-traded_fund",
+  "extract": "An exchange-traded fund (ETF) is a type of investment fund that is also an exchange-traded product; i.e., it is bought and sold on stock exchanges. ETFs own financial assets such as stocks, bonds, currencies, cryptocurrency, debt, and futures contracts, as well as commodities such as gold bars. ETFs provide more diversification than owning an individual stock and more market liquidity than owning an individual bond. Most equity and fixed-income ETFs are index funds; they use passive management to replicate the performance of a stock market index or bond market index.",
+  "vi_title": "Quỹ hoán đổi danh mục"
+ },
+ "en:Open-end fund": {
+  "title": "Open-end fund",
+  "url": "https://en.wikipedia.org/wiki/Open-end_fund",
+  "extract": "Open-end fund (or open-ended fund) is a collective investment scheme that can issue and redeem shares at any time. An investor will generally purchase shares in the fund directly from the fund itself, rather than from the existing shareholders. The term contrasts with a closed-end fund, which typically issues at the outset all the shares that it will issue, with such shares usually thereafter being tradable among investors. Open-ended funds are available in most developed countries, but the terminology and operating rules vary.",
+  "vi_title": "Quỹ đầu tư mở"
+ },
+ "en:Subscription right": {
+  "title": "Pre-emption right",
+  "url": "https://en.wikipedia.org/wiki/Pre-emption_right",
+  "extract": "A pre-emption right, right of pre-emption, or first option to buy is a contractual right to acquire certain property newly coming into existence before it can be offered to any other person or entity. It comes from the Latin verb emo, emere, emi, emptum, to buy or purchase, plus the inseparable preposition pre, before. A right to acquire existing property in preference to any other person is usually referred to as a right of first refusal."
+ },
+ "en:Stock right": null,
+ "en:ETF portfolio review": null,
+ "en:Index rebalancing": null,
+ "en:Foreign ownership limit": null,
+ "en:Systematic risk": {
+  "title": "Systematic risk",
+  "url": "https://en.wikipedia.org/wiki/Systematic_risk",
+  "extract": "In finance and economics, systematic risk (in economics often called aggregate risk or undiversifiable risk) is vulnerability to events which affect aggregate outcomes such as broad market returns, total economy-wide resource holdings, or aggregate income. In many contexts, events like earthquakes, epidemics and major weather catastrophes pose aggregate risks that affect not only the distribution but also the total amount of resources. That is why it is also known as contingent risk, unplanned risk or risk events."
+ },
+ "en:Unsystematic risk": {
+  "title": "Systematic risk",
+  "url": "https://en.wikipedia.org/wiki/Systematic_risk",
+  "extract": "In finance and economics, systematic risk (in economics often called aggregate risk or undiversifiable risk) is vulnerability to events which affect aggregate outcomes such as broad market returns, total economy-wide resource holdings, or aggregate income. In many contexts, events like earthquakes, epidemics and major weather catastrophes pose aggregate risks that affect not only the distribution but also the total amount of resources. That is why it is also known as contingent risk, unplanned risk or risk events."
+ },
+ "en:Specific risk": {
+  "title": "Specific risk",
+  "url": "https://en.wikipedia.org/wiki/Specific_risk",
+  "extract": "In finance, a specific risk is a risk that affects a very small number of assets. This is sometimes referred to as \"unsystematic risk\". In a balanced portfolio of assets there would be a spread between general market risk and risks specific to individual components of that portfolio. Determination of the extent of exposure to individual risks is made using models such as Treynor-Black in which the optimal share of a security is inversely proportional to the square of its specific risk."
+ },
+ "en:Vietnam Exchange": null,
+ "en:Liquidity": {
+  "title": "Liquidity",
+  "url": "https://en.wikipedia.org/wiki/Liquidity",
+  "extract": "Liquidity is a concept in economics involving the convertibility of assets and obligations. It can include: Market liquidity, the ease with which an asset can be sold Accounting liquidity, the ability to meet cash obligations when due Funding liquidity, the availability of credit to finance the purchase of financial asset Liquid capital, the amount of money that a firm holds Liquidity risk, the risk that an asset will have impaired market liquidity"
+ },
+ "en:Bull market": {
+  "title": "Market trend",
+  "url": "https://en.wikipedia.org/wiki/Market_trend",
+  "extract": "A market trend is a perceived tendency of the financial markets to move in a particular direction over time. Analysts classify these trends as secular for long time-frames, primary for medium time-frames, and secondary for short time-frames. Traders attempt to identify market trends using technical analysis, a framework which characterizes market trends as predictable price tendencies within the market when price reaches support and resistance levels, varying over time. A future market trend can only be determined in hindsight, since at any time prices in the future are not known.",
+  "vi_title": "Xu hướng thị trường"
+ },
+ "en:Bear market": {
+  "title": "Market trend",
+  "url": "https://en.wikipedia.org/wiki/Market_trend",
+  "extract": "A market trend is a perceived tendency of the financial markets to move in a particular direction over time. Analysts classify these trends as secular for long time-frames, primary for medium time-frames, and secondary for short time-frames. Traders attempt to identify market trends using technical analysis, a framework which characterizes market trends as predictable price tendencies within the market when price reaches support and resistance levels, varying over time. A future market trend can only be determined in hindsight, since at any time prices in the future are not known.",
+  "vi_title": "Xu hướng thị trường"
+ },
+ "en:Unlisted Public Company Market": null,
+ "en:Personal income tax on securities transfer": null,
+ "en:Vietnam Securities Depository and Clearing Corporation": null,
+ "en:Government bond": {
+  "title": "Government bond",
+  "url": "https://en.wikipedia.org/wiki/Government_bond",
+  "extract": "A government bond or sovereign bond is a form of bond issued by a government to support public spending. It generally includes a commitment to pay periodic interest, called coupon payments, and to repay the face value on the maturity date. The ratio of the annual interest payment to the current market price of the bond is called the current yield. The yield tends to decrease when the government budget balance improves.",
+  "vi_title": "Trái phiếu chính phủ"
+ },
+ "en:Free-float ratio": null,
+ "en:Free float": {
+  "title": "Public float",
+  "url": "https://en.wikipedia.org/wiki/Public_float",
+  "extract": "In the context of stock markets, the public float or free float represents the portion of shares of a corporation that are in the hands of public investors as opposed to shares held by promoters, company officers, controlling interest investors, or governments. This number is sometimes seen as a better way of calculating market capitalization, because it provides a more accurate reflection (than entire market capitalization) of what public investors consider the company to be worth. In this context, the float may refer to all the shares outstanding that can be publicly traded."
+ },
+ "en:Rate of return": {
+  "title": "Rate of return",
+  "url": "https://en.wikipedia.org/wiki/Rate_of_return",
+  "extract": "In finance, return is a profit on an investment. It comprises any change in value of the investment, and/or cash flows (or securities, or other investments) which the investor receives from that investment over a specified time period, such as interest payments, coupons, cash dividends and stock dividends. It may be measured either in absolute terms (e.g., dollars) or as a percentage of the amount invested. The latter is also called the holding period return. A loss instead of a profit is described as a negative return, assuming the amount invested is greater than zero.",
+  "vi_title": "Tỷ lệ hoàn vốn"
+ },
+ "Điểm cân bằng thị trường": {
+  "title": "Điểm cân bằng thị trường",
+  "url": "https://vi.wikipedia.org/wiki/%C4%90i%E1%BB%83m_c%C3%A2n_b%E1%BA%B1ng_th%E1%BB%8B_tr%C6%B0%E1%BB%9Dng",
+  "extract": "Trong kinh tế, cân bằng kinh tế là tình huống trong đó các lực lượng kinh tế như cung và cầu được cân bằng và khi không có ảnh hưởng bên ngoài, các giá trị (cân bằng) của các biến kinh tế sẽ không thay đổi. Ví dụ, trong văn bản tiêu chuẩn cạnh tranh hoàn hảo, trạng thái cân bằng xảy ra tại điểm mà tại đó lượng cầu và lượng cung là bằng nhau. Trạng thái cân bằng thị trường (Vùng cân bằng) trong trường hợp này là điều kiện giá thị trường được thiết lập thông qua cạnh tranh sao cho lượng hàng hóa hoặc dịch vụ mà người mua tìm kiếm bằng với lượng hàng hóa hoặc dịch vụ do người bán sản xuất."
+ },
+ "Hiệu ứng lấn át (kinh tế học)": {
+  "title": "Hiệu ứng lấn át (kinh tế học)",
+  "url": "https://vi.wikipedia.org/wiki/Hi%E1%BB%87u_%E1%BB%A9ng_l%E1%BA%A5n_%C3%A1t_(kinh_t%E1%BA%BF_h%E1%BB%8Dc)",
+  "extract": "Theo nhận định của một số chuyên gia kinh tế học, hiệu ứng lấn át trong kinh tế là hiện tượng xảy ra khi sự tham gia của chính phủ trong một lĩnh vực nào đó của nền kinh tế thị trường có ảnh hưởng đáng kể đến cung hoặc cầu của những yếu tố khác của thị trường. Trong khi đó, một số chuyên gia kinh tế học khác lại định nghĩa “hiệu ứng lấn át” là trường hợp xảy ra khi chính phủ nới lỏng chính sách tài khoá làm giảm đầu tư khu vực tư nhân. Các khoản vay nợ tăng “lấn át” đầu tư tư nhân."
+ },
+ "Lãi suất chiết khấu": {
+  "title": "Lãi suất chiết khấu",
+  "url": "https://vi.wikipedia.org/wiki/L%C3%A3i_su%E1%BA%A5t_chi%E1%BA%BFt_kh%E1%BA%A5u",
+  "extract": "Lãi suất chiết khấu là lãi suất mà ngân hàng trung ương (ngân hàng Nhà nước) đánh vào các khoản tiền cho các ngân hàng thương mại vay để đáp ứng nhu cầu tiền mặt ngắn hạn hoặc bất thường của các ngân hàng này. Quy định lãi suất chiết khấu là một trong những công cụ của chính sách tiền tệ nhằm điều tiết lượng cung tiền."
+ },
+ "Lãi suất thực tế": {
+  "title": "Lãi suất thực tế",
+  "url": "https://vi.wikipedia.org/wiki/L%C3%A3i_su%E1%BA%A5t_th%E1%BB%B1c_t%E1%BA%BF",
+  "extract": "Lãi suất thực tế được tính xấp xỉ bằng lãi suất danh nghĩa trừ đi tỷ lệ lạm phát. Đây là lãi suất mà nhà đầu tư hy vọng nhận được sau khi trừ đi lạm phát. Đây không phải là số đơn thuần, vì các nhà đầu tư khác nhau có kỳ vọng về tỷ lệ lạm phát khác nhau. Nếu một nhà đầu tư nhận được 5% lãi trong năm tới và dự đoán rằng lạm phát là 2% thì ông ta hy vọng nhận được lãi thực là 3%."
+ },
+ "Số nhân tiền tệ": {
+  "title": "Số nhân tiền tệ",
+  "url": "https://vi.wikipedia.org/wiki/S%E1%BB%91_nh%C3%A2n_ti%E1%BB%81n_t%E1%BB%87",
+  "extract": "Số nhân tiền tệ, còn gọi là số nhân tín dụng, đo lường mức độ mà ngân hàng thương mại làm tăng cung tiền. Số nhân này bằng tỷ số giữa tổng lượng cung tiền và lượng cung tiền cơ sở."
+ },
+ "Báo cáo kết quả kinh doanh": {
+  "title": "Báo cáo kết quả kinh doanh",
+  "url": "https://vi.wikipedia.org/wiki/B%C3%A1o_c%C3%A1o_k%E1%BA%BFt_qu%E1%BA%A3_kinh_doanh",
+  "extract": "Báo cáo kết quả kinh doanh, hay còn gọi là bảng báo cáo lãi lỗ, chỉ ra sự cân bằng giữa thu nhập (doanh thu) và chi phí trong từng kỳ kế toán. Bảng báo cáo này phản ánh tổng hợp tình hình và kết quả hoạt động sản xuất kinh doanh theo từng loại trong một thời kỳ kế toán và tình hình thực hiện nghĩa vụ đối với nhà nước. Báo cáo còn được sử dụng như một bảng hướng dẫn để xem xét doanh nghiệp sẽ hoạt động thế nào trong tương lai."
+ },
+ "Đầu tư bất động sản": {
+  "title": "Đầu tư bất động sản",
+  "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%A7u_t%C6%B0_b%E1%BA%A5t_%C4%91%E1%BB%99ng_s%E1%BA%A3n",
+  "extract": "Đầu tư bất động sản liên quan đến việc mua, sở hữu, quản lý, cho thuê hoặc bán bất động sản để kiếm lợi nhuận. Cải thiện bất động sản như là một phần của chiến lược đầu tư bất động sản thường được coi là một chuyên ngành phụ của đầu tư bất động sản gọi là phát triển bất động sản. Bất động sản là một hình thức tài sản có thanh khoản hạn chế so với các khoản đầu tư khác, nó cũng thâm dụng vốn (mặc dù vốn có thể thu được thông qua đòn bẩy thế chấp) và phụ thuộc nhiều vào dòng tiền. Nếu những yếu tố này không được nhà đầu tư hiểu và quản lý tốt, bất động sản trở thành một khoản đầu tư rủi ro."
+ },
+ "Lợi nhuận ròng": {
+  "title": "Lợi nhuận ròng",
+  "url": "https://vi.wikipedia.org/wiki/L%E1%BB%A3i_nhu%E1%BA%ADn_r%C3%B2ng",
+  "extract": "Lợi nhuận ròng, còn được gọi là lãi thuần, thu nhập ròng hoặc lãi ròng là thước đo lợi nhuận của một liên doanh sau khi hạch toán tất cả các chi phí và thuế. Đó là lợi nhuận thực tế, và bao gồm các chi phí hoạt động được loại trừ khỏi lợi nhuận gộp Một từ đồng nghĩa chung cho lợi nhuận ròng khi thảo luận báo cáo tài chính (bao gồm bảng cân đối kế toán và báo cáo thu nhập) là lãi ròng."
+ },
+ "Lợi nhuận trước thuế và lãi": {
+  "title": "Lợi nhuận trước thuế và lãi",
+  "url": "https://vi.wikipedia.org/wiki/L%E1%BB%A3i_nhu%E1%BA%ADn_tr%C6%B0%E1%BB%9Bc_thu%E1%BA%BF_v%C3%A0_l%C3%A3i",
+  "extract": "Lợi nhuận trước lãi vay và thuế hay thu nhập trước lãi vay và thuế (tiếng Anh: earnings before interest and taxes—EBIT) là một chỉ tiêu dùng để đánh giá khả năng thu được lợi nhuận của công ty, bằng thu nhập trừ đi các chi phí, nhưng chưa trừ tiền (trả) lãi và thuế thu nhập. EBIT được đề cập đến như \"khoản kiếm được từ hoạt động kinh doanh\", \"lợi nhuận từ hoạt động kinh doanh\" hay \"thu nhập ròng từ hoạt động\"."
+ },
+ "Sự khôn ngoan": {
+  "title": "Sự khôn ngoan",
+  "url": "https://vi.wikipedia.org/wiki/S%E1%BB%B1_kh%C3%B4n_ngoan",
+  "extract": "Sự khôn ngoan hay sự thận trọng (tiếng Latinh: prudentia, tiếng Anh: prudence) là khả năng quản trị và kỷ luật bản thân thông qua việc sử dụng lý trí. Sự khôn ngoan được coi là một đức hạnh, và đặc biệt là một trong bốn đức hạnh cốt yếu (cùng với Can đảm, Công bằng và Tiết độ). Vị thần của sự khôn ngoan (Prudentia) được hình tượng hóa là một nhân vật nữ cùng với những yếu tố như là chiếc gương và con rắn. Vị thần này thường được thể hiện trong một cặp, với vị còn lại là Justitia, vị thần Công lý của người La Mã."
+ },
+ "Các khoản phải thu": {
+  "title": "Các khoản phải thu",
+  "url": "https://vi.wikipedia.org/wiki/C%C3%A1c_kho%E1%BA%A3n_ph%E1%BA%A3i_thu",
+  "extract": "Các khoản phải thu, (accounts receivable, viết tắt là AR hoặc A/R) là các khiếu nại có hiệu lực pháp luật đối với khoản thanh toán do một doanh nghiệp nắm giữ đối với hàng hóa được cung cấp hoặc dịch vụ mà khách hàng đã đặt hàng nhưng chưa được thanh toán. Chúng thường ở dạng những hóa đơn do doanh nghiệp lập và được chuyển tới khách hàng để thanh toán trong một khung thời gian đã thỏa thuận. Các khoản phải thu được ghi trong bảng cân đối kế toán như một tài sản."
+ },
+ "Tài sản": {
+  "title": "Tài sản",
+  "url": "https://vi.wikipedia.org/wiki/T%C3%A0i_s%E1%BA%A3n",
+  "extract": "Trong kế toán tài chính, tài sản là bất kỳ nguồn lực nào được sở hữu hoặc kiểm soát bởi một doanh nghiệp hay thực thể kinh tế. Nó là tất cả những thứ được dùng với mục đích sản xuất ra giá trị kinh tế tích cực. Tài sản là quyền sở hữu có thể được chuyển thành tiền (mặc dù tiền cũng có thể coi là một loại tài sản). Bảng cân đối kế toán của một công ty ghi chép giá trị tiền tệ của tài sản mà công ty đó sở hữu. Nó bao gồm tiền tệ và các giá trị thuộc sở hữu của cá nhân và doanh nghiệp. Tài sản có thể phân chia thành 2 nhóm chính: tài sản hữu hình và tài sản vô hình."
+ },
+ "Lợi nhuận trước lãi vay, thuế, khấu hao và khấu trừ dần": {
+  "title": "Lợi nhuận trước lãi vay, thuế, khấu hao và khấu trừ dần",
+  "url": "https://vi.wikipedia.org/wiki/L%E1%BB%A3i_nhu%E1%BA%ADn_tr%C6%B0%E1%BB%9Bc_l%C3%A3i_vay,_thu%E1%BA%BF,_kh%E1%BA%A5u_hao_v%C3%A0_kh%E1%BA%A5u_tr%E1%BB%AB_d%E1%BA%A7n",
+  "extract": "Lợi nhuận trước lãi vay, thuế, khấu hao và khấu trừ dần của một công ty (thường được viết tắt là EBITDA, phát âm là ) là một thước đo lợi nhuận của hoạt động kinh doanh cốt lõi, tức là trước khi tính đến tác động của các khoản nợ, nghĩa vụ thuế và chi phí duy trì tài sản."
+ },
+ "Chi phí sử dụng vốn": {
+  "title": "Chi phí sử dụng vốn",
+  "url": "https://vi.wikipedia.org/wiki/Chi_ph%C3%AD_s%E1%BB%AD_d%E1%BB%A5ng_v%E1%BB%91n",
+  "extract": "Trong kinh tế học và kế toán, chi phí sử dụng vốn là chi phí về vốn của một công ty (cả nợ và vốn chủ sở hữu), hoặc theo quan điểm của nhà đầu tư là \"tỷ suất sinh lợi yêu cầu trên danh mục đầu tư chứng khoán hiện có của một công ty\". Chi phí sử dụng vốn được sử dụng để đánh giá các dự án mới của một công ty. Đây là mức lợi nhuận tối thiểu mà các nhà đầu tư kỳ vọng khi cung cấp vốn cho công ty, do đó đặt ra tiêu chuẩn mà một dự án mới phải đáp ứng."
+ },
+ "Chi phí tài sản cố định": {
+  "title": "Chi phí tài sản cố định",
+  "url": "https://vi.wikipedia.org/wiki/Chi_ph%C3%AD_t%C3%A0i_s%E1%BA%A3n_c%E1%BB%91_%C4%91%E1%BB%8Bnh",
+  "extract": "Chi phí vốn, chi tiêu vốn hay chi phí tài sản cố định (tiếng Anh: Capital Expenditures và thường được viết tắt là Capex) là số tiền mà công ty dành để mua, duy trì, hoặc cải thiện tài sản cố định, như nhà cửa, xe cộ, thiết bị hoặc đất. Nó được coi là chi phí đầu tư khi tài sản được mua mới hoặc khi tiền được sử dụng để kéo dài tuổi thọ hữu ích của một tài sản hiện có, chẳng hạn như sửa mái nhà."
+ },
+ "Đòn bẩy (tài chính)": {
+  "title": "Đòn bẩy (tài chính)",
+  "url": "https://vi.wikipedia.org/wiki/%C4%90%C3%B2n_b%E1%BA%A9y_(t%C3%A0i_ch%C3%ADnh)",
+  "extract": "Trong tài chính, đòn bẩy hay đòn bẩy nợ (tiếng anh là leverage trong Anh-Mỹ hay gearing trong Anh-Anh và Anh-Úc) là bất kỳ kỹ thuật nào liên quan đến việc sử dụng nợ (tiền đi vay) thay vì vốn chủ sở hữu để mua tài sản, với kỳ vọng rằng lợi nhuận sau thuế cho chủ sở hữu vốn từ giao dịch sẽ vượt quá chi phí đi vay, thường là một số bội số ⁠— do đó nguồn gốc của từ này từ tác dụng của một đòn bẩy trong vật lý, một cỗ máy đơn giản khuếch đại việc áp dụng một lực đầu vào tương đối nhỏ thành một lực đầu ra tương ứng lớn hơn."
+ },
+ "Tỷ số khả năng trả lãi": {
+  "title": "Tỷ số khả năng trả lãi",
+  "url": "https://vi.wikipedia.org/wiki/T%E1%BB%B7_s%E1%BB%91_kh%E1%BA%A3_n%C4%83ng_tr%E1%BA%A3_l%C3%A3i",
+  "extract": "Tỷ số khả năng trả lãi (hay Tỷ số trang trải lãi vay) là một tỷ số tài chính đo lường khả năng sử dụng lợi nhuận thu được từ quá trình kinh doanh để trả lãi các khoản mà công ty đã vay."
+ },
+ "Tỷ số thanh khoản nhanh": {
+  "title": "Tỷ số thanh khoản nhanh",
+  "url": "https://vi.wikipedia.org/wiki/T%E1%BB%B7_s%E1%BB%91_thanh_kho%E1%BA%A3n_nhanh",
+  "extract": "Tỷ số thanh khoản nhanh (hay Hệ số khả năng thanh toán nhanh, Hệ số khả năng thanh toán tức thời, Hệ số thanh toán tức thời, Hệ số thử axit) là một tỷ số tài chính dùng nhằm đo khả năng huy động tài sản lưu động của một doanh nghiệp để thanh toán ngay các khoản nợ ngắn hạn của doanh nghiệp này."
+ },
+ "Nợ": {
+  "title": "Nợ",
+  "url": "https://vi.wikipedia.org/wiki/N%E1%BB%A3",
+  "extract": "Nợ, nợ phải trả (Tiếng Anh: liability) là một thuật ngữ thường được sử dụng trong trường hợp phải thực hiện một nghĩa vụ hoàn trả hay đền bù về tài sản, vật chất. Tuy nhiên, nợ cũng có thể được sử dụng để chỉ các nghĩa vụ khác. Trong trường hợp nợ tài sản thì nợ là một cách sử dụng sức mua trước khi kiếm đủ tổng số tiền để trả cho sức mua đó. Các công ty cũng có thể sử dụng nợ như là một phần trong chiến lược tài chính tổng thể của mình. Nợ được hình thành khi một người cho vay đồng ý cho người vay vay một lượng tài sản nhất định."
+ },
+ "Tỉ suất lợi nhuận trên cổ phần": {
+  "title": "Tỉ suất lợi nhuận trên cổ phần",
+  "url": "https://vi.wikipedia.org/wiki/T%E1%BB%89_su%E1%BA%A5t_l%E1%BB%A3i_nhu%E1%BA%ADn_tr%C3%AAn_c%E1%BB%95_ph%E1%BA%A7n",
+  "extract": "Tỉ suất thu nhập trên cổ phần hay gọi tắt là EPS (tiếng Anh: Earnings per Share) là chỉ số nói lên phần lợi nhuận thu được trên mỗi cổ phần. Đây cũng có thể coi như phần lợi nhuận thu được trên mỗi khoản đầu tư ban đầu, nên nó được coi như là chỉ số xác định khả năng lợi nhuận của một công ty (hay một dự án đầu tư)."
+ },
+ "Tỷ số tăng trưởng bền vững": {
+  "title": "Tỷ số tăng trưởng bền vững",
+  "url": "https://vi.wikipedia.org/wiki/T%E1%BB%B7_s%E1%BB%91_t%C4%83ng_tr%C6%B0%E1%BB%9Fng_b%E1%BB%81n_v%E1%BB%AFng",
+  "extract": "Tỷ số tăng trưởng bền vững, hay còn được viết tắt là SGR (tiếng Anh: Sustainable Growth Rate) là một tỷ số tài chính để đánh giá khả năng tăng trưởng của vốn chủ sở hữu thông qua tích lũy lợi nhuận."
+ },
+ "Tỷ lệ tăng trưởng hàng năm kép": {
+  "title": "Tỷ lệ tăng trưởng hàng năm kép",
+  "url": "https://vi.wikipedia.org/wiki/T%E1%BB%B7_l%E1%BB%87_t%C4%83ng_tr%C6%B0%E1%BB%9Fng_h%C3%A0ng_n%C4%83m_k%C3%A9p",
+  "extract": "Tốc độ tăng trưởng hằng năm kép (thuật ngữ tiếng Anh: Compounded Annual Growth rate, viết tắt CAGR) là một thuật ngữ kinh doanh và đầu tư cụ thể cho thu nhập đầu tư thường niên hóa trơn tru trong một thời kỳ nhất định. CAGR không phải là một thuật ngữ kế toán, nhưng vẫn được sử dụng rộng rãi, đặc biệt trong các ngành công nghiệp tăng trưởng hoặc để so sánh tốc độ tăng trưởng của hai khoản đầu tư bởi vì CAGR là làm suy giảm ảnh hưởng của biến động của các hoàn vốn định kỳ có thể làm cho các ý nghĩa số học là không thích hợp."
+ },
+ "Tỷ số nợ trên tài sản": {
+  "title": "Tỷ số nợ trên tài sản",
+  "url": "https://vi.wikipedia.org/wiki/T%E1%BB%B7_s%E1%BB%91_n%E1%BB%A3_tr%C3%AAn_t%C3%A0i_s%E1%BA%A3n",
+  "extract": "Tỷ số nợ trên tài sản (hay Tỷ lệ nợ trên tài sản, Tỷ số nợ trên tổng tài sản, Tỷ số nợ D/A) là một tỷ số tài chính đo lường năng lực sử dụng và quản lý nợ của doanh nghiệp."
+ },
+ "Số vòng quay hàng tồn kho": {
+  "title": "Số vòng quay hàng tồn kho",
+  "url": "https://vi.wikipedia.org/wiki/S%E1%BB%91_v%C3%B2ng_quay_h%C3%A0ng_t%E1%BB%93n_kho",
+  "extract": "Số vòng quay hàng tồn kho (hay Hệ số quay vòng của hàng tồn kho) là một trong những tỷ số tài chính để đánh giá hiệu quả hoạt động của doanh nghiệp. Tỷ số này được tính ra bằng cách lấy doanh thu (hoặc giá vốn hàng bán) trong một kỳ nhất định chia cho bình quân giá trị hàng tồn kho trong cùng kỳ. Ở đây, bình quân giá trị hàng tồn kho bằng trung bình cộng của giá trị đầu kỳ và giá trị cuối kỳ. Tỷ số cho biết hàng tồn kho quay bao nhiêu vòng trong kỳ để tạo ra số doanh thu được ghi nhận trong kỳ đó. Tỷ số càng cao có thể là dấu hiệu doanh nghiệp hoạt động có hiệu quả."
+ },
+ "Số vòng quay tài sản cố định": {
+  "title": "Số vòng quay tài sản cố định",
+  "url": "https://vi.wikipedia.org/wiki/S%E1%BB%91_v%C3%B2ng_quay_t%C3%A0i_s%E1%BA%A3n_c%E1%BB%91_%C4%91%E1%BB%8Bnh",
+  "extract": "Số vòng quay tài sản cố định (Hệ số quay vòng tài sản cố định) là một trong những tỷ số tài chính đánh giá khái quát hiệu quả sử dụng tài sản, ở đây là tài sản cố định, của doanh nghiệp. Thước đo này được tính bằng cách lấy doanh thu của doanh nghiệp đạt được trong một kỳ nào đó chia cho giá trị bình quân tài sản cố định thuần (ròng) của doanh nghiệp trong kỳ đó. Giá trị bình quân này được tính bằng cách lấy giá trị trung bình cộng của giá trị đầu kỳ và giá trị cuối kỳ."
+ },
+ "Số vòng quay tổng tài sản": {
+  "title": "Số vòng quay tổng tài sản",
+  "url": "https://vi.wikipedia.org/wiki/S%E1%BB%91_v%C3%B2ng_quay_t%E1%BB%95ng_t%C3%A0i_s%E1%BA%A3n",
+  "extract": "Số vòng quay tổng tài sản (hay gọi tắt là Số vòng quay tài sản) là một tỷ số tài chính, là thước đo khái quát nhất hiệu quả sử dụng tài sản của doanh nghiệp. Tỷ số này được tính ra bằng cách lấy doanh thu thuần (ròng) đạt được trong một thời kỳ nhất định chia cho giá trị bình quân tổng tài sản (bao gồm cả tài sản lưu động lẫn tài sản cố định) của doanh nghiệp trong cũng kỳ đó. Giá trị bình quân tính bằng trung bình cộng của giá trị đầu kỳ và giá trị cuối kỳ. Tỷ số này cho biết mỗi đồng tài sản tạo ra cho doanh nghiệp bao nhiêu đồng doanh thu."
+ },
+ "Tín dụng": {
+  "title": "Tín dụng",
+  "url": "https://vi.wikipedia.org/wiki/T%C3%ADn_d%E1%BB%A5ng",
+  "extract": "Tín dụng là khái niệm thể hiện mối quan hệ giữa người cho vay và người vay. Tín dụng ra đời, tồn tại qua nhiều hình thái kinh tế - xã hội. Quan hệ tín dụng được phát sinh ngay từ thời kỳ chế độ công xã nguyên thủy bắt đầu tan rã. Khi chế độ tư hữu về tư liệu sản xuất xuất hiện, cũng là đồng thời xuất hiện quan hệ trao đổi hàng hóa. Thời kỳ này, tín dụng được thực hiện dưới hình thức vay mượn bằng hiện vật - hàng hóa."
+ },
+ "Tổ chức tài chính": {
+  "title": "Tổ chức tài chính",
+  "url": "https://vi.wikipedia.org/wiki/T%E1%BB%95_ch%E1%BB%A9c_t%C3%A0i_ch%C3%ADnh",
+  "extract": "Trong kinh tế học tài chính, tổ chức tài chính hay định chế tài chính là tổ chức có chức năng cung cấp các dịch vụ tài chính cho các khách hàng hoặc các thành viên. Có lẽ dịch vụ tài chính quan trọng nhất mà các tổ chức tài chính cung cấp là hoạt động như các trung gian tài chính. Phần lớn các tổ chức tài chính được đặt dưới sự kiểm soát chặt chẽ của nhà nước."
+ },
+ "Ủy ban Basel về Giám sát Ngân hàng": {
+  "title": "Ủy ban Basel về Giám sát Ngân hàng",
+  "url": "https://vi.wikipedia.org/wiki/%E1%BB%A6y_ban_Basel_v%E1%BB%81_Gi%C3%A1m_s%C3%A1t_Ng%C3%A2n_h%C3%A0ng",
+  "extract": "Ủy ban Basel về Giám sát Ngân hàng (BCBS) là một ủy ban giám sát ngân hàng được thành lập bởi thống đốc ngân hàng trung ương của G-10 vào năm 1974."
+ },
+ "Tài khoản tiết kiệm": {
+  "title": "Tài khoản tiết kiệm",
+  "url": "https://vi.wikipedia.org/wiki/T%C3%A0i_kho%E1%BA%A3n_ti%E1%BA%BFt_ki%E1%BB%87m",
+  "extract": "Tài khoản tiết kiệm là một tài khoản ngân hàng tại một ngân hàng bán lẻ mà có các tính năng bao gồm các yêu cầu chỉ có thể rút tiền hạn chế, không có phương tiện kiểm tra và thường không có tiện ích thẻ ghi nợ, có cơ sở chuyển khoản hạn chế và không thể dùng để rút tiền. Theo truyền thống, các giao dịch trên tài khoản tiết kiệm được ghi lại rộng rãi trong sổ tiết kiệm và đôi khi được gọi là tài khoản sổ tiết kiệm và không cung cấp sao kê ; tuy nhiên, hiện tại các giao dịch như vậy thường được ghi lại bằng điện tử và có thể truy cập trực tuyến."
+ },
+ "Blue chip": {
+  "title": "Blue chip",
+  "url": "https://vi.wikipedia.org/wiki/Blue_chip",
+  "extract": "Blue chip là cổ phiếu của một công ty có độ uy tín cao, tình hình tài chính vững chắc và giá trị vốn hóa thị trường lớn. Đây là cổ phiếu của của một công ty cổ phần có danh tiếng toàn quốc về chất lượng, độ tin cậy và khả năng hoạt động có lãi trong cả thời điểm thuận lợi và khó khăn. Từ Blue-chip (thẻ nhựa xanh) bắt nguồn từ loại thẻ đổi tiền khi chơi bài poker tại các sòng bạc, trong đó Chip là loại thẻ nhựa đổi tiền khi đánh bạc, theo thông lệ, chip màu xanh (blue) có giá trị quy đổi cao nhất."
+ },
+ "Cổ tức": {
+  "title": "Cổ tức",
+  "url": "https://vi.wikipedia.org/wiki/C%E1%BB%95_t%E1%BB%A9c",
+  "extract": "Cổ tức (dividend) là một phần lợi nhuận sau thuế được chia cho các cổ đông của một công ty cổ phần. Cổ tức có thể được trả bằng tiền, cổ phiếu."
+ },
+ "Đa dạng hóa (đầu tư)": {
+  "title": "Đa dạng hóa (đầu tư)",
+  "url": "https://vi.wikipedia.org/wiki/%C4%90a_d%E1%BA%A1ng_h%C3%B3a_(%C4%91%E1%BA%A7u_t%C6%B0)",
+  "extract": "Đa dạng hoá (là cách viết tắt của Đa dạng hoá trong đầu tư) là ý tưởng mà nhà đầu tư phân bổ tiền vào nhiều loại đầu tư khác nhau. Khi một lĩnh vực đầu tư bị sụt giảm và lĩnh vực khác tăng trưởng thì việc lựa chọn đa dạng hoá trong đầu tư giúp nhà đầu tư giảm thiểu rủi ro của mình. Đa dạng hóa cùng phòng ngừa rủi ro là hai kỹ thuật chung để giảm thiểu rủi ro trong đầu tư tài chính. Mức độ cơ bản nhất trong đa dạng hoá danh mục đầu tư là mua nhiều loại cổ phiếu thay vì mua chỉ một loại cổ phiếu."
+ },
+ "Đầu tư": {
+  "title": "Đầu tư",
+  "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%A7u_t%C6%B0",
+  "extract": "Đầu tư (Tiếng Anh: investment) có ý nghĩa khác nhau trong tài chính và kinh tế học. Trong kinh tế học, đầu tư có liên quan đến tiết kiệm và trì hoãn tiêu thụ. Đầu tư có liên quan đến nhiều khu vực của nền kinh tế, chẳng hạn như quản lý kinh doanh và tài chính dù là cho hộ gia đình, doanh nghiệp, hoặc chính phủ. Trong tài chính, đầu tư tài chính là đặt tiền vào một tài sản với kỳ vọng của vốn đánh giá cao, thường là trong tương lai dài hạn. Điều này có thể được hoặc không được hỗ trợ bởi nghiên cứu và phân tích."
+ },
+ "Lệnh giao dịch chứng khoán": {
+  "title": "Lệnh giao dịch chứng khoán",
+  "url": "https://vi.wikipedia.org/wiki/L%E1%BB%87nh_giao_d%E1%BB%8Bch_ch%E1%BB%A9ng_kho%C3%A1n",
+  "extract": "Lệnh giao dịch chứng khoán hay còn gọi là đặt lệnh (Order) là hướng dẫn mua hoặc bán trên một địa điểm giao dịch như thị trường chứng khoán, thị trường trái phiếu, thị trường hàng hóa, thị trường phái sinh tài chính hoặc sàn giao dịch tiền điện tử. Những hướng dẫn này có thể đơn giản hoặc phức tạp và có thể được gửi tới nhà môi giới hoặc trực tiếp đến địa điểm giao dịch thông qua tiếp cận thị trường trực tiếp. Có một số hướng dẫn tiêu chuẩn cho các lệnh giao dịch như thế."
+ },
+ "Quỹ hoán đổi danh mục": {
+  "title": "Quỹ hoán đổi danh mục",
+  "url": "https://vi.wikipedia.org/wiki/Qu%E1%BB%B9_ho%C3%A1n_%C4%91%E1%BB%95i_danh_m%E1%BB%A5c",
+  "extract": "Quỹ hoán đổi danh mục (tiếng Anh: Exchange-traded fund) là một quỹ đầu tư mô phỏng biến động của chỉ số chứng khoán hoặc trái phiếu. Quỹ hoán đổi danh mục thường do các sở giao dịch chứng khoán niêm yết, tương tự như một dạng cổ phiếu. Đây được xem là một phương thức đầu tư thụ động. Bên cạnh một số ưu điểm thì quỹ này cũng tồn tại khá nhiều rủi ro."
+ },
+ "Quỹ đầu tư mở": {
+  "title": "Quỹ đầu tư mở",
+  "url": "https://vi.wikipedia.org/wiki/Qu%E1%BB%B9_%C4%91%E1%BA%A7u_t%C6%B0_m%E1%BB%9F",
+  "extract": "Quỹ đầu tư mở là một quỹ đầu tư tập thể cho phép phát hành thêm và mua lại cổ phiếu đã phát hành bất cứ lúc nào. Nhà đầu tư có thể mua cổ phiếu của những quỹ như vậy trực tiếp từ công ty quản lý quỹ, hoặc thông qua một hãng môi giới. Quỹ đầu tư mở khá phổ biến ở hầu hết các nước phát triển, tuy nhiên thuật ngữ và quy tắc hoạt động có thể hơi khác nhau. Ví dụ: ở Mỹ người ta gọi nó là mutual fund (quỹ tương hỗ), ở Anh là Unit trusts (đơn vị ủy thác đầu tư) hoặc OEIC (công ty đầu tư mở rộng), còn hầu hết các nước châu Âu gọi nó là SICAV (công ty đầu tư không cố định vốn)."
+ },
+ "Xu hướng thị trường": {
+  "title": "Xu hướng thị trường",
+  "url": "https://vi.wikipedia.org/wiki/Xu_h%C6%B0%E1%BB%9Bng_th%E1%BB%8B_tr%C6%B0%E1%BB%9Dng",
+  "extract": "Xu hướng thị trường (thuật ngữ tiếng Anh: Market trend) là xu thế của một thị trường tài chính di chuyển theo một hướng cụ thể qua thời gian. Các xu hướng này được phân loại thành trường kỳ cho các khung thời gian dài hạn, chính cho các khung thời gian trung hạn, và phụ cho các khung thời gian ngắn hạn. Các thương nhân xác định các xu hướng thị trường bằng cách dùng phân tích kỹ thuật, một khung thời gian đặc trưng các xu hướng thị trường như các xu thế giá cả có thể dự đoán được trong thị trường khi giá cả đạt tới các ngưỡng hỗ trợ và kháng cự, thay đổi theo thời gian."
+ },
+ "Trái phiếu chính phủ": {
+  "title": "Trái phiếu chính phủ",
+  "url": "https://vi.wikipedia.org/wiki/Tr%C3%A1i_phi%E1%BA%BFu_ch%C3%ADnh_ph%E1%BB%A7",
+  "extract": "Trái phiếu chính phủ, công trái hay công khố phiếu là trái phiếu được phát hành bởi chính phủ một quốc gia. Trái phiếu chính phủ có thể được phát hành bằng đồng tiền nước đó hoặc bằng ngoại tệ, tiếng Anh gọi là sovereign bond)."
+ },
+ "Tỷ lệ hoàn vốn": {
+  "title": "Tỷ lệ hoàn vốn",
+  "url": "https://vi.wikipedia.org/wiki/T%E1%BB%B7_l%E1%BB%87_ho%C3%A0n_v%E1%BB%91n",
+  "extract": "Trong tài chính, lợi nhuận là lãi có được từ một khoản đầu tư. Nó bao gồm bất kỳ thay đổi nào về giá trị của khoản đầu tư và/hoặc dòng tiền mà nhà đầu tư nhận được từ khoản đầu tư, chẳng hạn như thanh toán lãi hoặc cổ tức. Nó có thể được đo bằng thuật ngữ tuyệt đối (ví dụ: đô la) hoặc theo tỷ lệ phần trăm của số tiền đầu tư. Cái sau cũng được gọi là thời gian giữ lại. Khoản lỗ thay vì lợi nhuận được mô tả là lợi nhuận âm, giả sử là số tiền đầu tư lớn hơn 0. Tỷ lệ hoàn vốn là lợi nhuận của một khoản đầu tư trong một khoảng thời gian, được biểu thị bằng tỷ lệ của khoản đầu tư ban đầu."
+ }
 }
