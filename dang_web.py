@@ -33,7 +33,7 @@ def main() -> int:
         kiem_tra_ir.main([])
     import dashboard
     dashboard.build()
-    paths = ["docs", "ket_qua/ir_check.json", "website_30cty.xlsx", "LINKS.md", "tu_dien", "tu_dien_500.xlsx", "ket_qua/json"]
+    paths = ["docs", "ket_qua/ir_check.json", "website_30cty.xlsx", "LINKS.md", "tu_dien", "tu_dien_500.xlsx", "ket_qua/json", "ket_qua/doi_chieu.json", "tri_thuc"]
     paths = [x for x in paths if (ROOT / x).exists()]
     git("add", *paths)
     if not git("status", "--porcelain", "--", *paths):

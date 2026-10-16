@@ -18,7 +18,7 @@ ACB BID BSR CTG FPT GAS GVR HDB HPG LPB MBB MCH MSN MWG SAB SHB SSB SSI STB TCB 
 | 1 | `website_30cty.xlsx`, [LINKS.md](LINKS.md), `companies.json`, `kiem_tra_ir.py` | Danh sách web đăng BCTC của 30 công ty và kết quả kiểm tra tool đọc được từng web |
 | 2 | `bctc.py`, `ir_adapters.py` | Tải BCTC **từ web công ty** (nguồn đăng sớm nhất); CafeF chỉ để dự phòng |
 | 3 | `pdf2txt.py` | PDF thường hoặc PDF scan → TXT (OCR tiếng Việt, giữ hàng/cột của bảng số) |
-| 4 | `phan_tich.py` | Gemini đọc BCTC → DT, LNG, LNST, Tổng tài sản, Nợ, Nợ vay, Lưu chuyển tiền: **quý này so với quý trước** → Excel |
+| 4 | `phan_tich.py` | Gemini đọc BCTC → DT, LNG, LNST, Tổng tài sản, Nợ, Nợ vay, Lưu chuyển tiền từ **1 BCTC**: quý này so với cùng kỳ năm trước, cân đối so với đầu năm → Excel |
 | 5 | `cham_diem.py`, `dashboard.py` | Chấm điểm thang 10 → **dashboard** mỗi công ty 1 thẻ, lọc nhanh (VD DT tăng > 20%, nợ vay giảm > 10%) |
 
 ## Chạy nhanh
@@ -28,7 +28,7 @@ pip install -r requirements.txt     # aiohttp, pymupdf, google-genai, pydantic, 
 # Lấy API key Gemini miễn phí: https://aistudio.google.com/apikey -> dán vào file .env: GEMINI_API_KEY=...
 
 python kiem_tra_ir.py      # (tuỳ chọn) kiểm tra 30 web công ty còn đọc được không -> website_30cty.xlsx
-python phan_tich.py        # tải BCTC quý mới nhất + quý trước từ web công ty -> Gemini -> chấm điểm
+python phan_tich.py        # tải 1 BCTC quý mới nhất/mã từ web công ty -> Gemini -> chấm điểm -> đối chiếu Vietcap
                            # -> ket_qua/so_sanh_quy.xlsx + ket_qua/dashboard.html (mở bằng trình duyệt)
 ```
 
@@ -113,24 +113,24 @@ python phan_tich.py --dry-run              # không gọi API: tải, chọn tra
 ```
 
 ```
-2 BCTC quý cần so (quý thứ 3 chỉ khi cần tính lưu chuyển tiền trong quý)
+MỖI MÃ CHỈ 1 BCTC: quý mới nhất (công bố sớm nhất, có cột riêng quý) - báo cáo đã có sẵn kỳ so sánh
  → quét VÙNG TIÊU ĐỀ (30% đầu trang, ~0,25 s/trang) tìm Bảng CĐKT / KQKD / LCTT, bỏ mục lục, dừng ở Thuyết minh
  → OCR đầy đủ chỉ các trang báo cáo (4–16 trang thay vì 30–97)
  → PDF nhỏ (trang scan → JPEG xám 200 dpi) + văn bản OCR làm gợi ý
- → Gemini 3.5 Flash-Lite, structured output (JSON theo schema), temperature 0
- → kiểm tra chéo: TS = Nợ + VCSH, LCTT thuần = KD + ĐT + TC, số tháng lũy kế, đúng kỳ, đơn vị hợp lý
- → cache ket_qua/json theo sha256 file (lần sau chỉ hỏi BCTC mới)
+ → Gemini 3.5 Flash-Lite, structured output (JSON theo schema), temperature 0; prompt kèm SỔ BÀI HỌC (quy tắc + lưu ý từng mã)
+ → kiểm tra chéo: TS = Nợ + VCSH (cuối quý và đầu năm), LCTT thuần = KD + ĐT + TC (năm nay và năm trước), số tháng lũy kế
+ → tự sửa lỗi đã biết: LNST cổ đông mẹ không tách → bằng LNST; dòng LCTT in "-" → 0
+ → TỰ ĐỐI CHIẾU VIETCAP IQ (doi_chieu.py): lệch > 1% → ghi vào sổ bài học để xét
+ → cache ket_qua/json theo sha256 file + phiên bản sổ bài học (thêm quy tắc mới → trích lại theo quy tắc mới)
 ```
 
-| Loại hình | "Doanh thu" lấy | "Lợi nhuận gộp" lấy | "Nợ vay" lấy |
-|---|---|---|---|
-| Doanh nghiệp | Doanh thu thuần (mã 10) | Lợi nhuận gộp (mã 20) | Vay và nợ thuê TC ngắn + dài hạn (mã 320 + 338) |
-| Ngân hàng | Tổng thu nhập hoạt động | Thu nhập lãi thuần | không áp dụng (dùng Nợ phải trả) |
-| Chứng khoán | Cộng doanh thu hoạt động | DT − CP hoạt động (tool tự tính) | Vay và nợ thuê TS tài chính |
+Một BCTC quý có đủ dữ liệu để so sánh, không cần BCTC quý trước:
 
-BCTC chỉ ghi lưu chuyển tiền lũy kế từ đầu năm, nên tool tự trừ để ra số trong quý (quý 2 = lũy kế 6 tháng − lũy kế quý 1).
-
-Đo bằng `--dry-run` trên 60 BCTC lấy từ web công ty: khâu chuẩn bị (quét tiêu đề, dò trang scan nằm ngang, OCR) mất 572 giây, khoảng 9,5 giây/BCTC. Mỗi BCTC gửi Gemini 4–16 trang, khoảng 9k token với bản có sẵn chữ và 15–35k token với bản scan. Lần chạy đầu cho 30 mã cần 60 request, mất khoảng 10 phút vì khâu chuẩn bị và Gemini chạy chồng lên nhau. Các quý sau chỉ còn khoảng 30 BCTC mới, mất khoảng 5 phút. Quota miễn phí khoảng 15 request/phút và 500 request/ngày (Google không công bố chính thức), tool tự giới hạn ở 12 request/phút.
+| Báo cáo | Kỳ này | So với |
+|---|---|---|
+| Kết quả kinh doanh | Quý này (VD Q2/2026) và lũy kế từ đầu năm | Cùng quý năm trước (Q2/2025) và lũy kế cùng kỳ |
+| Bảng cân đối | Cuối quý (30/06/2026) | Đầu năm (01/01/2026) - BCTC quý không có số cuối quý năm trước |
+| Lưu chuyển tiền | Lũy kế từ đầu năm (6T/2026) | Lũy kế cùng kỳ năm trước (6T/2025) |
 
 ### Khi chưa có Gemini key: Claude trích số (claude_trich.py)
 
@@ -146,6 +146,23 @@ Số liệu Q2/2026 so với Q1/2026 đang có trên web do Claude (Anthropic) �
 
 Có Gemini key thì chạy `python phan_tich.py` như bình thường. Kết quả Gemini sẽ ghi đè các quý mới.
 
+### Học từ sai sót: sổ bài học + tự đối chiếu (tri_thuc.py, doi_chieu.py)
+
+AI không tự nhớ giữa các lần chạy, nên "học" nằm ở luồng:
+1. **Sổ bài học** `tri_thuc/bai_hoc.json`: quy tắc rút ra từ lỗi đã gặp (mẫu BCTC 2026 đổi mã số, ngân hàng không in dòng tổng
+   thu nhập, OCR đọc sai chữ số đầu, cùng kỳ trình bày lại...) và lưu ý riêng từng mã. Mỗi lần trích, quy tắc được đưa vào
+   system prompt, lưu ý của mã được đưa vào prompt của BCTC đó (cả Gemini lẫn Claude: `claude_trich.py huong_dan`).
+2. **Tự đối chiếu** sau mỗi lần chạy: `doi_chieu.py` so từng chỉ tiêu (năm nay và kỳ so sánh) với Vietcap IQ, ghi
+   `ket_qua/doi_chieu.json`, thẻ trên web hiện "Đối chiếu Vietcap: x/y khớp". Chỗ lệch > 1% tự vào mục *cần xem xét* của sổ.
+3. **Xét và rút bài học**: `python tri_thuc.py` xem các mục cần xét; lỗi đọc thì `python tri_thuc.py them-quy-tac "..."` hoặc
+   `them-luu-y MÃ "..."` (sổ tăng phiên bản → lần chạy sau Gemini trích lại theo quy tắc mới); khác phiên bản báo cáo
+   (Vietcap dùng bán niên soát xét / năm kiểm toán cho quý 2, quý 4) thì `python tri_thuc.py da-xet <số>`.
+
+```bash
+python doi_chieu.py            # đối chiếu lại với Vietcap
+python tri_thuc.py             # xem sổ: quy tắc, lưu ý theo mã, mục cần xem xét
+```
+
 ## Bước 5: Chấm điểm và dashboard
 
 `phan_tich.py` chạy xong sẽ tự tạo:
@@ -157,27 +174,29 @@ Muốn dựng lại dashboard mà không gọi API thì chạy `python dashboard
 Dashboard gồm:
 - **Chỉ số tổng hợp**: số mã đạt 10/10, điểm trung bình, số mã có DT tăng, LNST tăng, nợ vay giảm, số mã có cảnh báo dữ liệu.
 - **Bộ lọc**: tìm mã/tên, loại hình, điểm tối thiểu, DT tăng ≥ X%, LNST tăng ≥ X%, nợ vay giảm ≥ X%, dòng tiền kinh doanh dương, sắp xếp. Nút lọc nhanh: *Đạt 10/10*, *Từ 8 điểm*, *Doanh thu tăng > 20%*, *Nợ vay giảm > 10%*, *LNST tăng + dòng tiền dương*.
-- **Thẻ từng công ty**: điểm /10, xếp loại, các chỉ số quý này kèm % so với quý trước (▲▼ có dấu, không chỉ dựa vào màu), chi tiết từng tiêu chí, cảnh báo, link BCTC gốc và web IR.
+- **Thẻ từng công ty**: điểm /10, xếp loại, KQKD quý và lũy kế kèm % so với cùng kỳ năm trước, bảng cân đối kèm % so với đầu năm (▲▼ có dấu, không chỉ dựa vào màu), chi tiết từng tiêu chí, cảnh báo, ghi chú cách lấy số, kết quả đối chiếu Vietcap, link BCTC gốc và web IR.
 - Có thể chuyển sang dạng bảng, và đổi giao diện sáng/tối.
 
 ### Công thức chấm điểm (thang 10)
 
 Điểm do code tính từ số liệu nên kiểm chứng lại được, không phải AI tự cho. BCTC ngân hàng và công ty chứng khoán khác doanh nghiệp: dòng tiền của họ phản ánh tiền gửi và cho vay chứ không đo chất lượng lợi nhuận. Vì vậy mỗi loại hình có một bộ tiêu chí riêng, bộ nào cũng tối đa 10 điểm.
 
+KQKD so với **cùng kỳ năm trước**, bảng cân đối so với **đầu năm**, dòng tiền **lũy kế từ đầu năm** - tất cả lấy từ 1 BCTC.
+
 | Doanh nghiệp, bảo hiểm | Điểm | Ngân hàng | Điểm | Chứng khoán | Điểm |
 |---|---|---|---|---|---|
-| DT thuần tăng so với quý trước | tăng 1, tăng ≥20% thì 2 | Tổng thu nhập HĐ tăng | tăng 1, tăng ≥10% thì 2 | DT hoạt động tăng | tăng 1, tăng ≥20% thì 2 |
-| LNST tăng so với quý trước | tăng 1, tăng ≥20% hoặc lỗ → lãi thì 2 | LNST tăng | tăng 1, tăng ≥15% hoặc lỗ → lãi thì 2 | LNST tăng | tăng 1, tăng ≥20% hoặc lỗ → lãi thì 2 |
-| LNST tăng ≥10% so với cùng kỳ năm trước | 1 | LNST tăng ≥15% so với cùng kỳ | 1 | LNST tăng ≥10% so với cùng kỳ | 1 |
-| Biên LN gộp cải thiện | 1 | Thu nhập lãi thuần tăng | 1 | Biên LN hoạt động cải thiện | 1 |
-| Dòng tiền kinh doanh trong quý dương | 1 | Tổng tài sản tăng | 1 | ROE quý quy năm ≥12% | 1 |
-| LCTT kinh doanh ≥ LNST (lợi nhuận ra tiền thật) | 1 | ROE quý quy năm ≥15% | 1 | VCSH tăng | 1 |
-| Đòn bẩy Nợ vay/VCSH không tăng | 1 | VCSH tăng | 1 | Đòn bẩy Nợ vay/VCSH không tăng | 1 |
-| VCSH tăng | 1 | Đòn bẩy Nợ/VCSH không tăng | 1 | Tổng tài sản tăng | 1 |
+| DT thuần quý tăng so với cùng quý năm trước | tăng 1, ≥20% thì 2 | Tổng thu nhập HĐ quý tăng so cùng kỳ | tăng 1, ≥15% thì 2 | DT hoạt động quý tăng so cùng kỳ | tăng 1, ≥20% thì 2 |
+| LNST quý tăng so với cùng quý năm trước | tăng 1, ≥20% hoặc lỗ → lãi thì 2 | LNST quý tăng so cùng kỳ | tăng 1, ≥15% hoặc lỗ → lãi thì 2 | LNST quý tăng so cùng kỳ | tăng 1, ≥20% hoặc lỗ → lãi thì 2 |
+| LNST lũy kế từ đầu năm tăng so cùng kỳ | 1 | LNST lũy kế tăng so cùng kỳ | 1 | LNST lũy kế tăng so cùng kỳ | 1 |
+| Biên LN gộp cải thiện so cùng kỳ | 1 | Thu nhập lãi thuần tăng so cùng kỳ | 1 | Biên LN hoạt động cải thiện so cùng kỳ | 1 |
+| Dòng tiền kinh doanh lũy kế dương | 1 | Tổng tài sản tăng so đầu năm | 1 | ROE quy năm ≥12% | 1 |
+| LCTT kinh doanh lũy kế ≥ LNST lũy kế | 1 | ROE quy năm ≥15% | 1 | VCSH tăng so đầu năm | 1 |
+| Đòn bẩy Nợ vay/VCSH không tăng so đầu năm | 1 | VCSH tăng so đầu năm | 1 | Đòn bẩy không tăng so đầu năm | 1 |
+| VCSH tăng so đầu năm | 1 | Đòn bẩy Nợ/VCSH không tăng so đầu năm | 1 | Tổng tài sản tăng so đầu năm | 1 |
 
 - Xếp loại: **9–10 Rất tốt**, 7–8 Tốt, 4–6 Trung bình, 0–3 Yếu.
 - Thiếu số liệu thì tiêu chí đó được 0 điểm và thẻ ghi rõ số điểm bị thiếu dữ liệu.
-- **10/10** nghĩa là trong quý vừa công bố, công ty tăng cả doanh thu lẫn lợi nhuận mạnh, lãi hơn cùng kỳ, biên lợi nhuận tốt lên, lợi nhuận thu về bằng tiền, đòn bẩy không tăng và vốn chủ sở hữu tăng.
+- **10/10** nghĩa là so với cùng kỳ năm trước, công ty tăng mạnh cả doanh thu lẫn lợi nhuận (quý và lũy kế), biên lợi nhuận tốt lên, lợi nhuận thu về bằng tiền; so với đầu năm, đòn bẩy không tăng và vốn chủ sở hữu tăng.
 - Đây là điểm sức khỏe của **một quý BCTC**, chưa phải khuyến nghị đầu tư. Nên xem kèm định giá và xu hướng nhiều quý.
 - Muốn đổi ngưỡng hay trọng số thì sửa `cham_diem.py`.
 

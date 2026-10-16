@@ -38,12 +38,13 @@ from pydantic import BaseModel, Field
 
 import bctc
 import pdf2txt
+import tri_thuc
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 TXT = ROOT / "txt"
 OUT = ROOT / "ket_qua"
-PROMPT_VERSION = 2          # đổi prompt/schema -> tăng số để bỏ cache cũ
+PROMPT_VERSION = 3          # đổi prompt/schema -> tăng số để bỏ cache cũ (3: trường lũy kế, thong_tin, sổ bài học)
 UNIT = {"dong": 1e-9, "nghin_dong": 1e-6, "trieu_dong": 1e-3, "ty_dong": 1.0}   # -> tỷ đồng
 TOKENS_PER_PAGE = {"low": 280, "medium": 560, "high": 1120}
 
@@ -72,10 +73,32 @@ class BCTC(BaseModel):
     lctt_hddt: Optional[float] = Field(description="Lưu chuyển tiền thuần từ hoạt động đầu tư, lũy kế từ đầu năm")
     lctt_hdtc: Optional[float] = Field(description="Lưu chuyển tiền thuần từ hoạt động tài chính, lũy kế từ đầu năm")
     lctt_thuan: Optional[float] = Field(description="Lưu chuyển tiền thuần trong kỳ, lũy kế từ đầu năm")
+    # Kỳ so sánh có sẵn TRONG CÙNG 1 BCTC (không cần BCTC quý trước): KQKD cùng quý năm trước, CĐKT đầu năm,
+    # LCTT lũy kế cùng kỳ năm trước.
+    gia_von_cung_ky: Optional[float] = Field(None, description="Giá vốn / cộng chi phí hoạt động cùng quý năm trước")
+    lnst_cong_ty_me_cung_ky: Optional[float] = Field(None, description="LNST cổ đông công ty mẹ cùng quý năm trước")
+    tong_tai_san_dau_nam: Optional[float] = Field(None, description="Tổng tài sản cột SỐ ĐẦU NĂM (01/01) trên Bảng CĐKT")
+    no_phai_tra_dau_nam: Optional[float] = Field(None, description="Nợ phải trả cột số đầu năm")
+    vay_no_dau_nam: Optional[float] = Field(None, description="Nợ vay (vay + nợ thuê tài chính ngắn + dài hạn) cột số đầu năm")
+    von_chu_so_huu_dau_nam: Optional[float] = Field(None, description="Vốn chủ sở hữu cột số đầu năm")
+    lctt_hdkd_cung_ky: Optional[float] = Field(None, description="LCTT thuần từ HĐ kinh doanh, lũy kế cùng kỳ NĂM TRƯỚC")
+    lctt_hddt_cung_ky: Optional[float] = Field(None, description="LCTT thuần từ HĐ đầu tư, lũy kế cùng kỳ năm trước")
+    lctt_hdtc_cung_ky: Optional[float] = Field(None, description="LCTT thuần từ HĐ tài chính, lũy kế cùng kỳ năm trước")
+    lctt_thuan_cung_ky: Optional[float] = Field(None, description="LCTT thuần trong kỳ, lũy kế cùng kỳ năm trước")
+    # Cột LŨY KẾ từ đầu năm của KQKD (quý 2-4): so sánh lũy kế năm nay với lũy kế cùng kỳ năm trước.
+    doanh_thu_thuan_luy_ke: Optional[float] = Field(None, description="Doanh thu thuần LŨY KẾ từ đầu năm, năm nay")
+    doanh_thu_thuan_cung_ky_luy_ke: Optional[float] = Field(None, description="Doanh thu thuần lũy kế cùng kỳ năm trước")
+    gia_von_luy_ke: Optional[float] = Field(None)
+    loi_nhuan_gop_luy_ke: Optional[float] = Field(None)
+    loi_nhuan_gop_cung_ky_luy_ke: Optional[float] = Field(None)
+    lnst_luy_ke: Optional[float] = Field(None)
+    lnst_cung_ky_luy_ke: Optional[float] = Field(None)
+    lnst_cong_ty_me_luy_ke: Optional[float] = Field(None)
     trang_cdkt: Optional[int] = Field(description="Trang (trong file đính kèm, bắt đầu từ 1) có Bảng cân đối kế toán")
     trang_kqkd: Optional[int]
     trang_lctt: Optional[int]
-    ghi_chu: str = Field(description="Ghi chú ngắn nếu có điểm bất thường; để trống nếu không")
+    ghi_chu: str = Field(description="CHỈ ghi điểm bất thường cần người kiểm tra (báo cáo tự lệch, sai kỳ, thiếu trang); để trống nếu không")
+    thong_tin: str = Field("", description="Giải thích cách lấy số (VD tự cộng tổng thu nhập hoạt động, dùng số trình bày lại); không phải cảnh báo")
 
 
 SYSTEM = """Bạn là chuyên viên phân tích BCTC Việt Nam (chuẩn mực VAS). Nhiệm vụ: đọc 3 báo cáo chính trong file
@@ -84,11 +107,14 @@ SYSTEM = """Bạn là chuyên viên phân tích BCTC Việt Nam (chuẩn mực V
 Quy tắc bắt buộc:
 1. Chép số ĐÚNG như in trên báo cáo, đúng đơn vị của báo cáo (ghi vào don_vi); KHÔNG tự đổi đơn vị, KHÔNG làm tròn.
    Số trong ngoặc (1.234) là số âm -1234. Dấu chấm/phẩy là phân cách hàng nghìn kiểu Việt Nam.
-2. Báo cáo kết quả kinh doanh: lấy cột "Quý này năm nay" (3 tháng của riêng quý báo cáo), KHÔNG lấy cột lũy kế
-   (riêng quý 1 thì quý = lũy kế 3 tháng). Trường *_cung_ky lấy cột "Quý này năm trước".
-3. Bảng cân đối kế toán: lấy cột số CUỐI KỲ (ngày cuối quý báo cáo), KHÔNG lấy cột số đầu năm.
-4. Lưu chuyển tiền tệ: lấy cột lũy kế từ đầu năm đến cuối quý của NĂM NAY; ghi số tháng lũy kế.
-5. Ánh xạ chỉ tiêu theo loại hình:
+2. Báo cáo kết quả kinh doanh: các trường quý lấy cột "Quý này năm nay" (3 tháng của riêng quý báo cáo), *_cung_ky lấy
+   cột "Quý này năm trước" (riêng quý 1 thì quý = lũy kế 3 tháng). Quý 2-4 có cột lũy kế từ đầu năm: điền thêm
+   *_luy_ke (năm nay) và *_cung_ky_luy_ke (năm trước).
+3. Bảng cân đối kế toán: trường chính lấy cột số CUỐI KỲ (ngày cuối quý báo cáo); các trường *_dau_nam lấy cột SỐ ĐẦU NĂM.
+4. Lưu chuyển tiền tệ: trường chính lấy cột lũy kế từ đầu năm đến cuối quý của NĂM NAY; các trường lctt_*_cung_ky lấy
+   cột lũy kế cùng kỳ NĂM TRƯỚC; ghi số tháng lũy kế.
+5. Ánh xạ chỉ tiêu theo loại hình. Từ 2026 BCTC theo mẫu mới (Thông tư 99/2025) nên MÃ SỐ có thể khác mẫu cũ:
+   nhận diện theo TÊN dòng, mã số dưới đây chỉ để tham khảo (mẫu Thông tư 200).
    - doanh_nghiep: doanh_thu_thuan = "Doanh thu thuần về bán hàng và cung cấp dịch vụ" (mã số 10); gia_von = mã 11;
      loi_nhuan_gop = mã 20; lnst = mã 60; lnst_cong_ty_me = mã 61; tong_tai_san = mã 270;
      no_phai_tra = mã 300; vay_no = mã 320 + mã 338 (vay và nợ thuê tài chính ngắn hạn + dài hạn);
@@ -104,6 +130,11 @@ Quy tắc bắt buộc:
 6. Không thấy chỉ tiêu thì để null, KHÔNG đoán. Có văn bản OCR kèm theo: dùng để đọc chữ số; nếu khác ảnh thì nhìn kỹ ảnh."""
 
 
+def system_prompt() -> str:
+    """Prompt gốc + quy tắc rút ra từ các lần sai trước (tri_thuc/bai_hoc.json) - sửa sổ là lần sau áp dụng ngay."""
+    return SYSTEM + tri_thuc.quy_tac_text()
+
+
 # ------------------------------------------------------------------ chọn BCTC
 def quarter_key(rec) -> tuple[int, int]:
     return int(rec["year"]), int(rec["period"][1])
@@ -115,8 +146,8 @@ def prev_q(key: tuple[int, int]) -> tuple[int, int]:
 
 
 def pick_reports(tickers: list[str]) -> dict[str, dict[tuple[int, int], dict]]:
-    """Mỗi mã: quý mới nhất + quý trước (+ quý trước nữa nếu cần tính LCTT trong quý), ưu tiên hợp nhất;
-    công ty không có công ty con thì BCTC chung."""
+    """Mỗi mã: CHỈ 1 BCTC - quý mới nhất (hợp nhất, công ty không có công ty con thì BCTC chung).
+    Một BCTC quý đã chứa sẵn kỳ so sánh: KQKD cùng quý năm trước, CĐKT đầu năm, LCTT lũy kế cùng kỳ năm trước."""
     manifest = json.loads((DATA / "manifest.json").read_text(encoding="utf-8"))
     rank = {"HN": 2, "CHUNG": 1}
     by: dict[str, dict] = defaultdict(dict)
@@ -126,18 +157,12 @@ def pick_reports(tickers: list[str]) -> dict[str, dict[tuple[int, int], dict]]:
             continue
         k = quarter_key(rec)
         cur = by[rec["ticker"]].get(k)
-        # ưu tiên: hợp nhất > chung; file tải từ web công ty (nguồn gốc, mới nhất) > CafeF
-        if cur is None or (rank[rec["scope"]], rec["source"].startswith("official"), rec["size"]) > \
-                (rank[cur["scope"]], cur["source"].startswith("official"), cur["size"]):
+        # ưu tiên: hợp nhất > chung; bản quý thường (có cột riêng quý) > bản ghi "soát xét" (VPL: thực chất bán niên,
+        # chỉ có cột 6 tháng - bài học R11); web công ty (nguồn gốc, mới nhất) > CafeF
+        key = lambda x: (rank[x["scope"]], not x.get("audit"), x["source"].startswith("official"), x["size"])  # noqa: E731
+        if cur is None or key(rec) > key(cur):
             by[rec["ticker"]][k] = rec
-    out = {}
-    for t, v in by.items():
-        cur = max(v)
-        need = {cur, prev_q(cur)}
-        if prev_q(cur)[1] > 1:            # LCTT quý trước = lũy kế quý trước - lũy kế quý trước nữa
-            need.add(prev_q(prev_q(cur)))
-        out[t] = {k: v[k] for k in sorted(need) if k in v}
-    return out
+    return {t: {max(v): v[max(v)]} for t, v in by.items()}
 
 
 # ------------------------------------------------------------------ tìm trang báo cáo
@@ -233,7 +258,7 @@ async def ask_gemini(client, args, limiter: Limiter, sem: asyncio.Semaphore, pdf
     use_thinking = True
     for attempt in range(6):
         cfg = types.GenerateContentConfig(
-            system_instruction=SYSTEM, temperature=0, response_mime_type="application/json",
+            system_instruction=system_prompt(), temperature=0, response_mime_type="application/json",
             response_schema=BCTC, media_resolution=res,
             automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
             thinking_config=types.ThinkingConfig(thinking_level=args.thinking.upper()) if use_thinking else None)
@@ -271,6 +296,20 @@ async def ask_gemini(client, args, limiter: Limiter, sem: asyncio.Semaphore, pdf
 
 
 # ------------------------------------------------------------------ xử lý 1 BCTC
+def prompt_version() -> str:
+    """Phiên bản prompt = schema + sổ bài học: thêm quy tắc mới thì BCTC đã trích được hỏi lại theo quy tắc mới."""
+    return f"{PROMPT_VERSION}.{tri_thuc.phien_ban()}"
+
+
+def report_prompt(ticker: str, key: tuple[int, int], rec: dict, n_pages: int) -> str:
+    """Lời dặn cho 1 BCTC + lưu ý riêng của mã từ sổ bài học."""
+    hn = "hợp nhất" if rec["scope"] == "HN" else "riêng/chung"
+    notes = tri_thuc.luu_y_ma(ticker)
+    return (f"Mã {ticker}, BCTC {hn} quý {key[1]} năm {key[0]} (Q{key[1]}/{key[0]}). File đính kèm gồm {n_pages} trang "
+            f"trích từ báo cáo gốc. Trích xuất theo schema, gồm cả các cột so sánh (cùng kỳ năm trước, số đầu năm)."
+            + ("\nLưu ý riêng của mã này (từ các lần trích trước):\n" + "\n".join(f"- {x}" for x in notes) if notes else ""))
+
+
 async def select_pages(ctx, pdf: Path) -> tuple[list[int], dict[int, str]]:
     """Pha 1: chỉ quét vùng tiêu đề của n trang đầu (~0,1 s/trang) để biết 3 báo cáo nằm ở trang nào."""
     args = ctx["args"]
@@ -328,7 +367,7 @@ async def process_report(ticker: str, key: tuple[int, int], rec: dict, ctx: dict
     cache = OUT / "json" / f"{ticker}_{key[0]}_Q{key[1]}.json"
     if cache.exists() and not args.force:
         c = json.loads(cache.read_text(encoding="utf-8"))
-        if c.get("sha256") == rec["sha256"] and c.get("prompt_version") == PROMPT_VERSION and c.get("model") == args.model:
+        if c.get("sha256") == rec["sha256"] and c.get("prompt_version") == prompt_version() and c.get("model") == args.model:
             return c
     # Chỉ vài BCTC tiền xử lý cùng lúc: BCTC đầu xong sau vài giây và gửi Gemini ngay, trong khi CPU
     # xử lý tiếp BCTC sau (nếu cho cả 60 BCTC xếp hàng OCR cùng lúc, Gemini phải chờ tới khi gần xong hết).
@@ -341,8 +380,7 @@ async def process_report(ticker: str, key: tuple[int, int], rec: dict, ctx: dict
             full = await ocr_pages(ctx, pdf, scanned, {p: pdf2txt.rot_of(methods[p]) for p in scanned})
             ocr_txt = "\n\n".join(f"=== Trang {i} của file đính kèm ===\n{full[p][1]}"
                                   for i, p in enumerate(sel, 1) if p in scanned and p in full)
-    prompt = (f"Mã {ticker}, BCTC {'hợp nhất' if rec['scope'] == 'HN' else ''} quý {key[1]} năm {key[0]} ({ky}). "
-              f"File đính kèm gồm {len(sel)} trang trích từ báo cáo gốc. Trích xuất theo schema.")
+    prompt = report_prompt(ticker, key, rec, len(sel))
     if ocr_txt:
         prompt += "\n\nVăn bản OCR của các trang scan (có thể sai dấu tiếng Việt):\n" + ocr_txt
     est = len(sel) * TOKENS_PER_PAGE[args.media_resolution] + len(prompt) // 3 + 2500
@@ -356,7 +394,7 @@ async def process_report(ticker: str, key: tuple[int, int], rec: dict, ctx: dict
         return {**base, "data": None}
     t0 = time.perf_counter()
     data, usage = await ask_gemini(ctx["client"], args, ctx["limiter"], ctx["sem"], pdf_bytes, prompt, est)
-    result = {**base, "prompt_version": PROMPT_VERSION, "model": args.model, "usage": usage,
+    result = {**base, "prompt_version": prompt_version(), "model": args.model, "usage": usage,
               "extracted_at": datetime.now().isoformat(timespec="seconds"), "data": data.model_dump()}
     cache.parent.mkdir(parents=True, exist_ok=True)
     cache.write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -365,96 +403,130 @@ async def process_report(ticker: str, key: tuple[int, int], rec: dict, ctx: dict
 
 
 # ------------------------------------------------------------------ chuẩn hoá + kiểm tra
-FIELDS = ["doanh_thu_thuan", "doanh_thu_thuan_cung_ky", "gia_von", "loi_nhuan_gop", "loi_nhuan_gop_cung_ky",
-          "lnst", "lnst_cung_ky", "lnst_cong_ty_me", "tong_tai_san", "no_phai_tra", "vay_no", "von_chu_so_huu",
-          "lctt_hdkd", "lctt_hddt", "lctt_hdtc", "lctt_thuan"]
+# Trường lấy từ 1 BCTC quý. Kỳ so sánh nằm ngay trong báo cáo: KQKD *_cung_ky (cùng quý năm trước),
+# CĐKT *_dau_nam (số đầu năm), LCTT *_cung_ky (lũy kế cùng kỳ năm trước), KQKD lũy kế *_luy_ke / *_cung_ky_luy_ke.
+LUY_KE = ["doanh_thu_thuan", "doanh_thu_thuan_cung_ky", "gia_von", "loi_nhuan_gop", "loi_nhuan_gop_cung_ky",
+          "lnst", "lnst_cung_ky", "lnst_cong_ty_me"]
+BS = ["tong_tai_san", "no_phai_tra", "vay_no", "von_chu_so_huu"]
+CF = ["lctt_hdkd", "lctt_hddt", "lctt_hdtc", "lctt_thuan"]
+FIELDS = (["doanh_thu_thuan", "doanh_thu_thuan_cung_ky", "gia_von", "gia_von_cung_ky", "loi_nhuan_gop",
+           "loi_nhuan_gop_cung_ky", "lnst", "lnst_cung_ky", "lnst_cong_ty_me", "lnst_cong_ty_me_cung_ky"]
+          + BS + [f + "_dau_nam" for f in BS] + CF + [f + "_cung_ky" for f in CF] + [f + "_luy_ke" for f in LUY_KE])
+CF_TEN = {"lctt_hdkd": "LCTT kinh doanh", "lctt_hddt": "LCTT đầu tư", "lctt_hdtc": "LCTT tài chính"}
 
 
 def normalize(r: dict) -> dict:
-    """Đổi sang tỷ đồng, tự tính LNG cho công ty chứng khoán, gắn cảnh báo kiểm tra chéo."""
+    """Đổi sang tỷ đồng, tự tính LNG cho công ty chứng khoán, tự sửa các lỗi đã gặp (sổ bài học), gắn cảnh báo kiểm tra chéo.
+    warn = bất thường cần người xem; info = giải thích cách lấy số (không tính là cảnh báo)."""
     d = r["data"]
     f = UNIT.get(d["don_vi"], 1e-9)
     v = {k: (d[k] * f if d.get(k) is not None else None) for k in FIELDS}
-    if v["loi_nhuan_gop"] is None and v["doanh_thu_thuan"] is not None and v["gia_von"] is not None:
-        v["loi_nhuan_gop"] = v["doanh_thu_thuan"] - abs(v["gia_von"])
+    q = int(r["ky"][1])
+    if q == 1:            # quý 1: lũy kế = quý
+        for k in LUY_KE:
+            if v[k + "_luy_ke"] is None:
+                v[k + "_luy_ke"] = v[k]
+    info = [d["thong_tin"]] if d.get("thong_tin") else []
+    for sx in ("", "_cung_ky", "_luy_ke", "_cung_ky_luy_ke"):          # chứng khoán: LN hoạt động = DT − chi phí
+        g, dt, gv = "loi_nhuan_gop" + sx, "doanh_thu_thuan" + sx, "gia_von" + sx
+        if v.get(g) is None and v.get(dt) is not None and v.get(gv) is not None:
+            v[g] = v[dt] - abs(v[gv])
+    # R6: báo cáo không tách LNST cổ đông mẹ (không có cổ đông không kiểm soát / báo cáo riêng) -> bằng LNST
+    filled = False
+    for a, b in (("lnst_cong_ty_me", "lnst"), ("lnst_cong_ty_me_cung_ky", "lnst_cung_ky"),
+                 ("lnst_cong_ty_me_luy_ke", "lnst_luy_ke")):
+        if v[a] is None and v[b] is not None:
+            v[a], filled = v[b], True
+    if filled:
+        info.append("Báo cáo không tách LNST cổ đông công ty mẹ: lấy bằng LNST")
+    # R5: đúng 1 dòng LCTT trống mà 2 dòng kia đã cộng ra LCTT thuần -> dòng đó in "-" = 0
+    for sx in ("", "_cung_ky"):
+        miss = [k for k in CF_TEN if v[k + sx] is None]
+        if len(miss) == 1 and v["lctt_thuan" + sx] is not None:
+            rest = sum(v[k + sx] for k in CF_TEN if k != miss[0])
+            if abs(rest - v["lctt_thuan" + sx]) <= max(1.0, 0.005 * abs(v["lctt_thuan" + sx])):
+                v[miss[0] + sx] = 0.0
+                info.append(CF_TEN[miss[0]] + (" năm trước" if sx else "") + " không có số trên báo cáo: tính là 0")
     warn = []
-    ts, no, vc = v["tong_tai_san"], v["no_phai_tra"], v["von_chu_so_huu"]
+    ts = v["tong_tai_san"]
     if ts is not None and not 100 <= abs(ts) <= 5_000_000:      # VN30: tổng tài sản ~10^3 - 3.10^6 tỷ
         warn.append(f"Tổng tài sản {ts:,.1f} tỷ bất thường - nghi sai đơn vị ({d['don_vi']})")
-    if None not in (ts, no, vc) and ts and abs(ts - no - vc) / abs(ts) > 0.002:
-        warn.append(f"TS lệch Nợ+VCSH {abs(ts - no - vc):,.1f} tỷ")
-    parts = [v["lctt_hdkd"], v["lctt_hddt"], v["lctt_hdtc"]]
-    if None not in parts and v["lctt_thuan"] is not None:
-        diff = abs(sum(parts) - v["lctt_thuan"])
-        if diff > max(1.0, 0.005 * max(abs(x) for x in parts + [v["lctt_thuan"]])):
-            warn.append(f"LCTT thuần lệch tổng 3 hoạt động {diff:,.1f} tỷ")
-    q = int(r["ky"][1])
+    for sx, ten in (("", ""), ("_dau_nam", " đầu năm")):
+        ts, no, vc = v["tong_tai_san" + sx], v["no_phai_tra" + sx], v["von_chu_so_huu" + sx]
+        if None not in (ts, no, vc) and ts and abs(ts - no - vc) / abs(ts) > 0.002:
+            warn.append(f"TS{ten} lệch Nợ+VCSH {abs(ts - no - vc):,.1f} tỷ")
+    for sx, ten in (("", ""), ("_cung_ky", " năm trước")):
+        parts = [v[k + sx] for k in CF_TEN]
+        if None not in parts and v["lctt_thuan" + sx] is not None:
+            diff = abs(sum(parts) - v["lctt_thuan" + sx])
+            if diff > max(1.0, 0.005 * max(abs(x) for x in parts + [v["lctt_thuan" + sx]])):
+                warn.append(f"LCTT thuần{ten} lệch tổng 3 hoạt động {diff:,.1f} tỷ")
     if d.get("so_thang_luy_ke") and d["so_thang_luy_ke"] != 3 * q:
         warn.append(f"LCTT lũy kế {d['so_thang_luy_ke']} tháng (cần {3 * q})")
     if d.get("ky_bao_cao") and d["ky_bao_cao"].replace(" ", "") != r["ky"]:
-        warn.append(f"Gemini đọc kỳ {d['ky_bao_cao']}")
+        warn.append(f"AI đọc kỳ {d['ky_bao_cao']}")
     if d.get("ghi_chu"):
         warn.append(d["ghi_chu"])
-    return {"v": v, "warn": warn, "loai_hinh": d["loai_hinh"], "don_vi": d["don_vi"]}
+    return {"v": v, "warn": warn, "info": info, "loai_hinh": d["loai_hinh"], "don_vi": d["don_vi"]}
 
 
-ROWS = [  # (nhãn, trường, kiểu): q = số trong quý; bs = số cuối quý; cf = lưu chuyển tiền trong quý
-    ("Doanh thu thuần", "doanh_thu_thuan", "q"),
-    ("Lợi nhuận gộp", "loi_nhuan_gop", "q"),
-    ("LNST", "lnst", "q"),
-    ("LNST cổ đông công ty mẹ", "lnst_cong_ty_me", "q"),
-    ("Tổng tài sản (cuối quý)", "tong_tai_san", "bs"),
-    ("Nợ phải trả (cuối quý)", "no_phai_tra", "bs"),
-    ("Nợ vay (cuối quý)", "vay_no", "bs"),
-    ("Vốn chủ sở hữu (cuối quý)", "von_chu_so_huu", "bs"),
-    ("LCTT từ HĐ kinh doanh (trong quý)", "lctt_hdkd", "cf"),
-    ("LCTT từ HĐ đầu tư (trong quý)", "lctt_hddt", "cf"),
-    ("LCTT từ HĐ tài chính (trong quý)", "lctt_hdtc", "cf"),
-    ("LCTT thuần (trong quý)", "lctt_thuan", "cf"),
+def ky_so_sanh(key: tuple[int, int]) -> dict[str, tuple[str, str]]:
+    """Nhãn kỳ: q = quý (so cùng quý năm trước), bs = cuối quý (so đầu năm), cf/lk = lũy kế (so cùng kỳ năm trước)."""
+    y, q = key
+    lk = f"{3 * q}T" if q > 1 else "Q1"
+    return {"q": (f"Q{q}/{y}", f"Q{q}/{y - 1}"), "bs": (f"cuối Q{q}/{y}", f"đầu năm {y}"),
+            "cf": (f"{lk}/{y}", f"{lk}/{y - 1}"), "lk": (f"{lk}/{y}", f"{lk}/{y - 1}")}
+
+
+ROWS = [  # (nhãn, trường năm nay, trường kỳ so sánh, kiểu kỳ)
+    ("Doanh thu thuần", "doanh_thu_thuan", "doanh_thu_thuan_cung_ky", "q"),
+    ("Lợi nhuận gộp", "loi_nhuan_gop", "loi_nhuan_gop_cung_ky", "q"),
+    ("LNST", "lnst", "lnst_cung_ky", "q"),
+    ("LNST cổ đông công ty mẹ", "lnst_cong_ty_me", "lnst_cong_ty_me_cung_ky", "q"),
+    ("Doanh thu thuần lũy kế", "doanh_thu_thuan_luy_ke", "doanh_thu_thuan_cung_ky_luy_ke", "lk"),
+    ("LNST lũy kế", "lnst_luy_ke", "lnst_cung_ky_luy_ke", "lk"),
+    ("Tổng tài sản", "tong_tai_san", "tong_tai_san_dau_nam", "bs"),
+    ("Nợ phải trả", "no_phai_tra", "no_phai_tra_dau_nam", "bs"),
+    ("Nợ vay", "vay_no", "vay_no_dau_nam", "bs"),
+    ("Vốn chủ sở hữu", "von_chu_so_huu", "von_chu_so_huu_dau_nam", "bs"),
+    ("LCTT từ HĐ kinh doanh (lũy kế)", "lctt_hdkd", "lctt_hdkd_cung_ky", "cf"),
+    ("LCTT từ HĐ đầu tư (lũy kế)", "lctt_hddt", "lctt_hddt_cung_ky", "cf"),
+    ("LCTT từ HĐ tài chính (lũy kế)", "lctt_hdtc", "lctt_hdtc_cung_ky", "cf"),
+    ("LCTT thuần (lũy kế)", "lctt_thuan", "lctt_thuan_cung_ky", "cf"),
 ]
 
 
-def value(norm: dict, key: tuple[int, int], field: str, kind: str):
-    """Giá trị của quý `key`. LCTT trên BCTC là lũy kế -> quý = lũy kế quý này - lũy kế quý trước (cùng năm)."""
-    r = norm.get(key)
-    if r is None:
-        return None
-    x = r["v"][field]
-    if kind != "cf" or x is None or key[1] == 1:
-        return x
-    p = norm.get((key[0], key[1] - 1))
-    return x - p["v"][field] if p and p["v"][field] is not None else None
+def latest(results_tk: dict) -> tuple[tuple[int, int], dict] | None:
+    """BCTC mới nhất của 1 mã (cache có thể còn các quý cũ)."""
+    ks = [k for k, r in results_tk.items() if r.get("data")]
+    return (max(ks), results_tk[max(ks)]) if ks else None
 
 
 def compare(results: dict[str, dict[tuple[int, int], dict]]) -> tuple[list[list], list[list]]:
+    """Mỗi mã 1 BCTC: năm nay so với kỳ so sánh trong chính báo cáo đó."""
     long_rows, raw_rows = [], []
     for tk in sorted(results):
-        norm = {k: normalize(r) for k, r in results[tk].items() if r.get("data")}
-        for k, n in sorted(norm.items()):
-            r = results[tk][k]
-            raw_rows.append([tk, r["ky"], n["loai_hinh"], n["don_vi"]] + [n["v"][f] for f in FIELDS]
-                            + ["; ".join(n["warn"]), r["file"], ",".join(map(str, r["pages_sent"]))])
-        if not norm:
+        lt = latest(results[tk])
+        if not lt:
             continue
-        cur = max(norm)
-        prv = prev_q(cur)
-        for label, field, kind in ROWS:
-            a, b = value(norm, cur, field, kind), value(norm, prv, field, kind)
+        key, r = lt
+        n = normalize(r)
+        raw_rows.append([tk, r["ky"], n["loai_hinh"], n["don_vi"]] + [n["v"][f] for f in FIELDS]
+                        + ["; ".join(n["warn"]), "; ".join(n["info"]), r["file"], ",".join(map(str, r["pages_sent"]))])
+        lab = ky_so_sanh(key)
+        for label, f_now, f_cmp, kind in ROWS:
+            a, b = n["v"][f_now], n["v"][f_cmp]
             if a is None and b is None:
                 continue
             delta = a - b if None not in (a, b) else None
             pct = delta / abs(b) if delta is not None and b else None
-            warn = "; ".join(norm[cur]["warn"]
-                             + ([f"quý trước: {w}" for w in norm[prv]["warn"]] if prv in norm
-                                else ["thiếu BCTC quý trước"]))
-            long_rows.append([tk, norm[cur]["loai_hinh"], label, f"Q{cur[1]}/{cur[0]}", f"Q{prv[1]}/{prv[0]}",
-                              a, b, delta, pct, warn])
+            long_rows.append([tk, n["loai_hinh"], label, lab[kind][0], lab[kind][1], a, b, delta, pct, "; ".join(n["warn"])])
     return long_rows, raw_rows
 
 
-LONG_HEAD = ["Mã", "Loại hình", "Chỉ tiêu", "Quý này", "Quý trước", "Giá trị quý này (tỷ đ)",
-             "Giá trị quý trước (tỷ đ)", "Chênh lệch (tỷ đ)", "% thay đổi", "Cảnh báo kiểm tra"]
-RAW_HEAD = ["Mã", "Kỳ", "Loại hình", "Đơn vị gốc"] + [f"{f} (tỷ đ)" for f in FIELDS] + ["Cảnh báo", "File", "Trang gửi"]
+LONG_HEAD = ["Mã", "Loại hình", "Chỉ tiêu", "Kỳ này", "Kỳ so sánh", "Giá trị kỳ này (tỷ đ)",
+             "Giá trị kỳ so sánh (tỷ đ)", "Chênh lệch (tỷ đ)", "% thay đổi", "Cảnh báo kiểm tra"]
+RAW_HEAD = ["Mã", "Kỳ", "Loại hình", "Đơn vị gốc"] + [f"{f} (tỷ đ)" for f in FIELDS] + ["Cảnh báo", "Thông tin", "File", "Trang gửi"]
 
 
 def write_outputs(long_rows, raw_rows, score: tuple | None = None):
@@ -548,6 +620,9 @@ async def run(args, tickers: list[str]) -> int:
         print(f"\nDry-run xong trong {time.perf_counter() - t0:.0f}s. PDF nhỏ sẽ gửi Gemini: {OUT / 'debug'}")
         return 0
     import dashboard
+    if args.doi_chieu:              # tự đối chiếu Vietcap: chỗ lệch > 1% vào sổ bài học để lần sau tránh
+        import doi_chieu
+        doi_chieu.run(results)
     long_rows, raw_rows = compare(results)
     path = write_outputs(long_rows, raw_rows, dashboard.score_rows(dashboard.build_cards(results)))
     dash = dashboard.build(results)
@@ -576,6 +651,8 @@ def main(argv=None) -> int:
     ap.add_argument("--no-download", action="store_true", help="Không gọi bctc.py tải BCTC thiếu")
     ap.add_argument("--dry-run", action="store_true", help="Không gọi Gemini: chỉ tải, OCR, chọn trang")
     ap.add_argument("--force", action="store_true", help="Bỏ cache, hỏi Gemini lại")
+    ap.add_argument("--khong-doi-chieu", dest="doi_chieu", action="store_false",
+                    help="Bỏ bước tự đối chiếu với Vietcap IQ sau khi trích")
     ap.add_argument("--tong-hop", action="store_true",
                     help="Không tải, không gọi AI: chỉ so sánh + chấm điểm + dựng web từ ket_qua/json (VD số do claude_trich.py ghi)")
     args = ap.parse_args(argv)
@@ -584,6 +661,9 @@ def main(argv=None) -> int:
     if args.tong_hop:
         import dashboard
         results = dashboard.load_results()
+        if args.doi_chieu:
+            import doi_chieu
+            doi_chieu.run(results)
         long_rows, raw_rows = compare(results)
         path = write_outputs(long_rows, raw_rows, dashboard.score_rows(dashboard.build_cards(results)))
         print(f"{len(results)} mã | {len(long_rows)} dòng so sánh -> {path}\nDashboard: {dashboard.build(results)}")
@@ -597,7 +677,7 @@ def main(argv=None) -> int:
         return 2
     if not args.no_download:      # đảm bảo có 3 BCTC quý gần nhất (tải tăng dần, file đã có thì bỏ qua)
         print("== Kiểm tra / tải BCTC quý ==")
-        bctc.main(["--tickers", ",".join(tickers), "--periods", "Q1,Q2,Q3,Q4", "--latest", "3",
+        bctc.main(["--tickers", ",".join(tickers), "--periods", "Q1,Q2,Q3,Q4", "--latest", "1",
                    "--scope", "HN", "--source", "ir-first"])
         print()
     try:

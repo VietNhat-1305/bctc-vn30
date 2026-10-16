@@ -13,9 +13,9 @@
   11,
   12
  ],
- "prompt_version": 2,
+ "prompt_version": "3.2",
  "model": "claude-opus-5-5",
- "extracted_at": "2026-10-16T16:03:18",
+ "extracted_at": "2026-10-16T19:29:15",
  "data": {
   "ma_ck": "GVR",
   "ky_bao_cao": "Q2/2026",
@@ -38,9 +38,28 @@
   "lctt_hddt": -4703647420275.0,
   "lctt_hdtc": -409362477440.0,
   "lctt_thuan": 38605564362.0,
+  "gia_von_cung_ky": 4390193562999.0,
+  "lnst_cong_ty_me_cung_ky": 1403971688666.0,
+  "tong_tai_san_dau_nam": 86340573729767.0,
+  "no_phai_tra_dau_nam": 24186867217471.0,
+  "vay_no_dau_nam": 2972916618455.0,
+  "von_chu_so_huu_dau_nam": 62153706512296.0,
+  "lctt_hdkd_cung_ky": 681096644949.0,
+  "lctt_hddt_cung_ky": 1316997629990.0,
+  "lctt_hdtc_cung_ky": -2469445310442.0,
+  "lctt_thuan_cung_ky": -471351035503.0,
+  "doanh_thu_thuan_luy_ke": 15942517606912.0,
+  "doanh_thu_thuan_cung_ky_luy_ke": 11566969346250.0,
+  "gia_von_luy_ke": 11439111575025.0,
+  "loi_nhuan_gop_luy_ke": 4503406031887.0,
+  "loi_nhuan_gop_cung_ky_luy_ke": 3445050684105.0,
+  "lnst_luy_ke": 5069755445435.0,
+  "lnst_cung_ky_luy_ke": 2934606128881.0,
+  "lnst_cong_ty_me_luy_ke": 4539496367794.0,
   "trang_cdkt": 1,
   "trang_kqkd": 5,
   "trang_lctt": 6,
-  "ghi_chu": ""
+  "ghi_chu": "",
+  "thong_tin": "BCTC hợp nhất giữa niên độ Q2/2026 (VND), đọc từ ảnh trang. KQKD trang 5: cột Quý II 2026/2025 và lũy kế 6 tháng 2026/2025. CĐKT trang 1-4: cột 30/06/2026 và 01/01/2026; vay nợ = vay và nợ thuê tài chính ngắn hạn (321) + dài hạn (339): cuối kỳ 1.184.649.714.257 + 1.414.314.744.661, đầu năm 1.446.793.217.535 + 1.526.123.400.920. LCTT trang 6-7: 6 tháng 2026 và 6 tháng 2025. Kiểm tra: Q1 + Q2 = lũy kế (DT, giá vốn, LNG, LNST, LNST mẹ) khớp; DT − GV = LNG và LNTT − thuế = LNST khớp cả 4 cột; TS ngắn + dài hạn = tổng và nợ ngắn + dài hạn = NPT khớp cột đầu năm."
  }
 }

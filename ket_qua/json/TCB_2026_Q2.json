@@ -12,9 +12,9 @@
   9,
   10
  ],
- "prompt_version": 2,
+ "prompt_version": "3.2",
  "model": "claude-opus-5-5",
- "extracted_at": "2026-10-16T16:06:19",
+ "extracted_at": "2026-10-16T19:29:53",
  "data": {
   "ma_ck": "TCB",
   "ky_bao_cao": "Q2/2026",
@@ -37,9 +37,28 @@
   "lctt_hddt": 57197.0,
   "lctt_hdtc": -5048942.0,
   "lctt_thuan": -21579919.0,
+  "gia_von_cung_ky": null,
+  "lnst_cong_ty_me_cung_ky": 6247364.0,
+  "tong_tai_san_dau_nam": 1192344137.0,
+  "no_phai_tra_dau_nam": 1012842695.0,
+  "vay_no_dau_nam": null,
+  "von_chu_so_huu_dau_nam": 179501442.0,
+  "lctt_hdkd_cung_ky": -18786488.0,
+  "lctt_hddt_cung_ky": -286252.0,
+  "lctt_hdtc_cung_ky": 1376714.0,
+  "lctt_thuan_cung_ky": -17696026.0,
+  "doanh_thu_thuan_luy_ke": 28616055.0,
+  "doanh_thu_thuan_cung_ky_luy_ke": 24354229.0,
+  "gia_von_luy_ke": null,
+  "loi_nhuan_gop_luy_ke": 20285055.0,
+  "loi_nhuan_gop_cung_ky_luy_ke": 17442469.0,
+  "lnst_luy_ke": 14676922.0,
+  "lnst_cung_ky_luy_ke": 12361121.0,
+  "lnst_cong_ty_me_luy_ke": 14021140.0,
   "trang_cdkt": 1,
   "trang_kqkd": 4,
   "trang_lctt": 5,
-  "ghi_chu": ""
+  "ghi_chu": "",
+  "thong_tin": "Đọc từ ảnh trang (khớp lớp chữ gốc). KQKD in sẵn dòng 'Tổng thu nhập hoạt động' (= tổng các mục thu nhập thuần, đã cộng kiểm 4 cột); lợi nhuận gộp = Thu nhập lãi thuần. LNST cổ đông mẹ = 'Lợi nhuận thuần của cổ đông của Ngân hàng'. CĐKT cột đầu năm = 31/12/2025. VCSH = 'Tổng vốn chủ sở hữu' (gồm lợi ích cổ đông không kiểm soát). Quý + lũy kế Q1 khớp cột lũy kế cả 2 năm."
  }
 }

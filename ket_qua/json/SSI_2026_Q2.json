@@ -22,9 +22,9 @@
   18,
   19
  ],
- "prompt_version": 2,
+ "prompt_version": "3.2",
  "model": "claude-opus-5-5",
- "extracted_at": "2026-10-16T16:03:21",
+ "extracted_at": "2026-10-16T19:30:40",
  "data": {
   "ma_ck": "SSI",
   "ky_bao_cao": "Q2/2026",
@@ -47,9 +47,28 @@
   "lctt_hddt": 537029302913.0,
   "lctt_hdtc": 198605532303.0,
   "lctt_thuan": -3114971140252.0,
+  "gia_von_cung_ky": 1116846846217.0,
+  "lnst_cong_ty_me_cung_ky": 969506698143.0,
+  "tong_tai_san_dau_nam": 94049979396183.0,
+  "no_phai_tra_dau_nam": 61983660935421.0,
+  "vay_no_dau_nam": 60160501864584.0,
+  "von_chu_so_huu_dau_nam": 32066318460762.0,
+  "lctt_hdkd_cung_ky": -12920530391989.0,
+  "lctt_hddt_cung_ky": -443458896627.0,
+  "lctt_hdtc_cung_ky": 15873914416634.0,
+  "lctt_thuan_cung_ky": 2509925128018.0,
+  "doanh_thu_thuan_luy_ke": 6496752922734.0,
+  "doanh_thu_thuan_cung_ky_luy_ke": 5152309035804.0,
+  "gia_von_luy_ke": 1790090622790.0,
+  "loi_nhuan_gop_luy_ke": null,
+  "loi_nhuan_gop_cung_ky_luy_ke": null,
+  "lnst_luy_ke": 2509479672227.0,
+  "lnst_cung_ky_luy_ke": 1811592874189.0,
+  "lnst_cong_ty_me_luy_ke": 2509035928639.0,
   "trang_cdkt": 1,
   "trang_kqkd": 7,
   "trang_lctt": 12,
-  "ghi_chu": ""
+  "ghi_chu": "",
+  "thong_tin": "CTCK mẫu B01-CTCK/HN: DT = Cộng doanh thu hoạt động (mã 20), giá vốn = Cộng chi phí hoạt động (mã 40), LNG để null. Nợ vay = Vay và nợ thuê TSTC ngắn hạn (mã 311), không có vay dài hạn. Số năm nay giữ nguyên bản đã đối chiếu Vietcap; cột Q2/2025, lũy kế 6T, đầu năm 01/01/2026 và LCTT 6T/2025 đọc từ ảnh trang 2, 3, 7, 8, 10, 12-14. Kiểm tra: TSNH+TSDH đầu năm = 94.049.979.396.183; LNTT−thuế = LNST cả 4 cột; LCTT 6T/2025 KD+ĐT+TC = 2.509.925.128.018; lũy kế 6T = Q1 + Q2 (R9 khớp). Q2/2025 LNST cổ đông mẹ 969.506.698.143 > LNST do NCI lỗ (1.907.088.310), đúng như in."
  }
 }
