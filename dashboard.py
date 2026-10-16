@@ -140,6 +140,9 @@ def tu_dien_rows() -> list[list]:
     return out
 
 
+# Trang hiện trên web. Các trang khác vẫn được dựng sẵn, thêm tên vào đây là hiện lại:
+# "thu-vien" (Thư viện BCTC), "tu-dien" (Từ điển), "nguon" (Nguồn dữ liệu), "phuong-phap" (Phương pháp).
+TABS_HIEN = ["bang-diem"]
 AI_TEN = {"claude": "Claude (Anthropic)", "gemini": "Gemini (Google)"}
 
 
@@ -167,6 +170,7 @@ def build(results: dict | None = None, outs: list[Path] | None = None) -> Path:
         "criteria": cham_diem.CRITERIA_DOC,
         "repo": REPO_URL,
         "ai": ai_used(results),
+        "tabs": TABS_HIEN,
     }
     data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     html = TEMPLATE.replace("__DATA__", data)
@@ -483,12 +487,15 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     `Đoạn trích Wikipedia trong Từ điển theo giấy phép <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.vi" target="_blank" rel="noopener">CC BY-SA 4.0</a>.`;
 
   // ---------- tab ----------
-  const TABS = ['bang-diem', 'thu-vien', 'tu-dien', 'nguon', 'phuong-phap'];
+  const TABS_ALL = ['bang-diem', 'thu-vien', 'tu-dien', 'nguon', 'phuong-phap'];
+  const TABS = TABS_ALL.filter(t => (D.tabs || TABS_ALL).includes(t));
+  document.querySelectorAll('nav.tabs a').forEach(a => { a.hidden = !TABS.includes(a.dataset.tab); });
+  document.querySelector('nav.tabs').hidden = TABS.length < 2;     // chỉ 1 trang -> ẩn luôn thanh chuyển trang
   function showTab() {
     const [h, arg] = decodeURIComponent(location.hash.slice(1)).split('/');
     const t = TABS.includes(h) ? h : 'bang-diem';
     if (t === 'tu-dien' && arg) openTerm(arg);
-    TABS.forEach(x => { $('tab-' + x).hidden = x !== t; });
+    TABS_ALL.forEach(x => { $('tab-' + x).hidden = x !== t; });
     document.querySelectorAll('nav.tabs a').forEach(a => {
       if (a.dataset.tab === t) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     });
