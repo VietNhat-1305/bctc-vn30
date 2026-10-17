@@ -80,5 +80,27 @@
   "ket_thuc": "2026-10-17T10:16:10",
   "thoi_gian_s": 1079.5,
   "trang_thai": "có BCTC mới"
+ },
+ {
+  "id": "20261018-013514",
+  "khung": "thủ công 01:35",
+  "bat_dau": "2026-10-18T01:35:14",
+  "so_web": 30,
+  "ky_quet": "Q2/2026",
+  "giai_doan": {
+   "kham_pha_tai": 9.5,
+   "tim_can_trich": 0.3
+  },
+  "loi": [],
+  "web_doc_duoc": 30,
+  "web_loi": [],
+  "du_phong_cafef": [],
+  "bctc_moi": [],
+  "bo_qua_bai_cu": 31,
+  "loi_tai": 0,
+  "can_trich": [],
+  "ket_thuc": "2026-10-18T01:35:24",
+  "thoi_gian_s": 9.8,
+  "trang_thai": "không có BCTC mới"
  }
 ]
