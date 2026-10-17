@@ -1,0 +1,20 @@
+{
+ "cach": "Agent Claude (Opus 5.5), 3 BCTC song song",
+ "da_trich": [
+  "VCB Q2/2026",
+  "HPG Q2/2026",
+  "MWG Q2/2026"
+ ],
+ "cho_trich": [],
+ "giay_tong": 60,
+ "giay_moi_bctc": [
+  59,
+  59,
+  50
+ ],
+ "claude_cli_ngam": [
+  "Lần 1 (17/10 ~10:00): Claude CLI đọc và trích đúng số nhưng bị chặn ghi file JSON (chạy ngầm không có quyền Write)",
+  "Lần 2 (17/10 12:37): đổi sang ghi qua stdin, tiến trình treo 2,5 giờ; trên Windows lệnh dừng khi quá giờ chỉ tắt cmd, node vẫn giữ pipe",
+  "Đã sửa: tắt cả cây tiến trình khi quá 15 phút/BCTC, BCTC chưa trích được để chờ lần sau; cần thêm 1 lần chạy thật để xác nhận"
+ ]
+}

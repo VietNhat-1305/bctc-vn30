@@ -17,3 +17,7 @@ website_kiemtra_tam.xlsx
 __pycache__/
 *.pyc
 ket_qua/vietcap/
+ket_qua/quet.log
+quet_dinh_ky.cmd
+ket_qua/claude_tmp/
+ket_qua/kiem_thu/mo_phong_backup/

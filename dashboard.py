@@ -145,6 +145,15 @@ TABS_HIEN = ["bang-diem"]
 AI_TEN = {"claude": "Claude (Anthropic)", "gemini": "Gemini (Google)"}
 
 
+def lich_quet() -> dict:
+    """Nhật ký quét định kỳ (quet_dinh_ky.py) cho timeline trên web."""
+    path = phan_tich.OUT / "lich_su_quet.json"
+    runs = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+    keep = ("id", "khung", "bat_dau", "ket_thuc", "thoi_gian_s", "so_web", "web_doc_duoc", "web_loi", "du_phong_cafef", "bctc_moi",
+            "da_trich", "cho_trich", "cach_trich", "trang_thai", "giai_doan", "loi")
+    return {"khung": ["00:00", "06:00", "12:00", "18:00"], "lan": [{k: r.get(k) for k in keep} for r in runs[-60:]]}
+
+
 def ai_used(results: dict) -> dict:
     """AI nào đã đọc số liệu + kỳ so sánh, để web ghi rõ nguồn."""
     models = sorted({r.get("model", "") for v in results.values() for r in v.values() if r.get("data")})
@@ -170,6 +179,7 @@ def build(results: dict | None = None, outs: list[Path] | None = None) -> Path:
         "repo": REPO_URL,
         "ai": ai_used(results),
         "tabs": TABS_HIEN,
+        "lich_quet": lich_quet(),
     }
     data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     html = TEMPLATE.replace("__DATA__", data)
@@ -292,6 +302,22 @@ summary { cursor: pointer; color: var(--accent); }
 .rows .sec { grid-column: 1 / -1; font-size: 11px; color: var(--ink-2); text-transform: uppercase; letter-spacing: .04em;
   margin-top: 6px; border-top: 1px solid var(--line); padding-top: 4px; }
 .vc { font-size: 12px; color: var(--ink-2); }
+.tl { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 14px 0 4px;
+  display: grid; gap: 10px; }
+.tl-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline; }
+.tl-head b { font-size: 14px; } .tl-head span { font-size: 12.5px; color: var(--ink-2); }
+.tl-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); position: relative; }
+.tl-row::before { content: ''; position: absolute; left: 12.5%; right: 12.5%; top: 11px; height: 2px; background: var(--line); }
+.tl-node { display: grid; justify-items: center; gap: 2px; text-align: center; position: relative; font-size: 12px; color: var(--ink-2); }
+.tl-dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--line); background: var(--surface);
+  display: grid; place-items: center; font-size: 12px; font-weight: 700; z-index: 1; }
+.tl-node.done .tl-dot { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.tl-node.new .tl-dot { background: var(--tier-1, #1f9d55); border-color: var(--tier-1, #1f9d55); }
+.tl-node.err .tl-dot { background: var(--tier-4, #c0392b); border-color: var(--tier-4, #c0392b); }
+.tl-node.next .tl-dot { border-color: var(--accent); border-style: dashed; }
+.tl-node .h { font-weight: 700; color: var(--ink); font-size: 13px; }
+.tl details summary { cursor: pointer; font-size: 13px; color: var(--accent); }
+.tl table { font-size: 12.5px; }
 .vc b { color: var(--ink); }
 .foot { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--muted); flex-wrap: wrap; }
 .tablewrap { overflow-x: auto; border: 1px solid var(--ring); border-radius: 12px; background: var(--surface); }
@@ -357,6 +383,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
 
   <!-- ============ BẢNG ĐIỂM ============ -->
   <section id="tab-bang-diem" hidden>
+    <div class="tl" id="timeline" hidden></div>
     <div id="noScore" class="notice" hidden>
       Chưa có điểm cho kỳ này: bước phân tích bằng Gemini chưa chạy. Các thẻ dưới đây vẫn hiện BCTC quý mới nhất
       lấy trực tiếp từ web từng công ty; điểm và chỉ số sẽ tự xuất hiện sau khi chạy <code>python phan_tich.py</code>.
@@ -742,6 +769,38 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     `<div class="tablewrap"><table><thead><tr><th>${names[k]}</th><th>Điểm</th></tr></thead><tbody>${rows.map(([t, p]) =>
       `<tr><td>${esc(t)}</td><td>${esc(p)}</td></tr>`).join('')}<tr><td><b>Tổng tối đa</b></td><td><b>10đ</b></td></tr></tbody></table></div>`).join('');
 
+  // ---------- timeline quét định kỳ ----------
+  function renderTimeline() {
+    const L = D.lich_quet || {khung: [], lan: []}, runs = L.lan || [];
+    const el = $('timeline');
+    if (!L.khung.length) return;
+    el.hidden = false;
+    const now = new Date(), day = d => d.toISOString().slice(0, 10), today = new Date(now.getTime() - now.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+    const fmtT = s => s ? `${s.slice(11, 16)} ${s.slice(8, 10)}/${s.slice(5, 7)}` : '–';
+    const dur = x => { if (x == null) return '–'; const t = Math.round(x); return t >= 60 ? `${Math.floor(t / 60)} phút ${t % 60} giây` : `${t} giây`; };
+    const nowMin = now.getHours() * 60 + now.getMinutes();
+    const nextK = L.khung.find(k => +k.slice(0, 2) * 60 > nowMin) || L.khung[0];
+    const nodes = L.khung.map(k => {
+      const r = [...runs].reverse().find(x => x.bat_dau && x.bat_dau.slice(0, 10) === today && x.khung === k);
+      let cls = '', mark = '', sub = k === nextK && !r ? 'tiếp theo' : (+k.slice(0, 2) * 60 > nowMin ? 'chờ' : 'chưa chạy');
+      if (r) { const n = (r.bctc_moi || []).length; cls = r.trang_thai === 'lỗi' ? 'err' : n ? 'done new' : 'done';
+        mark = r.trang_thai === 'lỗi' ? '!' : '✓'; sub = n ? `${n} BCTC mới` : 'không có mới'; }
+      else if (k === nextK) cls = 'next';
+      return `<div class="tl-node ${cls}"><div class="tl-dot" aria-hidden="true">${mark}</div><div class="h">${k.slice(0, 2)}h</div><div>${sub}</div></div>`;
+    }).join('');
+    const last = runs[runs.length - 1];
+    const fb = last && (last.du_phong_cafef || []).length ? ` (${last.du_phong_cafef.join(', ')} lấy qua CafeF)` : '';
+    const lastTxt = last ? `Lần quét gần nhất ${fmtT(last.bat_dau)}: đọc được ${last.web_doc_duoc ?? '–'}/${last.so_web} web công ty${fb}, `
+      + `${(last.bctc_moi || []).length} BCTC mới${(last.da_trich || []).length ? `, đã phân tích ${last.da_trich.length}` : ''}, mất ${dur(last.thoi_gian_s)}.` : 'Chưa có lần quét nào.';
+    const rows = [...runs].reverse().slice(0, 20).map(r => `<tr><td>${fmtT(r.bat_dau)}</td><td>${esc(r.khung)}</td>`
+      + `<td class="num">${r.web_doc_duoc ?? '–'}/${r.so_web}</td><td>${esc((r.bctc_moi || []).map(b => b.ma + ' ' + b.ky).join(', ') || '–')}</td>`
+      + `<td>${esc((r.da_trich || []).join(', ') || '–')}</td><td class="num">${dur(r.thoi_gian_s)}</td><td>${esc(r.trang_thai || '')}</td></tr>`).join('');
+    el.innerHTML = `<div class="tl-head"><b>Quét web 30 công ty mỗi 6 giờ (0h · 6h · 12h · 18h)</b><span>${esc(lastTxt)}</span></div>`
+      + `<div class="tl-row" role="list" aria-label="Các lần quét hôm nay">${nodes}</div>`
+      + (rows ? `<details><summary>Lịch sử quét (${runs.length} lần)</summary><div class="tablewrap"><table><thead><tr><th>Thời điểm</th><th>Khung</th>`
+      + `<th class="num">Web đọc được</th><th>BCTC mới</th><th>Đã phân tích</th><th class="num">Thời gian</th><th>Trạng thái</th></tr></thead><tbody>${rows}</tbody></table></div></details>` : '');
+  }
+
   // ---------- giao diện sáng/tối ----------
   const root = document.documentElement;
   try { const t = localStorage.getItem('bctc-theme'); if (t) root.dataset.theme = t; } catch (e) {}
@@ -765,6 +824,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
       + `Tổng tài sản = Nợ + Vốn chủ sở hữu. Bấm "Mở PDF" trên thẻ để xem báo cáo gốc.`;
     $('aiFlow').textContent = `${D.ai.ten}, model ${D.ai.model}`;
   }
+  renderTimeline();
   kpis(); renderScores(); renderLib(); renderSrc(); renderTd(); showTab();
 })();
 </script>

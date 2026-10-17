@@ -1,7 +1,7 @@
 {
  "ticker": "HPG",
  "ky": "Q2/2026",
- "file": "HPG/2026/HPG_2026_Q2_HN_9ca921.pdf",
+ "file": "HPG/2026/HPG_2026_Q2_HN.pdf",
  "sha256": "1f5c4b14f867d2683fd3a84fe0f31fed6fc9920fdcd768c0eaaa1a6e9d19ea71",
  "scope": "HN",
  "pages_sent": [
@@ -13,9 +13,9 @@
   7,
   8
  ],
- "prompt_version": "3.2",
+ "prompt_version": "3.3",
  "model": "claude-opus-5-5",
- "extracted_at": "2026-10-16T19:28:34",
+ "extracted_at": "2026-10-17T15:18:05",
  "data": {
   "ma_ck": "HPG",
   "ky_bao_cao": "Q2/2026",
@@ -60,6 +60,6 @@
   "trang_kqkd": 5,
   "trang_lctt": 6,
   "ghi_chu": "",
-  "thong_tin": "BCTC hợp nhất Q2/2026 (mẫu TT 43/2026), đọc từ ảnh trang. KQKD 4 cột: Quý II/2026, Quý II/2025, 6T/2026, 6T/2025; quý 2 + quý 1 (đã trích) = lũy kế 6T khớp cho DT, LN gộp, LNST, LNST mẹ cả 2 năm. CĐKT: cột 01/01/2026 ghi 'Số điều chỉnh lại' (dùng đúng số in). Nợ vay = vay và nợ thuê tài chính ngắn hạn (321) + dài hạn (339): 71.433,4 + 27.096,6 tỷ cuối quý; 64.695,0 + 27.479,2 tỷ đầu năm. LCTT 6T/2026 và 6T/2025 lấy mã 20, 30, 40, 50."
+  "thong_tin": "BCTC hợp nhất Q2/2026 (mẫu TT 43/2026), đơn vị VND, số đọc từ ảnh trang. KQKD: cột Quý II 2026/2025 và 6 tháng đầu năm 2026/2025. CĐKT: cột 30/06/2026 và 01/01/2026 (cột đầu năm ghi 'Số điều chỉnh lại' - dùng số trình bày lại theo báo cáo hiện tại). Vay nợ = vay và nợ thuê tài chính ngắn hạn (mã 321) + dài hạn (mã 339): 71.433.383.400.905 + 27.096.593.831.648 (đầu năm 64.694.957.245.143 + 27.479.194.057.074). VCSH gồm lợi ích cổ đông không kiểm soát. LCTT lũy kế 6 tháng 2026/2025. Đã kiểm: TSNH+TSDH=Tổng TS, Nợ+VCSH=Tổng nguồn vốn, DT-GV=LNG, LNTT-thuế=LNST, mẹ+CĐKKS=LNST, KD+ĐT+TC=LCTT thuần (cả hai cột)."
  }
 }

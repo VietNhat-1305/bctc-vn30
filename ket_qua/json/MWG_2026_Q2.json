@@ -1,7 +1,7 @@
 {
  "ticker": "MWG",
  "ky": "Q2/2026",
- "file": "MWG/2026/MWG_2026_Q2_HN_088000.pdf",
+ "file": "MWG/2026/MWG_2026_Q2_HN.pdf",
  "sha256": "a2a768e269d3a40f4af397be785dc65a60fb9f620bfcc8ab18f618125e4708f7",
  "scope": "HN",
  "pages_sent": [
@@ -12,9 +12,9 @@
   9,
   10
  ],
- "prompt_version": "3.2",
+ "prompt_version": "3.3",
  "model": "claude-opus-5-5",
- "extracted_at": "2026-10-16T19:29:29",
+ "extracted_at": "2026-10-17T15:17:56",
  "data": {
   "ma_ck": "MWG",
   "ky_bao_cao": "Q2/2026",
@@ -22,7 +22,7 @@
   "don_vi": "dong",
   "doanh_thu_thuan": 48751283551957.0,
   "doanh_thu_thuan_cung_ky": 37619968659970.0,
-  "gia_von": -37942073479846.0,
+  "gia_von": 37942073479846.0,
   "loi_nhuan_gop": 10809210072111.0,
   "loi_nhuan_gop_cung_ky": 7568700660156.0,
   "lnst": 3354897720617.0,
@@ -37,7 +37,7 @@
   "lctt_hddt": -4344640085920.0,
   "lctt_hdtc": -841715565519.0,
   "lctt_thuan": 12993555765453.0,
-  "gia_von_cung_ky": -30051267999814.0,
+  "gia_von_cung_ky": 30051267999814.0,
   "lnst_cong_ty_me_cung_ky": 1648146246704.0,
   "tong_tai_san_dau_nam": 83945619612034.0,
   "no_phai_tra_dau_nam": 50769502237457.0,
@@ -49,7 +49,7 @@
   "lctt_thuan_cung_ky": 1132622145604.0,
   "doanh_thu_thuan_luy_ke": 95213235578730.0,
   "doanh_thu_thuan_cung_ky_luy_ke": 73754927078179.0,
-  "gia_von_luy_ke": -74693924067303.0,
+  "gia_von_luy_ke": 74693924067303.0,
   "loi_nhuan_gop_luy_ke": 20519311511427.0,
   "loi_nhuan_gop_cung_ky_luy_ke": 14769111275361.0,
   "lnst_luy_ke": 6112454741144.0,
@@ -59,6 +59,6 @@
   "trang_kqkd": 3,
   "trang_lctt": 5,
   "ghi_chu": "",
-  "thong_tin": "BCTC hợp nhất giữa niên độ Q2/2026 tự lập (VND), đọc từ ảnh trang. KQKD có 4 cột: quý 2/2026, lũy kế 6T/2026, quý 2/2025, lũy kế 6T/2025; kiểm tra DT thuần - giá vốn = LN gộp và LNTT - thuế hiện hành + thuế hoãn lại = LNST ở cả 4 cột. CĐKT: cuối kỳ 30/06/2026, đầu năm = cột 31/12/2025; nợ vay chỉ có Vay ngắn hạn (mã 321), không có vay dài hạn. LCTT gián tiếp lũy kế 6T/2026 và 6T/2025, KD + ĐT + TC = LCTT thuần ở cả 2 cột. Theo R1: bản bán niên soát xét (EY) tách 13.315 tỷ khỏi Tiền và phân loại lại tiền thu lãi nên tiền và LCTT KD của bản quý tự lập này khác bản soát xét."
+  "thong_tin": "BCTC hợp nhất giữa niên độ Q2/2026 công ty tự lập (B01a/B02/B03a-DN/HN), đơn vị VND, số đọc từ ảnh trang. KQKD: cột quý này/quý năm trước và lũy kế 6 tháng 2026/2025. CĐKT: 30/06/2026 và 31/12/2025. LCTT lũy kế 6 tháng. Nợ vay = Vay ngắn hạn (mã 321); không có vay dài hạn. VCSH gồm lợi ích cổ đông không kiểm soát. Đã kiểm tra: TSNH + TSDH = Tổng TS; Nợ + VCSH = Tổng nguồn vốn; DT thuần − giá vốn = LN gộp; LNTT − thuế = LNST; LNST mẹ + CĐKKS = LNST; KD + ĐT + TC = LCTT thuần (cả cột so sánh). Không có nhãn trình bày lại ở cột so sánh."
  }
 }

@@ -1,0 +1,79 @@
+{
+ "thoi_diem": "2026-10-17T10:16:10",
+ "ma_mo_phong": [
+  "VCB",
+  "HPG",
+  "MWG"
+ ],
+ "lan_quet": {
+  "id": "20261017-095811",
+  "khung": "thủ công 09:58",
+  "bat_dau": "2026-10-17T09:58:11",
+  "so_web": 30,
+  "ky_quet": "Q2/2026",
+  "giai_doan": {
+   "kham_pha_tai": 18.6,
+   "tim_can_trich": 0.0,
+   "chuan_bi": 30.1,
+   "trich_so": 1029.3,
+   "tong_hop": 1.4
+  },
+  "loi": [],
+  "web_doc_duoc": 30,
+  "web_loi": [],
+  "du_phong_cafef": [],
+  "bctc_moi": [
+   {
+    "ma": "HPG",
+    "ky": "Q2/2026",
+    "pham_vi": "HN",
+    "file": "HPG/2026/HPG_2026_Q2_HN.pdf",
+    "nguon": "web công ty"
+   },
+   {
+    "ma": "VCB",
+    "ky": "Q2/2026",
+    "pham_vi": "HN",
+    "file": "VCB/2026/VCB_2026_Q2_HN.pdf",
+    "nguon": "web công ty"
+   },
+   {
+    "ma": "MWG",
+    "ky": "Q2/2026",
+    "pham_vi": "HN",
+    "file": "MWG/2026/MWG_2026_Q2_HN.pdf",
+    "nguon": "web công ty"
+   }
+  ],
+  "bo_qua_bai_cu": 28,
+  "loi_tai": 0,
+  "can_trich": [
+   "HPG Q2/2026",
+   "MWG Q2/2026",
+   "VCB Q2/2026"
+  ],
+  "cach_trich": "Claude CLI",
+  "da_trich": [],
+  "cho_trich": [
+   "HPG Q2/2026",
+   "MWG Q2/2026",
+   "VCB Q2/2026"
+  ],
+  "ket_thuc": "2026-10-17T10:16:10",
+  "thoi_gian_s": 1079.5,
+  "trang_thai": "có BCTC mới"
+ },
+ "ma_khac_khong_doi": true,
+ "ket_qua_ma_khac_khong_doi": true,
+ "so_sanh_trich_lai": {
+  "VCB": {
+   "trang_thai": "chưa trích lại"
+  },
+  "HPG": {
+   "trang_thai": "chưa trích lại"
+  },
+  "MWG": {
+   "trang_thai": "chưa trích lại"
+  }
+ }
+}

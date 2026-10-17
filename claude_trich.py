@@ -7,6 +7,7 @@ Mỗi mã chỉ 1 BCTC (quý mới nhất): báo cáo đã có sẵn cùng kỳ 
     python claude_trich.py chu VCB 2026 2            # chữ của các trang 3 báo cáo (lớp chữ gốc hoặc OCR)
     python claude_trich.py anh VCB 2026 2            # ảnh PNG từng trang -> ket_qua/debug/anh/ (xem bằng tool Read)
     python claude_trich.py ghi VCB 2026 2 a.json     # kiểm tra schema + cân đối, lưu ket_qua/json/
+    python claude_trich.py ghi VCB 2026 2 - < a.json # như trên, đọc JSON từ stdin
 
 Kết quả lưu cùng định dạng cache của phan_tich.py (model = claude) -> `python phan_tich.py --tong-hop` chấm điểm,
 tự đối chiếu Vietcap và dựng web.
@@ -101,7 +102,8 @@ def guide(tickers: list[str]) -> str:
 
 def save(tk: str, y: int, q: int, path: str) -> int:
     r = find(tk, y, q)
-    data = pt.BCTC.model_validate_json(Path(path).read_text(encoding="utf-8")).model_dump()
+    raw = sys.stdin.read() if path == "-" else Path(path).read_text(encoding="utf-8")   # "-": JSON qua stdin (lịch quét chạy ngầm)
+    data = pt.BCTC.model_validate_json(raw).model_dump()
     res = {"ticker": tk, "ky": f"Q{q}/{y}", "file": r["file"], "sha256": r["sha256"], "scope": r["scope"],
            "pages_sent": r["trang"] or [], "prompt_version": pt.prompt_version(), "model": MODEL,
            "extracted_at": datetime.now().isoformat(timespec="seconds"), "data": data}

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiểm thử luồng quét BCTC VN30</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: biên bản kiểm thử một cột - kết luận và bảng tiêu chí trước, chi tiết từng kịch bản sau. */
+:root {
+  --bg: #f4f6f5; --surface: #ffffff; --fg: #17201c; --fg-2: #4c5a54; --line: #d9e0dc;
+  --accent: #1d5f78; --accent-soft: #e3eef2;
+  --ok: #23774a; --ok-soft: #e2f1e8; --warn: #9a6512; --warn-soft: #f8edd8;
+  --bad: #b03a2e; --bad-soft: #f8e3e0; --def: #566573; --def-soft: #e7ebee;
+  --sans: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #101513; --surface: #171e1b; --fg: #e4ebe7; --fg-2: #9fb0a8; --line: #2b3632;
+  --accent: #6fb6d3; --accent-soft: #1a2c34;
+  --ok: #6cc893; --ok-soft: #173024; --warn: #e2b05a; --warn-soft: #33291a;
+  --bad: #f08a7c; --bad-soft: #3a1f1c; --def: #a9b6c2; --def-soft: #242c33; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #101513; --surface: #171e1b; --fg: #e4ebe7; --fg-2: #9fb0a8; --line: #2b3632;
+  --accent: #6fb6d3; --accent-soft: #1a2c34;
+  --ok: #6cc893; --ok-soft: #173024; --warn: #e2b05a; --warn-soft: #33291a;
+  --bad: #f08a7c; --bad-soft: #3a1f1c; --def: #a9b6c2; --def-soft: #242c33; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 15px/1.6 var(--sans); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 32px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 44px; }
+.wrap > *, section > * { min-width: 0; }
+h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.25; }
+h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 21px; font-weight: 700; } h3 { font-size: 16px; font-weight: 600; }
+p { margin: 0; max-width: 76ch; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.head { display: grid; gap: 12px; } .lede { color: var(--fg-2); font-size: 16px; }
+.verdict { background: var(--ok-soft); border: 1px solid color-mix(in srgb, var(--ok) 35%, transparent); border-radius: 10px;
+  padding: 14px 18px; display: grid; gap: 6px; max-width: 920px; }
+.verdict b { color: var(--ok); }
+section { display: grid; gap: 16px; }
+.prose ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; max-width: 84ch; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 2px; }
+.tile .n { font: 600 24px/1.2 var(--mono); font-variant-numeric: tabular-nums; } .tile .l { font-size: 13px; color: var(--fg-2); }
+.tile.ok .n { color: var(--ok); } .tile.warn .n { color: var(--warn); }
+.flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; counter-reset: s; }
+.flow div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; gap: 4px; }
+.flow div::before { counter-increment: s; content: "Bước " counter(s); font: 600 11px/1 var(--mono); color: var(--accent); letter-spacing: .05em; text-transform: uppercase; }
+.flow b { font-size: 14px; } .flow span { font-size: 13px; color: var(--fg-2); }
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { font-size: 12px; font-weight: 600; color: var(--fg-2); background: var(--bg); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.t { font-weight: 600; min-width: 170px; } td.why { color: var(--fg-2); min-width: 220px; max-width: 460px; }
+.chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.chip.ok { color: var(--ok); background: var(--ok-soft); } .chip.warn { color: var(--warn); background: var(--warn-soft); }
+.chip.bad { color: var(--bad); background: var(--bad-soft); } .chip.def { color: var(--def); background: var(--def-soft); }
+.bars { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; }
+.bar-row { display: grid; grid-template-columns: 170px 1fr 120px; gap: 12px; align-items: center; font-size: 13.5px; }
+.bar { height: 16px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.bar span { display: block; height: 100%; border-radius: 4px; }
+.bar-row .v { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; color: var(--fg-2); }
+.note { font-size: 13px; color: var(--fg-2); }
+.foot { font-size: 13px; color: var(--fg-2); display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 16px; }
+.foot p { max-width: none; } code { font: 13px var(--mono); background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
+a { color: var(--accent); }
+@media (max-width: 560px) { .bar-row { grid-template-columns: 1fr; } .bar-row .v { text-align: left; } }
+</style>
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="head">
+    <div class="eyebrow">Báo cáo kiểm thử · 17/10/2026 · dự án BCTC VN30</div>
+    <h1>Kiểm thử luồng quét BCTC VN30 theo timeline</h1>
+    <p class="lede">Luồng tự quét web của 30 công ty VN30 mỗi 6 giờ (0h, 6h, 12h, 18h); có BCTC mới thì tải về, trích số liệu bằng AI,
+      chấm điểm và cập nhật web. Báo cáo này đo hiệu năng của luồng trên 30 BCTC quý 2/2026: chạy theo timeline (bài mới cập nhật, bài cũ không),
+      chạy đồng thời 30 BCTC để xem khả năng chịu tải, và so các chỉ số với mục tiêu và mốc của các nguồn dữ liệu trong ngành.</p>
+    <div class="verdict" id="verdict"></div>
+  </header>
+
+  <section aria-labelledby="h-tong"><h2 id="h-tong">Tóm tắt</h2><div class="tiles" id="tiles"></div></section>
+
+  <section aria-labelledby="h-luong">
+    <h2 id="h-luong">Luồng quét theo timeline</h2>
+    <div class="flow">
+      <div><b>Đọc web 30 công ty, tải BCTC mới</b><span>So với danh sách đã tải (manifest + sha256): bài cũ bỏ qua, web lỗi thì lấy dự phòng từ CafeF.</span></div>
+      <div><b>Tìm trang 3 báo cáo, OCR</b><span>Chỉ BCTC mới: tìm trang Bảng cân đối, Kết quả kinh doanh, Lưu chuyển tiền tệ, OCR các trang đó.</span></div>
+      <div><b>Trích số liệu bằng AI</b><span>Gemini nếu có API key; không có thì Claude CLI chạy ngầm, kèm sổ bài học; tự kiểm cân đối trước khi lưu.</span></div>
+      <div><b>Đối chiếu, chấm điểm, cập nhật web</b><span>Tự đối chiếu Vietcap, chấm điểm thang 10, dựng web, đẩy GitHub Pages; ghi lần quét lên timeline.</span></div>
+    </div>
+    <p class="note">Lịch chạy bằng Windows Task Scheduler (4 tác vụ hằng ngày: 0h, 6h, 12h, 18h; máy cần bật). Giai đoạn thử chỉ quét kỳ Q2/2026
+      (<code>--ky Q2/2026</code>); bỏ tùy chọn này là luồng tự lấy kỳ mới nhất. Trang Bảng điểm có timeline 4 mốc trong ngày và lịch sử các lần quét.</p>
+  </section>
+
+  <section aria-labelledby="h-kpi">
+    <h2 id="h-kpi">Bộ tiêu chí đánh giá</h2>
+    <p class="note" id="mayNote"></p>
+    <div class="tablewrap"><table id="tblKpi"></table></div>
+  </section>
+
+  <section aria-labelledby="h-bm">
+    <h2 id="h-bm">So sánh với nguồn dữ liệu trong ngành: độ trễ cập nhật BCTC</h2>
+    <p>Tính từ lúc công ty đăng BCTC trên web của mình đến lúc nguồn có số liệu. Đo trên các mã có ngày công bố rõ ràng (n = 14).</p>
+    <div class="bars" id="bars"></div>
+    <p class="note">Vietcap lấy số quý 2 từ BCTC bán niên đã soát xét nên chậm hơn nhiều; riêng VNM soát xét từng quý nên Vietcap cập nhật trong ngày.
+      Độ trễ của luồng là giới hạn trên theo lịch 6 giờ (trung bình 3 giờ), chưa tính thời gian xử lý.</p>
+  </section>
+
+  <section aria-labelledby="h-t1" class="prose">
+    <h2 id="h-t1">Kịch bản 1: chạy theo timeline</h2>
+    <h3>1a. Lần quét khi 30 BCTC quý 2 đều đã có</h3>
+    <div class="tablewrap"><table id="tbl1a"></table></div>
+    <h3>1b. Giả lập 3 BCTC "vừa đăng" (VCB, HPG, MWG)</h3>
+    <p>Cất file, manifest và kết quả trích của 3 BCTC rồi chạy 1 lần quét: luồng phải phát hiện đúng 3 bài, không đụng 27 mã còn lại, và tự trích số.</p>
+    <div class="tablewrap"><table id="tbl1b"></table></div>
+    <h3>Độ lặp lại của AI: kết quả trích lại so với lần trích trước</h3>
+    <div class="tablewrap"><table id="tblAi"></table></div>
+  </section>
+
+  <section aria-labelledby="h-t2" class="prose">
+    <h2 id="h-t2">Kịch bản 2: chịu tải, 30 BCTC đồng thời từ đầu</h2>
+    <p>Mỗi lần dựng một bản sao dự án trống (chưa có file, chưa có OCR), tải và xử lý cùng lúc 30 BCTC quý 2 (30 luồng tải, tối đa 4 kết nối mỗi web;
+      OCR song song theo số nhân CPU). Chạy 2 lần để so thời gian và so output.</p>
+    <div class="tablewrap"><table id="tbl2"></table></div>
+    <h3>Chạy 2 lần có cho cùng output không</h3>
+    <div class="tablewrap"><table id="tblLap"></table></div>
+  </section>
+
+  <section aria-labelledby="h-cx" class="prose">
+    <h2 id="h-cx">Độ chính xác số liệu so với nguồn</h2>
+    <ul id="cxList"></ul>
+  </section>
+
+  <section aria-labelledby="h-vd" class="prose">
+    <h2 id="h-vd">Vấn đề phát hiện khi kiểm thử và đề xuất</h2>
+    <ul id="vdList"></ul>
+  </section>
+
+  <footer class="foot">
+    <p>Chạy lại: <code>python kiem_thu_hieu_nang.py tai-lanh --lan 2</code> (chịu tải), <code>python kiem_thu_hieu_nang.py mo-phong-moi VCB,HPG,MWG</code>
+      (timeline), <code>python quet_dinh_ky.py --dat-lich --ky Q2/2026</code> (đặt lịch). Số liệu gốc: <code>ket_qua/kiem_thu/</code>,
+      <code>ket_qua/lich_su_quet.json</code> trong repo <a href="https://github.com/VietNhat-1305/bctc-vn30" target="_blank" rel="noopener">github.com/VietNhat-1305/bctc-vn30</a>.</p>
+  </footer>
+</div>
+
+<script id="data" type="application/json">{"verdict": "<div><b>Đạt 15/17 tiêu chí.<\/b> Luồng phát hiện đúng bài mới và không xử lý lại bài cũ; 30 BCTC quý 2 xử lý đồng thời từ đầu mất 7 phút 38 giây đến 13 phút 52 giây trước bước AI, 30/30 thành công; chạy 2 lần cho cùng output. So với nguồn trong ngành, luồng phát hiện BCTC trong tối đa 6 giờ, CafeF chậm trung vị 1.4 ngày, Vietcap 19 ngày.<\/div>", "tiles": [["Phát hiện BCTC mới", "≤ 6 giờ", "ok", "CafeF 1.4 ngày · Vietcap 19 ngày"], ["Quét khi không có bài mới", "34 giây", "ok", "30 web, 0 file tải lại"], ["30 BCTC đồng thời", "7 phút 38 giây", "ok", "đến 13 phút 52 giây, trước bước AI"], ["Xử lý thành công", "30/30", "ok", "cả 2 lần chạy"], ["Chạy 2 lần cùng output", "100%", "ok", "file, trang, OCR"]], "may": "Máy kiểm thử: 6 nhân / 12 luồng CPU, 16.9 GB RAM, Windows 11, mạng gia đình. Dữ liệu: 30 BCTC hợp nhất (riêng LPB, TCX là BCTC chung) quý 2/2026 của rổ VN30.", "kpi": [["Độ trễ phát hiện BCTC mới", "Chu kỳ quét theo lịch", "≤ 6 giờ", "Tối đa 6 giờ, trung bình 3 giờ (lịch 0h, 6h, 12h, 18h)", "dat", "CafeF: trung vị 1.4 ngày, tối đa 5.5 ngày; Vietcap: trung vị 19 ngày, tối đa 35 ngày"], ["Thời gian 1 lần quét khi không có BCTC mới", "Kịch bản 1a, 30 web", "≤ 2 phút", "34 giây", "dat", "–"], ["Tỷ lệ đọc được web công ty", "Số web đọc được danh mục / 30", "≥ 95%", "30/30 ở các lần chạy 1b, 2a, 2b; 29/30 ở lần 1a (MBB chặn tạm thời, tự lấy dự phòng từ CafeF, vẫn đủ 30/30 BCTC)", "dat", "–"], ["Không xử lý lại bài cũ", "Số file tải lại / BCTC trích lại khi không có bài mới", "0", "0 (1a: bỏ qua 31 file cũ; 1b: bỏ qua 28)", "dat", "–"], ["Chỉ xử lý đúng bài mới", "Kịch bản 1b: giả lập 3 BCTC mới", "Đúng 3/3, 27 mã khác không đổi", "Phát hiện 3/3; file và kết quả 27 mã khác không đổi: có", "dat", "–"], ["Thời gian tải 30 BCTC đồng thời", "Kịch bản 2, bản sao trống", "≤ 5 phút", "46 giây / 2 phút 40 giây (322 MB)", "dat", "–"], ["Thời gian tìm trang + OCR 30 BCTC", "Kịch bản 2", "≤ 10 phút", "13 phút 5 giây / 4 phút 58 giây", "mot_phan", "Lần 1 chậm do chạy cùng tiến trình khác chiếm CPU"], ["Tổng thời gian xử lý 30 BCTC trước bước AI", "Kịch bản 2", "≤ 15 phút", "13 phút 52 giây / 7 phút 38 giây", "dat", "–"], ["Tỷ lệ BCTC xử lý thành công", "Số BCTC tải + chọn trang được / 30", "≥ 95%", "30/30 và 30/30 (0 lỗi)", "dat", "–"], ["Tài nguyên đỉnh", "RAM, CPU cả cây tiến trình", "RAM ≤ 4 GB", "RAM 2.608 MB; CPU 100% khi OCR", "dat", "Máy 6 nhân, 16,9 GB RAM"], ["Chạy 2 lần cùng output (tầng xác định)", "So file sha256, trang chọn, chữ OCR", "100%", "File 30/30, trang 30/30, OCR 27/27", "dat", "–"], ["Chạy 2 lần cùng output (tầng AI)", "Trích lại 3 BCTC, so từng trường số", "≥ 99% trường giống", "97/97 trường giống (100.0%)", "dat", "–"], ["Thời gian trích số 1 BCTC bằng AI", "Agent Claude đọc ảnh trang + chữ OCR", "≤ 2 phút", "50–59 giây mỗi BCTC (3 BCTC song song khoảng 1 phút)", "dat", "Gemini gói miễn phí giới hạn 12 request/phút: khoảng 10 phút cho 60 BCTC (ước tính trong README)"], ["Trích AI tự động trong lịch quét", "Claude CLI chạy ngầm khi chưa có Gemini key", "Lưu được 100% BCTC mới", "Chưa đạt ở 2 lần thử (bị chặn ghi file, rồi treo); đã sửa, chờ xác nhận ở lần chạy thật", "chua", "Có Gemini key thì dùng Gemini (đường thiết kế chính)"], ["Độ chính xác so với nguồn ngoài cùng phiên bản báo cáo", "Q1/2026 so với Vietcap (cùng là BCTC quý)", "≥ 99%", "345/345 chỉ số khớp (100%)", "dat", "Vietcap IQ"], ["Lỗi đọc số so với BCTC gốc", "690 chỉ số đối chiếu, mở ảnh trang ở mọi chỗ lệch", "0", "0 lỗi đọc; mọi chỗ lệch Vietcap do Vietcap dùng bản soát xét hoặc số trình bày lại", "dat", "–"], ["Kiểm tra cân đối", "Tổng tài sản = Nợ + VCSH; LCTT thuần = KD + ĐT + TC", "100% BCTC", "30/30 BCTC qua", "dat", "–"]], "lag": [["Luồng quét (giới hạn trên)", 0.25, "≤ 6 giờ", "ok"], ["CafeF (trung vị)", 1.4, "1.4 ngày", "warn"], ["Vietcap (trung vị)", 19.0, "19 ngày", "bad"]], "t1a": [["Thời gian", "34 giây"], ["Theo bước", "kham_pha_tai: 23.5 giây, tim_can_trich: 0.3 giây, tong_hop: 10.5 giây"], ["Web đọc được", "30/30 (MBB trả lỗi 403, tự chuyển CafeF)"], ["BCTC mới", "0"], ["File cũ bỏ qua (không tải lại)", "31"], ["BCTC phải trích lại", "0"]], "t1b": [["BCTC mới phát hiện", "HPG Q2/2026 (web công ty), VCB Q2/2026 (web công ty), MWG Q2/2026 (web công ty)"], ["File cũ bỏ qua", "28"], ["27 mã khác", "File và kết quả trích không đổi"], ["Đọc web + tải 3 file", "19 giây"], ["Tìm trang + OCR 3 BCTC", "30 giây"], ["Trích số bằng Claude CLI chạy ngầm", "Chưa lưu được ở 2 lần thử (bị chặn ghi file; treo do lỗi dừng tiến trình trên Windows) - đã sửa, cần xác nhận ở lần chạy thật"], ["Trích số bằng agent Claude (3 BCTC song song)", "3/3 BCTC qua kiểm tra cân đối, mỗi BCTC 50-59 giây, tổng khoảng 1 phút"]], "ai": [["VCB", "29", "0", "Trùng khớp toàn bộ"], ["HPG", "34", "0", "Trùng khớp toàn bộ"], ["MWG", "34", "0", "Trùng khớp toàn bộ"]], "t2": [["Đọc 30 web + tải 30 BCTC", "46 giây · 31 file · 322 MB · lỗi 0", "2 phút 40 giây · 31 file · 322 MB · lỗi 0"], ["Tìm trang + OCR 30 BCTC", "13 phút 5 giây · 30/30", "4 phút 58 giây · 30/30"], ["Tổng", "13 phút 52 giây", "7 phút 38 giây"], ["RAM đỉnh", "2.608 MB", "2.598 MB"], ["CPU đỉnh", "100.0%", "100.0%"]], "lap": [["File BCTC tải về (sha256)", "30/30 giống nhau"], ["Trang 3 báo cáo được chọn", "30/30 giống nhau"], ["Chữ OCR (bản scan)", "27/27 giống nhau (3 BCTC có sẵn lớp chữ, không cần OCR)"], ["Chấm điểm, dựng web từ cùng số liệu", "Giống nhau (tính toán xác định)"]], "cx": ["<b>Cùng phiên bản báo cáo:<\/b> số Q1/2026 đã trích khớp Vietcap 345/345 chỉ số (100%).", "<b>Kỳ hiện tại Q2/2026:<\/b> 264/345 chỉ số khớp Vietcap. Mọi chỗ lệch đã mở ảnh trang BCTC gốc: số của luồng đúng với BCTC quý 2 công ty công bố; Vietcap lấy quý 2 từ BCTC bán niên đã soát xét (công bố muộn hơn khoảng 3 tuần) nên một số dòng khác.", "<b>Cột so sánh<\/b> (cùng kỳ năm trước, đầu năm): lệch Vietcap khi BCTC năm nay trình bày lại số năm trước; luồng dùng số trình bày lại để so cùng cơ sở.", "<b>Kiểm tra cân đối<\/b> chạy tự động cho mọi BCTC trước khi lưu: 30/30 qua (GAS có cảnh báo do chính báo cáo gốc lệch 11 tỷ giữa LNTT trên 2 báo cáo)."], "vd": ["<b>OCR là nút thắt<\/b> (5–13 phút cho 30 BCTC, CPU 100%): khoảng 90% BCTC là bản scan. Đề xuất: ưu tiên bản có lớp chữ khi công ty đăng cả hai bản; chạy luồng trên máy nhiều nhân hơn hoặc gửi thẳng ảnh trang cho Gemini để bỏ bước OCR khi có API key.", "<b>Claude CLI chạy ngầm bị chặn ghi file<\/b> ở lần thử đầu, chạy 2 giờ không lưu được kết quả. Đã sửa: Claude gửi JSON qua stdin cho lệnh <code>claude_trich.py ghi<\/code> (chỉ cần 1 quyền chạy lệnh), thêm giới hạn 15 phút mỗi BCTC để không treo.", "<b>Web MBB trả lỗi 403 tạm thời<\/b> lúc 9h30 17/10: luồng tự lấy danh mục từ CafeF, các lần chạy sau đọc lại được web MBB. Timeline ghi rõ web nào dùng dự phòng.", "<b>Máy phải bật và đăng nhập<\/b> để Task Scheduler chạy. Muốn chạy 24/7 cần đưa luồng lên máy chủ hoặc dịch vụ chạy theo lịch.", "<b>Chi phí trích bằng AI<\/b>: Claude CLI chỉ chạy khi có BCTC mới. Có Gemini API key (gói miễn phí) thì luồng tự dùng Gemini, rẻ và nhanh hơn."]}</script>
+<script>
+(() => {
+  const D = JSON.parse(document.getElementById('data').textContent);
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const chip = (t, c) => `<span class="chip ${c}">${esc(t)}</span>`;
+  const st = {dat: chip('Đạt', 'ok'), chua: chip('Chưa đạt', 'bad'), mot_phan: chip('Đạt một phần', 'warn'), tham_khao: chip('Tham khảo', 'def')};
+  const dur = x => { if (x == null) return '–'; const t = Math.round(x); return t >= 60 ? `${Math.floor(t / 60)} phút ${t % 60} giây` : `${t} giây`; };
+  const nf = new Intl.NumberFormat('vi-VN', {maximumFractionDigits: 1});
+
+  $('verdict').innerHTML = D.verdict;
+  $('tiles').innerHTML = D.tiles.map(([l, n, c, s]) => `<div class="tile ${c}"><div class="l">${esc(l)}</div><div class="n">${esc(n)}</div><div class="l">${esc(s)}</div></div>`).join('');
+  $('mayNote').textContent = D.may;
+  $('tblKpi').innerHTML = `<thead><tr><th>Tiêu chí</th><th>Cách đo</th><th>Mục tiêu</th><th>Kết quả đo</th><th>Đánh giá</th><th>Mốc ngành / tham chiếu</th></tr></thead><tbody>` +
+    D.kpi.map(k => `<tr><td class="t">${esc(k[0])}</td><td class="why">${esc(k[1])}</td><td>${esc(k[2])}</td><td>${esc(k[3])}</td><td>${st[k[4]] || ''}</td><td class="why">${esc(k[5] || '–')}</td></tr>`).join('') + '</tbody>';
+
+  const max = Math.max(...D.lag.map(x => x[1]));
+  $('bars').innerHTML = D.lag.map(([l, v, txt, c]) => `<div class="bar-row"><span>${esc(l)}</span><div class="bar" role="img" aria-label="${esc(l)}: ${esc(txt)}"><span style="width:${Math.max(0.6, v / max * 100)}%;background:var(--${c})"></span></div><span class="v">${esc(txt)}</span></div>`).join('');
+
+  const rowsTbl = (head, rows) => `<thead><tr>${head.map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>` +
+    rows.map(r => `<tr>${r.map((c, i) => `<td class="${i === 0 ? 't' : ''}">${c}</td>`).join('')}</tr>`).join('') + '</tbody>';
+  $('tbl1a').innerHTML = rowsTbl(['Chỉ số', 'Kết quả'], D.t1a);
+  $('tbl1b').innerHTML = rowsTbl(['Chỉ số', 'Kết quả'], D.t1b);
+  $('tblAi').innerHTML = rowsTbl(['BCTC', 'Trường giống', 'Trường khác', 'Ghi chú'], D.ai);
+  $('tbl2').innerHTML = rowsTbl(['Bước', 'Lần 1', 'Lần 2'], D.t2);
+  $('tblLap').innerHTML = rowsTbl(['Output', 'Kết quả'], D.lap);
+  $('cxList').innerHTML = D.cx.map(x => `<li>${x}</li>`).join('');
+  $('vdList').innerHTML = D.vd.map(x => `<li>${x}</li>`).join('');
+})();
+</script>
+
+</body>
+</html>

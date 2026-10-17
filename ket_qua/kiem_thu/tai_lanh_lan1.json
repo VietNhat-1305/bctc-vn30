@@ -1,0 +1,527 @@
+{
+ "lan": 1,
+ "bat_dau": "2026-10-17T09:35:45",
+ "may": {
+  "cpu_luong": 12,
+  "cpu_nhan": 6,
+  "ram_gb": 16.9
+ },
+ "buoc1_tai": {
+  "giay": 46.4,
+  "dinh": {
+   "ram_mb": 1762.3,
+   "cpu_pct": 94.6,
+   "tien_trinh": 32
+  },
+  "tai_moi": 31,
+  "mb": 321.5,
+  "loi_tai": 0,
+  "web_loi": [],
+  "so_ma_co_file": 30
+ },
+ "buoc2_ocr": {
+  "giay": 785.4,
+  "dinh": {
+   "ram_mb": 2608.5,
+   "cpu_pct": 100.0,
+   "tien_trinh": 7
+  },
+  "so_bctc_xu_ly": 30,
+  "loi": []
+ },
+ "tong_giay": 831.8,
+ "file": {
+  "FPT": {
+   "file": "FPT/2026/FPT_2026_Q2_HN.pdf",
+   "sha256": "a5aa01df2225a062db3410ce29f0462eaac3d73ee266267c823904a22ae993eb",
+   "mb": 2.66,
+   "nguon": "official"
+  },
+  "TCB": {
+   "file": "TCB/2026/TCB_2026_Q2_HN.pdf",
+   "sha256": "7040941f31a2032745b88db04b9d81c571aa2b0c0f93ce53563507efaa762b73",
+   "mb": 1.42,
+   "nguon": "official"
+  },
+  "VCB": {
+   "file": "VCB/2026/VCB_2026_Q2_HN.pdf",
+   "sha256": "d28c8c4062b8db512d717a0ee75923b5941c25b3be2363a691c8ff3fadeef1b0",
+   "mb": 5.05,
+   "nguon": "official"
+  },
+  "MCH": {
+   "file": "MCH/2026/MCH_2026_Q2_HN.pdf",
+   "sha256": "40d693dc27232676187a24271977e533ee915accc320a9cf781ad11e2a0faab5",
+   "mb": 10.71,
+   "nguon": "official"
+  },
+  "VIB": {
+   "file": "VIB/2026/VIB_2026_Q2_HN.pdf",
+   "sha256": "0d7f9ab03feb69bd5cb64310308782731ec6b45569a502c5ab0ba0a4922d693a",
+   "mb": 2.47,
+   "nguon": "official"
+  },
+  "MBB": {
+   "file": "MBB/2026/MBB_2026_Q2_HN.pdf",
+   "sha256": "a86757a4499953264ca22dd57ae2e3257057631107742e1d04ad1ecd0e2c23d1",
+   "mb": 3.68,
+   "nguon": "official"
+  },
+  "VIC": {
+   "file": "VIC/2026/VIC_2026_Q2_HN.pdf",
+   "sha256": "9a044beccdd8ec36eba001ecbcf5217b6d0695ba51d3a30d2de96fbe3c1f2d85",
+   "mb": 2.24,
+   "nguon": "official"
+  },
+  "VNM": {
+   "file": "VNM/2026/VNM_2026_Q2_HN_SX.pdf",
+   "sha256": "a6155aa757b320b893a78093b0454473f4a581aead225af4eb4ef1fbd6628561",
+   "mb": 4.35,
+   "nguon": "official"
+  },
+  "TCX": {
+   "file": "TCX/2026/TCX_2026_Q2_CHUNG.pdf",
+   "sha256": "0426f72962116a429854811247a413bbde3d5ce6ae41fddb4d946f74bd6aa6d5",
+   "mb": 3.8,
+   "nguon": "official"
+  },
+  "VRE": {
+   "file": "VRE/2026/VRE_2026_Q2_HN.pdf",
+   "sha256": "28f29bbdebac76103bbb4216d8457c821ae85b424fa12aca4e2bc03c790060db",
+   "mb": 8.38,
+   "nguon": "official"
+  },
+  "SHB": {
+   "file": "SHB/2026/SHB_2026_Q2_HN.pdf",
+   "sha256": "27fc5120875b0ea38a9dd8955b1f1103b80063703d880c074e05d57a65e0839c",
+   "mb": 6.42,
+   "nguon": "official"
+  },
+  "HDB": {
+   "file": "HDB/2026/HDB_2026_Q2_HN.pdf",
+   "sha256": "dae87ce9d04a135515dc0211591b21f44d3421eaeccd8258122bfeef3fe5877f",
+   "mb": 12.36,
+   "nguon": "official"
+  },
+  "VPB": {
+   "file": "VPB/2026/VPB_2026_Q2_HN.pdf",
+   "sha256": "01ce509d68f3d3af8ad624a7060e7be080c0968947de14188647926bc56a1c58",
+   "mb": 2.55,
+   "nguon": "official"
+  },
+  "ACB": {
+   "file": "ACB/2026/ACB_2026_Q2_HN.pdf",
+   "sha256": "e8f35233caf9b53720fde6c53a48c65d53704ca46170854267450850367ac351",
+   "mb": 0.94,
+   "nguon": "official"
+  },
+  "SSI": {
+   "file": "SSI/2026/SSI_2026_Q2_HN.pdf",
+   "sha256": "a1b964fb0b94960972bd5d8be1ca3ffcc466442dba7ba58da1d456cb6132d1f0",
+   "mb": 10.92,
+   "nguon": "official"
+  },
+  "LPB": {
+   "file": "LPB/2026/LPB_2026_Q2_CHUNG.pdf",
+   "sha256": "47d3b2d6b5a4ab6855ad1568127928204e7097f490748c07274e2ed9704f5fe3",
+   "mb": 7.64,
+   "nguon": "official"
+  },
+  "HPG": {
+   "file": "HPG/2026/HPG_2026_Q2_HN.pdf",
+   "sha256": "1f5c4b14f867d2683fd3a84fe0f31fed6fc9920fdcd768c0eaaa1a6e9d19ea71",
+   "mb": 10.64,
+   "nguon": "official"
+  },
+  "BSR": {
+   "file": "BSR/2026/BSR_2026_Q2_HN.pdf",
+   "sha256": "539ad3ec85853f923ea4cd50b280fb78c13c849dc3249f7a6c04856eec1a9c45",
+   "mb": 12.09,
+   "nguon": "official"
+  },
+  "VPL": {
+   "file": "VPL/2026/VPL_2026_Q2_HN_SX.pdf",
+   "sha256": "fe9fdc9bc2eabc2fa7f178f6e9fa4ccf3563417212414efb6bfc40ab0aaac0fe",
+   "mb": 9.94,
+   "nguon": "official"
+  },
+  "MSN": {
+   "file": "MSN/2026/MSN_2026_Q2_HN.pdf",
+   "sha256": "8768e969ec6f0c96af33dc642466fffb41eed372da94e8d3c4dd69fa98f8a2d3",
+   "mb": 84.05,
+   "nguon": "official"
+  },
+  "CTG": {
+   "file": "CTG/2026/CTG_2026_Q2_HN.pdf",
+   "sha256": "f7453816648cac21536621e09d4e52a40e8ce9fcdbaf824981b3b997a8197318",
+   "mb": 6.7,
+   "nguon": "official"
+  },
+  "VJC": {
+   "file": "VJC/2026/VJC_2026_Q2_HN.pdf",
+   "sha256": "979db52d2bed37e9f1e9a4308db39627f62bc10cb8d9ed1b3fe208f81d3ac682",
+   "mb": 7.01,
+   "nguon": "official"
+  },
+  "BID": {
+   "file": "BID/2026/BID_2026_Q2_HN.pdf",
+   "sha256": "d754ea79667f01a7d65959327b72094734ec3631997787750e040f3994438eca",
+   "mb": 13.47,
+   "nguon": "official"
+  },
+  "GVR": {
+   "file": "GVR/2026/GVR_2026_Q2_HN.pdf",
+   "sha256": "b783766f41494dbaa6bd626e9eef5a14d64174313c8e5381f2409fb73e8237f5",
+   "mb": 4.41,
+   "nguon": "official"
+  },
+  "GAS": {
+   "file": "GAS/2026/GAS_2026_Q2_HN.pdf",
+   "sha256": "118f3b092ddce271d87051734c4c789d18b82a65dc7ace39ce83beedeea46e56",
+   "mb": 8.76,
+   "nguon": "official"
+  },
+  "VHM": {
+   "file": "VHM/2026/VHM_2026_Q2_HN.pdf",
+   "sha256": "18e9e2c8486fb6c3fdbde681abfd2289c949bb1909c6cb97b32fdcd7b8b267f5",
+   "mb": 20.52,
+   "nguon": "official"
+  },
+  "SSB": {
+   "file": "SSB/2026/SSB_2026_Q2_HN.pdf",
+   "sha256": "7fd70735610eecb95add47b7a3d77af4cf2c1c37cd81dd956ebb0d12cfde0cc7",
+   "mb": 16.01,
+   "nguon": "official"
+  },
+  "MWG": {
+   "file": "MWG/2026/MWG_2026_Q2_HN.pdf",
+   "sha256": "a2a768e269d3a40f4af397be785dc65a60fb9f620bfcc8ab18f618125e4708f7",
+   "mb": 18.16,
+   "nguon": "official"
+  },
+  "SAB": {
+   "file": "SAB/2026/SAB_2026_Q2_HN.pdf",
+   "sha256": "4082092490fdea42427029eb7179e8207434732b18ef7811a8a43cbe8a78b56b",
+   "mb": 7.75,
+   "nguon": "official"
+  },
+  "STB": {
+   "file": "STB/2026/STB_2026_Q2_HN.pdf",
+   "sha256": "b50173a5c871d979f1cdcb42bcb8f3bb1860a27afe9b72bfa90f3edca1f07ff0",
+   "mb": 14.63,
+   "nguon": "official"
+  }
+ },
+ "trang": {
+  "TCB": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "FPT": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ],
+  "VCB": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "MCH": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13
+  ],
+  "VIB": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "MBB": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "VNM": [
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "VIC": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13
+  ],
+  "TCX": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14
+  ],
+  "VRE": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "SHB": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "VPB": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "ACB": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "HDB": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "LPB": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "SSI": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19
+  ],
+  "HPG": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "BSR": [
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "VPL": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13
+  ],
+  "MSN": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ],
+  "VJC": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "CTG": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "BID": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "GVR": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "VHM": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13
+  ],
+  "GAS": [
+   3,
+   4,
+   5,
+   6
+  ],
+  "SSB": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "SAB": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "MWG": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "STB": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ]
+ },
+ "ocr_hash": {
+  "FPT": "97a4c813f58872789d1c930240a23d603963203841b135267571874d2e972b50",
+  "VCB": "1a5b52435ef8a8c880b2733e52feadf5ae00abf02e8be8ffe928bb1aaa9dbefb",
+  "MCH": "daaf5a385b852d241ec4d80f60283adc4d32b112537427fd7cf5bf208033aa2e",
+  "VIB": "f6f78490a1cbbce156024f2948d11549c3cb8e89f2aebfaa4b3711d63147fce2",
+  "MBB": "2d99321062074ffb2dd5cad6517854d129a31ad4f2926eb0aa5a128ab099e536",
+  "VIC": "5c06c77647e3ecb39db9d185f061c734b6c2195d9f9ed69d3c9f6d26610fa708",
+  "VNM": "23ea4077125059f572428c4d6139d5fe75143e2c98a45019b45b33d950015c29",
+  "TCX": "4e687c071b65780762cb06dcea7d5f24538fe4209b4080443593be258cf42fc7",
+  "VRE": "3541eaff76b6e1c38e77b17dc1225dc60560d99cd2df82eefd47d7e17d6bea6b",
+  "SHB": "1713dbe9b8a982658e4dc49c924257f9ba2edf48b0ff6f4b1b45653082eec935",
+  "HDB": "b4279aaaf3d082d288c935f8341c36fc55d240ad9160aef77dcc539652167865",
+  "SSI": "b91d2b1a8113190c0e9f6880467a6f957be46475ef90b5eb1568f3a8f88ea114",
+  "LPB": "0d7e78063b7c1f2a64986887644727ed5a3eaa3a3abf5308d171bd0fb4dd757e",
+  "HPG": "fb471564e8acd9e46349526180241821c8511ef42f1e8e9faac4304325f735a6",
+  "BSR": "56051cf3fa18a0a9015c7ecab1f482195f0dc3a52ee4a3483fa4fcb7103420f4",
+  "VPL": "b1974c64db754796e20552491abcd98c6a1963bbbeb2546ddbcd185adb175a81",
+  "MSN": "4667b6f643f78d67e7fcdc3d090d9dbddd6b47caa9caf43304ec83c70caf57a0",
+  "CTG": "0cc47af300ceafcd2181452a7fe2121fb8b7761a37ebfb621b3e49740da3f93b",
+  "VJC": "4139a00c05f047c26fe9a2c74ec387ac55d9e3344ad4a57c78f548cd50aba904",
+  "BID": "3f1917e72c8fea709a4ec0dce2273f635547a31650be26e3a4090bb162ebac50",
+  "GVR": "fcc6e303ddfa72d867d680abb7710c1e2ed5db7b9a2be07913ebd333ddba0767",
+  "GAS": "ffe344735e25280fbc930c0b0a336edcd813d2ca7c06f56598ed113603bbfe62",
+  "VHM": "2b19f2873386f6b435554e2b799e4f760887cc354e1ea07116cf856ce8eefa53",
+  "SSB": "9960572561e22fa3ebfea388ebf560795fa23d90923ecae61591b394af5394c5",
+  "MWG": "9c06d940ea017aafd745edf818b238aa1179878491b1ebf7c42ed5527cd3f07f",
+  "SAB": "fc1d4bbfbf2704f912bb70120c4376453204db5e714a81b1f7b20dd8f1195690",
+  "STB": "579caf6e34c652764f1913e4010c1779db0e10e54f34ced23f7861eeeecf83c7"
+ }
+}

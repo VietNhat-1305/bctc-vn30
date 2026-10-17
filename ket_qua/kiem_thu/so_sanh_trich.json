@@ -1,0 +1,26 @@
+{
+ "VCB": {
+  "truong_giong": 29,
+  "truong_khac": 0,
+  "chi_tiet_khac": [],
+  "trich_luc_cu": "2026-10-16T19:29:12",
+  "trich_luc_moi": "2026-10-17T15:18:05",
+  "model_moi": "claude-opus-5-5"
+ },
+ "HPG": {
+  "truong_giong": 34,
+  "truong_khac": 0,
+  "chi_tiet_khac": [],
+  "trich_luc_cu": "2026-10-16T19:28:34",
+  "trich_luc_moi": "2026-10-17T15:18:05",
+  "model_moi": "claude-opus-5-5"
+ },
+ "MWG": {
+  "truong_giong": 34,
+  "truong_khac": 0,
+  "chi_tiet_khac": [],
+  "trich_luc_cu": "2026-10-16T19:29:29",
+  "trich_luc_moi": "2026-10-17T15:17:56",
+  "model_moi": "claude-opus-5-5"
+ }
+}
