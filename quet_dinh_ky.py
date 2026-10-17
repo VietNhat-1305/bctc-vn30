@@ -247,10 +247,14 @@ def dat_lich(ky: str | None = None) -> None:
     extra = f" --ky {ky}" if ky else ""
     cmd.write_text("@echo off\r\ncd /d %~dp0\r\nset PYTHONIOENCODING=utf-8\r\n"
                    f"\"{sys.executable}\" quet_dinh_ky.py{extra} >> ket_qua\\quet.log 2>&1\r\n", encoding="ascii")
+    # Chạy ẩn qua wscript: cửa sổ console hiện lên giữa màn hình dễ bị đóng tay -> lượt quét 18/10/2026 01:35 bị ngắt
+    # (0xC000013A) đúng lúc git push. Quit trả về mã thoát của cmd để Task Scheduler ghi đúng kết quả.
+    vbs = ROOT / "quet_dinh_ky.vbs"
+    vbs.write_text(f'WScript.Quit CreateObject("WScript.Shell").Run("""{cmd}""", 0, True)\r\n', encoding="ascii")
     for k in KHUNG:
         name = TASK.format(k.replace(":", ""))
-        r = subprocess.run(["schtasks", "/Create", "/F", "/SC", "DAILY", "/ST", k, "/TN", name, "/TR", str(cmd)],
-                           capture_output=True, text=True)
+        r = subprocess.run(["schtasks", "/Create", "/F", "/SC", "DAILY", "/ST", k, "/TN", name,
+                            "/TR", f'wscript.exe //B //Nologo "{vbs}"'], capture_output=True, text=True)
         if r.returncode == 0:
             # Mặc định của schtasks: không chạy khi máy dùng pin, lỡ giờ (máy ngủ) thì bỏ luôn -> 17-18/10/2026 lượt 18h, 0h
             # bị Windows từ chối (0x800710E0). Cho chạy cả khi dùng pin và chạy bù ngay khi máy thức.
