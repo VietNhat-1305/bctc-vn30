@@ -28,8 +28,17 @@ REPO_URL = "https://github.com/VietNhat-1305/bctc-vn30"
 LOAI_VI = {"doanh_nghiep": "Doanh nghiệp", "ngan_hang": "Ngân hàng", "chung_khoan": "Chứng khoán",
            "bao_hiem": "Bảo hiểm"}
 # Loại hình mặc định khi chưa có kết quả Gemini (Gemini tự nhận loại hình khi đọc BCTC)
-LOAI_MAC_DINH = {**{t: "ngan_hang" for t in "ACB BID CTG HDB LPB MBB SHB SSB STB TCB VCB VIB VPB".split()},
-                 **{t: "chung_khoan" for t in ("SSI", "TCX")}}
+LOAI_MAC_DINH = {**{t: "ngan_hang" for t in "ACB BID CTG HDB LPB MBB SHB SSB STB TCB VCB VIB VPB OCB".split()},
+                 **{t: "chung_khoan" for t in ("SSI", "TCX", "HCM")}}
+
+
+def all_companies() -> list[dict]:
+    """30 mã VN30 (companies.json) + mã bổ sung thử nghiệm BCTC scan (companies_mo_rong.json, nguồn CafeF)."""
+    out = json.loads((ROOT / "companies.json").read_text(encoding="utf-8"))["companies"]
+    extra = ROOT / "companies_mo_rong.json"
+    if extra.exists():
+        out += json.loads(extra.read_text(encoding="utf-8"))["companies"]
+    return out
 # Chỉ tiêu trên thẻ (kỳ so sánh: KQKD/LCTT *_cung_ky, CĐKT *_dau_nam - đều có sẵn trong 1 BCTC)
 CARD_FIELDS = ["doanh_thu_thuan", "loi_nhuan_gop", "lnst", "tong_tai_san", "no_phai_tra", "vay_no",
                "von_chu_so_huu", "lctt_hdkd"]
@@ -61,8 +70,7 @@ def _file_urls() -> dict[str, str]:
 
 def build_cards(results: dict) -> list[dict]:
     """Mỗi mã 1 thẻ từ 1 BCTC (quý mới nhất): năm nay so với kỳ so sánh có sẵn trong báo cáo đó."""
-    companies = {c["ticker"]: c for c in
-                 json.loads((ROOT / "companies.json").read_text(encoding="utf-8"))["companies"]}
+    companies = {c["ticker"]: c for c in all_companies()}
     urls = _file_urls()
     cards = []
     for tk in sorted(results):
@@ -163,14 +171,14 @@ def ai_used(results: dict) -> dict:
 
 def build(results: dict | None = None, outs: list[Path] | None = None) -> Path:
     results = results if results is not None else load_results()
-    companies = json.loads((ROOT / "companies.json").read_text(encoding="utf-8"))["companies"]
+    companies = all_companies()
     ir_path = phan_tich.OUT / "ir_check.json"
     ir = json.loads(ir_path.read_text(encoding="utf-8")) if ir_path.exists() else {"cong_ty": [], "kiem_tra_luc": None}
     payload = {
         "cards": build_cards(results),
         "companies": [{"ma": c["ticker"], "ten": c.get("name", ""), "website": c.get("website", ""),
-                       "bctc_url": c.get("bctc_url", ""), "loai": LOAI_MAC_DINH.get(c["ticker"], "doanh_nghiep")}
-                      for c in companies],
+                       "bctc_url": c.get("bctc_url", ""), "loai": LOAI_MAC_DINH.get(c["ticker"], "doanh_nghiep"),
+                       "nhom": c.get("nhom", "vn30")} for c in companies],
         "ir": ir["cong_ty"], "ir_luc": ir["kiem_tra_luc"],
         "lib": library(date.today().year - 2),
         "tu_dien": tu_dien_rows(),
@@ -506,14 +514,16 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
   const irBy = Object.fromEntries(D.ir.map(c => [c.ma, c]));
   const items = D.companies.map(co => {
     const c = scoreBy[co.ma], ir = irBy[co.ma];
-    return {ma: co.ma, ten: co.ten, loai: c ? c.loai : co.loai, bctc_url: co.bctc_url, c, ir,
+    return {ma: co.ma, ten: co.ten, loai: c ? c.loai : co.loai, bctc_url: co.bctc_url, nhom: co.nhom, c, ir,
             m: c ? c.m : {}, diem: c ? c.diem : null};
   });
   const hasScore = D.cards.length > 0;
   const debt = it => it.m.vay_pct != null ? it.m.vay_pct : it.m.no_pct;
 
   $('sub').textContent = (hasScore ? `Kỳ ${D.cards[0].ky} so với ${D.cards[0].ky_truoc} · ` : '') +
-    `30 mã VN30 · dữ liệu lấy trực tiếp từ web công ty · cập nhật ${D.tao_luc}`;
+    `${items.filter(x => x.nhom !== 'mo_rong').length} mã VN30` +
+    (items.some(x => x.nhom === 'mo_rong') ? ` + ${items.filter(x => x.nhom === 'mo_rong').length} mã bổ sung (BCTC scan)` : '') +
+    ` · dữ liệu lấy trực tiếp từ web công ty · cập nhật ${D.tao_luc}`;
   $('footer').innerHTML = `Số liệu tỷ đồng. Nguồn: web quan hệ nhà đầu tư của từng công ty. Không phải khuyến nghị đầu tư. ` +
     `Mã nguồn: <a href="${esc(D.repo)}" target="_blank" rel="noopener">${esc(D.repo.replace('https://', ''))}</a>. ` +
     `Đoạn trích Wikipedia trong Từ điển theo giấy phép <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.vi" target="_blank" rel="noopener">CC BY-SA 4.0</a>.`;
@@ -584,6 +594,8 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
   }
   function latestBlock(it) {
     const ir = it.ir;
+    if (it.nhom === 'mo_rong') return `<div class="latest"><span>Mã bổ sung thử nghiệm BCTC dạng scan · nguồn CafeF</span>`
+      + `${it.c && it.c.file_url ? `<span><a href="${esc(it.c.file_url)}" target="_blank" rel="noopener">Mở PDF</a></span>` : ''}</div>`;
     if (!ir || !ir.ir) return `<div class="latest"><span>BCTC mới nhất: chưa đọc được từ web công ty${it.bctc_url ? ` · <a href="${esc(it.bctc_url)}" target="_blank" rel="noopener">Mở trang BCTC</a>` : ''}</span></div>`;
     const d = ir.ir;
     return `<div class="latest">
@@ -620,7 +632,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     }
     return `<article class="card" aria-label="${esc(it.ma)}">
       <div class="card-top"><div><div class="tk">${esc(it.ma)}</div><div class="name">${esc(it.ten)}</div>
-        <span class="tag">${esc(LOAI[it.loai] || it.loai)}${c ? ` · ${esc(c.ky)} vs ${esc(c.ky_truoc)}` : ''}</span></div>${head}</div>
+        <span class="tag">${esc(LOAI[it.loai] || it.loai)}${c ? ` · ${esc(c.ky)} vs ${esc(c.ky_truoc)}` : ''}</span>${it.nhom === 'mo_rong' ? ' <span class="tag">Bổ sung · BCTC scan</span>' : ''}</div>${head}</div>
       ${body}${latestBlock(it)}
     </article>`;
   }

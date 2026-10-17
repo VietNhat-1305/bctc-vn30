@@ -4,3 +4,5 @@ google-genai>=1.50    # phan_tich.py: Gemini API
 pydantic>=2
 openpyxl>=3.1         # xuất Excel
 cryptography>=41      # ir_adapters.hdb: giải mã API HDBank
+rapidocr>=3.10       # ocr_so.py: PP-OCRv6 đọc lại số trên trang báo cáo scan (tuỳ chọn, không có thì chỉ dùng Tesseract)
+onnxruntime>=1.20

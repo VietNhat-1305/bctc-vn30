@@ -1,0 +1,10 @@
+{
+ "ghi_chu": "Mã ngoài VN30 dùng để thử luồng với BCTC dạng scan (17/10/2026). Nguồn tải: CafeF. Không thuộc lịch quét 30 web VN30.",
+ "companies": [
+  {"ticker": "OCB", "name": "Ngân hàng TMCP Phương Đông", "website": "https://www.ocb.com.vn", "bctc_url": "", "nhom": "mo_rong"},
+  {"ticker": "HCM", "name": "CTCP Chứng khoán Thành phố Hồ Chí Minh (HSC)", "website": "https://www.hsc.com.vn", "bctc_url": "", "nhom": "mo_rong"},
+  {"ticker": "PNJ", "name": "CTCP Vàng bạc Đá quý Phú Nhuận", "website": "https://www.pnj.com.vn", "bctc_url": "", "nhom": "mo_rong"},
+  {"ticker": "DGC", "name": "CTCP Tập đoàn Hóa chất Đức Giang", "website": "https://ducgiangchem.vn", "bctc_url": "", "nhom": "mo_rong"},
+  {"ticker": "KDH", "name": "CTCP Đầu tư và Kinh doanh Nhà Khang Điền", "website": "https://www.khangdien.com.vn", "bctc_url": "", "nhom": "mo_rong"}
+ ]
+}

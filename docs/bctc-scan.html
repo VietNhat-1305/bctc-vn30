@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thử nghiệm BCTC scan</title>
+<meta name="description" content="Chạy toàn bộ luồng cho 5 BCTC quý 2/2026 dạng scan với OCR tầng 2 PP-OCRv6; kiểm độc lập 170/170 trường khớp ảnh trang.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: biên bản thử nghiệm một cột - kết luận trước, rồi 3 bước theo đúng yêu cầu. */
+:root {
+  --bg: #f4f6f5; --surface: #ffffff; --fg: #17201c; --fg-2: #4c5a54; --line: #d9e0dc;
+  --accent: #1d5f78; --accent-soft: #e3eef2;
+  --ok: #23774a; --ok-soft: #e2f1e8; --warn: #9a6512; --warn-soft: #f8edd8;
+  --bad: #b03a2e; --bad-soft: #f8e3e0; --def: #566573; --def-soft: #e7ebee;
+  --sans: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #101513; --surface: #171e1b; --fg: #e4ebe7; --fg-2: #9fb0a8; --line: #2b3632;
+  --accent: #6fb6d3; --accent-soft: #1a2c34;
+  --ok: #6cc893; --ok-soft: #173024; --warn: #e2b05a; --warn-soft: #33291a;
+  --bad: #f08a7c; --bad-soft: #3a1f1c; --def: #a9b6c2; --def-soft: #242c33; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #101513; --surface: #171e1b; --fg: #e4ebe7; --fg-2: #9fb0a8; --line: #2b3632;
+  --accent: #6fb6d3; --accent-soft: #1a2c34;
+  --ok: #6cc893; --ok-soft: #173024; --warn: #e2b05a; --warn-soft: #33291a;
+  --bad: #f08a7c; --bad-soft: #3a1f1c; --def: #a9b6c2; --def-soft: #242c33; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 15px/1.6 var(--sans); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 32px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 44px; }
+.wrap > *, section > * { min-width: 0; }
+h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.25; }
+h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 21px; font-weight: 700; } h3 { font-size: 16px; font-weight: 600; }
+p { margin: 0; max-width: 76ch; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.head { display: grid; gap: 12px; } .lede { color: var(--fg-2); font-size: 16px; }
+.verdict { background: var(--ok-soft); border: 1px solid color-mix(in srgb, var(--ok) 35%, transparent); border-radius: 10px;
+  padding: 14px 18px; display: grid; gap: 6px; max-width: 920px; }
+.verdict b { color: var(--ok); }
+section { display: grid; gap: 16px; }
+.prose ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; max-width: 84ch; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 2px; }
+.tile .n { font: 600 24px/1.2 var(--mono); font-variant-numeric: tabular-nums; } .tile .l { font-size: 13px; color: var(--fg-2); }
+.tile.ok .n { color: var(--ok); } .tile.warn .n { color: var(--warn); }
+.flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; counter-reset: s; }
+.flow div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; gap: 4px; }
+.flow div::before { counter-increment: s; content: "Bước " counter(s); font: 600 11px/1 var(--mono); color: var(--accent); letter-spacing: .05em; text-transform: uppercase; }
+.flow b { font-size: 14px; } .flow span { font-size: 13px; color: var(--fg-2); }
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { font-size: 12px; font-weight: 600; color: var(--fg-2); background: var(--bg); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.t { font-weight: 600; min-width: 170px; } td.why { color: var(--fg-2); min-width: 220px; max-width: 460px; }
+.chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.chip.ok { color: var(--ok); background: var(--ok-soft); } .chip.warn { color: var(--warn); background: var(--warn-soft); }
+.chip.bad { color: var(--bad); background: var(--bad-soft); } .chip.def { color: var(--def); background: var(--def-soft); }
+.bars { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; }
+.bar-row { display: grid; grid-template-columns: 170px 1fr 120px; gap: 12px; align-items: center; font-size: 13.5px; }
+.bar { height: 16px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.bar span { display: block; height: 100%; border-radius: 4px; }
+.bar-row .v { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; color: var(--fg-2); }
+.note { font-size: 13px; color: var(--fg-2); }
+.foot { font-size: 13px; color: var(--fg-2); display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 16px; }
+.foot p { max-width: none; } code { font: 13px var(--mono); background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
+a { color: var(--accent); }
+@media (max-width: 560px) { .bar-row { grid-template-columns: 1fr; } .bar-row .v { text-align: left; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="head">
+  <div class="eyebrow">Thử nghiệm · 18/10/2026</div>
+  <h1>Chạy toàn bộ luồng cho 5 BCTC dạng scan</h1>
+  <p class="lede">Năm BCTC quý 2/2026 ngoài VN30, đều là bản scan không có lớp chữ, thuộc 5 loại hình khác nhau. Mục tiêu: thử bộ OCR mới
+  cho tiếng Việt, kiểm số liệu đầu ra so với chính báo cáo, rồi đưa lên Bảng điểm cạnh 30 mã VN30.</p>
+  <div class="verdict"><div><b>Đạt.</b> 170/170 trường số liệu khớp ảnh trang báo cáo. Kiểm độc lập: agent kiểm chỉ đọc ảnh, không
+  dùng chữ OCR. Cả 5 mã đã lên <a href="./">Bảng điểm</a> với nhãn "Bổ sung · BCTC scan".</div></div>
+</header>
+
+<section>
+  <div class="tiles">
+    <div class="tile"><span class="n">5</span><span class="l">BCTC scan, 5 loại hình</span></div>
+    <div class="tile"><span class="n">29</span><span class="l">trang báo cáo được OCR tầng 2</span></div>
+    <div class="tile ok"><span class="n">170/170</span><span class="l">trường khớp ảnh (kiểm độc lập)</span></div>
+    <div class="tile ok"><span class="n">145/145</span><span class="l">số PP-OCRv6 đọc đúng (Tesseract 134/145)</span></div>
+    <div class="tile"><span class="n">3:58</span><span class="l">phút:giây, tìm trang + OCR 2 tầng cho 5 BCTC, chưa có cache</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Bước 1. Năm BCTC dạng scan</h2>
+  <p>Tải 22 BCTC quý 2/2026 của các mã ngoài VN30 từ CafeF (21 file là scan), chọn 5 file khác loại hình để thử cả 3 mẫu báo cáo:
+  doanh nghiệp, ngân hàng, công ty chứng khoán. Không file nào có lớp chữ, nên mọi con số đều phải qua OCR.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Mã</th><th>Công ty</th><th>Loại hình</th><th class="num">Số trang</th><th class="num">Trang báo cáo</th><th>Dạng file</th><th>Nguồn</th></tr></thead>
+    <tbody><tr><td class="t">OCB</td><td>Ngân hàng TMCP Phương Đông</td><td>Ngân hàng</td><td class="num">41</td><td class="num">6</td><td>Scan, không có lớp chữ</td><td><a href="https://cafefnew.mediacdn.vn//Images/Uploaded/DuLieuDownload/BCTC/OCB_202607302020OCB2020Bao20cao20tai20chinh20hop20nhat20Q2202026_31072026151923.pdf?v=1785485964570" target="_blank" rel="noopener">PDF gốc</a></td></tr><tr><td class="t">HCM</td><td>CTCP Chứng khoán Thành phố Hồ Chí Minh (HSC)</td><td>Chứng khoán</td><td class="num">61</td><td class="num">10</td><td>Scan, không có lớp chữ</td><td><a href="https://cafefnew.mediacdn.vn//Images/Uploaded/DuLieuDownload/BCTC/HCM_202607202020HCM2020Bao20cao20tai20chinh20Q22026_21072026145438.pdf?v=1784620479814" target="_blank" rel="noopener">PDF gốc</a></td></tr><tr><td class="t">PNJ</td><td>CTCP Vàng bạc Đá quý Phú Nhuận</td><td>Bán lẻ vàng bạc</td><td class="num">33</td><td class="num">4</td><td>Scan, không có lớp chữ</td><td><a href="https://cafefnew.mediacdn.vn//Images/Uploaded/DuLieuDownload/BCTC/PNJ_202607302020PNJ2020BCTC20quy20220nam20202620Hop20nhat_Signed_31072026112507.pdf?v=1785471908548" target="_blank" rel="noopener">PDF gốc</a></td></tr><tr><td class="t">DGC</td><td>CTCP Tập đoàn Hóa chất Đức Giang</td><td>Hoá chất</td><td class="num">43</td><td class="num">4</td><td>Scan, không có lớp chữ</td><td><a href="https://cafefnew.mediacdn.vn//Images/Uploaded/DuLieuDownload/BCTC/DGC_202607212020DGC2020BCTC20Hop20nhat20Q2202026_23072026094929.pdf?v=1784774971389" target="_blank" rel="noopener">PDF gốc</a></td></tr><tr><td class="t">KDH</td><td>CTCP Đầu tư và Kinh doanh Nhà Khang Điền</td><td>Bất động sản</td><td class="num">45</td><td class="num">5</td><td>Scan, không có lớp chữ</td><td><a href="https://cafefnew.mediacdn.vn//Images/Uploaded/DuLieuDownload/BCTC/KDH_202607292020KDH2020BCTC20Hop20nhat20Q220262020Giai20trinh20trong20TM20sign_31072026090050.pdf?v=1785463252139" target="_blank" rel="noopener">PDF gốc</a></td></tr></tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Bước 2. Chọn mô hình OCR từ GitHub</h2>
+  <div class="prose"><p>Khảo sát 12 dự án OCR mã nguồn mở có tiếng Việt, chạy được trên CPU Windows (máy không có GPU):</p></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Dự án</th><th>Kiểu</th><th>Tiếng Việt</th><th>Tốc độ CPU</th><th>Kết luận</th></tr></thead>
+    <tbody>
+      <tr><td class="t"><a href="https://github.com/PaddlePaddle/PaddleOCR" target="_blank" rel="noopener">PaddleOCR PP-OCRv6</a> qua <a href="https://github.com/RapidAI/RapidOCR" target="_blank" rel="noopener">RapidOCR</a></td><td>Dò dòng + nhận dạng CTC, ONNX</td><td>Có <code>vi</code> chính thức (06/2026)</td><td>5–10 s/trang</td><td><span class="chip ok">Chọn</span> Đọc từng ký tự kèm điểm tin cậy, không bịa số. Apache-2.0, cài bằng pip, không cần Paddle</td></tr>
+      <tr><td class="t"><a href="https://github.com/pbcquoc/vietocr" target="_blank" rel="noopener">VietOCR</a></td><td>Chỉ nhận dạng (VGG + Seq2Seq)</td><td>Chuyên tiếng Việt</td><td>khoảng 4–10 s/trang</td><td><span class="chip def">Dự phòng</span> Cần detector ngoài; dòng dài bị ép 512 px nên mất nét số</td></tr>
+      <tr><td class="t">Tesseract <code>vie</code> (đang dùng)</td><td>LSTM</td><td>Có</td><td>khoảng 1,6 s/trang</td><td><span class="chip warn">Giữ để tìm trang</span> Nhanh, dấu tốt, nhưng hay đọc sai chữ số</td></tr>
+      <tr><td class="t">SenOCR-Vi, PaddleOCR-VL, Vintern-1B, Surya 2</td><td>VLM ~0,65–1B tham số</td><td>Có / chuyên tiếng Việt</td><td>1–5 phút/trang</td><td><span class="chip bad">Loại</span> Quá chậm trên CPU, sinh tự do nên có rủi ro bịa số</td></tr>
+      <tr><td class="t">EasyOCR, docTR/OnnxTR</td><td>CRAFT/DBNet + CRNN</td><td>Chung Latin / không có model</td><td>3–20 s/trang</td><td><span class="chip bad">Loại</span> Không có lợi thế, hoặc phải tự huấn luyện</td></tr>
+    </tbody>
+  </table></div>
+  <div class="prose"><p><b>Kế thừa:</b> dùng model PP-OCRv6 bản small, <code>lang_type="vi"</code>, chạy bằng RapidOCR + ONNX Runtime. Code mới ở
+  <code>ocr_so.py</code>, thêm làm OCR tầng 2:</p>
+  <ul>
+    <li>Tesseract vẫn đọc nhanh cả file để tìm trang báo cáo.</li>
+    <li>PP-OCRv6 chỉ đọc lại 4–10 trang báo cáo, lấy số chính xác.</li>
+    <li>Không cài <code>rapidocr</code> thì luồng tự quay về Tesseract như cũ.</li>
+  </ul>
+  <p>Bản rec medium không đúng thêm số nào trên trang thử mà chậm gấp 16 lần (81 s/trang), nên bỏ.</p></div>
+  <h3>So sánh trên 29 trang báo cáo của 5 BCTC (đáp án: các con số đã được kiểm độc lập trên ảnh)</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Mã</th><th class="num">Trang</th><th class="num">Số đáp án</th><th class="num">Tesseract đúng</th><th class="num">PP-OCRv6 đúng</th></tr></thead>
+    <tbody><tr><td class="t">OCB</td><td class="num">6</td><td class="num">25</td><td class="num">22/25</td><td class="num">25/25</td></tr><tr><td class="t">HCM</td><td class="num">10</td><td class="num">25</td><td class="num">23/25</td><td class="num">25/25</td></tr><tr><td class="t">PNJ</td><td class="num">4</td><td class="num">31</td><td class="num">30/31</td><td class="num">31/31</td></tr><tr><td class="t">DGC</td><td class="num">4</td><td class="num">32</td><td class="num">27/32</td><td class="num">32/32</td></tr><tr><td class="t">KDH</td><td class="num">5</td><td class="num">32</td><td class="num">32/32</td><td class="num">32/32</td></tr><tr><td class="t">Tổng</td><td class="num">29</td><td class="num">145</td><td class="num"><b>134/145 (92,4%)</b></td><td class="num"><b>145/145 (100%)</b></td></tr></tbody>
+  </table></div>
+  <h3>Các số Tesseract đọc sai (PP-OCRv6 đọc đúng hết)</h3>
+  <p>11 số Tesseract đọc sai: 3 sai chữ số, 4 sai dấu phân cách,
+  4 không đọc ra số gần đúng. Ngoài 5 BCTC này, trên trang thử PNJ trước đó Tesseract còn đọc 1 thành 4
+  ở 19.430.865.390.489 và 1.586.705.577.147, nhưng các số đó không thuộc 34 trường trích nên không tính vào bảng trên.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Mã</th><th class="num">Số trên báo cáo</th><th class="num">Tesseract đọc</th><th>Loại lỗi</th></tr></thead>
+    <tbody><tr><td class="t">OCB</td><td class="num">2.179.122.847.119</td><td class="num">không đọc được</td><td>Không đọc ra số gần đúng</td></tr><tr><td class="t">OCB</td><td class="num">5.433.538.429.428</td><td class="num">6.433.638.429.428</td><td>Sai chữ số</td></tr><tr><td class="t">OCB</td><td class="num">5.290.042.440.181</td><td class="num">không đọc được</td><td>Không đọc ra số gần đúng</td></tr><tr><td class="t">HCM</td><td class="num">1.073.464.552.077</td><td class="num">1.073.464.552077</td><td>Sai dấu phân cách</td></tr><tr><td class="t">HCM</td><td class="num">563.896.381.858</td><td class="num">563.896.381858</td><td>Sai dấu phân cách</td></tr><tr><td class="t">PNJ</td><td class="num">8.483.734.481.474</td><td class="num">8.483.734.461.474</td><td>Sai chữ số</td></tr><tr><td class="t">DGC</td><td class="num">3.029.778.362.136</td><td class="num">không đọc được</td><td>Không đọc ra số gần đúng</td></tr><tr><td class="t">DGC</td><td class="num">1.913.548.105.226</td><td class="num">1913.548.105226</td><td>Sai dấu phân cách</td></tr><tr><td class="t">DGC</td><td class="num">4.167.309.059.753</td><td class="num">không đọc được</td><td>Không đọc ra số gần đúng</td></tr><tr><td class="t">DGC</td><td class="num">4.540.004.805.000</td><td class="num">4,540.004.805.000</td><td>Sai dấu phân cách</td></tr><tr><td class="t">DGC</td><td class="num">1.727.646.728.095</td><td class="num">1.727.646.728.098</td><td>Sai chữ số</td></tr></tbody>
+  </table></div>
+  <p class="note">Điểm yếu của PP-OCRv6: chữ hay mất dấu ("Tài sn ngn hn") và có lúc xếp số vào nhầm dòng ở bảng 4 cột (gặp ở KQKD của PNJ).
+  Vì vậy AI vẫn đọc ảnh trang và chỉ dùng chữ OCR làm gợi ý. Điểm này đã ghi vào hướng dẫn trích.</p>
+</section>
+
+<section>
+  <h2>Bước 3. Chạy toàn bộ luồng và kiểm số liệu</h2>
+  <div class="flow">
+    <div><b>Tìm trang báo cáo</b><span>Tesseract quét vùng tiêu đề, chọn CĐKT, KQKD, LCTT</span></div>
+    <div><b>OCR tầng 2</b><span>PP-OCRv6 đọc lại trang báo cáo, giữ hàng/cột</span></div>
+    <div><b>AI trích số</b><span>5 agent song song đọc ảnh trang + chữ OCR, theo sổ bài học R1–R13</span></div>
+    <div><b>Kiểm cân đối</b><span>TS = Nợ + VCSH; LCTT thuần = KD + ĐT + TC; cả kỳ này lẫn kỳ so sánh</span></div>
+    <div><b>Kiểm độc lập</b><span>5 agent khác chỉ đọc ảnh, so từng chữ số của 34 trường</span></div>
+    <div><b>Đối chiếu Vietcap</b><span>Lệch &gt; 1% thì xét bằng bản bán niên soát xét</span></div>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Mã</th><th class="num">DT Q2 (tỷ)</th><th class="num">so cùng kỳ</th><th class="num">LNST Q2 (tỷ)</th><th class="num">so cùng kỳ</th><th class="num">Tổng TS (tỷ)</th><th>Cân đối</th><th>Kiểm độc lập</th><th class="num">Vietcap khớp</th><th>Cảnh báo trên thẻ</th></tr></thead>
+    <tbody><tr><td class="t">OCB</td><td class="num">3.205,4</td><td class="num">+21,3%</td><td class="num">972,9</td><td class="num">+22,7%</td><td class="num">351.741,2</td><td><span class="chip ok">Khớp</span></td><td><span class="chip ok">34/34</span></td><td class="num">22/22</td><td class="why"></td></tr><tr><td class="t">HCM</td><td class="num">1.235,4</td><td class="num">+15,1%</td><td class="num">273,2</td><td class="num">+42,0%</td><td class="num">41.258,9</td><td><span class="chip ok">Khớp</span></td><td><span class="chip ok">34/34</span></td><td class="num">18/22</td><td class="why"></td></tr><tr><td class="t">PNJ</td><td class="num">8.483,7</td><td class="num">+11,9%</td><td class="num">-283,0</td><td class="num">-164,8%</td><td class="num">21.017,6</td><td><span class="chip ok">Khớp</span></td><td><span class="chip ok">34/34</span></td><td class="num">16/24</td><td class="why"></td></tr><tr><td class="t">DGC</td><td class="num">2.415,4</td><td class="num">-16,5%</td><td class="num">440,8</td><td class="num">-50,5%</td><td class="num">19.271,2</td><td><span class="chip ok">Khớp</span></td><td><span class="chip ok">34/34</span></td><td class="num">19/24</td><td class="why">Báo cáo tự lệch: LCTT HĐKD 6 tháng 2026 in (10,13 tỷ) nhưng cộng các dòng con ra (110,13 tỷ), chênh đúng 100 tỷ (có thể thiếu khoản dự phòng phải trả 100 tỷ ở dòng con). Lấy theo dòng tổng in, khớp LCTT thuần và tiền cuối kỳ.</td></tr><tr><td class="t">KDH</td><td class="num">160,6</td><td class="num">-84,7%</td><td class="num">770,1</td><td class="num">+292,9%</td><td class="num">39.470,8</td><td><span class="chip ok">Khớp</span></td><td><span class="chip ok">34/34</span></td><td class="num">20/24</td><td class="why"></td></tr></tbody>
+  </table></div>
+  <p class="note">Ngân hàng (OCB): doanh thu = Tổng thu nhập hoạt động. Chứng khoán (HCM): doanh thu = Tổng doanh thu hoạt động. Các agent đọc
+  ảnh không thấy chữ số nào trong chữ PP-OCRv6 khác với ảnh.</p>
+</section>
+
+<section>
+  <h2>Vì sao một số dòng lệch Vietcap</h2>
+  <div class="prose"><p>Mọi dòng lệch đều được xem lại trên ảnh trang và vẫn khớp báo cáo quý. Để biết nguyên nhân, đã tải thêm bản bán niên
+  soát xét từ CafeF:</p>
+  <ul>
+    <li><b>PNJ:</b> bản bán niên soát xét điều chỉnh lớn so với báo cáo quý. TS 21.595,8 tỷ (quý: 21.017,6), nợ 8.139,3 tỷ (quý: 7.105,0),
+    VCSH 13.456,5 tỷ. LNST 6 tháng 728,4 tỷ (quý: 1.184,4). Trừ quý 1 (1.467,4 tỷ) ra quý 2 là −739,0 tỷ, đúng số Vietcap.
+    Vietcap lấy số theo bản soát xét (quy tắc R1), còn thẻ dùng báo cáo quý, công bố sớm hơn.</li>
+    <li><b>HCM:</b> cả báo cáo quý lẫn bản soát xét đều in LCTT thuần 6 tháng (1.178,67 tỷ), đúng số mình. Số LCTT của Vietcap khác cả hai bản.</li>
+    <li><b>DGC:</b> KD + ĐT + TC của Vietcap cũng ra −1.003,2 tỷ, bằng LCTT thuần của mình, chỉ khác cách phân loại. Bản soát xét chưa có trên
+    CafeF. Riêng báo cáo DGC <b>tự lệch 100 tỷ</b>: các dòng con của LCTT kinh doanh cộng ra −110,13 tỷ, nhưng dòng tổng in −10,13 tỷ.
+    Số trích theo dòng tổng (khớp LCTT thuần và tiền cuối kỳ). Điểm này hiện thành cảnh báo trên thẻ.</li>
+    <li><b>KDH:</b> chỉ lệch nhỏ 0,2–0,3%.</li>
+  </ul>
+  <p>Các kết luận này đã ghi vào sổ bài học (lưu ý theo mã DGC, PNJ, HCM). Lần trích sau, AI được dặn trước.</p></div>
+</section>
+
+<footer class="foot">
+  <p>Chạy lại: <code>python phan_tich.py --dry-run --tickers OCB,HCM,PNJ,DGC,KDH</code> (tìm trang + OCR 2 tầng), trích bằng
+  <code>claude_trich.py</code>, rồi <code>python phan_tich.py --tong-hop</code>. Danh sách mã bổ sung: <code>companies_mo_rong.json</code>.
+  Kết quả so sánh OCR: <code>ket_qua/kiem_thu/so_sanh_ocr.json</code>.</p>
+  <p>Mô hình OCR: PP-OCRv6 (PaddleOCR, Apache-2.0) qua RapidOCR 3.10 + ONNX Runtime 1.23, máy 6 nhân, không GPU. Nguồn BCTC: CafeF.
+  Dữ liệu đối chiếu: Vietcap IQ.</p>
+</footer>
+</main>
+</body>
+</html>

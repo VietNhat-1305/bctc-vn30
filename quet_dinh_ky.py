@@ -251,6 +251,13 @@ def dat_lich(ky: str | None = None) -> None:
         name = TASK.format(k.replace(":", ""))
         r = subprocess.run(["schtasks", "/Create", "/F", "/SC", "DAILY", "/ST", k, "/TN", name, "/TR", str(cmd)],
                            capture_output=True, text=True)
+        if r.returncode == 0:
+            # Mặc định của schtasks: không chạy khi máy dùng pin, lỡ giờ (máy ngủ) thì bỏ luôn -> 17-18/10/2026 lượt 18h, 0h
+            # bị Windows từ chối (0x800710E0). Cho chạy cả khi dùng pin và chạy bù ngay khi máy thức.
+            subprocess.run(["powershell", "-NoProfile", "-Command",
+                            "$s = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries "
+                            "-StartWhenAvailable -MultipleInstances IgnoreNew -ExecutionTimeLimit (New-TimeSpan -Hours 5); "
+                            f"Set-ScheduledTask -TaskName '{name}' -Settings $s | Out-Null"], capture_output=True, text=True)
         print(name, "OK" if r.returncode == 0 else f"LỖI: {r.stderr.strip() or r.stdout.strip()}")
 
 

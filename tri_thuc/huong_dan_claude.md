@@ -10,6 +10,7 @@ Chép CHÍNH XÁC từng con số. Số sai là lỗi nghiêm trọng; để nul
 ## Công cụ (Bash, thư mục C:/Users/Admin/bctc-vn30, luôn đặt PYTHONIOENCODING=utf-8)
 1. `python claude_trich.py ds`: danh sách BCTC cần trích.
 2. `python claude_trich.py chu <MÃ> <NĂM> <QUÝ>`: chữ của các trang 3 báo cáo. Chữ lấy từ lớp chữ gốc hoặc từ OCR; OCR có thể sai dấu và sai chữ số.
+   - Trang scan đọc bằng PP-OCRv6 (`đọc bằng ppocr`): chữ số đáng tin hơn Tesseract nhưng chữ hay mất dấu, và ở bảng nhiều cột có thể xếp số vào nhầm dòng (gặp ở KQKD PNJ Q2/2026). Luôn khớp dòng và cột theo ảnh.
 3. `python claude_trich.py anh <MÃ> <NĂM> <QUÝ>`: xuất ảnh PNG từng trang. Dùng tool Read xem ảnh (Read không mở PDF được trên máy này). Ảnh là nguồn đúng.
 4. Viết JSON ra file riêng của bạn (tool Write), rồi chạy `python claude_trich.py ghi <MÃ> <NĂM> <QUÝ> <file.json>`.
    - Lệnh kiểm tra schema và cân đối: Tổng TS = Nợ + VCSH, cả cuối quý lẫn đầu năm; LCTT thuần = KD + ĐT + TC, cả năm nay lẫn năm trước.
@@ -51,10 +52,10 @@ Ghi đủ tất cả trường; trường không có thì để null.
   - LNST thu nhập doanh nghiệp, và LNST của cổ đông công ty mẹ.
   - TỔNG CỘNG TÀI SẢN; NỢ PHẢI TRẢ; VỐN CHỦ SỞ HỮU (gồm cổ đông không kiểm soát).
   - Nợ vay = vay và nợ thuê tài chính ngắn hạn + dài hạn.
-- **Ngân hàng** (ACB BID CTG HDB LPB MBB SHB SSB STB TCB VCB VIB VPB):
+- **Ngân hàng** (ACB BID CTG HDB LPB MBB SHB SSB STB TCB VCB VIB VPB, mã bổ sung OCB):
   - Doanh thu = Tổng thu nhập hoạt động; lợi nhuận gộp = Thu nhập lãi thuần.
   - Giá vốn và nợ vay để null.
-- **Chứng khoán** (SSI, TCX):
+- **Chứng khoán** (SSI, TCX, mã bổ sung HCM):
   - Doanh thu = Cộng doanh thu hoạt động; giá vốn = Cộng chi phí hoạt động; lợi nhuận gộp để null.
   - Nợ vay = vay và nợ thuê tài sản tài chính ngắn hạn + dài hạn.
 

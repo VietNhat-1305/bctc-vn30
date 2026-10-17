@@ -37,6 +37,7 @@ import pymupdf
 from pydantic import BaseModel, Field
 
 import bctc
+import ocr_so
 import pdf2txt
 import tri_thuc
 
@@ -378,11 +379,15 @@ async def process_report(ticker: str, key: tuple[int, int], rec: dict, ctx: dict
         scanned = [p for p in sel if methods[p] != "text"]
         if args.ocr_hint and scanned:
             full = await ocr_pages(ctx, pdf, scanned, {p: pdf2txt.rot_of(methods[p]) for p in scanned})
+            if ocr_so.available():      # tầng 2: PP-OCRv6 đọc lại trang báo cáo -> số chính xác hơn Tesseract
+                full.update(await asyncio.to_thread(ocr_so.pages, pdf, pdf2txt.txt_path_for(pdf, TXT, DATA), scanned,
+                                                    {p: pdf2txt.rot_of(methods[p]) for p in scanned}))
             ocr_txt = "\n\n".join(f"=== Trang {i} của file đính kèm ===\n{full[p][1]}"
                                   for i, p in enumerate(sel, 1) if p in scanned and p in full)
     prompt = report_prompt(ticker, key, rec, len(sel))
     if ocr_txt:
-        prompt += "\n\nVăn bản OCR của các trang scan (có thể sai dấu tiếng Việt):\n" + ocr_txt
+        prompt += ("\n\nVăn bản OCR của các trang scan (PP-OCRv6: số đáng tin hơn chữ, chữ có thể mất dấu tiếng Việt;"
+                   " số nào lệch với ảnh thì theo ảnh):\n" + ocr_txt)
     est = len(sel) * TOKENS_PER_PAGE[args.media_resolution] + len(prompt) // 3 + 2500
     base = {"ticker": ticker, "ky": ky, "file": rec["path"], "sha256": rec["sha256"], "scope": rec["scope"],
             "pages_sent": sel, "est_tokens": est, "pdf_kb": len(pdf_bytes) // 1024}

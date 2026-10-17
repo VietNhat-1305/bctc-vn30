@@ -17,7 +17,7 @@ ACB BID BSR CTG FPT GAS GVR HDB HPG LPB MBB MCH MSN MWG SAB SHB SSB SSI STB TCB 
 |---|---|---|
 | 1 | `website_30cty.xlsx`, [LINKS.md](LINKS.md), `companies.json`, `kiem_tra_ir.py` | Danh sách web đăng BCTC của 30 công ty và kết quả kiểm tra tool đọc được từng web |
 | 2 | `bctc.py`, `ir_adapters.py` | Tải BCTC **từ web công ty** (nguồn đăng sớm nhất); CafeF chỉ để dự phòng |
-| 3 | `pdf2txt.py` | PDF thường hoặc PDF scan → TXT (OCR tiếng Việt, giữ hàng/cột của bảng số) |
+| 3 | `pdf2txt.py`, `ocr_so.py` | PDF thường hoặc PDF scan → TXT (OCR tiếng Việt, giữ hàng/cột của bảng số). Trang báo cáo dạng scan được đọc lại bằng PP-OCRv6 để lấy số chính xác |
 | 4 | `phan_tich.py` | Gemini đọc BCTC → DT, LNG, LNST, Tổng tài sản, Nợ, Nợ vay, Lưu chuyển tiền từ **1 BCTC**: quý này so với cùng kỳ năm trước, cân đối so với đầu năm → Excel |
 | 5 | `cham_diem.py`, `dashboard.py` | Chấm điểm thang 10 → **dashboard** mỗi công ty 1 thẻ, lọc nhanh (VD DT tăng > 20%, nợ vay giảm > 10%) |
 
@@ -103,6 +103,25 @@ python pdf2txt.py --pages 1-20             # chỉ 20 trang đầu (đủ chứa
 - **Trang scan nằm ngang** (VD file trên web Vinhomes, không ghi thuộc tính xoay): khi OCR ra nhiều chữ rác, tool thử xoay 90°/270°/180° và giữ góc cho chữ giống tiếng Việt nhất. Trang không tự dò được thì theo góc đa số của file.
 
 OCR dùng Tesseract có sẵn trong PyMuPDF, chỉ cần thư mục `tessdata/`, không phải cài gì. Bảng số giữ đúng hàng và cột. Tool chạy song song theo số nhân CPU thật; đo trên máy 6 nhân, 12 tiến trình còn chậm hơn 6.
+
+### OCR tầng 2 cho trang báo cáo scan: PP-OCRv6 (`ocr_so.py`)
+
+Tesseract đọc dấu tiếng Việt tốt nhưng hay đọc sai chữ số (1 → 4, 6 → 8, cắt cụt số dài). Vì vậy các trang 3 báo cáo đã chọn được đọc lại bằng **PP-OCRv6** của [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) (Apache-2.0), chạy qua [RapidOCR](https://github.com/RapidAI/RapidOCR) + ONNX Runtime trên CPU, không cần GPU hay cài Paddle. Cấu hình: det small + rec small, `lang_type="vi"`, ảnh 200 dpi, cạnh dài tối đa 2000 px, 6 luồng.
+
+Đo ngày 18/10/2026 trên 5 BCTC scan (OCB, HCM, PNJ, DGC, KDH; 29 trang báo cáo). Đáp án là 145 con số đã được kiểm độc lập trên ảnh trang:
+
+| Engine | Số đúng | Tốc độ |
+|---|---|---|
+| Tesseract `vie` (tessdata_fast) | 134/145 (92,4%) | ~1,6 s/trang |
+| **PP-OCRv6 small, `vi`** | **145/145 (100%)** | ~5–10 s/trang |
+| PP-OCRv6 rec medium | như bản small trên trang thử | ~81 s/trang, bỏ |
+
+Chia việc: Tesseract đọc nhanh cả file để tìm trang báo cáo; PP-OCRv6 chỉ đọc lại 4–16 trang báo cáo. Chữ của PP-OCRv6 hay mất dấu ("Tài sn ngn hn") và có lúc xếp số vào nhầm dòng ở bảng nhiều cột, nên AI vẫn đối chiếu với ảnh trang. Kết quả lưu cạnh txt của Tesseract: `txt/<mã>/<năm>/<file>.ppocr.txt`. Không cài `rapidocr` thì luồng tự dùng Tesseract như cũ.
+
+```bash
+pip install rapidocr onnxruntime                    # lần chạy đầu tự tải model (~30 MB)
+python ocr_so.py data/PNJ/2026/PNJ_2026_Q2_HN.pdf 4-7  # OCR thử vài trang
+```
 
 ## Bước 4: Gemini đọc BCTC (phan_tich.py)
 

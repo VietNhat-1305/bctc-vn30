@@ -30,7 +30,7 @@ ROOT = Path(__file__).resolve().parent
 VERSION = 1
 # Ký tự đặc trưng khi PDF dùng font TCVN3/VNI hoặc mất bảng mã -> lớp chữ vô dụng, phải OCR
 BAD_CHARS = set("¸µ¶·¹¨©ª«¬®¯°±²³´½¾¿�")
-PAGE_MARK = re.compile(r"^=== Trang (\d+) \((text|ocr(?:@\d+)?|none)\) ===$", re.M)   # ocr@90: đã xoay 90°
+PAGE_MARK = re.compile(r"^=== Trang (\d+) \((text|(?:pp)?ocr(?:@\d+)?|none)\) ===$", re.M)   # ocr@90: đã xoay 90°; ppocr: ocr_so.py
 
 
 # ------------------------------------------------------------------ một trang
@@ -234,7 +234,7 @@ def read_txt(path: Path) -> dict[int, tuple[str, str]]:
 
 def write_txt(path: Path, pdf_rel: str, n_pages: int, pages: dict[int, tuple[str, str]]):
     path.parent.mkdir(parents=True, exist_ok=True)
-    n_ocr = sum(1 for m, _ in pages.values() if m.startswith("ocr"))
+    n_ocr = sum(1 for m, _ in pages.values() if "ocr" in m)
     parts = [f"# {pdf_rel} | {n_pages} trang | đã chuyển {len(pages)} trang, OCR {n_ocr} trang"]
     for pno in sorted(pages):
         method, txt = pages[pno]

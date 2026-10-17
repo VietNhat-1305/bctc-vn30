@@ -1,7 +1,7 @@
 {
  "ghi_chu": "Sổ bài học của luồng trích BCTC. 'quy_tac' và 'theo_ma' được đưa vào prompt của Gemini/Claude mỗi lần trích; 'can_xem_xet' do doi_chieu.py tự ghi khi số lệch Vietcap > 1%, xét xong thì chuyển thành quy tắc/lưu ý (python tri_thuc.py). Tăng 'phien_ban' khi quy tắc đổi để Gemini trích lại.",
  "phien_ban": 3,
- "cap_nhat": "2026-10-16",
+ "cap_nhat": "2026-10-18",
  "quy_tac": [
   {
    "id": "R1",
@@ -135,6 +135,15 @@
   ],
   "VHM": [
    "BCTC Q2/2026: cột năm trước 'Trình bày lại' (R7); Q1 + Q2 lệch lũy kế 6T ở doanh thu 1.270 tỷ, giá vốn 1.117 tỷ do phân loại lại số Q1 (R9) - LNST vẫn khớp. Cột lũy kế: LNST mẹ + CĐ không kiểm soát lệch tổng LNST 2 triệu đồng (làm tròn của báo cáo)."
+  ],
+  "DGC": [
+   "Q2/2026: báo cáo tự lệch 100 tỷ ở LCTT HĐKD 6T/2026 (cộng dòng con ra -110,13 tỷ, mã 20 in -10,13 tỷ); lấy theo dòng tổng in (khớp LCTT thuần và tiền cuối kỳ), ghi vào ghi_chu."
+  ],
+  "PNJ": [
+   "Q2/2026: BCTC bán niên soát xét điều chỉnh lớn so với BCTC quý (LNST 6T 1.184,4 -> 728,4 tỷ; TS +578 tỷ). Vietcap theo bản soát xét; lệch Vietcap ở Q2/Q4 của PNJ thì kiểm bản soát xét trước khi kết luận lỗi."
+  ],
+  "HCM": [
+   "LCTT lũy kế của Vietcap khác cả BCTC quý lẫn bán niên soát xét (Q2/2026). Mẫu CTCK: CĐKT chỉ có nợ ngắn hạn, nợ vay = mã 311; doanh thu = mã 20 Tổng doanh thu hoạt động; chi phí = mã 40."
   ]
  },
  "loi_da_gap": [
@@ -1585,6 +1594,216 @@
    "nguon": "Vietcap IQ",
    "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán: nếu ảnh trang khớp số mình thì đóng mục này",
    "ngay": "2026-10-16",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "DGC",
+   "ky": "Q2/2026",
+   "chi_tieu": "LNST",
+   "so_minh": 440.769040323,
+   "so_nguon": 432.657124225,
+   "chenh_lech_pct": 1.87,
+   "ket_luan": "Kiểm độc lập trên ảnh 34/34 khớp. LCTT: KD+ĐT+TC của Vietcap cũng ra -1.003,2 tỷ = LCTT thuần của mình -> Vietcap phân loại khác (bản soát xét, R1). LNST lệch 1,9%: bản bán niên soát xét chưa có trên CafeF ngày 18/10/2026 -> theo R1.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "DGC",
+   "ky": "Q2/2026",
+   "chi_tieu": "LNST cổ đông mẹ",
+   "so_minh": 388.553679077,
+   "so_nguon": 380.114419502,
+   "chenh_lech_pct": 2.22,
+   "ket_luan": "Kiểm độc lập trên ảnh 34/34 khớp. LCTT: KD+ĐT+TC của Vietcap cũng ra -1.003,2 tỷ = LCTT thuần của mình -> Vietcap phân loại khác (bản soát xét, R1). LNST lệch 1,9%: bản bán niên soát xét chưa có trên CafeF ngày 18/10/2026 -> theo R1.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "DGC",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT kinh doanh (lũy kế)",
+   "so_minh": -10.131957078000001,
+   "so_nguon": -240.47047818,
+   "chenh_lech_pct": 95.79,
+   "ket_luan": "Kiểm độc lập trên ảnh 34/34 khớp. LCTT: KD+ĐT+TC của Vietcap cũng ra -1.003,2 tỷ = LCTT thuần của mình -> Vietcap phân loại khác (bản soát xét, R1). LNST lệch 1,9%: bản bán niên soát xét chưa có trên CafeF ngày 18/10/2026 -> theo R1.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "DGC",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT đầu tư (lũy kế)",
+   "so_minh": -178.56633791500002,
+   "so_nguon": 174.267911587,
+   "chenh_lech_pct": -202.47,
+   "ket_luan": "Kiểm độc lập trên ảnh 34/34 khớp. LCTT: KD+ĐT+TC của Vietcap cũng ra -1.003,2 tỷ = LCTT thuần của mình -> Vietcap phân loại khác (bản soát xét, R1). LNST lệch 1,9%: bản bán niên soát xét chưa có trên CafeF ngày 18/10/2026 -> theo R1.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "DGC",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT tài chính (lũy kế)",
+   "so_minh": -814.5108266760001,
+   "so_nguon": -937.006606676,
+   "chenh_lech_pct": 13.07,
+   "ket_luan": "Kiểm độc lập trên ảnh 34/34 khớp. LCTT: KD+ĐT+TC của Vietcap cũng ra -1.003,2 tỷ = LCTT thuần của mình -> Vietcap phân loại khác (bản soát xét, R1). LNST lệch 1,9%: bản bán niên soát xét chưa có trên CafeF ngày 18/10/2026 -> theo R1.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "HCM",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT kinh doanh (lũy kế)",
+   "so_minh": 4054.5149120700003,
+   "so_nguon": 3734.01491207,
+   "chenh_lech_pct": 8.58,
+   "ket_luan": "Kiểm độc lập trên ảnh 38/38 khớp. BCTC bán niên soát xét in LCTT thuần 6T/2026 (1.178,67 tỷ), 6T/2025 (890,10 tỷ) = đúng số mình -> số Vietcap khác cả BCTC quý lẫn bản soát xét; không phải lỗi đọc.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "HCM",
+   "ky": "6T/2025",
+   "chi_tieu": "LCTT kinh doanh (lũy kế)",
+   "so_minh": -4154.430940064,
+   "so_nguon": -3978.730940064,
+   "chenh_lech_pct": -4.42,
+   "ket_luan": "Kiểm độc lập trên ảnh 38/38 khớp. BCTC bán niên soát xét in LCTT thuần 6T/2026 (1.178,67 tỷ), 6T/2025 (890,10 tỷ) = đúng số mình -> số Vietcap khác cả BCTC quý lẫn bản soát xét; không phải lỗi đọc.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Cột so sánh: BCTC năm nay có thể đã trình bày lại số năm trước (R7, R13) - xem nhãn trên báo cáo",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "HCM",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT thuần (lũy kế)",
+   "so_minh": -1178.673936079,
+   "so_nguon": -1499.173936079,
+   "chenh_lech_pct": 21.38,
+   "ket_luan": "Kiểm độc lập trên ảnh 38/38 khớp. BCTC bán niên soát xét in LCTT thuần 6T/2026 (1.178,67 tỷ), 6T/2025 (890,10 tỷ) = đúng số mình -> số Vietcap khác cả BCTC quý lẫn bản soát xét; không phải lỗi đọc.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "HCM",
+   "ky": "6T/2025",
+   "chi_tieu": "LCTT thuần (lũy kế)",
+   "so_minh": -890.104369451,
+   "so_nguon": -714.404369451,
+   "chenh_lech_pct": -24.59,
+   "ket_luan": "Kiểm độc lập trên ảnh 38/38 khớp. BCTC bán niên soát xét in LCTT thuần 6T/2026 (1.178,67 tỷ), 6T/2025 (890,10 tỷ) = đúng số mình -> số Vietcap khác cả BCTC quý lẫn bản soát xét; không phải lỗi đọc.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Cột so sánh: BCTC năm nay có thể đã trình bày lại số năm trước (R7, R13) - xem nhãn trên báo cáo",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "PNJ",
+   "ky": "Q2/2026",
+   "chi_tieu": "Lợi nhuận gộp",
+   "so_minh": 1563.2588769220001,
+   "so_nguon": -666.831550134,
+   "chenh_lech_pct": 334.43,
+   "ket_luan": "Kiểm độc lập trên ảnh 34/34 khớp. BCTC bán niên soát xét HN: TS 21.595,8; Nợ 8.139,3; VCSH 13.456,5; LNST 6T 728,4 tỷ (trừ Q1 1.467,4 = -739,0) = đúng số Vietcap -> soát xét điều chỉnh lớn so với BCTC quý (R1); thẻ dùng BCTC quý.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "PNJ",
+   "ky": "Q2/2026",
+   "chi_tieu": "LNST",
+   "so_minh": -283.029272213,
+   "so_nguon": -739.01931229,
+   "chenh_lech_pct": 61.7,
+   "ket_luan": "Kiểm độc lập trên ảnh 34/34 khớp. BCTC bán niên soát xét HN: TS 21.595,8; Nợ 8.139,3; VCSH 13.456,5; LNST 6T 728,4 tỷ (trừ Q1 1.467,4 = -739,0) = đúng số Vietcap -> soát xét điều chỉnh lớn so với BCTC quý (R1); thẻ dùng BCTC quý.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "PNJ",
+   "ky": "Q2/2026",
+   "chi_tieu": "LNST cổ đông mẹ",
+   "so_minh": -282.885492395,
+   "so_nguon": -738.875532472,
+   "chenh_lech_pct": 61.71,
+   "ket_luan": "Kiểm độc lập trên ảnh 34/34 khớp. BCTC bán niên soát xét HN: TS 21.595,8; Nợ 8.139,3; VCSH 13.456,5; LNST 6T 728,4 tỷ (trừ Q1 1.467,4 = -739,0) = đúng số Vietcap -> soát xét điều chỉnh lớn so với BCTC quý (R1); thẻ dùng BCTC quý.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "PNJ",
+   "ky": "cuối Q2/2026",
+   "chi_tieu": "Tổng tài sản",
+   "so_minh": 21017.570967636002,
+   "so_nguon": 21595.833814316,
+   "chenh_lech_pct": -2.68,
+   "ket_luan": "Kiểm độc lập trên ảnh 34/34 khớp. BCTC bán niên soát xét HN: TS 21.595,8; Nợ 8.139,3; VCSH 13.456,5; LNST 6T 728,4 tỷ (trừ Q1 1.467,4 = -739,0) = đúng số Vietcap -> soát xét điều chỉnh lớn so với BCTC quý (R1); thẻ dùng BCTC quý.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "PNJ",
+   "ky": "cuối Q2/2026",
+   "chi_tieu": "Nợ phải trả",
+   "so_minh": 7105.049566093,
+   "so_nguon": 8139.30245285,
+   "chenh_lech_pct": -12.71,
+   "ket_luan": "Kiểm độc lập trên ảnh 34/34 khớp. BCTC bán niên soát xét HN: TS 21.595,8; Nợ 8.139,3; VCSH 13.456,5; LNST 6T 728,4 tỷ (trừ Q1 1.467,4 = -739,0) = đúng số Vietcap -> soát xét điều chỉnh lớn so với BCTC quý (R1); thẻ dùng BCTC quý.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
+   "trang_thai": "da_xet"
+  },
+  {
+   "ma": "PNJ",
+   "ky": "cuối Q2/2026",
+   "chi_tieu": "Vốn chủ sở hữu",
+   "so_minh": 13912.521401543001,
+   "so_nguon": 13456.531361466,
+   "chenh_lech_pct": 3.39,
+   "ket_luan": "Kiểm độc lập trên ảnh 34/34 khớp. BCTC bán niên soát xét HN: TS 21.595,8; Nợ 8.139,3; VCSH 13.456,5; LNST 6T 728,4 tỷ (trừ Q1 1.467,4 = -739,0) = đúng số Vietcap -> soát xét điều chỉnh lớn so với BCTC quý (R1); thẻ dùng BCTC quý.",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-18",
    "trang_thai": "da_xet"
   }
  ]

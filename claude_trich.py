@@ -22,6 +22,7 @@ from pathlib import Path
 
 import pymupdf
 
+import ocr_so
 import pdf2txt
 import phan_tich as pt
 import tri_thuc
@@ -41,7 +42,8 @@ def pages_sent() -> dict[tuple[str, int, int], list[int]]:
 
 
 def reports() -> list[dict]:
-    tickers = [c["ticker"] for c in json.loads((pt.ROOT / "companies.json").read_text(encoding="utf-8"))["companies"]]
+    import dashboard
+    tickers = [c["ticker"] for c in dashboard.all_companies()]      # 30 mã VN30 + mã bổ sung (BCTC scan)
     sent = pages_sent()
     rows = []
     for tk, v in sorted(pt.pick_reports(tickers).items()):
@@ -64,7 +66,11 @@ def find(tk: str, y: int, q: int) -> dict:
 def text_of(tk: str, y: int, q: int) -> str:
     r = find(tk, y, q)
     pdf = pt.DATA / r["file"]
-    have = pdf2txt.read_txt(pdf2txt.txt_path_for(pdf, pt.TXT, pt.DATA))
+    txt = pdf2txt.txt_path_for(pdf, pt.TXT, pt.DATA)
+    have = pdf2txt.read_txt(txt)
+    scan = [p for p in r["trang"] or [] if p in have and have[p][0] != "text"]
+    if scan and ocr_so.available():      # trang scan: lấy chữ PP-OCRv6 (số chính xác hơn Tesseract)
+        have.update(ocr_so.pages(pdf, txt, scan, {p: pdf2txt.rot_of(have[p][0]) for p in scan}))
     out = [f"# {tk} Q{q}/{y} - BCTC {'hợp nhất' if r['scope'] == 'HN' else 'riêng/chung'} - file gốc {r['file']}",
            f"# Ảnh trang: python claude_trich.py anh {tk} {y} {q}"]
     notes = tri_thuc.luu_y_ma(tk)
