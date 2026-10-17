@@ -425,6 +425,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     </div>
     <p class="count" id="count" aria-live="polite"></p>
     <div id="list"></div>
+    <section id="scanSec" hidden></section>
   </section>
 
   <!-- ============ THƯ VIỆN ============ -->
@@ -517,12 +518,14 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     return {ma: co.ma, ten: co.ten, loai: c ? c.loai : co.loai, bctc_url: co.bctc_url, nhom: co.nhom, c, ir,
             m: c ? c.m : {}, diem: c ? c.diem : null};
   });
+  const vn30 = items.filter(x => x.nhom !== 'mo_rong');          // task chính: 30 mã VN30
+  const scan = items.filter(x => x.nhom === 'mo_rong');          // task riêng: BCTC dạng scan ngoài VN30
+  const cardsVn = D.cards.filter(c => vn30.some(it => it.ma === c.ma));
   const hasScore = D.cards.length > 0;
   const debt = it => it.m.vay_pct != null ? it.m.vay_pct : it.m.no_pct;
 
   $('sub').textContent = (hasScore ? `Kỳ ${D.cards[0].ky} so với ${D.cards[0].ky_truoc} · ` : '') +
-    `${items.filter(x => x.nhom !== 'mo_rong').length} mã VN30` +
-    (items.some(x => x.nhom === 'mo_rong') ? ` + ${items.filter(x => x.nhom === 'mo_rong').length} mã bổ sung (BCTC scan)` : '') +
+    `${vn30.length} mã VN30` +
     ` · dữ liệu lấy trực tiếp từ web công ty · cập nhật ${D.tao_luc}`;
   $('footer').innerHTML = `Số liệu tỷ đồng. Nguồn: web quan hệ nhà đầu tư của từng công ty. Không phải khuyến nghị đầu tư. ` +
     `Mã nguồn: <a href="${esc(D.repo)}" target="_blank" rel="noopener">${esc(D.repo.replace('https://', ''))}</a>. ` +
@@ -552,18 +555,18 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     return `<span class="d ${(x > 0) === upGood ? 'up' : 'down'}">${x > 0 ? '▲' : '▼'} ${pct(x)}</span>`;
   }
   function kpis() {
-    const n = D.cards.length || 1;
+    const n = cardsVn.length || 1;
     const ok = D.ir.filter(r => r.kiem_tra === 'PASS').length;
     const lags = D.ir.map(r => r.cafef_tre_ngay).filter(x => x != null).sort((a, b) => a - b);
     const tiles = hasScore ? [
-      ['Đạt 10/10', D.cards.filter(c => c.diem === 10).length, 'BCTC rất tốt'],
-      ['Điểm trung bình', nf1.format(D.cards.reduce((s, c) => s + c.diem, 0) / n), 'trên thang 10'],
-      ['Doanh thu tăng', `${D.cards.filter(c => (c.m.dt_pct ?? -1) > 0).length}/${D.cards.length}`, 'so với cùng kỳ năm trước'],
-      ['LNST tăng', `${D.cards.filter(c => (c.m.lnst_pct ?? -1) > 0).length}/${D.cards.length}`, 'so với cùng kỳ năm trước'],
-      ['Nợ vay giảm', `${items.filter(it => it.c && (debt(it) ?? 1) < 0).length}/${D.cards.length}`, 'so với đầu năm (thiếu nợ vay: nợ phải trả)'],
-      ['Có cảnh báo dữ liệu', D.cards.filter(c => c.canh_bao.length).length, 'nên mở BCTC gốc kiểm tra'],
+      ['Đạt 10/10', cardsVn.filter(c => c.diem === 10).length, 'BCTC rất tốt'],
+      ['Điểm trung bình', nf1.format(cardsVn.reduce((s, c) => s + c.diem, 0) / n), 'trên thang 10'],
+      ['Doanh thu tăng', `${cardsVn.filter(c => (c.m.dt_pct ?? -1) > 0).length}/${cardsVn.length}`, 'so với cùng kỳ năm trước'],
+      ['LNST tăng', `${cardsVn.filter(c => (c.m.lnst_pct ?? -1) > 0).length}/${cardsVn.length}`, 'so với cùng kỳ năm trước'],
+      ['Nợ vay giảm', `${vn30.filter(it => it.c && (debt(it) ?? 1) < 0).length}/${cardsVn.length}`, 'so với đầu năm (thiếu nợ vay: nợ phải trả)'],
+      ['Có cảnh báo dữ liệu', cardsVn.filter(c => c.canh_bao.length).length, 'nên mở BCTC gốc kiểm tra'],
     ] : [
-      ['Công ty theo dõi', items.length, 'rổ VN30 hiện hành'],
+      ['Công ty theo dõi', vn30.length, 'rổ VN30 hiện hành'],
       ['Web công ty đọc được', `${ok}/${D.ir.length || 30}`, 'kiểm tra tự động'],
       ['BCTC quý mới nhất', latestPeriod() || '–', 'trên web công ty'],
       ['CafeF đăng chậm', lags.length ? nf1.format(lags[lags.length >> 1]) + ' ngày' : '–', `trung vị, ${lags.length} mã đo được`],
@@ -580,8 +583,8 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     dt: $('dt').value === '' ? null : +$('dt').value / 100, lnst: $('lnst').value === '' ? null : +$('lnst').value / 100,
     no: $('no').value === '' ? null : +$('no').value / 100, cfo: $('cfo').checked, sort: $('sort').value,
   });
-  function filtered(s) {
-    const r = items.filter(it =>
+  function filtered(s, base = vn30) {
+    const r = base.filter(it =>
       (!s.q || it.ma.toLowerCase().includes(s.q) || it.ten.toLowerCase().includes(s.q) || (LOAI[it.loai] || '').toLowerCase().includes(s.q)) &&
       (!s.loai || it.loai === s.loai) && (!hasScore || (it.diem ?? -1) >= s.diem) &&
       (s.dt == null || (it.m.dt_pct != null && it.m.dt_pct >= s.dt)) &&
@@ -650,9 +653,19 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     const s = state();
     $('diemOut').textContent = s.diem;
     const list = filtered(s);
-    $('count').textContent = `Đang hiện ${list.length}/${items.length} công ty`;
+    $('count').innerHTML = `Đang hiện ${list.length}/${vn30.length} công ty VN30`
+      + (scan.length ? ` · <a href="#scanSec">Task riêng: ${scan.length} BCTC dạng scan ↓</a>` : '');
     $('list').innerHTML = !list.length ? '<div class="empty">Không có công ty nào khớp bộ lọc.</div>'
       : asTable ? scoreTable(list) : `<div class="grid">${list.map(card).join('')}</div>`;
+    if (scan.length) {             // task riêng: không lọc, không tính vào số tổng hợp VN30 ở trên
+      const sl = filtered({...s, q: '', loai: '', diem: 0, dt: null, lnst: null, no: null, cfo: false}, scan);
+      $('scanSec').hidden = false;
+      $('scanSec').innerHTML = `<h2>Task riêng: ${scan.length} BCTC dạng scan (ngoài VN30)</h2>`
+        + `<p class="count">Thử luồng với BCTC bản scan: OCR 2 tầng (Tesseract + PP-OCRv6), AI trích số, kiểm độc lập `
+        + `trên ảnh trang 170/170 trường khớp báo cáo. Không tính vào số tổng hợp và bộ lọc VN30 ở trên. `
+        + `<a href="bctc-scan.html">Xem báo cáo kiểm tra</a></p>`
+        + (asTable ? scoreTable(sl) : `<div class="grid">${sl.map(card).join('')}</div>`);
+    }
   }
   ['q', 'loai', 'diem', 'dt', 'lnst', 'no', 'cfo', 'sort'].forEach(id => $(id).addEventListener('input', renderScores));
   $('reset').onclick = () => { ['q', 'dt', 'lnst', 'no'].forEach(id => $(id).value = ''); $('loai').value = '';
