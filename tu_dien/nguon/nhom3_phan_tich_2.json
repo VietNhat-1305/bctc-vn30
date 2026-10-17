@@ -1,77 +1,322 @@
 [
-{"thuat_ngu": "Hệ số PEG", "tieng_anh": "Price/earnings-to-growth ratio", "viet_tat": "PEG", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Điều chỉnh P/E theo tốc độ tăng trưởng lợi nhuận để so sánh các doanh nghiệp tăng trưởng khác nhau. Công thức: PEG = P/E / Tốc độ tăng trưởng EPS kỳ vọng hằng năm (tính bằng số %, ví dụ tăng trưởng 15% thì chia cho 15). PEG dưới 1 thường được coi là rẻ so với tăng trưởng, nhưng chỉ đáng tin khi tăng trưởng đến từ lợi nhuận cốt lõi và có tính bền vững.",
- "lien_quan": ["Hệ số giá trên thu nhập", "Hệ số P/E dự phóng", "Tốc độ tăng trưởng kép hàng năm"]},
-{"thuat_ngu": "Giá trị doanh nghiệp", "tieng_anh": "Enterprise value", "viet_tat": "EV", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Tổng giá trị của doanh nghiệp đối với mọi nhà cung cấp vốn, xấp xỉ chi phí để mua lại toàn bộ doanh nghiệp. Công thức: EV = Vốn hóa thị trường + Nợ vay ngắn và dài hạn (gồm trái phiếu) + Lợi ích cổ đông không kiểm soát + Cổ phiếu ưu đãi − Tiền, tương đương tiền và tiền gửi có kỳ hạn. Khác với vốn hóa, EV không bị ảnh hưởng bởi cơ cấu vốn nên phù hợp để so sánh các doanh nghiệp có mức nợ khác nhau.",
- "lien_quan": ["Hệ số EV/EBITDA", "Hệ số EV/Doanh thu", "Nợ vay ròng", "Dòng tiền tự do cho doanh nghiệp"]},
-{"thuat_ngu": "Hệ số EV/EBITDA", "tieng_anh": "EV/EBITDA multiple", "viet_tat": "EV/EBITDA", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Bội số định giá so sánh giá trị doanh nghiệp với EBITDA, trung lập với cấu trúc vốn, thuế và chính sách khấu hao. Công thức: EV/EBITDA = Giá trị doanh nghiệp / EBITDA (thường lấy bốn quý gần nhất hoặc số dự phóng). Thường dùng cho ngành thâm dụng vốn (điện, thép, cảng, viễn thông) và trong các thương vụ M&A; hệ số thấp hơn trung bình ngành có thể là dấu hiệu định giá rẻ.",
- "lien_quan": ["Giá trị doanh nghiệp", "Lợi nhuận trước lãi vay, thuế và khấu hao", "Định giá so sánh", "Hệ số EV/Doanh thu"]},
-{"thuat_ngu": "Hệ số EV/Doanh thu", "tieng_anh": "EV/Sales multiple", "viet_tat": "EV/Sales", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Bội số so sánh giá trị doanh nghiệp với doanh thu thuần. Công thức: EV/Doanh thu = Giá trị doanh nghiệp / Doanh thu thuần. Khác P/S, chỉ số này tính cả nợ vay nên nhất quán hơn (tử và mẫu đều thuộc về toàn bộ nhà cung cấp vốn), hay dùng cho doanh nghiệp mới, đang lỗ hoặc doanh nghiệp bán lẻ, công nghệ có biên lợi nhuận đang mở rộng.",
- "lien_quan": ["Hệ số giá trên doanh thu", "Giá trị doanh nghiệp", "Hệ số EV/EBITDA"]},
-{"thuat_ngu": "Giá trị nội tại", "tieng_anh": "Intrinsic value", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Giá trị thực của doanh nghiệp hoặc cổ phiếu dựa trên khả năng tạo dòng tiền trong tương lai, độc lập với giá giao dịch trên thị trường. Giá trị nội tại thường được ước tính bằng các mô hình chiết khấu như DCF, DDM hay mô hình thu nhập thặng dư, nên phụ thuộc lớn vào giả định tăng trưởng và tỷ lệ chiết khấu. Nhà đầu tư giá trị chỉ mua khi giá thị trường thấp hơn đáng kể giá trị nội tại.",
- "lien_quan": ["Mô hình chiết khấu dòng tiền", "Biên an toàn", "Giá trị hợp lý", "Mô hình chiết khấu cổ tức"]},
-{"thuat_ngu": "Giá trị hợp lý", "tieng_anh": "Fair value", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Trong kế toán (IFRS 13), giá trị hợp lý là mức giá sẽ nhận được khi bán một tài sản hoặc phải trả để chuyển giao một khoản nợ trong giao dịch thông thường giữa các bên tham gia thị trường tại ngày đo lường. Trong phân tích đầu tư, giá trị hợp lý của cổ phiếu là kết quả định giá tổng hợp, thường là bình quân có trọng số của nhiều phương pháp (DCF, P/E, P/B, EV/EBITDA). Việt Nam đang theo lộ trình áp dụng IFRS nên nhiều khoản mục theo VAS hiện vẫn được ghi nhận theo giá gốc thay vì giá trị hợp lý.",
- "lien_quan": ["Giá trị nội tại", "Giá mục tiêu", "Định giá so sánh", "Mô hình chiết khấu dòng tiền"]},
-{"thuat_ngu": "Giá mục tiêu", "tieng_anh": "Target price", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Mức giá cổ phiếu mà nhà phân tích kỳ vọng đạt được trong một khoảng thời gian nhất định, thường là 12 tháng. Giá mục tiêu được suy ra từ giá trị hợp lý (có thể điều chỉnh theo thời gian và cổ tức), và khuyến nghị Mua/Nắm giữ/Bán dựa trên mức chênh lệch: Tiềm năng tăng giá = Giá mục tiêu / Giá hiện tại − 1. Các công ty chứng khoán tại Việt Nam thường cập nhật giá mục tiêu sau mỗi kỳ công bố BCTC quý.",
- "lien_quan": ["Giá trị hợp lý", "Hệ số P/E dự phóng", "Phân tích kịch bản"]},
-{"thuat_ngu": "Biên an toàn", "tieng_anh": "Margin of safety", "viet_tat": "MOS", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Khoảng chênh lệch giữa giá trị nội tại ước tính và giá thị trường, đóng vai trò tấm đệm cho sai số trong định giá. Công thức: Biên an toàn = (Giá trị nội tại − Giá thị trường) / Giá trị nội tại × 100%. Khái niệm do Benjamin Graham đề xuất; nhiều nhà đầu tư giá trị chỉ mua khi biên an toàn đạt khoảng 25–30% trở lên.",
- "lien_quan": ["Giá trị nội tại", "Phân tích độ nhạy", "Giá trị hợp lý"]},
-{"thuat_ngu": "Mô hình chiết khấu dòng tiền", "tieng_anh": "Discounted cash flow model", "viet_tat": "DCF", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Phương pháp định giá xác định giá trị hiện tại của các dòng tiền tự do dự phóng trong tương lai. Công thức: Giá trị = Σ FCF_t / (1 + r)^t + TV / (1 + r)^n, trong đó r là WACC (nếu chiết khấu FCFF) hoặc chi phí vốn chủ sở hữu (nếu chiết khấu FCFE), TV là giá trị cuối kỳ. DCF phản ánh tốt bản chất kinh tế nhưng rất nhạy với giả định WACC và tăng trưởng dài hạn, nên luôn cần kèm phân tích độ nhạy.",
- "lien_quan": ["Dòng tiền tự do cho doanh nghiệp", "Chi phí vốn bình quân gia quyền", "Giá trị cuối kỳ", "Phân tích độ nhạy", "Giá trị nội tại"]},
-{"thuat_ngu": "Dòng tiền tự do", "tieng_anh": "Free cash flow", "viet_tat": "FCF", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Lượng tiền doanh nghiệp tạo ra sau khi đã chi cho đầu tư duy trì và mở rộng tài sản cố định, có thể dùng để trả nợ, chia cổ tức hoặc mua lại cổ phiếu. Công thức đơn giản: FCF = Lưu chuyển tiền thuần từ hoạt động kinh doanh (mã 20) − Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác (mã 21) trên Báo cáo lưu chuyển tiền tệ. FCF dương và ổn định là dấu hiệu sức khỏe tài chính tốt; FCF âm kéo dài trong khi lợi nhuận cao là tín hiệu cần soi lại chất lượng lợi nhuận.",
- "lien_quan": ["Dòng tiền tự do cho doanh nghiệp", "Dòng tiền tự do cho chủ sở hữu", "Chi tiêu vốn", "Chất lượng lợi nhuận"]},
-{"thuat_ngu": "Dòng tiền tự do cho doanh nghiệp", "tieng_anh": "Free cash flow to the firm", "viet_tat": "FCFF", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Dòng tiền tự do dành cho tất cả các nhà cung cấp vốn (chủ nợ và cổ đông) sau khi doanh nghiệp đã nộp thuế, đầu tư TSCĐ và vốn lưu động. Công thức: FCFF = EBIT × (1 − t) + Khấu hao − Capex − Thay đổi nhu cầu vốn lưu động. Chiết khấu FCFF bằng WACC cho ra giá trị doanh nghiệp (EV); trừ đi nợ vay ròng sẽ được giá trị vốn chủ sở hữu.",
- "lien_quan": ["Lợi nhuận hoạt động thuần sau thuế", "Chi phí vốn bình quân gia quyền", "Giá trị doanh nghiệp", "Nhu cầu vốn lưu động", "Dòng tiền tự do cho chủ sở hữu"]},
-{"thuat_ngu": "Dòng tiền tự do cho chủ sở hữu", "tieng_anh": "Free cash flow to equity", "viet_tat": "FCFE", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Dòng tiền còn lại thuộc về cổ đông sau khi doanh nghiệp đã trả mọi chi phí, nghĩa vụ nợ (lãi và gốc) và thực hiện các khoản đầu tư cần thiết. Công thức: FCFE = FCFF − Chi phí lãi vay × (1 − t) + Vay nợ ròng (vay mới − trả nợ gốc), hay FCFE = LNST + Khấu hao − Capex − Thay đổi vốn lưu động + Vay nợ ròng. Chiết khấu FCFE bằng chi phí vốn chủ sở hữu cho ra trực tiếp giá trị vốn chủ sở hữu, phù hợp với doanh nghiệp có cấu trúc nợ ổn định.",
- "lien_quan": ["Dòng tiền tự do cho doanh nghiệp", "Chi phí vốn chủ sở hữu", "Mô hình chiết khấu dòng tiền", "Dòng tiền tự do"]},
-{"thuat_ngu": "Chi phí vốn bình quân gia quyền", "tieng_anh": "Weighted average cost of capital", "viet_tat": "WACC", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Chi phí bình quân của tất cả các nguồn vốn doanh nghiệp sử dụng, có trọng số theo tỷ trọng giá trị của từng nguồn. Công thức: WACC = E/(D+E) × Ke + D/(D+E) × Kd × (1 − t), với E là giá trị vốn chủ sở hữu, D là nợ vay, t là thuế suất TNDN (20% tại Việt Nam). WACC là tỷ lệ chiết khấu FCFF trong mô hình DCF và là ngưỡng lợi suất tối thiểu (so với ROIC) để doanh nghiệp tạo ra giá trị.",
- "lien_quan": ["Chi phí vốn chủ sở hữu", "Chi phí nợ", "Mô hình chiết khấu dòng tiền", "Tỷ suất lợi nhuận trên vốn đầu tư"]},
-{"thuat_ngu": "Chi phí vốn chủ sở hữu", "tieng_anh": "Cost of equity", "viet_tat": "Ke", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Mức lợi suất tối thiểu cổ đông đòi hỏi để bù đắp rủi ro khi đầu tư vào cổ phiếu của doanh nghiệp. Thường được ước tính bằng CAPM: Ke = Lãi suất phi rủi ro + Beta × Phần bù rủi ro thị trường (có thể cộng thêm phần bù rủi ro quốc gia hoặc quy mô). Ke luôn cao hơn chi phí nợ và là tỷ lệ chiết khấu dùng cho FCFE, mô hình chiết khấu cổ tức và mô hình thu nhập thặng dư.",
- "lien_quan": ["Mô hình định giá tài sản vốn", "Hệ số beta", "Lãi suất phi rủi ro", "Phần bù rủi ro thị trường", "Chi phí vốn bình quân gia quyền"]},
-{"thuat_ngu": "Chi phí nợ", "tieng_anh": "Cost of debt", "viet_tat": "Kd", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Chi phí doanh nghiệp phải trả cho nguồn vốn vay. Có thể ước tính bằng Kd = Chi phí lãi vay / Nợ vay bình quân, hoặc theo lãi suất vay ngân hàng, lợi suất trái phiếu doanh nghiệp hiện hành; chi phí nợ sau thuế = Kd × (1 − t) do lãi vay được trừ khi tính thuế TNDN. Lưu ý theo Nghị định 132/2020/NĐ-CP, doanh nghiệp có giao dịch liên kết chỉ được trừ chi phí lãi vay tối đa 30% EBITDA, nên lá chắn thuế thực tế có thể nhỏ hơn.",
- "lien_quan": ["Chi phí vốn bình quân gia quyền", "Hệ số khả năng thanh toán lãi vay", "Chi phí vốn chủ sở hữu"]},
-{"thuat_ngu": "Mô hình định giá tài sản vốn", "tieng_anh": "Capital asset pricing model", "viet_tat": "CAPM", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Mô hình mô tả quan hệ giữa rủi ro hệ thống và lợi suất kỳ vọng của một tài sản. Công thức: E(Ri) = Rf + βi × (E(Rm) − Rf), trong đó Rf là lãi suất phi rủi ro, β là hệ số beta, E(Rm) − Rf là phần bù rủi ro thị trường. Đây là cách phổ biến nhất để ước tính chi phí vốn chủ sở hữu trong các báo cáo định giá tại Việt Nam, dù các giả định của mô hình không hoàn toàn phù hợp với thị trường mới nổi.",
- "lien_quan": ["Chi phí vốn chủ sở hữu", "Hệ số beta", "Phần bù rủi ro thị trường", "Lãi suất phi rủi ro"]},
-{"thuat_ngu": "Hệ số beta", "tieng_anh": "Beta coefficient", "viet_tat": "β", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Đo mức độ biến động của lợi suất cổ phiếu so với lợi suất toàn thị trường, đại diện cho rủi ro hệ thống không thể đa dạng hóa. Công thức: β = Cov(Ri, Rm) / Var(Rm); tại Việt Nam thường tính so với VN-Index bằng dữ liệu tuần hoặc tháng trong 2–5 năm. Beta lớn hơn 1 nghĩa là cổ phiếu biến động mạnh hơn thị trường (như chứng khoán, bất động sản), beta nhỏ hơn 1 thường gặp ở nhóm phòng thủ như điện, nước, tiêu dùng thiết yếu.",
- "lien_quan": ["Mô hình định giá tài sản vốn", "Chi phí vốn chủ sở hữu", "Độ lớn đòn bẩy tài chính"]},
-{"thuat_ngu": "Phần bù rủi ro thị trường", "tieng_anh": "Market risk premium", "viet_tat": "MRP", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Phần lợi suất vượt trội mà nhà đầu tư đòi hỏi khi nắm giữ danh mục cổ phiếu thị trường thay vì tài sản phi rủi ro. Công thức: MRP = E(Rm) − Rf, được ước tính từ dữ liệu lịch sử hoặc theo phương pháp ngụ ý từ giá thị trường. Với thị trường mới nổi như Việt Nam, phần bù này thường được giả định cao hơn thị trường phát triển, hoặc được cộng thêm phần bù rủi ro quốc gia.",
- "lien_quan": ["Mô hình định giá tài sản vốn", "Phần bù rủi ro quốc gia", "Lãi suất phi rủi ro", "Chi phí vốn chủ sở hữu"]},
-{"thuat_ngu": "Lãi suất phi rủi ro", "tieng_anh": "Risk-free rate", "viet_tat": "Rf", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Lợi suất của khoản đầu tư được coi như không có rủi ro vỡ nợ, là điểm xuất phát của mọi tỷ lệ chiết khấu. Tại Việt Nam, nhà phân tích thường dùng lợi suất trái phiếu Chính phủ kỳ hạn 10 năm (hoặc kỳ hạn khớp với thời gian dự phóng) do Kho bạc Nhà nước phát hành. Lãi suất phi rủi ro tăng làm tăng chi phí vốn và kéo giảm giá trị định giá của cổ phiếu, nhất là nhóm tăng trưởng.",
- "lien_quan": ["Mô hình định giá tài sản vốn", "Phần bù rủi ro thị trường", "Chi phí vốn chủ sở hữu"]},
-{"thuat_ngu": "Phần bù rủi ro quốc gia", "tieng_anh": "Country risk premium", "viet_tat": "CRP", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Phần lợi suất bổ sung nhà đầu tư đòi hỏi để bù đắp rủi ro đặc thù của một quốc gia như rủi ro chính trị, tỷ giá, pháp lý. CRP thường được ước tính từ chênh lệch lợi suất trái phiếu chính phủ bằng USD (hoặc CDS) so với trái phiếu Mỹ, hay dựa trên xếp hạng tín nhiệm quốc gia, rồi cộng vào chi phí vốn: Ke = Rf + β × MRP + CRP. Nếu Rf đã là lợi suất trái phiếu Chính phủ Việt Nam bằng VND thì một phần rủi ro quốc gia đã nằm trong đó, cần tránh cộng trùng.",
- "lien_quan": ["Phần bù rủi ro thị trường", "Lãi suất phi rủi ro", "Chi phí vốn chủ sở hữu"]},
-{"thuat_ngu": "Giá trị cuối kỳ", "tieng_anh": "Terminal value", "viet_tat": "TV", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Giá trị của toàn bộ dòng tiền phát sinh sau giai đoạn dự phóng chi tiết trong mô hình DCF, quy về thời điểm cuối kỳ dự phóng. Có hai cách tính: theo mô hình tăng trưởng đều TV = FCF_(n+1) / (WACC − g), hoặc theo bội số thoát (ví dụ TV = EBITDA năm n × EV/EBITDA mục tiêu). Giá trị cuối kỳ thường chiếm 60–80% tổng giá trị DCF, nên cần kiểm tra kỹ giả định g và WACC.",
- "lien_quan": ["Mô hình chiết khấu dòng tiền", "Tốc độ tăng trưởng dài hạn", "Chi phí vốn bình quân gia quyền", "Mô hình Gordon"]},
-{"thuat_ngu": "Tốc độ tăng trưởng dài hạn", "tieng_anh": "Terminal growth rate", "viet_tat": "g", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Tốc độ tăng trưởng đều giả định cho dòng tiền hoặc cổ tức sau giai đoạn dự phóng chi tiết, dùng để tính giá trị cuối kỳ. Về nguyên tắc, g không được vượt tốc độ tăng trưởng GDP danh nghĩa dài hạn của nền kinh tế và phải nhỏ hơn tỷ lệ chiết khấu; các báo cáo định giá tại Việt Nam thường giả định ở mức thấp, phổ biến khoảng 2–4%. Chỉ cần thay đổi g thêm 1 điểm phần trăm cũng có thể làm giá trị định giá thay đổi đáng kể.",
- "lien_quan": ["Giá trị cuối kỳ", "Mô hình Gordon", "Tốc độ tăng trưởng bền vững", "Phân tích độ nhạy"]},
-{"thuat_ngu": "Mô hình chiết khấu cổ tức", "tieng_anh": "Dividend discount model", "viet_tat": "DDM", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Phương pháp định giá cổ phiếu bằng giá trị hiện tại của toàn bộ cổ tức kỳ vọng trong tương lai. Công thức: P0 = Σ D_t / (1 + Ke)^t. Mô hình phù hợp với doanh nghiệp chi trả cổ tức tiền mặt đều đặn như điện, nước, cảng, nhưng kém phù hợp với nhiều doanh nghiệp Việt Nam hay chia cổ tức bằng cổ phiếu hoặc giữ lại phần lớn lợi nhuận.",
- "lien_quan": ["Mô hình Gordon", "Chi phí vốn chủ sở hữu", "Tỷ suất cổ tức", "Tỷ lệ chi trả cổ tức"]},
-{"thuat_ngu": "Mô hình Gordon", "tieng_anh": "Gordon growth model", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Dạng đơn giản của mô hình chiết khấu cổ tức, giả định cổ tức tăng trưởng đều mãi mãi với tốc độ g không đổi. Công thức: P0 = D1 / (Ke − g), trong đó D1 là cổ tức dự kiến năm tới và điều kiện bắt buộc là Ke > g. Công thức cùng dạng cũng được dùng để tính giá trị cuối kỳ trong DCF và để suy ra P/E, P/B hợp lý.",
- "lien_quan": ["Mô hình chiết khấu cổ tức", "Tốc độ tăng trưởng dài hạn", "Giá trị cuối kỳ", "Chi phí vốn chủ sở hữu"]},
-{"thuat_ngu": "Mô hình thu nhập thặng dư", "tieng_anh": "Residual income model", "viet_tat": "RIM", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Mô hình định giá vốn chủ sở hữu bằng giá trị sổ sách hiện tại cộng giá trị hiện tại của các khoản lợi nhuận vượt trên chi phí vốn chủ sở hữu. Công thức: V0 = BV0 + Σ (LNST_t − Ke × BV_(t−1)) / (1 + Ke)^t. Mô hình rất phù hợp để định giá ngân hàng và công ty tài chính tại Việt Nam, vì dòng tiền của nhóm này khó xác định còn giá trị sổ sách lại phản ánh tương đối sát giá trị tài sản.",
- "lien_quan": ["Giá trị sổ sách trên mỗi cổ phiếu", "Chi phí vốn chủ sở hữu", "Giá trị kinh tế gia tăng", "Hệ số giá trên giá trị sổ sách"]}
+{
+"thuat_ngu": "Hệ số PEG",
+"tieng_anh": "Price/earnings-to-growth ratio",
+"viet_tat": "PEG",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Điều chỉnh P/E theo tốc độ tăng trưởng lợi nhuận để so sánh các doanh nghiệp tăng trưởng khác nhau. Công thức: PEG = P/E / Tốc độ tăng trưởng EPS kỳ vọng hằng năm (tính bằng số %, ví dụ tăng trưởng 15% thì chia cho 15). PEG dưới 1 thường được coi là rẻ so với tăng trưởng, nhưng chỉ đáng tin khi tăng trưởng đến từ lợi nhuận cốt lõi và có tính bền vững.",
+"lien_quan": [
+"Hệ số giá trên thu nhập",
+"Hệ số P/E dự phóng",
+"Tốc độ tăng trưởng kép hàng năm"
+]
+},
+{
+"thuat_ngu": "Giá trị doanh nghiệp",
+"tieng_anh": "Enterprise value",
+"viet_tat": "EV",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Tổng giá trị của doanh nghiệp đối với mọi nhà cung cấp vốn, xấp xỉ chi phí để mua lại toàn bộ doanh nghiệp. Công thức: EV = Vốn hóa thị trường + Nợ vay ngắn và dài hạn (gồm trái phiếu) + Lợi ích cổ đông không kiểm soát + Cổ phiếu ưu đãi − Tiền, tương đương tiền và tiền gửi có kỳ hạn. Khác với vốn hóa, EV không bị ảnh hưởng bởi cơ cấu vốn nên phù hợp để so sánh các doanh nghiệp có mức nợ khác nhau.",
+"lien_quan": [
+"Hệ số EV/EBITDA",
+"Hệ số EV/Doanh thu",
+"Nợ vay ròng",
+"Dòng tiền tự do cho doanh nghiệp"
+]
+},
+{
+"thuat_ngu": "Hệ số EV/EBITDA",
+"tieng_anh": "EV/EBITDA multiple",
+"viet_tat": "EV/EBITDA",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Bội số định giá so sánh giá trị doanh nghiệp với EBITDA, trung lập với cấu trúc vốn, thuế và chính sách khấu hao. Công thức: EV/EBITDA = Giá trị doanh nghiệp / EBITDA (thường lấy bốn quý gần nhất hoặc số dự phóng). Thường dùng cho ngành thâm dụng vốn (điện, thép, cảng, viễn thông) và trong các thương vụ M&A; hệ số thấp hơn trung bình ngành có thể là dấu hiệu định giá rẻ.",
+"lien_quan": [
+"Giá trị doanh nghiệp",
+"Lợi nhuận trước lãi vay, thuế và khấu hao",
+"Định giá so sánh",
+"Hệ số EV/Doanh thu"
+]
+},
+{
+"thuat_ngu": "Hệ số EV/Doanh thu",
+"tieng_anh": "EV/Sales multiple",
+"viet_tat": "EV/Sales",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Bội số so sánh giá trị doanh nghiệp với doanh thu thuần. Công thức: EV/Doanh thu = Giá trị doanh nghiệp / Doanh thu thuần. Khác P/S, chỉ số này tính cả nợ vay nên nhất quán hơn (tử và mẫu đều thuộc về toàn bộ nhà cung cấp vốn), hay dùng cho doanh nghiệp mới, đang lỗ hoặc doanh nghiệp bán lẻ, công nghệ có biên lợi nhuận đang mở rộng.",
+"lien_quan": [
+"Hệ số giá trên doanh thu",
+"Giá trị doanh nghiệp",
+"Hệ số EV/EBITDA"
+]
+},
+{
+"thuat_ngu": "Giá trị nội tại",
+"tieng_anh": "Intrinsic value",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Giá trị thực của doanh nghiệp hoặc cổ phiếu dựa trên khả năng tạo dòng tiền trong tương lai, độc lập với giá giao dịch trên thị trường. Giá trị nội tại thường được ước tính bằng các mô hình chiết khấu như DCF, DDM hay mô hình thu nhập thặng dư, nên phụ thuộc lớn vào giả định tăng trưởng và tỷ lệ chiết khấu. Nhà đầu tư giá trị chỉ mua khi giá thị trường thấp hơn đáng kể giá trị nội tại.",
+"lien_quan": [
+"Mô hình chiết khấu dòng tiền",
+"Biên an toàn",
+"Giá trị hợp lý",
+"Mô hình chiết khấu cổ tức"
+]
+},
+{
+"thuat_ngu": "Giá trị hợp lý",
+"tieng_anh": "Fair value",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Trong kế toán (IFRS 13), giá trị hợp lý là mức giá sẽ nhận được khi bán một tài sản hoặc phải trả để chuyển giao một khoản nợ trong giao dịch thông thường giữa các bên tham gia thị trường tại ngày đo lường. Trong phân tích đầu tư, giá trị hợp lý của cổ phiếu là kết quả định giá tổng hợp, thường là bình quân có trọng số của nhiều phương pháp (DCF, P/E, P/B, EV/EBITDA). Việt Nam đang theo lộ trình áp dụng IFRS nên nhiều khoản mục theo VAS hiện vẫn được ghi nhận theo giá gốc thay vì giá trị hợp lý.",
+"lien_quan": [
+"Giá trị nội tại",
+"Giá mục tiêu",
+"Định giá so sánh",
+"Mô hình chiết khấu dòng tiền"
+]
+},
+{
+"thuat_ngu": "Giá mục tiêu",
+"tieng_anh": "Target price",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Mức giá cổ phiếu mà nhà phân tích kỳ vọng đạt được trong một khoảng thời gian nhất định, thường là 12 tháng. Giá mục tiêu được suy ra từ giá trị hợp lý (có thể điều chỉnh theo thời gian và cổ tức), và khuyến nghị Mua/Nắm giữ/Bán dựa trên mức chênh lệch: Tiềm năng tăng giá = Giá mục tiêu / Giá hiện tại − 1. Các công ty chứng khoán tại Việt Nam thường cập nhật giá mục tiêu sau mỗi kỳ công bố BCTC quý.",
+"lien_quan": [
+"Giá trị hợp lý",
+"Hệ số P/E dự phóng",
+"Phân tích kịch bản"
+]
+},
+{
+"thuat_ngu": "Biên an toàn",
+"tieng_anh": "Margin of safety",
+"viet_tat": "MOS",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Khoảng chênh lệch giữa giá trị nội tại ước tính và giá thị trường, đóng vai trò tấm đệm cho sai số trong định giá. Công thức: Biên an toàn = (Giá trị nội tại − Giá thị trường) / Giá trị nội tại × 100%. Khái niệm do Benjamin Graham đề xuất; nhiều nhà đầu tư giá trị chỉ mua khi biên an toàn đạt khoảng 25–30% trở lên.",
+"lien_quan": [
+"Giá trị nội tại",
+"Phân tích độ nhạy",
+"Giá trị hợp lý"
+]
+},
+{
+"thuat_ngu": "Mô hình chiết khấu dòng tiền",
+"tieng_anh": "Discounted cash flow model",
+"viet_tat": "DCF",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Phương pháp định giá xác định giá trị hiện tại của các dòng tiền tự do dự phóng trong tương lai. Công thức: Giá trị = Σ FCF_t / (1 + r)^t + TV / (1 + r)^n, trong đó r là WACC (nếu chiết khấu FCFF) hoặc chi phí vốn chủ sở hữu (nếu chiết khấu FCFE), TV là giá trị cuối kỳ. DCF phản ánh tốt bản chất kinh tế nhưng rất nhạy với giả định WACC và tăng trưởng dài hạn, nên luôn cần kèm phân tích độ nhạy.",
+"lien_quan": [
+"Dòng tiền tự do cho doanh nghiệp",
+"Chi phí vốn bình quân gia quyền",
+"Giá trị cuối kỳ",
+"Phân tích độ nhạy",
+"Giá trị nội tại"
+]
+},
+{
+"thuat_ngu": "Dòng tiền tự do",
+"tieng_anh": "Free cash flow",
+"viet_tat": "FCF",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Lượng tiền doanh nghiệp tạo ra sau khi đã chi cho đầu tư duy trì và mở rộng tài sản cố định, có thể dùng để trả nợ, chia cổ tức hoặc mua lại cổ phiếu. Công thức đơn giản: FCF = Lưu chuyển tiền thuần từ hoạt động kinh doanh (mã 20) − Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác (mã 21) trên Báo cáo lưu chuyển tiền tệ. FCF dương và ổn định là dấu hiệu sức khỏe tài chính tốt; FCF âm kéo dài trong khi lợi nhuận cao là tín hiệu cần soi lại chất lượng lợi nhuận.",
+"lien_quan": [
+"Dòng tiền tự do cho doanh nghiệp",
+"Dòng tiền tự do cho chủ sở hữu",
+"Chi tiêu vốn",
+"Chất lượng lợi nhuận"
+]
+},
+{
+"thuat_ngu": "Dòng tiền tự do cho doanh nghiệp",
+"tieng_anh": "Free cash flow to the firm",
+"viet_tat": "FCFF",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Dòng tiền tự do dành cho tất cả các nhà cung cấp vốn (chủ nợ và cổ đông) sau khi doanh nghiệp đã nộp thuế, đầu tư TSCĐ và vốn lưu động. Công thức: FCFF = EBIT × (1 − t) + Khấu hao − Capex − Thay đổi nhu cầu vốn lưu động. Chiết khấu FCFF bằng WACC cho ra giá trị doanh nghiệp (EV); trừ đi nợ vay ròng sẽ được giá trị vốn chủ sở hữu.",
+"lien_quan": [
+"Lợi nhuận hoạt động thuần sau thuế",
+"Chi phí vốn bình quân gia quyền",
+"Giá trị doanh nghiệp",
+"Nhu cầu vốn lưu động",
+"Dòng tiền tự do cho chủ sở hữu"
+]
+},
+{
+"thuat_ngu": "Dòng tiền tự do cho chủ sở hữu",
+"tieng_anh": "Free cash flow to equity",
+"viet_tat": "FCFE",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Dòng tiền còn lại thuộc về cổ đông sau khi doanh nghiệp đã trả mọi chi phí, nghĩa vụ nợ (lãi và gốc) và thực hiện các khoản đầu tư cần thiết. Công thức: FCFE = FCFF − Chi phí lãi vay × (1 − t) + Vay nợ ròng (vay mới − trả nợ gốc), hay FCFE = LNST + Khấu hao − Capex − Thay đổi vốn lưu động + Vay nợ ròng. Chiết khấu FCFE bằng chi phí vốn chủ sở hữu cho ra trực tiếp giá trị vốn chủ sở hữu, phù hợp với doanh nghiệp có cấu trúc nợ ổn định.",
+"lien_quan": [
+"Dòng tiền tự do cho doanh nghiệp",
+"Chi phí vốn chủ sở hữu",
+"Mô hình chiết khấu dòng tiền",
+"Dòng tiền tự do"
+]
+},
+{
+"thuat_ngu": "Chi phí vốn bình quân gia quyền",
+"tieng_anh": "Weighted average cost of capital",
+"viet_tat": "WACC",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Chi phí bình quân của tất cả các nguồn vốn doanh nghiệp sử dụng, có trọng số theo tỷ trọng giá trị của từng nguồn. Công thức: WACC = E/(D+E) × Ke + D/(D+E) × Kd × (1 − t), với E là giá trị vốn chủ sở hữu, D là nợ vay, t là thuế suất TNDN (20% tại Việt Nam). WACC là tỷ lệ chiết khấu FCFF trong mô hình DCF và là ngưỡng lợi suất tối thiểu (so với ROIC) để doanh nghiệp tạo ra giá trị.",
+"lien_quan": [
+"Chi phí vốn chủ sở hữu",
+"Chi phí nợ",
+"Mô hình chiết khấu dòng tiền",
+"Tỷ suất lợi nhuận trên vốn đầu tư"
+]
+},
+{
+"thuat_ngu": "Chi phí vốn chủ sở hữu",
+"tieng_anh": "Cost of equity",
+"viet_tat": "Ke",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Mức lợi suất tối thiểu cổ đông đòi hỏi để bù đắp rủi ro khi đầu tư vào cổ phiếu của doanh nghiệp. Thường được ước tính bằng CAPM: Ke = Lãi suất phi rủi ro + Beta × Phần bù rủi ro thị trường (có thể cộng thêm phần bù rủi ro quốc gia hoặc quy mô). Ke luôn cao hơn chi phí nợ và là tỷ lệ chiết khấu dùng cho FCFE, mô hình chiết khấu cổ tức và mô hình thu nhập thặng dư.",
+"lien_quan": [
+"Mô hình định giá tài sản vốn",
+"Hệ số beta",
+"Lãi suất phi rủi ro",
+"Phần bù rủi ro thị trường",
+"Chi phí vốn bình quân gia quyền"
+]
+},
+{
+"thuat_ngu": "Chi phí nợ",
+"tieng_anh": "Cost of debt",
+"viet_tat": "Kd",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Chi phí doanh nghiệp phải trả cho nguồn vốn vay. Có thể ước tính bằng Kd = Chi phí lãi vay / Nợ vay bình quân, hoặc theo lãi suất vay ngân hàng, lợi suất trái phiếu doanh nghiệp hiện hành; chi phí nợ sau thuế = Kd × (1 − t) do lãi vay được trừ khi tính thuế TNDN. Lưu ý theo Nghị định 132/2020/NĐ-CP, doanh nghiệp có giao dịch liên kết chỉ được trừ chi phí lãi vay tối đa 30% EBITDA, nên lá chắn thuế thực tế có thể nhỏ hơn.",
+"lien_quan": [
+"Chi phí vốn bình quân gia quyền",
+"Hệ số khả năng thanh toán lãi vay",
+"Chi phí vốn chủ sở hữu"
+]
+},
+{
+"thuat_ngu": "Mô hình định giá tài sản vốn",
+"tieng_anh": "Capital asset pricing model",
+"viet_tat": "CAPM",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Mô hình mô tả quan hệ giữa rủi ro hệ thống và lợi suất kỳ vọng của một tài sản. Công thức: E(Ri) = Rf + βi × (E(Rm) − Rf), trong đó Rf là lãi suất phi rủi ro, β là hệ số beta, E(Rm) − Rf là phần bù rủi ro thị trường. Đây là cách phổ biến nhất để ước tính chi phí vốn chủ sở hữu trong các báo cáo định giá tại Việt Nam, dù các giả định của mô hình không hoàn toàn phù hợp với thị trường mới nổi.",
+"lien_quan": [
+"Chi phí vốn chủ sở hữu",
+"Hệ số beta",
+"Phần bù rủi ro thị trường",
+"Lãi suất phi rủi ro"
+]
+},
+{
+"thuat_ngu": "Hệ số beta",
+"tieng_anh": "Beta coefficient",
+"viet_tat": "β",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Đo mức độ biến động của lợi suất cổ phiếu so với lợi suất toàn thị trường, đại diện cho rủi ro hệ thống không thể đa dạng hóa. Công thức: β = Cov(Ri, Rm) / Var(Rm); tại Việt Nam thường tính so với VN-Index bằng dữ liệu tuần hoặc tháng trong 2–5 năm. Beta lớn hơn 1 nghĩa là cổ phiếu biến động mạnh hơn thị trường (như chứng khoán, bất động sản), beta nhỏ hơn 1 thường gặp ở nhóm phòng thủ như điện, nước, tiêu dùng thiết yếu.",
+"lien_quan": [
+"Mô hình định giá tài sản vốn",
+"Chi phí vốn chủ sở hữu",
+"Độ lớn đòn bẩy tài chính"
+]
+},
+{
+"thuat_ngu": "Phần bù rủi ro thị trường",
+"tieng_anh": "Market risk premium",
+"viet_tat": "MRP",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Phần lợi suất vượt trội mà nhà đầu tư đòi hỏi khi nắm giữ danh mục cổ phiếu thị trường thay vì tài sản phi rủi ro. Công thức: MRP = E(Rm) − Rf, được ước tính từ dữ liệu lịch sử hoặc theo phương pháp ngụ ý từ giá thị trường. Với thị trường mới nổi như Việt Nam, phần bù này thường được giả định cao hơn thị trường phát triển, hoặc được cộng thêm phần bù rủi ro quốc gia.",
+"lien_quan": [
+"Mô hình định giá tài sản vốn",
+"Phần bù rủi ro quốc gia",
+"Lãi suất phi rủi ro",
+"Chi phí vốn chủ sở hữu"
+]
+},
+{
+"thuat_ngu": "Lãi suất phi rủi ro",
+"tieng_anh": "Risk-free rate",
+"viet_tat": "Rf",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Lợi suất của khoản đầu tư được coi như không có rủi ro vỡ nợ, là điểm xuất phát của mọi tỷ lệ chiết khấu. Tại Việt Nam, nhà phân tích thường dùng lợi suất trái phiếu Chính phủ kỳ hạn 10 năm (hoặc kỳ hạn khớp với thời gian dự phóng) do Kho bạc Nhà nước phát hành. Lãi suất phi rủi ro tăng làm tăng chi phí vốn và kéo giảm giá trị định giá của cổ phiếu, nhất là nhóm tăng trưởng.",
+"lien_quan": [
+"Mô hình định giá tài sản vốn",
+"Phần bù rủi ro thị trường",
+"Chi phí vốn chủ sở hữu"
+]
+},
+{
+"thuat_ngu": "Phần bù rủi ro quốc gia",
+"tieng_anh": "Country risk premium",
+"viet_tat": "CRP",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Phần lợi suất bổ sung nhà đầu tư đòi hỏi để bù đắp rủi ro đặc thù của một quốc gia như rủi ro chính trị, tỷ giá, pháp lý. CRP thường được ước tính từ chênh lệch lợi suất trái phiếu chính phủ bằng USD (hoặc CDS) so với trái phiếu Mỹ, hay dựa trên xếp hạng tín nhiệm quốc gia, rồi cộng vào chi phí vốn: Ke = Rf + β × MRP + CRP. Nếu Rf đã là lợi suất trái phiếu Chính phủ Việt Nam bằng VND thì một phần rủi ro quốc gia đã nằm trong đó, cần tránh cộng trùng.",
+"lien_quan": [
+"Phần bù rủi ro thị trường",
+"Lãi suất phi rủi ro",
+"Chi phí vốn chủ sở hữu"
+]
+},
+{
+"thuat_ngu": "Giá trị cuối kỳ",
+"tieng_anh": "Terminal value",
+"viet_tat": "TV",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Giá trị của toàn bộ dòng tiền phát sinh sau giai đoạn dự phóng chi tiết trong mô hình DCF, quy về thời điểm cuối kỳ dự phóng. Có hai cách tính: theo mô hình tăng trưởng đều TV = FCF_(n+1) / (WACC − g), hoặc theo bội số thoát (ví dụ TV = EBITDA năm n × EV/EBITDA mục tiêu). Giá trị cuối kỳ thường chiếm 60–80% tổng giá trị DCF, nên cần kiểm tra kỹ giả định g và WACC.",
+"lien_quan": [
+"Mô hình chiết khấu dòng tiền",
+"Tốc độ tăng trưởng dài hạn",
+"Chi phí vốn bình quân gia quyền",
+"Mô hình Gordon"
+]
+},
+{
+"thuat_ngu": "Tốc độ tăng trưởng dài hạn",
+"tieng_anh": "Terminal growth rate",
+"viet_tat": "g",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Tốc độ tăng trưởng đều giả định cho dòng tiền hoặc cổ tức sau giai đoạn dự phóng chi tiết, dùng để tính giá trị cuối kỳ. Về nguyên tắc, g không được vượt tốc độ tăng trưởng GDP danh nghĩa dài hạn của nền kinh tế và phải nhỏ hơn tỷ lệ chiết khấu; các báo cáo định giá tại Việt Nam thường giả định ở mức thấp, phổ biến khoảng 2–4%. Chỉ cần thay đổi g thêm 1 điểm phần trăm cũng có thể làm giá trị định giá thay đổi đáng kể.",
+"lien_quan": [
+"Giá trị cuối kỳ",
+"Mô hình Gordon",
+"Tốc độ tăng trưởng bền vững",
+"Phân tích độ nhạy"
+]
+},
+{
+"thuat_ngu": "Mô hình chiết khấu cổ tức",
+"tieng_anh": "Dividend discount model",
+"viet_tat": "DDM",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Phương pháp định giá cổ phiếu bằng giá trị hiện tại của toàn bộ cổ tức kỳ vọng trong tương lai. Công thức: P0 = Σ D_t / (1 + Ke)^t. Mô hình phù hợp với doanh nghiệp chi trả cổ tức tiền mặt đều đặn như điện, nước, cảng, nhưng kém phù hợp với nhiều doanh nghiệp Việt Nam hay chia cổ tức bằng cổ phiếu hoặc giữ lại phần lớn lợi nhuận.",
+"lien_quan": [
+"Mô hình Gordon",
+"Chi phí vốn chủ sở hữu",
+"Tỷ suất cổ tức",
+"Tỷ lệ chi trả cổ tức"
+]
+},
+{
+"thuat_ngu": "Mô hình Gordon",
+"tieng_anh": "Gordon growth model",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Dạng đơn giản của mô hình chiết khấu cổ tức, giả định cổ tức tăng trưởng đều mãi mãi với tốc độ g không đổi. Công thức: P0 = D1 / (Ke − g), trong đó D1 là cổ tức dự kiến năm tới và điều kiện bắt buộc là Ke > g. Công thức cùng dạng cũng được dùng để tính giá trị cuối kỳ trong DCF và để suy ra P/E, P/B hợp lý.",
+"lien_quan": [
+"Mô hình chiết khấu cổ tức",
+"Tốc độ tăng trưởng dài hạn",
+"Giá trị cuối kỳ",
+"Chi phí vốn chủ sở hữu"
+]
+},
+{
+"thuat_ngu": "Mô hình thu nhập thặng dư",
+"tieng_anh": "Residual income model",
+"viet_tat": "RIM",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Mô hình định giá vốn chủ sở hữu bằng giá trị sổ sách hiện tại cộng giá trị hiện tại của các khoản lợi nhuận vượt trên chi phí vốn chủ sở hữu. Công thức: V0 = BV0 + Σ (LNST_t − Ke × BV_(t−1)) / (1 + Ke)^t. Mô hình rất phù hợp để định giá ngân hàng và công ty tài chính tại Việt Nam, vì dòng tiền của nhóm này khó xác định còn giá trị sổ sách lại phản ánh tương đối sát giá trị tài sản.",
+"lien_quan": [
+"Giá trị sổ sách trên mỗi cổ phiếu",
+"Chi phí vốn chủ sở hữu",
+"Giá trị kinh tế gia tăng",
+"Hệ số giá trên giá trị sổ sách"
+]
+}
 ]

@@ -1,77 +1,315 @@
 [
-{"thuat_ngu": "Vốn lưu động ròng", "tieng_anh": "Net working capital", "viet_tat": "NWC", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Phần chênh lệch giữa tài sản ngắn hạn và nợ ngắn hạn, cũng chính là phần nguồn vốn dài hạn dùng để tài trợ cho tài sản ngắn hạn. Công thức: Vốn lưu động ròng = Tài sản ngắn hạn − Nợ ngắn hạn = (Vốn chủ sở hữu + Nợ dài hạn) − Tài sản dài hạn. Vốn lưu động ròng âm cho thấy doanh nghiệp đang dùng nợ ngắn hạn để tài trợ tài sản dài hạn, một dấu hiệu mất cân đối kỳ hạn cần lưu ý.",
- "lien_quan": ["Vốn lưu động", "Hệ số thanh toán hiện hành", "Nhu cầu vốn lưu động", "Altman Z-score"]},
-{"thuat_ngu": "Nhu cầu vốn lưu động", "tieng_anh": "Working capital requirement", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Lượng vốn doanh nghiệp cần để tài trợ cho chu kỳ hoạt động sau khi đã tận dụng các khoản tín dụng thương mại không chịu lãi. Công thức: Nhu cầu vốn lưu động = (Phải thu ngắn hạn + Hàng tồn kho + Tài sản ngắn hạn khác) − (Phải trả người bán + Người mua trả tiền trước + Nợ ngắn hạn phi tài chính khác), không tính tiền và nợ vay. Phần tăng thêm của nhu cầu vốn lưu động (ΔNWC) được trừ khi tính FCFF; nếu nhu cầu này tăng nhanh hơn doanh thu, doanh nghiệp buộc phải vay thêm.",
- "lien_quan": ["Vốn lưu động ròng", "Chu kỳ chuyển đổi tiền mặt", "Dòng tiền tự do cho doanh nghiệp"]},
-{"thuat_ngu": "Chi tiêu vốn", "tieng_anh": "Capital expenditure", "viet_tat": "Capex", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Khoản tiền doanh nghiệp chi để mua sắm, xây dựng, nâng cấp tài sản cố định và tài sản dài hạn khác. Trên BCTC Việt Nam, capex được lấy từ chỉ tiêu Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác (mã 21) trong Báo cáo lưu chuyển tiền tệ. Nên phân biệt capex bảo trì (xấp xỉ mức khấu hao) và capex mở rộng; capex lớn kéo dài làm giảm dòng tiền tự do hiện tại nhưng có thể tạo tăng trưởng trong tương lai.",
- "lien_quan": ["Dòng tiền tự do", "Vòng quay tài sản cố định", "Dòng tiền tự do cho doanh nghiệp"]},
-{"thuat_ngu": "Phân tích Dupont", "tieng_anh": "DuPont analysis", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Phương pháp tách ROE thành ba nhân tố để biết ROE đến từ đâu. Công thức: ROE = Biên lợi nhuận ròng × Vòng quay tổng tài sản × Hệ số đòn bẩy tài chính = (LNST / Doanh thu) × (Doanh thu / Tổng tài sản) × (Tổng tài sản / Vốn chủ sở hữu). Nhờ đó nhà phân tích phân biệt được ROE cao là nhờ sinh lời tốt, nhờ dùng tài sản hiệu quả hay chỉ nhờ vay nợ nhiều.",
- "lien_quan": ["Tỷ suất lợi nhuận trên vốn chủ sở hữu", "Biên lợi nhuận ròng", "Vòng quay tổng tài sản", "Hệ số đòn bẩy tài chính", "Phân tích Dupont 5 thành phần"]},
-{"thuat_ngu": "Phân tích Dupont 5 thành phần", "tieng_anh": "Five-step DuPont analysis", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Phiên bản mở rộng của phân tích Dupont, tách biên lợi nhuận ròng thành gánh nặng thuế, gánh nặng lãi vay và biên EBIT. Công thức: ROE = (LNST / LNTT) × (LNTT / EBIT) × (EBIT / Doanh thu) × (Doanh thu / Tổng tài sản) × (Tổng tài sản / Vốn chủ sở hữu). Cách tách này cho thấy rõ tác động của ưu đãi thuế, chi phí lãi vay và hiệu quả hoạt động cốt lõi lên ROE.",
- "lien_quan": ["Phân tích Dupont", "Lợi nhuận trước lãi vay và thuế", "Tỷ suất lợi nhuận trên vốn chủ sở hữu", "Hệ số đòn bẩy tài chính"]},
-{"thuat_ngu": "Phân tích theo chiều ngang", "tieng_anh": "Horizontal analysis", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Phương pháp so sánh từng khoản mục BCTC qua các kỳ để thấy mức biến động tuyệt đối và tương đối. Công thức: Mức thay đổi = Giá trị kỳ này − Giá trị kỳ gốc; Tỷ lệ thay đổi = Mức thay đổi / |Giá trị kỳ gốc| × 100%. Phân tích ngang giúp phát hiện các khoản mục tăng giảm bất thường, như phải thu tăng nhanh hơn doanh thu hay chi phí lãi vay tăng đột biến.",
- "lien_quan": ["Phân tích theo chiều dọc", "Phân tích xu hướng", "Tăng trưởng so với cùng kỳ năm trước"]},
-{"thuat_ngu": "Phân tích theo chiều dọc", "tieng_anh": "Vertical analysis (common-size analysis)", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Phương pháp biểu diễn mỗi khoản mục BCTC dưới dạng tỷ lệ phần trăm của một chỉ tiêu gốc trong cùng kỳ (báo cáo quy mô chung). Trên BCKQKD các khoản mục được chia cho doanh thu thuần, còn trên Bảng cân đối kế toán được chia cho tổng tài sản (hoặc tổng nguồn vốn). Cách này giúp so sánh cơ cấu chi phí, tài sản giữa các doanh nghiệp có quy mô khác nhau và theo dõi sự dịch chuyển cơ cấu qua thời gian.",
- "lien_quan": ["Phân tích theo chiều ngang", "Biên lợi nhuận gộp", "Phân tích tỷ số tài chính"]},
-{"thuat_ngu": "Phân tích xu hướng", "tieng_anh": "Trend analysis", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Phương pháp theo dõi diễn biến của một chỉ tiêu qua nhiều kỳ (thường 3–5 năm hoặc 8–12 quý) để nhận diện hướng đi dài hạn. Cách làm phổ biến là chọn một kỳ gốc bằng 100 và tính chỉ số xu hướng: Chỉ số kỳ t = Giá trị kỳ t / Giá trị kỳ gốc × 100. Phân tích xu hướng giúp tách biến động mang tính chu kỳ, mùa vụ khỏi những thay đổi mang tính cấu trúc.",
- "lien_quan": ["Phân tích theo chiều ngang", "Tốc độ tăng trưởng kép hàng năm", "Tăng trưởng so với cùng kỳ năm trước"]},
-{"thuat_ngu": "Phân tích tỷ số tài chính", "tieng_anh": "Financial ratio analysis", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Phương pháp đánh giá doanh nghiệp thông qua các tỷ số tính từ BCTC, thường chia thành các nhóm: thanh khoản, đòn bẩy, hiệu quả hoạt động, khả năng sinh lời và định giá. Một tỷ số riêng lẻ ít có ý nghĩa; nó cần được so sánh với lịch sử của chính doanh nghiệp, với trung bình ngành và với các doanh nghiệp cùng ngành. Các bộ chấm điểm như Altman Z-score hay Piotroski F-score đều được xây dựng từ tỷ số tài chính.",
- "lien_quan": ["Phân tích Dupont", "Phân tích theo chiều dọc", "Định giá so sánh", "Piotroski F-score"]},
-{"thuat_ngu": "Tăng trưởng so với quý trước", "tieng_anh": "Quarter-on-quarter growth", "viet_tat": "QoQ", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Tốc độ thay đổi của một chỉ tiêu trong quý này so với quý liền trước. Công thức: QoQ = (Giá trị quý này − Giá trị quý trước) / |Giá trị quý trước| × 100%. Chỉ số phản ánh nhanh động lượng kinh doanh nhưng dễ bị nhiễu bởi tính mùa vụ, ví dụ quý IV thường cao nhờ mùa mua sắm cuối năm và bàn giao bất động sản, nên cần đọc kèm YoY.",
- "lien_quan": ["Tăng trưởng so với cùng kỳ năm trước", "Số liệu lũy kế", "Phân tích xu hướng"]},
-{"thuat_ngu": "Tăng trưởng so với cùng kỳ năm trước", "tieng_anh": "Year-on-year growth", "viet_tat": "YoY", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Tốc độ thay đổi của một chỉ tiêu so với cùng kỳ năm trước (quý này so với cùng quý năm trước, hoặc năm này so với năm trước). Công thức: YoY = (Giá trị kỳ này − Giá trị cùng kỳ năm trước) / |Giá trị cùng kỳ năm trước| × 100%. Đây là cách so sánh phổ biến nhất trong tin tức BCTC tại Việt Nam (tăng/giảm so với cùng kỳ) vì loại bỏ được ảnh hưởng mùa vụ; khi kỳ gốc lỗ hoặc rất thấp, tỷ lệ phần trăm dễ gây hiểu nhầm.",
- "lien_quan": ["Tăng trưởng so với quý trước", "Số liệu lũy kế", "Tốc độ tăng trưởng kép hàng năm"]},
-{"thuat_ngu": "Số liệu lũy kế", "tieng_anh": "Year-to-date", "viet_tat": "YTD", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Giá trị cộng dồn của một chỉ tiêu từ đầu năm tài chính đến hết kỳ báo cáo. BCKQKD giữa niên độ theo VAS trình bày cả số liệu riêng của quý và cột lũy kế từ đầu năm, trong khi Báo cáo lưu chuyển tiền tệ quý thường chỉ có số lũy kế; muốn có dòng tiền riêng của một quý phải lấy lũy kế quý này trừ lũy kế quý trước. Số lũy kế thường được so với kế hoạch năm để đánh giá tiến độ thực hiện.",
- "lien_quan": ["Tỷ lệ hoàn thành kế hoạch", "Số liệu bốn quý gần nhất", "Tăng trưởng so với cùng kỳ năm trước"]},
-{"thuat_ngu": "Số liệu bốn quý gần nhất", "tieng_anh": "Trailing twelve months", "viet_tat": "TTM", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Tổng giá trị của một chỉ tiêu trong bốn quý tài chính gần nhất, giúp có số liệu cả năm luôn cập nhật mà không phải chờ BCTC năm. Công thức: Chỉ tiêu TTM = Tổng 4 quý gần nhất, hoặc = Số cả năm trước + Lũy kế năm nay − Lũy kế cùng kỳ năm trước. EPS TTM được dùng để tính P/E trượt; với chỉ tiêu thời điểm trên bảng cân đối kế toán, cần dùng số bình quân thay vì cộng dồn.",
- "lien_quan": ["Hệ số giá trên thu nhập", "Số liệu lũy kế", "Thu nhập trên mỗi cổ phiếu"]},
-{"thuat_ngu": "Tốc độ tăng trưởng kép hàng năm", "tieng_anh": "Compound annual growth rate", "viet_tat": "CAGR", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Tốc độ tăng trưởng bình quân mỗi năm với giả định tăng trưởng đều theo lãi kép trong suốt một giai đoạn. Công thức: CAGR = (Giá trị cuối kỳ / Giá trị đầu kỳ)^(1/n) − 1, với n là số năm. CAGR làm mượt biến động từng năm nên tiện để so sánh, nhưng không tính được khi giá trị đầu kỳ âm và có thể che giấu những năm tăng trưởng âm.",
- "lien_quan": ["Phân tích xu hướng", "Tăng trưởng so với cùng kỳ năm trước", "Hệ số PEG"]},
-{"thuat_ngu": "Chất lượng lợi nhuận", "tieng_anh": "Earnings quality", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Mức độ lợi nhuận kế toán phản ánh đúng hiệu quả kinh doanh thực, được hậu thuẫn bởi dòng tiền và có tính bền vững, lặp lại. Dấu hiệu lợi nhuận chất lượng thấp gồm: dòng tiền kinh doanh thấp hơn lợi nhuận trong nhiều kỳ, phải thu và hàng tồn kho tăng nhanh hơn doanh thu, lợi nhuận phụ thuộc vào khoản bất thường hoặc giao dịch với bên liên quan, thay đổi chính sách khấu hao, trích lập dự phòng. Các công cụ đo lường thường dùng là tỷ lệ CFO/LNST, tỷ lệ dồn tích và Beneish M-score.",
- "lien_quan": ["Tỷ lệ dòng tiền hoạt động trên lợi nhuận ròng", "Tỷ lệ dồn tích", "Khoản mục bất thường", "Beneish M-score", "Lợi nhuận cốt lõi"]},
-{"thuat_ngu": "Tỷ lệ dồn tích", "tieng_anh": "Accruals ratio", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Đo phần lợi nhuận đến từ các khoản dồn tích kế toán (đã ghi nhận nhưng chưa thu, chi bằng tiền) thay vì dòng tiền thực. Công thức phổ biến: Tỷ lệ dồn tích = (LNST − Lưu chuyển tiền thuần từ hoạt động kinh doanh) / Tổng tài sản bình quân. Tỷ lệ dồn tích cao và tăng dần cho thấy lợi nhuận phụ thuộc nhiều vào ước tính kế toán, thường đi trước giai đoạn lợi nhuận suy giảm.",
- "lien_quan": ["Chất lượng lợi nhuận", "Tỷ lệ dòng tiền hoạt động trên lợi nhuận ròng", "Beneish M-score"]},
-{"thuat_ngu": "Tỷ lệ dòng tiền hoạt động trên lợi nhuận ròng", "tieng_anh": "Operating cash flow to net income ratio", "viet_tat": "CFO/LNST", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "So sánh dòng tiền thuần từ hoạt động kinh doanh với lợi nhuận sau thuế, cho biết mỗi đồng lợi nhuận được chuyển hóa thành bao nhiêu đồng tiền thực. Công thức: CFO / LNST = Lưu chuyển tiền thuần từ hoạt động kinh doanh / Lợi nhuận sau thuế. Tỷ lệ duy trì quanh hoặc trên 1 qua nhiều năm là dấu hiệu tốt; tỷ lệ dưới 1 (nhất là âm) kéo dài, như thường thấy ở một số doanh nghiệp bất động sản, xây dựng, là cảnh báo về chất lượng lợi nhuận.",
- "lien_quan": ["Chất lượng lợi nhuận", "Tỷ lệ dồn tích", "Dòng tiền tự do", "Piotroski F-score"]},
-{"thuat_ngu": "Khoản mục bất thường", "tieng_anh": "Non-recurring items", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Các khoản thu nhập hoặc chi phí không phát sinh từ hoạt động kinh doanh thường xuyên và khó lặp lại, như lãi thanh lý tài sản, lãi thoái vốn công ty con, lãi đánh giá lại khoản đầu tư, hoàn nhập dự phòng lớn, tiền phạt, bồi thường hay lãi/lỗ tỷ giá đột biến. Theo VAS, phần lớn các khoản này nằm trong doanh thu/chi phí tài chính hoặc thu nhập/chi phí khác, nên cần đọc kỹ thuyết minh BCTC để nhận diện. Nhà phân tích loại các khoản này ra để tính lợi nhuận cốt lõi và tránh định giá sai dựa trên EPS đột biến.",
- "lien_quan": ["Lợi nhuận cốt lõi", "Chất lượng lợi nhuận", "Biên lợi nhuận trước thuế"]},
-{"thuat_ngu": "Altman Z-score", "tieng_anh": "Altman Z-score", "viet_tat": "Z-score", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Mô hình chấm điểm do Edward Altman xây dựng năm 1968 để dự báo nguy cơ phá sản của doanh nghiệp trong khoảng hai năm. Công thức gốc cho doanh nghiệp sản xuất niêm yết: Z = 1,2X1 + 1,4X2 + 3,3X3 + 0,6X4 + 1,0X5, với X1 = Vốn lưu động ròng / Tổng tài sản, X2 = Lợi nhuận giữ lại / Tổng tài sản, X3 = EBIT / Tổng tài sản, X4 = Giá trị thị trường vốn chủ / Tổng nợ, X5 = Doanh thu / Tổng tài sản. Z > 2,99 là vùng an toàn, 1,81–2,99 là vùng xám, dưới 1,81 là vùng nguy hiểm; với doanh nghiệp phi sản xuất hoặc thị trường mới nổi như Việt Nam nên dùng phiên bản Z'' (bỏ X5) với ngưỡng riêng.",
- "lien_quan": ["Vốn lưu động ròng", "Lợi nhuận trước lãi vay và thuế", "Tỷ lệ nợ trên tổng tài sản", "Piotroski F-score", "Beneish M-score"]},
-{"thuat_ngu": "Piotroski F-score", "tieng_anh": "Piotroski F-score", "viet_tat": "F-score", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Bộ chấm điểm sức khỏe tài chính từ 0 đến 9 do Joseph Piotroski đề xuất năm 2000, gồm 9 tiêu chí nhị phân (đạt được 1 điểm, không đạt 0 điểm). Ba nhóm tiêu chí gồm: sinh lời (ROA dương, CFO dương, ROA tăng, CFO lớn hơn LNST); đòn bẩy, thanh khoản và nguồn vốn (tỷ lệ nợ dài hạn giảm, hệ số thanh toán hiện hành tăng, không phát hành thêm cổ phiếu); hiệu quả hoạt động (biên lợi nhuận gộp tăng, vòng quay tổng tài sản tăng). Điểm 8–9 cho thấy nền tảng tài chính mạnh, 0–2 là yếu; riêng tiêu chí không phát hành thêm cổ phiếu khá khắt khe với doanh nghiệp Việt Nam vốn thường xuyên tăng vốn.",
- "lien_quan": ["Altman Z-score", "Beneish M-score", "Tỷ suất lợi nhuận trên tổng tài sản", "Tỷ lệ dòng tiền hoạt động trên lợi nhuận ròng"]},
-{"thuat_ngu": "Beneish M-score", "tieng_anh": "Beneish M-score", "viet_tat": "M-score", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Mô hình xác suất do Messod Beneish xây dựng để phát hiện khả năng doanh nghiệp thao túng lợi nhuận, dựa trên 8 chỉ số: DSRI (phải thu so với doanh thu), GMI (biên gộp), AQI (chất lượng tài sản), SGI (tăng trưởng doanh thu), DEPI (khấu hao), SGAI (chi phí bán hàng và quản lý), LVGI (đòn bẩy) và TATA (dồn tích trên tổng tài sản). Công thức: M = −4,84 + 0,92·DSRI + 0,528·GMI + 0,404·AQI + 0,892·SGI + 0,115·DEPI − 0,172·SGAI + 4,679·TATA − 0,327·LVGI. M lớn hơn −1,78 là dấu hiệu nghi vấn cần soát xét kỹ BCTC, nhưng đây chỉ là công cụ sàng lọc chứ không phải bằng chứng gian lận.",
- "lien_quan": ["Chất lượng lợi nhuận", "Tỷ lệ dồn tích", "Kỳ thu tiền bình quân", "Altman Z-score"]},
-{"thuat_ngu": "Điểm hòa vốn", "tieng_anh": "Break-even point", "viet_tat": "BEP", "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Mức sản lượng hoặc doanh thu mà tại đó tổng doanh thu bằng tổng chi phí, doanh nghiệp không lãi cũng không lỗ. Công thức: Sản lượng hòa vốn = Định phí / (Giá bán đơn vị − Biến phí đơn vị); Doanh thu hòa vốn = Định phí / Tỷ lệ lãi trên biến phí. Doanh nghiệp có định phí cao (khấu hao lớn, lãi vay lớn) có điểm hòa vốn cao, phải duy trì công suất lớn mới có lãi.",
- "lien_quan": ["Độ lớn đòn bẩy hoạt động", "Phân tích độ nhạy", "Biên lợi nhuận gộp"]},
-{"thuat_ngu": "Phân tích độ nhạy", "tieng_anh": "Sensitivity analysis", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Kỹ thuật đánh giá giá trị định giá hoặc lợi nhuận thay đổi thế nào khi một (hoặc hai) giả định đầu vào thay đổi, trong khi các yếu tố khác giữ nguyên. Ví dụ phổ biến là bảng hai chiều WACC × tăng trưởng dài hạn trong mô hình DCF, hoặc tác động của giá thép, giá dầu, tỷ giá USD/VND lên lợi nhuận. Phân tích độ nhạy cho thấy biến số nào ảnh hưởng mạnh nhất và mức độ rủi ro của kết quả định giá.",
- "lien_quan": ["Phân tích kịch bản", "Mô hình chiết khấu dòng tiền", "Tốc độ tăng trưởng dài hạn", "Biên an toàn"]},
-{"thuat_ngu": "Phân tích kịch bản", "tieng_anh": "Scenario analysis", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Kỹ thuật xây dựng nhiều kịch bản (thường là cơ sở, lạc quan và bi quan) trong đó nhiều giả định như sản lượng, giá bán, chi phí, lãi suất thay đổi đồng thời và nhất quán với nhau. Mỗi kịch bản cho ra một giá trị định giá; có thể gán xác suất để tính Giá trị kỳ vọng = Σ (Xác suất × Giá trị kịch bản). Khác với phân tích độ nhạy, phân tích kịch bản phản ánh tốt hơn các tình huống thực tế như suy thoái ngành hay thay đổi chính sách.",
- "lien_quan": ["Phân tích độ nhạy", "Giá mục tiêu", "Giá trị hợp lý"]},
-{"thuat_ngu": "Tỷ lệ hoàn thành kế hoạch", "tieng_anh": "Business plan completion rate", "viet_tat": null, "nhom": "Phân tích tài chính & Định giá",
- "dinh_nghia": "Tỷ lệ phần trăm doanh thu hoặc lợi nhuận lũy kế đã thực hiện so với kế hoạch cả năm được Đại hội đồng cổ đông thường niên thông qua, một chỉ số được theo dõi rất phổ biến tại Việt Nam. Công thức: Tỷ lệ hoàn thành kế hoạch = Chỉ tiêu lũy kế từ đầu năm / Chỉ tiêu kế hoạch năm × 100%. Ví dụ sau quý III, hoàn thành khoảng 75% kế hoạch lợi nhuận thường được xem là đúng tiến độ, nhưng cần lưu ý tính mùa vụ và việc nhiều doanh nghiệp đặt kế hoạch thận trọng.",
- "lien_quan": ["Số liệu lũy kế", "Hệ số P/E dự phóng", "Tăng trưởng so với cùng kỳ năm trước"]}
+{
+"thuat_ngu": "Vốn lưu động ròng",
+"tieng_anh": "Net working capital",
+"viet_tat": "NWC",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Phần chênh lệch giữa tài sản ngắn hạn và nợ ngắn hạn, cũng chính là phần nguồn vốn dài hạn dùng để tài trợ cho tài sản ngắn hạn. Công thức: Vốn lưu động ròng = Tài sản ngắn hạn − Nợ ngắn hạn = (Vốn chủ sở hữu + Nợ dài hạn) − Tài sản dài hạn. Vốn lưu động ròng âm cho thấy doanh nghiệp đang dùng nợ ngắn hạn để tài trợ tài sản dài hạn, một dấu hiệu mất cân đối kỳ hạn cần lưu ý.",
+"lien_quan": [
+"Vốn lưu động",
+"Hệ số thanh toán hiện hành",
+"Nhu cầu vốn lưu động",
+"Altman Z-score"
+]
+},
+{
+"thuat_ngu": "Nhu cầu vốn lưu động",
+"tieng_anh": "Working capital requirement",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Lượng vốn doanh nghiệp phải tự tài trợ cho chu kỳ kinh doanh sau khi đã tận dụng các khoản nợ không chịu lãi (tín dụng thương mại). Công thức: Nhu cầu vốn lưu động = (Phải thu ngắn hạn + Hàng tồn kho + Tài sản ngắn hạn khác) − (Phải trả người bán + Người mua trả tiền trước + Các khoản phải trả ngắn hạn không chịu lãi khác như thuế phải nộp, lương phải trả), không tính tiền và nợ vay. Phần tăng thêm của nhu cầu vốn lưu động được trừ khi tính FCFF; chỉ tiêu này khác vốn lưu động ròng (Tài sản ngắn hạn − Nợ ngắn hạn).",
+"lien_quan": [
+"Vốn lưu động ròng",
+"Chu kỳ chuyển đổi tiền mặt",
+"Dòng tiền tự do cho doanh nghiệp"
+]
+},
+{
+"thuat_ngu": "Chi tiêu vốn",
+"tieng_anh": "Capital expenditure",
+"viet_tat": "Capex",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Khoản tiền doanh nghiệp chi để mua sắm, xây dựng, nâng cấp tài sản cố định và tài sản dài hạn khác. Trên BCTC Việt Nam, capex được lấy từ chỉ tiêu Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác (mã 21) trong Báo cáo lưu chuyển tiền tệ. Nên phân biệt capex bảo trì (xấp xỉ mức khấu hao) và capex mở rộng; capex lớn kéo dài làm giảm dòng tiền tự do hiện tại nhưng có thể tạo tăng trưởng trong tương lai.",
+"lien_quan": [
+"Dòng tiền tự do",
+"Vòng quay tài sản cố định",
+"Dòng tiền tự do cho doanh nghiệp"
+]
+},
+{
+"thuat_ngu": "Phân tích Dupont",
+"tieng_anh": "DuPont analysis",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Phương pháp tách ROE thành ba nhân tố để biết ROE đến từ đâu. Công thức: ROE = Biên lợi nhuận ròng × Vòng quay tổng tài sản × Hệ số đòn bẩy tài chính = (LNST / Doanh thu) × (Doanh thu / Tổng tài sản) × (Tổng tài sản / Vốn chủ sở hữu). Nhờ đó nhà phân tích phân biệt được ROE cao là nhờ sinh lời tốt, nhờ dùng tài sản hiệu quả hay chỉ nhờ vay nợ nhiều.",
+"lien_quan": [
+"Tỷ suất lợi nhuận trên vốn chủ sở hữu",
+"Biên lợi nhuận ròng",
+"Vòng quay tổng tài sản",
+"Hệ số đòn bẩy tài chính",
+"Phân tích Dupont 5 thành phần"
+]
+},
+{
+"thuat_ngu": "Phân tích Dupont 5 thành phần",
+"tieng_anh": "Five-step DuPont analysis",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Phiên bản mở rộng của phân tích Dupont, tách biên lợi nhuận ròng thành gánh nặng thuế, gánh nặng lãi vay và biên EBIT. Công thức: ROE = (LNST / LNTT) × (LNTT / EBIT) × (EBIT / Doanh thu) × (Doanh thu / Tổng tài sản) × (Tổng tài sản / Vốn chủ sở hữu). Cách tách này cho thấy rõ tác động của ưu đãi thuế, chi phí lãi vay và hiệu quả hoạt động cốt lõi lên ROE.",
+"lien_quan": [
+"Phân tích Dupont",
+"Lợi nhuận trước lãi vay và thuế",
+"Tỷ suất lợi nhuận trên vốn chủ sở hữu",
+"Hệ số đòn bẩy tài chính"
+]
+},
+{
+"thuat_ngu": "Phân tích theo chiều ngang",
+"tieng_anh": "Horizontal analysis",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Phương pháp so sánh từng khoản mục BCTC qua các kỳ để thấy mức biến động tuyệt đối và tương đối. Công thức: Mức thay đổi = Giá trị kỳ này − Giá trị kỳ gốc; Tỷ lệ thay đổi = Mức thay đổi / |Giá trị kỳ gốc| × 100%. Phân tích ngang giúp phát hiện các khoản mục tăng giảm bất thường, như phải thu tăng nhanh hơn doanh thu hay chi phí lãi vay tăng đột biến.",
+"lien_quan": [
+"Phân tích theo chiều dọc",
+"Phân tích xu hướng",
+"Tăng trưởng so với cùng kỳ năm trước"
+]
+},
+{
+"thuat_ngu": "Phân tích theo chiều dọc",
+"tieng_anh": "Vertical analysis (common-size analysis)",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Phương pháp biểu diễn mỗi khoản mục BCTC dưới dạng tỷ lệ phần trăm của một chỉ tiêu gốc trong cùng kỳ (báo cáo quy mô chung). Trên BCKQKD các khoản mục được chia cho doanh thu thuần, còn trên Bảng cân đối kế toán được chia cho tổng tài sản (hoặc tổng nguồn vốn). Cách này giúp so sánh cơ cấu chi phí, tài sản giữa các doanh nghiệp có quy mô khác nhau và theo dõi sự dịch chuyển cơ cấu qua thời gian.",
+"lien_quan": [
+"Phân tích theo chiều ngang",
+"Biên lợi nhuận gộp",
+"Phân tích tỷ số tài chính"
+]
+},
+{
+"thuat_ngu": "Phân tích xu hướng",
+"tieng_anh": "Trend analysis",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Phương pháp theo dõi diễn biến của một chỉ tiêu qua nhiều kỳ (thường 3–5 năm hoặc 8–12 quý) để nhận diện hướng đi dài hạn. Cách làm phổ biến là chọn một kỳ gốc bằng 100 và tính chỉ số xu hướng: Chỉ số kỳ t = Giá trị kỳ t / Giá trị kỳ gốc × 100. Phân tích xu hướng giúp tách biến động mang tính chu kỳ, mùa vụ khỏi những thay đổi mang tính cấu trúc.",
+"lien_quan": [
+"Phân tích theo chiều ngang",
+"Tốc độ tăng trưởng kép hàng năm",
+"Tăng trưởng so với cùng kỳ năm trước"
+]
+},
+{
+"thuat_ngu": "Phân tích tỷ số tài chính",
+"tieng_anh": "Financial ratio analysis",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Phương pháp đánh giá doanh nghiệp thông qua các tỷ số tính từ BCTC, thường chia thành các nhóm: thanh khoản, đòn bẩy, hiệu quả hoạt động, khả năng sinh lời và định giá. Một tỷ số riêng lẻ ít có ý nghĩa; nó cần được so sánh với lịch sử của chính doanh nghiệp, với trung bình ngành và với các doanh nghiệp cùng ngành. Các bộ chấm điểm như Altman Z-score hay Piotroski F-score đều được xây dựng từ tỷ số tài chính.",
+"lien_quan": [
+"Phân tích Dupont",
+"Phân tích theo chiều dọc",
+"Định giá so sánh",
+"Piotroski F-score"
+]
+},
+{
+"thuat_ngu": "Tăng trưởng so với quý trước",
+"tieng_anh": "Quarter-on-quarter growth",
+"viet_tat": "QoQ",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Tốc độ thay đổi của một chỉ tiêu trong quý này so với quý liền trước. Công thức: QoQ = (Giá trị quý này − Giá trị quý trước) / |Giá trị quý trước| × 100%. Chỉ số phản ánh nhanh động lượng kinh doanh nhưng dễ bị nhiễu bởi tính mùa vụ, ví dụ quý IV thường cao nhờ mùa mua sắm cuối năm và bàn giao bất động sản, nên cần đọc kèm YoY.",
+"lien_quan": [
+"Tăng trưởng so với cùng kỳ năm trước",
+"Số liệu lũy kế",
+"Phân tích xu hướng"
+]
+},
+{
+"thuat_ngu": "Tăng trưởng so với cùng kỳ năm trước",
+"tieng_anh": "Year-on-year growth",
+"viet_tat": "YoY",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Tốc độ thay đổi của một chỉ tiêu so với cùng kỳ năm trước (quý này so với cùng quý năm trước, hoặc năm này so với năm trước). Công thức: YoY = (Giá trị kỳ này − Giá trị cùng kỳ năm trước) / |Giá trị cùng kỳ năm trước| × 100%. Đây là cách so sánh phổ biến nhất trong tin tức BCTC tại Việt Nam (tăng/giảm so với cùng kỳ) vì loại bỏ được ảnh hưởng mùa vụ; khi kỳ gốc lỗ hoặc rất thấp, tỷ lệ phần trăm dễ gây hiểu nhầm.",
+"lien_quan": [
+"Tăng trưởng so với quý trước",
+"Số liệu lũy kế",
+"Tốc độ tăng trưởng kép hàng năm"
+]
+},
+{
+"thuat_ngu": "Số liệu lũy kế",
+"tieng_anh": "Year-to-date",
+"viet_tat": "YTD",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Giá trị cộng dồn của một chỉ tiêu từ đầu năm tài chính đến hết kỳ báo cáo. BCKQKD giữa niên độ theo VAS trình bày cả số liệu riêng của quý và cột lũy kế từ đầu năm, trong khi Báo cáo lưu chuyển tiền tệ quý thường chỉ có số lũy kế; muốn có dòng tiền riêng của một quý phải lấy lũy kế quý này trừ lũy kế quý trước. Số lũy kế thường được so với kế hoạch năm để đánh giá tiến độ thực hiện.",
+"lien_quan": [
+"Tỷ lệ hoàn thành kế hoạch",
+"Số liệu bốn quý gần nhất",
+"Tăng trưởng so với cùng kỳ năm trước"
+]
+},
+{
+"thuat_ngu": "Số liệu bốn quý gần nhất",
+"tieng_anh": "Trailing twelve months",
+"viet_tat": "TTM",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Tổng giá trị của một chỉ tiêu trong bốn quý tài chính gần nhất, giúp có số liệu cả năm luôn cập nhật mà không phải chờ BCTC năm. Công thức: Chỉ tiêu TTM = Tổng 4 quý gần nhất, hoặc = Số cả năm trước + Lũy kế năm nay − Lũy kế cùng kỳ năm trước. EPS TTM được dùng để tính P/E trượt; với chỉ tiêu thời điểm trên bảng cân đối kế toán, cần dùng số bình quân thay vì cộng dồn.",
+"lien_quan": [
+"Hệ số giá trên thu nhập",
+"Số liệu lũy kế",
+"Thu nhập trên mỗi cổ phiếu"
+]
+},
+{
+"thuat_ngu": "Tốc độ tăng trưởng kép hàng năm",
+"tieng_anh": "Compound annual growth rate",
+"viet_tat": "CAGR",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Tốc độ tăng trưởng bình quân mỗi năm với giả định tăng trưởng đều theo lãi kép trong suốt một giai đoạn. Công thức: CAGR = (Giá trị cuối kỳ / Giá trị đầu kỳ)^(1/n) − 1, với n là số năm. CAGR làm mượt biến động từng năm nên tiện để so sánh, nhưng không tính được khi giá trị đầu kỳ âm và có thể che giấu những năm tăng trưởng âm.",
+"lien_quan": [
+"Phân tích xu hướng",
+"Tăng trưởng so với cùng kỳ năm trước",
+"Hệ số PEG"
+]
+},
+{
+"thuat_ngu": "Chất lượng lợi nhuận",
+"tieng_anh": "Earnings quality",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Mức độ lợi nhuận kế toán phản ánh đúng hiệu quả kinh doanh thực, được hậu thuẫn bởi dòng tiền và có tính bền vững, lặp lại. Dấu hiệu lợi nhuận chất lượng thấp gồm: dòng tiền kinh doanh thấp hơn lợi nhuận trong nhiều kỳ, phải thu và hàng tồn kho tăng nhanh hơn doanh thu, lợi nhuận phụ thuộc vào khoản bất thường hoặc giao dịch với bên liên quan, thay đổi chính sách khấu hao, trích lập dự phòng. Các công cụ đo lường thường dùng là tỷ lệ CFO/LNST, tỷ lệ dồn tích và Beneish M-score.",
+"lien_quan": [
+"Tỷ lệ dòng tiền hoạt động trên lợi nhuận ròng",
+"Tỷ lệ dồn tích",
+"Khoản mục bất thường",
+"Beneish M-score",
+"Lợi nhuận cốt lõi"
+]
+},
+{
+"thuat_ngu": "Tỷ lệ dồn tích",
+"tieng_anh": "Accruals ratio",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Đo phần lợi nhuận đến từ các khoản dồn tích kế toán (đã ghi nhận nhưng chưa thu, chi bằng tiền) thay vì dòng tiền thực. Công thức phổ biến: Tỷ lệ dồn tích = (LNST − Lưu chuyển tiền thuần từ hoạt động kinh doanh) / Tổng tài sản bình quân. Tỷ lệ dồn tích cao và tăng dần cho thấy lợi nhuận phụ thuộc nhiều vào ước tính kế toán, thường đi trước giai đoạn lợi nhuận suy giảm.",
+"lien_quan": [
+"Chất lượng lợi nhuận",
+"Tỷ lệ dòng tiền hoạt động trên lợi nhuận ròng",
+"Beneish M-score"
+]
+},
+{
+"thuat_ngu": "Tỷ lệ dòng tiền hoạt động trên lợi nhuận ròng",
+"tieng_anh": "Operating cash flow to net income ratio",
+"viet_tat": "CFO/LNST",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "So sánh dòng tiền thuần từ hoạt động kinh doanh với lợi nhuận sau thuế, cho biết mỗi đồng lợi nhuận được chuyển hóa thành bao nhiêu đồng tiền thực. Công thức: CFO / LNST = Lưu chuyển tiền thuần từ hoạt động kinh doanh / Lợi nhuận sau thuế. Tỷ lệ duy trì quanh hoặc trên 1 qua nhiều năm là dấu hiệu tốt; tỷ lệ dưới 1 (nhất là âm) kéo dài, như thường thấy ở một số doanh nghiệp bất động sản, xây dựng, là cảnh báo về chất lượng lợi nhuận.",
+"lien_quan": [
+"Chất lượng lợi nhuận",
+"Tỷ lệ dồn tích",
+"Dòng tiền tự do",
+"Piotroski F-score"
+]
+},
+{
+"thuat_ngu": "Khoản mục bất thường",
+"tieng_anh": "Non-recurring items",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Các khoản thu nhập hoặc chi phí không phát sinh từ hoạt động kinh doanh thường xuyên và khó lặp lại, như lãi thanh lý tài sản, lãi thoái vốn công ty con, lãi đánh giá lại khoản đầu tư, hoàn nhập dự phòng lớn, tiền phạt, bồi thường hay lãi/lỗ tỷ giá đột biến. Theo VAS, phần lớn các khoản này nằm trong doanh thu/chi phí tài chính hoặc thu nhập/chi phí khác, nên cần đọc kỹ thuyết minh BCTC để nhận diện. Nhà phân tích loại các khoản này ra để tính lợi nhuận cốt lõi và tránh định giá sai dựa trên EPS đột biến.",
+"lien_quan": [
+"Lợi nhuận cốt lõi",
+"Chất lượng lợi nhuận",
+"Biên lợi nhuận trước thuế"
+]
+},
+{
+"thuat_ngu": "Altman Z-score",
+"tieng_anh": "Altman Z-score",
+"viet_tat": "Z-score",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Mô hình chấm điểm do Edward Altman xây dựng năm 1968 để dự báo nguy cơ phá sản của doanh nghiệp trong khoảng hai năm. Công thức gốc cho doanh nghiệp sản xuất niêm yết: Z = 1,2X1 + 1,4X2 + 3,3X3 + 0,6X4 + 1,0X5, với X1 = Vốn lưu động ròng / Tổng tài sản, X2 = Lợi nhuận giữ lại / Tổng tài sản, X3 = EBIT / Tổng tài sản, X4 = Giá trị thị trường vốn chủ / Tổng nợ, X5 = Doanh thu / Tổng tài sản. Z > 2,99 là vùng an toàn, 1,81–2,99 là vùng xám, dưới 1,81 là vùng nguy hiểm; với doanh nghiệp phi sản xuất hoặc thị trường mới nổi như Việt Nam nên dùng phiên bản Z'' (bỏ X5) với ngưỡng riêng.",
+"lien_quan": [
+"Vốn lưu động ròng",
+"Lợi nhuận trước lãi vay và thuế",
+"Tỷ lệ nợ trên tổng tài sản",
+"Piotroski F-score",
+"Beneish M-score"
+]
+},
+{
+"thuat_ngu": "Piotroski F-score",
+"tieng_anh": "Piotroski F-score",
+"viet_tat": "F-score",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Bộ chấm điểm sức khỏe tài chính từ 0 đến 9 do Joseph Piotroski đề xuất năm 2000, gồm 9 tiêu chí nhị phân (đạt được 1 điểm, không đạt 0 điểm). Ba nhóm tiêu chí gồm: sinh lời (ROA dương, CFO dương, ROA tăng, CFO lớn hơn LNST); đòn bẩy, thanh khoản và nguồn vốn (tỷ lệ nợ dài hạn giảm, hệ số thanh toán hiện hành tăng, không phát hành thêm cổ phiếu); hiệu quả hoạt động (biên lợi nhuận gộp tăng, vòng quay tổng tài sản tăng). Điểm 8–9 cho thấy nền tảng tài chính mạnh, 0–2 là yếu; riêng tiêu chí không phát hành thêm cổ phiếu khá khắt khe với doanh nghiệp Việt Nam vốn thường xuyên tăng vốn.",
+"lien_quan": [
+"Altman Z-score",
+"Beneish M-score",
+"Tỷ suất lợi nhuận trên tổng tài sản",
+"Tỷ lệ dòng tiền hoạt động trên lợi nhuận ròng"
+]
+},
+{
+"thuat_ngu": "Beneish M-score",
+"tieng_anh": "Beneish M-score",
+"viet_tat": "M-score",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Mô hình xác suất do Messod Beneish xây dựng để phát hiện khả năng doanh nghiệp thao túng lợi nhuận, dựa trên 8 chỉ số: DSRI (phải thu so với doanh thu), GMI (biên gộp), AQI (chất lượng tài sản), SGI (tăng trưởng doanh thu), DEPI (khấu hao), SGAI (chi phí bán hàng và quản lý), LVGI (đòn bẩy) và TATA (dồn tích trên tổng tài sản). Công thức: M = −4,84 + 0,92·DSRI + 0,528·GMI + 0,404·AQI + 0,892·SGI + 0,115·DEPI − 0,172·SGAI + 4,679·TATA − 0,327·LVGI. M lớn hơn −1,78 là dấu hiệu nghi vấn cần soát xét kỹ BCTC, nhưng đây chỉ là công cụ sàng lọc chứ không phải bằng chứng gian lận.",
+"lien_quan": [
+"Chất lượng lợi nhuận",
+"Tỷ lệ dồn tích",
+"Kỳ thu tiền bình quân",
+"Altman Z-score"
+]
+},
+{
+"thuat_ngu": "Điểm hòa vốn",
+"tieng_anh": "Break-even point",
+"viet_tat": "BEP",
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Mức sản lượng hoặc doanh thu mà tại đó tổng doanh thu bằng tổng chi phí, doanh nghiệp không lãi cũng không lỗ. Công thức: Sản lượng hòa vốn = Định phí / (Giá bán đơn vị − Biến phí đơn vị); Doanh thu hòa vốn = Định phí / Tỷ lệ số dư đảm phí, với tỷ lệ số dư đảm phí (còn gọi tỷ lệ lãi trên biến phí) = (Doanh thu − Biến phí) / Doanh thu. Doanh nghiệp có định phí cao (khấu hao, lãi vay lớn) có điểm hòa vốn cao, phải duy trì công suất lớn mới có lãi.",
+"lien_quan": [
+"Độ lớn đòn bẩy hoạt động",
+"Phân tích độ nhạy",
+"Biên lợi nhuận gộp"
+]
+},
+{
+"thuat_ngu": "Phân tích độ nhạy",
+"tieng_anh": "Sensitivity analysis",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Kỹ thuật đánh giá giá trị định giá hoặc lợi nhuận thay đổi thế nào khi một (hoặc hai) giả định đầu vào thay đổi, trong khi các yếu tố khác giữ nguyên. Ví dụ phổ biến là bảng hai chiều WACC × tăng trưởng dài hạn trong mô hình DCF, hoặc tác động của giá thép, giá dầu, tỷ giá USD/VND lên lợi nhuận. Phân tích độ nhạy cho thấy biến số nào ảnh hưởng mạnh nhất và mức độ rủi ro của kết quả định giá.",
+"lien_quan": [
+"Phân tích kịch bản",
+"Mô hình chiết khấu dòng tiền",
+"Tốc độ tăng trưởng dài hạn",
+"Biên an toàn"
+]
+},
+{
+"thuat_ngu": "Phân tích kịch bản",
+"tieng_anh": "Scenario analysis",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Kỹ thuật xây dựng nhiều kịch bản (thường là cơ sở, lạc quan và bi quan) trong đó nhiều giả định như sản lượng, giá bán, chi phí, lãi suất thay đổi đồng thời và nhất quán với nhau. Mỗi kịch bản cho ra một giá trị định giá; có thể gán xác suất để tính Giá trị kỳ vọng = Σ (Xác suất × Giá trị kịch bản). Khác với phân tích độ nhạy, phân tích kịch bản phản ánh tốt hơn các tình huống thực tế như suy thoái ngành hay thay đổi chính sách.",
+"lien_quan": [
+"Phân tích độ nhạy",
+"Giá mục tiêu",
+"Giá trị hợp lý"
+]
+},
+{
+"thuat_ngu": "Tỷ lệ hoàn thành kế hoạch",
+"tieng_anh": "Business plan completion rate",
+"viet_tat": null,
+"nhom": "Phân tích tài chính & Định giá",
+"dinh_nghia": "Tỷ lệ phần trăm doanh thu hoặc lợi nhuận lũy kế đã thực hiện so với kế hoạch cả năm được Đại hội đồng cổ đông thường niên thông qua, một chỉ số được theo dõi rất phổ biến tại Việt Nam. Công thức: Tỷ lệ hoàn thành kế hoạch = Chỉ tiêu lũy kế từ đầu năm / Chỉ tiêu kế hoạch năm × 100%. Ví dụ sau quý III, hoàn thành khoảng 75% kế hoạch lợi nhuận thường được xem là đúng tiến độ, nhưng cần lưu ý tính mùa vụ và việc nhiều doanh nghiệp đặt kế hoạch thận trọng.",
+"lien_quan": [
+"Số liệu lũy kế",
+"Hệ số P/E dự phóng",
+"Tăng trưởng so với cùng kỳ năm trước"
+]
+}
 ]

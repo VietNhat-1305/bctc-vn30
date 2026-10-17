@@ -1,77 +1,325 @@
 [
-{"thuat_ngu": "Bước giá", "tieng_anh": "Tick size", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Mức chênh lệch tối thiểu giữa hai mức giá đặt lệnh liền kề. Trên HOSE, với cổ phiếu và chứng chỉ quỹ đóng: giá dưới 10.000 đồng có bước giá 10 đồng, từ 10.000 đến 49.950 đồng là 50 đồng, từ 50.000 đồng trở lên là 100 đồng; chứng chỉ quỹ ETF và chứng quyền có bước giá 10 đồng. Trên HNX và UPCoM, bước giá cổ phiếu là 100 đồng.",
- "lien_quan": ["Lệnh giới hạn", "Giá trần", "Giá sàn", "Lô chẵn và lô lẻ"]},
-{"thuat_ngu": "Biên độ dao động giá", "tieng_anh": "Daily price limit / Trading band", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Giới hạn tỷ lệ tăng hoặc giảm tối đa của giá chứng khoán trong một phiên so với giá tham chiếu. Hiện nay biên độ cổ phiếu là ±7% trên HOSE, ±10% trên HNX và ±15% trên UPCoM; ngày giao dịch đầu tiên của cổ phiếu mới niêm yết, đăng ký giao dịch được nới rộng (±20% HOSE, ±30% HNX, ±40% UPCoM). Biên độ giúp hạn chế biến động quá mức nhưng có thể gây hiện tượng trắng bên mua hoặc trắng bên bán.",
- "lien_quan": ["Giá tham chiếu", "Giá trần", "Giá sàn", "Sở Giao dịch Chứng khoán TP. Hồ Chí Minh"]},
-{"thuat_ngu": "Giá tham chiếu", "tieng_anh": "Reference price", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Mức giá làm cơ sở để tính giá trần và giá sàn trong phiên giao dịch. Trên HOSE và HNX, giá tham chiếu là giá đóng cửa của phiên liền trước; trên UPCoM là bình quân gia quyền các giá khớp lệnh liên tục của phiên liền trước. Vào ngày giao dịch không hưởng quyền (chia cổ tức, phát hành thêm), giá tham chiếu được điều chỉnh giảm tương ứng.",
- "lien_quan": ["Giá trần", "Giá sàn", "Biên độ dao động giá", "Ngày giao dịch không hưởng quyền"]},
-{"thuat_ngu": "Giá trần", "tieng_anh": "Ceiling price", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Mức giá cao nhất được phép đặt lệnh trong phiên, bằng giá tham chiếu × (1 + biên độ dao động), làm tròn theo bước giá. Ví dụ cổ phiếu trên HOSE có giá tham chiếu 50.000 đồng thì giá trần là 53.500 đồng. Khi cổ phiếu tăng trần và không còn lệnh bán chờ (trắng bên bán), đó là tín hiệu lực cầu rất mạnh.",
- "lien_quan": ["Giá sàn", "Giá tham chiếu", "Biên độ dao động giá", "Bước giá"]},
-{"thuat_ngu": "Giá sàn", "tieng_anh": "Floor price", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Mức giá thấp nhất được phép đặt lệnh trong phiên, bằng giá tham chiếu × (1 − biên độ dao động), làm tròn theo bước giá. Ví dụ cổ phiếu trên HOSE có giá tham chiếu 50.000 đồng thì giá sàn là 46.500 đồng. Hiện tượng giảm sàn hàng loạt, trắng bên mua thường xuất hiện khi thị trường hoảng loạn hoặc bị bán giải chấp diện rộng.",
- "lien_quan": ["Giá trần", "Giá tham chiếu", "Biên độ dao động giá", "Bán giải chấp"]},
-{"thuat_ngu": "Chu kỳ thanh toán T+2", "tieng_anh": "T+2 settlement cycle", "viet_tat": "T+2", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Quy định việc thanh toán tiền và chuyển giao chứng khoán diễn ra vào ngày làm việc thứ hai sau ngày giao dịch (ngày T). Cổ phiếu mua ngày T về tài khoản vào trưa ngày T+2 và có thể bán ngay trong phiên chiều T+2; tiền bán chứng khoán về tài khoản ngày T+2 (nhà đầu tư có thể ứng trước tiền bán). Chu kỳ này khiến ngày giao dịch không hưởng quyền đứng trước ngày đăng ký cuối cùng một ngày làm việc.",
- "lien_quan": ["Tổng công ty Lưu ký và Bù trừ Chứng khoán Việt Nam", "Ngày giao dịch không hưởng quyền", "Hệ thống KRX", "Giao dịch ký quỹ"]},
-{"thuat_ngu": "Giao dịch ký quỹ", "tieng_anh": "Margin trading", "viet_tat": "Margin", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Hình thức nhà đầu tư vay tiền công ty chứng khoán để mua chứng khoán, dùng chính chứng khoán đó và tài sản trong tài khoản làm tài sản bảo đảm. Theo quy định, tỷ lệ ký quỹ ban đầu tối thiểu là 50% (tức khoản vay tối đa bằng vốn tự có), và chỉ cổ phiếu thuộc danh sách đủ điều kiện do Sở Giao dịch công bố mới được cho vay. Margin khuếch đại cả lợi nhuận lẫn thua lỗ, nhà đầu tư phải trả lãi vay và chịu rủi ro bị call margin, bán giải chấp.",
- "lien_quan": ["Call margin", "Bán giải chấp", "Công ty chứng khoán", "Cảnh báo, kiểm soát, hạn chế giao dịch"]},
-{"thuat_ngu": "Call margin", "tieng_anh": "Margin call", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Yêu cầu công ty chứng khoán gửi đến nhà đầu tư khi tỷ lệ tài sản thực có trên tổng tài sản trong tài khoản ký quỹ giảm xuống dưới tỷ lệ ký quỹ duy trì (thường khoảng 30-40% tùy công ty). Nhà đầu tư phải nộp thêm tiền, bổ sung tài sản hoặc bán bớt chứng khoán trong thời hạn quy định; nếu không, công ty chứng khoán sẽ bán giải chấp. Call margin hàng loạt thường xảy ra trong các nhịp giảm mạnh của thị trường.",
- "lien_quan": ["Giao dịch ký quỹ", "Bán giải chấp", "Thị trường giá xuống"]},
-{"thuat_ngu": "Bán giải chấp", "tieng_anh": "Forced selling / Margin liquidation", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Việc công ty chứng khoán tự động bán chứng khoán trong tài khoản ký quỹ của nhà đầu tư để thu hồi nợ khi tỷ lệ ký quỹ giảm dưới ngưỡng xử lý và nhà đầu tư không bổ sung tài sản kịp sau khi bị call margin. Bán giải chấp thường được thực hiện bằng lệnh giá thấp, có thể tại giá sàn, gây áp lực bán dây chuyền và khiến thị trường giảm sâu hơn.",
- "lien_quan": ["Call margin", "Giao dịch ký quỹ", "Giá sàn", "Thị trường giá xuống"]},
-{"thuat_ngu": "Bán khống", "tieng_anh": "Short selling", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Việc bán chứng khoán mà nhà đầu tư chưa sở hữu (thường là đi vay) với kỳ vọng giá giảm để mua lại ở giá thấp hơn, hưởng phần chênh lệch. Trên thị trường cổ phiếu cơ sở Việt Nam, bán khống chưa được áp dụng rộng rãi: nhà đầu tư chỉ được đặt lệnh bán khi có đủ chứng khoán, còn bán khống có kiểm soát và vay mượn chứng khoán đang được chuẩn bị trên nền tảng hệ thống KRX. Hiện nhà đầu tư có thể kiếm lời khi thị trường giảm bằng vị thế bán (short) hợp đồng tương lai chỉ số VN30.",
- "lien_quan": ["Hợp đồng tương lai chỉ số", "Hệ thống KRX", "Chứng khoán phái sinh", "Thị trường giá xuống"]},
-{"thuat_ngu": "Thanh khoản", "tieng_anh": "Liquidity", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Khả năng mua hoặc bán một chứng khoán nhanh chóng với khối lượng lớn mà không làm giá thay đổi đáng kể. Thanh khoản thường đo bằng khối lượng và giá trị giao dịch bình quân phiên; cổ phiếu VN30 có thanh khoản cao, trong khi nhiều cổ phiếu nhỏ trên UPCoM có thể nhiều phiên không có giao dịch. Ở cấp độ thị trường, thanh khoản thị trường (tổng giá trị giao dịch mỗi phiên) phản ánh dòng tiền và mức độ sôi động.",
- "lien_quan": ["Khối lượng khớp lệnh", "Cổ phiếu vốn hóa lớn", "Tỷ lệ free-float", "Cổ phiếu penny"]},
-{"thuat_ngu": "Khối lượng khớp lệnh", "tieng_anh": "Matched volume", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Tổng số chứng khoán được giao dịch thành công qua phương thức khớp lệnh (định kỳ và liên tục) trong một phiên, không tính giao dịch thỏa thuận. Nhân khối lượng với giá khớp sẽ có giá trị giao dịch (thường tính bằng tỷ đồng), chỉ tiêu dùng để so sánh thanh khoản giữa các cổ phiếu có thị giá khác nhau. Trong phân tích kỹ thuật, khối lượng tăng mạnh đi kèm biến động giá thường xác nhận độ tin cậy của xu hướng.",
- "lien_quan": ["Thanh khoản", "Khớp lệnh liên tục", "Giao dịch thỏa thuận", "Phân tích kỹ thuật"]},
-{"thuat_ngu": "Mua ròng/Bán ròng", "tieng_anh": "Net buying / Net selling", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Mua ròng là khi giá trị mua vào lớn hơn giá trị bán ra của một nhóm nhà đầu tư (khối ngoại, tự doanh công ty chứng khoán, nhà đầu tư cá nhân) trong một khoảng thời gian; ngược lại là bán ròng. Số liệu mua ròng/bán ròng của khối ngoại và tự doanh được công bố sau mỗi phiên, giúp nhận diện hướng dòng tiền vào từng cổ phiếu. Cần lưu ý các giao dịch thỏa thuận lớn hoặc ETF cơ cấu danh mục có thể làm số liệu bị méo trong ngắn hạn.",
- "lien_quan": ["Khối ngoại", "Giao dịch thỏa thuận", "Review danh mục ETF", "Thanh khoản"]},
-{"thuat_ngu": "Phí giao dịch chứng khoán", "tieng_anh": "Brokerage fee / Trading fee", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Khoản phí nhà đầu tư trả cho công ty chứng khoán khi mua bán thành công, tính theo phần trăm giá trị giao dịch, phổ biến từ 0% đến khoảng 0,35% tùy công ty và gói dịch vụ. Ngoài phí môi giới (đã bao gồm phần phí trả cho Sở Giao dịch), nhà đầu tư còn chịu phí lưu ký chứng khoán hằng tháng, lãi vay margin và phí ứng trước tiền bán nếu sử dụng.",
- "lien_quan": ["Công ty chứng khoán", "Thuế thu nhập từ chuyển nhượng chứng khoán", "Giao dịch ký quỹ"]},
-{"thuat_ngu": "Thuế thu nhập từ chuyển nhượng chứng khoán", "tieng_anh": "Personal income tax on securities transfer", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Thuế thu nhập cá nhân áp dụng khi nhà đầu tư cá nhân bán chứng khoán, hiện tính bằng 0,1% trên giá trị bán của từng giao dịch, bất kể lãi hay lỗ, và được công ty chứng khoán khấu trừ tại nguồn. Bên cạnh đó, cổ tức bằng tiền mặt chịu thuế thu nhập từ đầu tư vốn 5%; cổ tức bằng cổ phiếu và cổ phiếu thưởng chưa bị tính thuế khi nhận, nhưng khi bán sẽ chịu thuế 5% tính trên mệnh giá cùng thuế 0,1% giá trị chuyển nhượng.",
- "lien_quan": ["Phí giao dịch chứng khoán", "Cổ tức bằng tiền mặt", "Cổ tức bằng cổ phiếu", "Công ty chứng khoán"]},
-{"thuat_ngu": "Cổ tức bằng tiền mặt", "tieng_anh": "Cash dividend", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Phần lợi nhuận sau thuế được công ty chia cho cổ đông bằng tiền, thường công bố theo tỷ lệ phần trăm trên mệnh giá 10.000 đồng (ví dụ cổ tức 15% tức 1.500 đồng/cổ phiếu). Cổ đông có tên trong danh sách tại ngày đăng ký cuối cùng được nhận sau khi khấu trừ thuế thu nhập cá nhân 5%; theo Luật Doanh nghiệp, cổ tức phải được thanh toán trong vòng 6 tháng kể từ ngày kết thúc họp Đại hội đồng cổ đông thường niên. Vào ngày giao dịch không hưởng quyền, giá tham chiếu bị trừ đi đúng phần cổ tức.",
- "lien_quan": ["Cổ tức bằng cổ phiếu", "Ngày đăng ký cuối cùng", "Ngày giao dịch không hưởng quyền", "Đại hội đồng cổ đông"]},
-{"thuat_ngu": "Cổ tức bằng cổ phiếu", "tieng_anh": "Stock dividend", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Hình thức chia lợi nhuận sau thuế chưa phân phối bằng cách phát hành thêm cổ phiếu cho cổ đông hiện hữu theo tỷ lệ (ví dụ 100:15, sở hữu 100 cổ phiếu nhận thêm 15 cổ phiếu mới). Doanh nghiệp giữ lại tiền để tái đầu tư, vốn điều lệ tăng nhưng tổng giá trị tài sản của cổ đông về lý thuyết không đổi do giá tham chiếu được điều chỉnh giảm tương ứng. Phần cổ phiếu lẻ phát sinh thường được làm tròn xuống và xử lý theo phương án của công ty.",
- "lien_quan": ["Cổ tức bằng tiền mặt", "Cổ phiếu thưởng", "Ngày giao dịch không hưởng quyền", "Chia tách cổ phiếu"]},
-{"thuat_ngu": "Cổ phiếu thưởng", "tieng_anh": "Bonus share", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Cổ phiếu phát hành miễn phí cho cổ đông hiện hữu theo tỷ lệ sở hữu, từ các nguồn thuộc vốn chủ sở hữu như thặng dư vốn cổ phần, quỹ đầu tư phát triển. Cổ phiếu thưởng khác cổ tức bằng cổ phiếu ở nguồn phát hành nhưng có tác động tương tự: số cổ phiếu và vốn điều lệ tăng, giá tham chiếu bị điều chỉnh giảm, tổng giá trị tài sản của cổ đông không đổi.",
- "lien_quan": ["Cổ tức bằng cổ phiếu", "Phát hành thêm cổ phiếu", "Ngày giao dịch không hưởng quyền", "Chia tách cổ phiếu"]},
-{"thuat_ngu": "Ngày giao dịch không hưởng quyền", "tieng_anh": "Ex-rights date / Ex-dividend date", "viet_tat": "GDKHQ", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Ngày mà người mua cổ phiếu sẽ không còn được hưởng các quyền đi kèm như cổ tức, cổ phiếu thưởng, quyền mua, quyền dự họp. Với chu kỳ thanh toán T+2, ngày GDKHQ đứng trước ngày đăng ký cuối cùng một ngày làm việc; muốn được hưởng quyền, nhà đầu tư phải mua chậm nhất trong phiên liền trước ngày GDKHQ. Vào ngày này, giá tham chiếu được điều chỉnh giảm nếu quyền có giá trị kinh tế.",
- "lien_quan": ["Ngày đăng ký cuối cùng", "Chu kỳ thanh toán T+2", "Giá tham chiếu", "Cổ tức bằng tiền mặt"]},
-{"thuat_ngu": "Ngày đăng ký cuối cùng", "tieng_anh": "Record date", "viet_tat": "ĐKCC", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Ngày VSDC chốt danh sách người sở hữu chứng khoán để xác định ai được hưởng quyền như nhận cổ tức, cổ phiếu thưởng, quyền mua cổ phiếu phát hành thêm hoặc tham dự Đại hội đồng cổ đông. Nhà đầu tư có tên trong danh sách tại ngày này mới được hưởng quyền, kể cả khi đã bán cổ phiếu từ ngày giao dịch không hưởng quyền trở đi.",
- "lien_quan": ["Ngày giao dịch không hưởng quyền", "Tổng công ty Lưu ký và Bù trừ Chứng khoán Việt Nam", "Đại hội đồng cổ đông", "Quyền mua cổ phiếu"]},
-{"thuat_ngu": "Phát hành thêm cổ phiếu", "tieng_anh": "Seasoned equity offering / Additional share issuance", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Việc doanh nghiệp đã có cổ phiếu lưu hành phát hành thêm cổ phiếu để tăng vốn, dưới các hình thức: chào bán cho cổ đông hiện hữu (kèm quyền mua), chào bán ra công chúng, phát hành riêng lẻ, trả cổ tức bằng cổ phiếu, cổ phiếu thưởng hoặc ESOP. Phát hành có thu tiền giúp bổ sung vốn kinh doanh nhưng làm tăng số cổ phiếu, gây pha loãng lợi ích cổ đông nếu hiệu quả sử dụng vốn không tương xứng. Phương án phát hành phải được Đại hội đồng cổ đông thông qua.",
- "lien_quan": ["Quyền mua cổ phiếu", "Phát hành riêng lẻ", "Cổ phiếu ESOP", "Thị trường sơ cấp"]},
-{"thuat_ngu": "Phát hành riêng lẻ", "tieng_anh": "Private placement", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Hình thức chào bán chứng khoán cho dưới 100 nhà đầu tư (không kể nhà đầu tư chuyên nghiệp) và không dùng phương tiện thông tin đại chúng; với công ty đại chúng, đối tượng mua chỉ gồm nhà đầu tư chiến lược và nhà đầu tư chuyên nghiệp. Cổ phiếu phát hành riêng lẻ bị hạn chế chuyển nhượng 3 năm với nhà đầu tư chiến lược và 1 năm với nhà đầu tư chuyên nghiệp. Giá phát hành riêng lẻ cần được xem xét kỹ vì nếu thấp hơn thị giá sẽ gây thiệt thòi cho cổ đông hiện hữu.",
- "lien_quan": ["Phát hành thêm cổ phiếu", "Nhà đầu tư chuyên nghiệp", "Tỷ lệ free-float", "Trái phiếu doanh nghiệp"]},
-{"thuat_ngu": "Phát hành lần đầu ra công chúng", "tieng_anh": "Initial Public Offering", "viet_tat": "IPO", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Đợt chào bán cổ phiếu lần đầu tiên của một công ty ra công chúng, sau đó công ty trở thành công ty đại chúng và tiến tới niêm yết trên sàn. Tại Việt Nam, doanh nghiệp IPO phải đáp ứng điều kiện của Luật Chứng khoán như vốn điều lệ đã góp từ 30 tỷ đồng, có lãi 2 năm liền trước, không có lỗ lũy kế và được UBCKNN cấp giấy chứng nhận đăng ký chào bán. IPO thuộc thị trường sơ cấp, tiền huy động chảy về doanh nghiệp.",
- "lien_quan": ["Thị trường sơ cấp", "Niêm yết", "Ủy ban Chứng khoán Nhà nước", "Phát hành thêm cổ phiếu"]},
-{"thuat_ngu": "Cổ phiếu ESOP", "tieng_anh": "Employee Stock Ownership Plan", "viet_tat": "ESOP", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Cổ phiếu phát hành cho người lao động theo chương trình lựa chọn của doanh nghiệp, thường với giá ưu đãi thấp hơn thị giá (nhiều trường hợp bằng mệnh giá 10.000 đồng) nhằm giữ chân và khuyến khích nhân sự. Theo quy định, tổng số cổ phiếu ESOP phát hành trong 12 tháng không vượt quá 5% số cổ phiếu đang lưu hành và bị hạn chế chuyển nhượng tối thiểu 1 năm. ESOP gây pha loãng nhẹ cho cổ đông hiện hữu và phải được Đại hội đồng cổ đông thông qua.",
- "lien_quan": ["Phát hành thêm cổ phiếu", "Đại hội đồng cổ đông", "Cổ phiếu quỹ", "Người nội bộ"]},
-{"thuat_ngu": "Chia tách cổ phiếu", "tieng_anh": "Stock split", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Nghiệp vụ chia một cổ phiếu thành nhiều cổ phiếu có mệnh giá nhỏ hơn (ví dụ 1 thành 2), làm tăng số lượng cổ phiếu và giảm giá mỗi cổ phiếu tương ứng mà không làm thay đổi vốn hóa. Do mệnh giá cổ phiếu niêm yết ở Việt Nam cố định 10.000 đồng, doanh nghiệp không thể chia tách theo đúng nghĩa mà thường tạo hiệu ứng tương tự bằng cổ phiếu thưởng hoặc cổ tức bằng cổ phiếu tỷ lệ lớn. Mục đích là đưa thị giá về mức dễ giao dịch, tăng thanh khoản.",
- "lien_quan": ["Cổ phiếu thưởng", "Cổ tức bằng cổ phiếu", "Thanh khoản", "Vốn hóa thị trường"]}
+{
+"thuat_ngu": "Bước giá",
+"tieng_anh": "Tick size",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Mức chênh lệch tối thiểu giữa hai mức giá đặt lệnh liền kề. Trên HOSE, với cổ phiếu và chứng chỉ quỹ đóng: giá dưới 10.000 đồng có bước giá 10 đồng, từ 10.000 đến 49.950 đồng là 50 đồng, từ 50.000 đồng trở lên là 100 đồng; chứng chỉ quỹ ETF và chứng quyền có bước giá 10 đồng. Trên HNX và UPCoM, bước giá cổ phiếu là 100 đồng.",
+"lien_quan": [
+"Lệnh giới hạn",
+"Giá trần",
+"Giá sàn",
+"Lô chẵn và lô lẻ"
+]
+},
+{
+"thuat_ngu": "Biên độ dao động giá",
+"tieng_anh": "Daily price limit / Trading band",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Giới hạn tỷ lệ tăng hoặc giảm tối đa của giá chứng khoán trong một phiên so với giá tham chiếu. Hiện nay biên độ cổ phiếu là ±7% trên HOSE, ±10% trên HNX và ±15% trên UPCoM; ngày giao dịch đầu tiên của cổ phiếu mới niêm yết, đăng ký giao dịch được nới rộng (±20% HOSE, ±30% HNX, ±40% UPCoM). Biên độ giúp hạn chế biến động quá mức nhưng có thể gây hiện tượng trắng bên mua hoặc trắng bên bán.",
+"lien_quan": [
+"Giá tham chiếu",
+"Giá trần",
+"Giá sàn",
+"Sở Giao dịch Chứng khoán TP. Hồ Chí Minh"
+]
+},
+{
+"thuat_ngu": "Giá tham chiếu",
+"tieng_anh": "Reference price",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Mức giá làm cơ sở để tính giá trần và giá sàn trong phiên giao dịch. Trên HOSE và HNX, giá tham chiếu là giá đóng cửa của phiên liền trước; trên UPCoM là bình quân gia quyền các giá khớp lệnh liên tục của phiên liền trước. Vào ngày giao dịch không hưởng quyền (chia cổ tức, phát hành thêm), giá tham chiếu được điều chỉnh giảm tương ứng.",
+"lien_quan": [
+"Giá trần",
+"Giá sàn",
+"Biên độ dao động giá",
+"Ngày giao dịch không hưởng quyền"
+]
+},
+{
+"thuat_ngu": "Giá trần",
+"tieng_anh": "Ceiling price",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Mức giá cao nhất được phép đặt lệnh trong phiên, bằng giá tham chiếu × (1 + biên độ dao động), làm tròn theo bước giá. Ví dụ cổ phiếu trên HOSE có giá tham chiếu 50.000 đồng thì giá trần là 53.500 đồng. Khi cổ phiếu tăng trần và không còn lệnh bán chờ (trắng bên bán), đó là tín hiệu lực cầu rất mạnh.",
+"lien_quan": [
+"Giá sàn",
+"Giá tham chiếu",
+"Biên độ dao động giá",
+"Bước giá"
+]
+},
+{
+"thuat_ngu": "Giá sàn",
+"tieng_anh": "Floor price",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Mức giá thấp nhất được phép đặt lệnh trong phiên, bằng giá tham chiếu × (1 − biên độ dao động), làm tròn theo bước giá. Ví dụ cổ phiếu trên HOSE có giá tham chiếu 50.000 đồng thì giá sàn là 46.500 đồng. Hiện tượng giảm sàn hàng loạt, trắng bên mua thường xuất hiện khi thị trường hoảng loạn hoặc bị bán giải chấp diện rộng.",
+"lien_quan": [
+"Giá trần",
+"Giá tham chiếu",
+"Biên độ dao động giá",
+"Bán giải chấp"
+]
+},
+{
+"thuat_ngu": "Chu kỳ thanh toán T+2",
+"tieng_anh": "T+2 settlement cycle",
+"viet_tat": "T+2",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Quy định việc thanh toán tiền và chuyển giao chứng khoán diễn ra vào ngày làm việc thứ hai sau ngày giao dịch (ngày T). Cổ phiếu mua ngày T về tài khoản vào trưa ngày T+2 và có thể bán ngay trong phiên chiều T+2; tiền bán chứng khoán về tài khoản ngày T+2 (nhà đầu tư có thể ứng trước tiền bán). Chu kỳ này khiến ngày giao dịch không hưởng quyền đứng trước ngày đăng ký cuối cùng một ngày làm việc.",
+"lien_quan": [
+"Tổng công ty Lưu ký và Bù trừ Chứng khoán Việt Nam",
+"Ngày giao dịch không hưởng quyền",
+"Hệ thống KRX",
+"Giao dịch ký quỹ"
+]
+},
+{
+"thuat_ngu": "Giao dịch ký quỹ",
+"tieng_anh": "Margin trading",
+"viet_tat": "Margin",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Hình thức nhà đầu tư vay tiền công ty chứng khoán để mua chứng khoán, dùng chính chứng khoán đó và tài sản trong tài khoản làm tài sản bảo đảm. Theo quy định, tỷ lệ ký quỹ ban đầu tối thiểu là 50% (khoản vay tối đa bằng số vốn tự có); hằng quý Sở Giao dịch công bố danh sách chứng khoán không đủ điều kiện giao dịch ký quỹ, mỗi công ty chứng khoán tự chọn danh mục cho vay trong số chứng khoán còn lại. Margin khuếch đại cả lãi lẫn lỗ, nhà đầu tư phải trả lãi vay và có thể bị call margin, bán giải chấp.",
+"lien_quan": [
+"Call margin",
+"Bán giải chấp",
+"Công ty chứng khoán",
+"Cảnh báo, kiểm soát, hạn chế giao dịch"
+]
+},
+{
+"thuat_ngu": "Call margin",
+"tieng_anh": "Margin call",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Yêu cầu công ty chứng khoán gửi đến nhà đầu tư khi tỷ lệ tài sản thực có trên tổng tài sản trong tài khoản ký quỹ giảm xuống dưới tỷ lệ ký quỹ duy trì (thường khoảng 30-40% tùy công ty). Nhà đầu tư phải nộp thêm tiền, bổ sung tài sản hoặc bán bớt chứng khoán trong thời hạn quy định; nếu không, công ty chứng khoán sẽ bán giải chấp. Call margin hàng loạt thường xảy ra trong các nhịp giảm mạnh của thị trường.",
+"lien_quan": [
+"Giao dịch ký quỹ",
+"Bán giải chấp",
+"Thị trường giá xuống"
+]
+},
+{
+"thuat_ngu": "Bán giải chấp",
+"tieng_anh": "Forced selling / Margin liquidation",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Việc công ty chứng khoán tự động bán chứng khoán trong tài khoản ký quỹ của nhà đầu tư để thu hồi nợ khi tỷ lệ ký quỹ giảm dưới ngưỡng xử lý và nhà đầu tư không bổ sung tài sản kịp sau khi bị call margin. Bán giải chấp thường được thực hiện bằng lệnh giá thấp, có thể tại giá sàn, gây áp lực bán dây chuyền và khiến thị trường giảm sâu hơn.",
+"lien_quan": [
+"Call margin",
+"Giao dịch ký quỹ",
+"Giá sàn",
+"Thị trường giá xuống"
+]
+},
+{
+"thuat_ngu": "Bán khống",
+"tieng_anh": "Short selling",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Việc bán chứng khoán mà nhà đầu tư chưa sở hữu (thường là đi vay) với kỳ vọng giá giảm để mua lại ở giá thấp hơn, hưởng phần chênh lệch. Trên thị trường cổ phiếu cơ sở Việt Nam, bán khống chưa được áp dụng rộng rãi: nhà đầu tư chỉ được đặt lệnh bán khi có đủ chứng khoán, còn bán khống có kiểm soát và vay mượn chứng khoán đang được chuẩn bị trên nền tảng hệ thống KRX. Hiện nhà đầu tư có thể kiếm lời khi thị trường giảm bằng vị thế bán (short) hợp đồng tương lai chỉ số VN30.",
+"lien_quan": [
+"Hợp đồng tương lai chỉ số",
+"Hệ thống KRX",
+"Chứng khoán phái sinh",
+"Thị trường giá xuống"
+]
+},
+{
+"thuat_ngu": "Thanh khoản",
+"tieng_anh": "Liquidity",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Khả năng mua hoặc bán một chứng khoán nhanh chóng với khối lượng lớn mà không làm giá thay đổi đáng kể. Thanh khoản thường đo bằng khối lượng và giá trị giao dịch bình quân phiên; cổ phiếu VN30 có thanh khoản cao, trong khi nhiều cổ phiếu nhỏ trên UPCoM có thể nhiều phiên không có giao dịch. Ở cấp độ thị trường, thanh khoản thị trường (tổng giá trị giao dịch mỗi phiên) phản ánh dòng tiền và mức độ sôi động.",
+"lien_quan": [
+"Khối lượng khớp lệnh",
+"Cổ phiếu vốn hóa lớn",
+"Tỷ lệ tự do chuyển nhượng",
+"Cổ phiếu penny"
+]
+},
+{
+"thuat_ngu": "Khối lượng khớp lệnh",
+"tieng_anh": "Matched volume",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Tổng số chứng khoán được giao dịch thành công qua phương thức khớp lệnh (định kỳ và liên tục) trong một phiên, không tính giao dịch thỏa thuận. Nhân khối lượng với giá khớp sẽ có giá trị giao dịch (thường tính bằng tỷ đồng), chỉ tiêu dùng để so sánh thanh khoản giữa các cổ phiếu có thị giá khác nhau. Trong phân tích kỹ thuật, khối lượng tăng mạnh đi kèm biến động giá thường xác nhận độ tin cậy của xu hướng.",
+"lien_quan": [
+"Thanh khoản",
+"Khớp lệnh liên tục",
+"Giao dịch thỏa thuận",
+"Phân tích kỹ thuật"
+]
+},
+{
+"thuat_ngu": "Mua ròng/Bán ròng",
+"tieng_anh": "Net buying / Net selling",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Mua ròng là khi giá trị mua vào lớn hơn giá trị bán ra của một nhóm nhà đầu tư (khối ngoại, tự doanh công ty chứng khoán, nhà đầu tư cá nhân) trong một khoảng thời gian; ngược lại là bán ròng. Số liệu mua ròng/bán ròng của khối ngoại và tự doanh được công bố sau mỗi phiên, giúp nhận diện hướng dòng tiền vào từng cổ phiếu. Cần lưu ý các giao dịch thỏa thuận lớn hoặc ETF cơ cấu danh mục có thể làm số liệu bị méo trong ngắn hạn.",
+"lien_quan": [
+"Khối ngoại",
+"Giao dịch thỏa thuận",
+"Review danh mục ETF",
+"Thanh khoản"
+]
+},
+{
+"thuat_ngu": "Phí giao dịch chứng khoán",
+"tieng_anh": "Brokerage fee / Trading fee",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Khoản phí nhà đầu tư trả cho công ty chứng khoán khi mua bán thành công, tính theo phần trăm giá trị giao dịch, phổ biến từ 0% đến khoảng 0,35% tùy công ty và gói dịch vụ. Ngoài phí môi giới (đã bao gồm phần phí trả cho Sở Giao dịch), nhà đầu tư còn chịu phí lưu ký chứng khoán hằng tháng, lãi vay margin và phí ứng trước tiền bán nếu sử dụng.",
+"lien_quan": [
+"Công ty chứng khoán",
+"Thuế thu nhập từ chuyển nhượng chứng khoán",
+"Giao dịch ký quỹ"
+]
+},
+{
+"thuat_ngu": "Thuế thu nhập từ chuyển nhượng chứng khoán",
+"tieng_anh": "Personal income tax on securities transfer",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Thuế thu nhập cá nhân áp dụng khi nhà đầu tư cá nhân bán chứng khoán, hiện tính bằng 0,1% trên giá trị bán của từng giao dịch, bất kể lãi hay lỗ, và được công ty chứng khoán khấu trừ tại nguồn. Bên cạnh đó, cổ tức bằng tiền mặt chịu thuế thu nhập từ đầu tư vốn 5%; cổ tức bằng cổ phiếu và cổ phiếu thưởng chưa bị tính thuế khi nhận, nhưng khi bán sẽ chịu thuế 5% tính trên mệnh giá cùng thuế 0,1% giá trị chuyển nhượng.",
+"lien_quan": [
+"Phí giao dịch chứng khoán",
+"Cổ tức bằng tiền mặt",
+"Cổ tức bằng cổ phiếu",
+"Công ty chứng khoán"
+]
+},
+{
+"thuat_ngu": "Cổ tức bằng tiền mặt",
+"tieng_anh": "Cash dividend",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Phần lợi nhuận sau thuế được công ty chia cho cổ đông bằng tiền, thường công bố theo tỷ lệ phần trăm trên mệnh giá 10.000 đồng (ví dụ cổ tức 15% tức 1.500 đồng/cổ phiếu). Cổ đông có tên trong danh sách tại ngày đăng ký cuối cùng được nhận sau khi khấu trừ thuế thu nhập cá nhân 5%; theo Luật Doanh nghiệp, cổ tức phải được thanh toán trong vòng 6 tháng kể từ ngày kết thúc họp Đại hội đồng cổ đông thường niên. Vào ngày giao dịch không hưởng quyền, giá tham chiếu bị trừ đi đúng phần cổ tức.",
+"lien_quan": [
+"Cổ tức bằng cổ phiếu",
+"Ngày đăng ký cuối cùng",
+"Ngày giao dịch không hưởng quyền",
+"Đại hội đồng cổ đông"
+]
+},
+{
+"thuat_ngu": "Cổ tức bằng cổ phiếu",
+"tieng_anh": "Stock dividend",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Hình thức chia lợi nhuận sau thuế chưa phân phối bằng cách phát hành thêm cổ phiếu cho cổ đông hiện hữu theo tỷ lệ (ví dụ 100:15, sở hữu 100 cổ phiếu nhận thêm 15 cổ phiếu mới). Doanh nghiệp giữ lại tiền để tái đầu tư, vốn điều lệ tăng nhưng tổng giá trị tài sản của cổ đông về lý thuyết không đổi do giá tham chiếu được điều chỉnh giảm tương ứng. Phần cổ phiếu lẻ phát sinh thường được làm tròn xuống và xử lý theo phương án của công ty.",
+"lien_quan": [
+"Cổ tức bằng tiền mặt",
+"Cổ phiếu thưởng",
+"Ngày giao dịch không hưởng quyền",
+"Chia tách cổ phiếu"
+]
+},
+{
+"thuat_ngu": "Cổ phiếu thưởng",
+"tieng_anh": "Bonus share",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Cổ phiếu phát hành miễn phí cho cổ đông hiện hữu theo tỷ lệ sở hữu, từ các nguồn thuộc vốn chủ sở hữu như thặng dư vốn cổ phần, quỹ đầu tư phát triển. Cổ phiếu thưởng khác cổ tức bằng cổ phiếu ở nguồn phát hành nhưng có tác động tương tự: số cổ phiếu và vốn điều lệ tăng, giá tham chiếu bị điều chỉnh giảm, tổng giá trị tài sản của cổ đông không đổi.",
+"lien_quan": [
+"Cổ tức bằng cổ phiếu",
+"Phát hành thêm cổ phiếu",
+"Ngày giao dịch không hưởng quyền",
+"Chia tách cổ phiếu"
+]
+},
+{
+"thuat_ngu": "Ngày giao dịch không hưởng quyền",
+"tieng_anh": "Ex-rights date / Ex-dividend date",
+"viet_tat": "GDKHQ",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Ngày mà người mua cổ phiếu sẽ không còn được hưởng các quyền đi kèm như cổ tức, cổ phiếu thưởng, quyền mua, quyền dự họp. Với chu kỳ thanh toán T+2, ngày GDKHQ đứng trước ngày đăng ký cuối cùng một ngày làm việc; muốn được hưởng quyền, nhà đầu tư phải mua chậm nhất trong phiên liền trước ngày GDKHQ. Vào ngày này, giá tham chiếu được điều chỉnh giảm nếu quyền có giá trị kinh tế.",
+"lien_quan": [
+"Ngày đăng ký cuối cùng",
+"Chu kỳ thanh toán T+2",
+"Giá tham chiếu",
+"Cổ tức bằng tiền mặt"
+]
+},
+{
+"thuat_ngu": "Ngày đăng ký cuối cùng",
+"tieng_anh": "Record date",
+"viet_tat": "ĐKCC",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Ngày VSDC chốt danh sách người sở hữu chứng khoán để xác định ai được hưởng quyền như nhận cổ tức, cổ phiếu thưởng, quyền mua cổ phiếu phát hành thêm hoặc tham dự Đại hội đồng cổ đông. Nhà đầu tư có tên trong danh sách tại ngày này mới được hưởng quyền, kể cả khi đã bán cổ phiếu từ ngày giao dịch không hưởng quyền trở đi.",
+"lien_quan": [
+"Ngày giao dịch không hưởng quyền",
+"Tổng công ty Lưu ký và Bù trừ Chứng khoán Việt Nam",
+"Đại hội đồng cổ đông",
+"Quyền mua cổ phiếu"
+]
+},
+{
+"thuat_ngu": "Phát hành thêm cổ phiếu",
+"tieng_anh": "Seasoned equity offering / Additional share issuance",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Việc doanh nghiệp đã có cổ phiếu lưu hành phát hành thêm cổ phiếu để tăng vốn, dưới các hình thức: chào bán cho cổ đông hiện hữu (kèm quyền mua), chào bán ra công chúng, phát hành riêng lẻ, trả cổ tức bằng cổ phiếu, cổ phiếu thưởng hoặc ESOP. Phát hành có thu tiền giúp bổ sung vốn kinh doanh nhưng làm tăng số cổ phiếu, gây pha loãng lợi ích cổ đông nếu hiệu quả sử dụng vốn không tương xứng. Phương án phát hành phải được Đại hội đồng cổ đông thông qua.",
+"lien_quan": [
+"Quyền mua cổ phiếu",
+"Phát hành riêng lẻ",
+"Cổ phiếu ESOP",
+"Thị trường sơ cấp"
+]
+},
+{
+"thuat_ngu": "Phát hành riêng lẻ",
+"tieng_anh": "Private placement",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Hình thức chào bán chứng khoán cho dưới 100 nhà đầu tư (không kể nhà đầu tư chuyên nghiệp) và không dùng phương tiện thông tin đại chúng; với công ty đại chúng, đối tượng mua chỉ gồm nhà đầu tư chiến lược và nhà đầu tư chuyên nghiệp. Cổ phiếu phát hành riêng lẻ bị hạn chế chuyển nhượng 3 năm với nhà đầu tư chiến lược và 1 năm với nhà đầu tư chuyên nghiệp. Giá phát hành riêng lẻ cần được xem xét kỹ vì nếu thấp hơn thị giá sẽ gây thiệt thòi cho cổ đông hiện hữu.",
+"lien_quan": [
+"Phát hành thêm cổ phiếu",
+"Nhà đầu tư chuyên nghiệp",
+"Tỷ lệ tự do chuyển nhượng",
+"Trái phiếu doanh nghiệp"
+]
+},
+{
+"thuat_ngu": "Phát hành lần đầu ra công chúng",
+"tieng_anh": "Initial Public Offering",
+"viet_tat": "IPO",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Đợt chào bán cổ phiếu lần đầu tiên của một công ty ra công chúng, sau đó công ty trở thành công ty đại chúng và tiến tới niêm yết trên sàn. Tại Việt Nam, doanh nghiệp IPO phải đáp ứng điều kiện của Luật Chứng khoán như vốn điều lệ đã góp từ 30 tỷ đồng, có lãi 2 năm liền trước, không có lỗ lũy kế và được UBCKNN cấp giấy chứng nhận đăng ký chào bán. IPO thuộc thị trường sơ cấp, tiền huy động chảy về doanh nghiệp.",
+"lien_quan": [
+"Thị trường sơ cấp",
+"Niêm yết",
+"Ủy ban Chứng khoán Nhà nước",
+"Phát hành thêm cổ phiếu"
+]
+},
+{
+"thuat_ngu": "Cổ phiếu ESOP",
+"tieng_anh": "Employee Stock Ownership Plan",
+"viet_tat": "ESOP",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Cổ phiếu phát hành cho người lao động theo chương trình lựa chọn của doanh nghiệp, thường với giá ưu đãi thấp hơn thị giá (nhiều trường hợp bằng mệnh giá 10.000 đồng) nhằm giữ chân và khuyến khích nhân sự. Theo quy định, tổng số cổ phiếu ESOP phát hành trong 12 tháng không vượt quá 5% số cổ phiếu đang lưu hành và bị hạn chế chuyển nhượng tối thiểu 1 năm. ESOP gây pha loãng nhẹ cho cổ đông hiện hữu và phải được Đại hội đồng cổ đông thông qua.",
+"lien_quan": [
+"Phát hành thêm cổ phiếu",
+"Đại hội đồng cổ đông",
+"Cổ phiếu quỹ",
+"Người nội bộ"
+]
+},
+{
+"thuat_ngu": "Chia tách cổ phiếu",
+"tieng_anh": "Stock split",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Nghiệp vụ chia một cổ phiếu thành nhiều cổ phiếu có mệnh giá nhỏ hơn (ví dụ 1 thành 2), làm tăng số lượng cổ phiếu và giảm giá mỗi cổ phiếu tương ứng mà không làm thay đổi vốn hóa. Do mệnh giá cổ phiếu niêm yết ở Việt Nam cố định 10.000 đồng, doanh nghiệp không thể chia tách theo đúng nghĩa mà thường tạo hiệu ứng tương tự bằng cổ phiếu thưởng hoặc cổ tức bằng cổ phiếu tỷ lệ lớn. Mục đích là đưa thị giá về mức dễ giao dịch, tăng thanh khoản.",
+"lien_quan": [
+"Cổ phiếu thưởng",
+"Cổ tức bằng cổ phiếu",
+"Thanh khoản",
+"Vốn hóa thị trường"
+]
+}
 ]

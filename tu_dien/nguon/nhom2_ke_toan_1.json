@@ -1,77 +1,320 @@
 [
-{"thuat_ngu": "Báo cáo tài chính", "tieng_anh": "Financial statements", "viet_tat": "BCTC", "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Bộ báo cáo tổng hợp tình hình tài chính, kết quả kinh doanh và các dòng tiền của doanh nghiệp trong một kỳ kế toán. Theo Thông tư 200/2014/TT-BTC, bộ BCTC đầy đủ gồm Bảng cân đối kế toán (B01-DN), Báo cáo kết quả hoạt động kinh doanh (B02-DN), Báo cáo lưu chuyển tiền tệ (B03-DN) và Thuyết minh báo cáo tài chính (B09-DN). Đây là nguồn dữ liệu chính để nhà đầu tư phân tích doanh nghiệp niêm yết.",
- "lien_quan": ["Bảng cân đối kế toán", "Báo cáo kết quả hoạt động kinh doanh", "Báo cáo lưu chuyển tiền tệ", "Thuyết minh báo cáo tài chính"]},
-{"thuat_ngu": "Bảng cân đối kế toán", "tieng_anh": "Balance sheet (Statement of financial position)", "viet_tat": "BCĐKT", "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Báo cáo phản ánh toàn bộ tài sản và nguồn hình thành tài sản (nợ phải trả và vốn chủ sở hữu) của doanh nghiệp tại một thời điểm, thường là ngày cuối quý hoặc cuối năm. Luôn tuân theo đẳng thức Tổng tài sản (mã 270) = Tổng nguồn vốn (mã 440). Từ năm tài chính 2026, Thông tư 99/2025/TT-BTC gọi báo cáo này là Báo cáo tình hình tài chính, giống cách gọi của IFRS.",
- "lien_quan": ["Báo cáo tài chính", "Tài sản ngắn hạn", "Tài sản dài hạn", "Nợ phải trả", "Vốn chủ sở hữu"]},
-{"thuat_ngu": "Báo cáo kết quả hoạt động kinh doanh", "tieng_anh": "Income statement (Statement of profit or loss)", "viet_tat": "BCKQKD", "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Báo cáo trình bày doanh thu, chi phí và lợi nhuận (hoặc lỗ) của doanh nghiệp trong một kỳ, ví dụ một quý hay một năm. Các chỉ tiêu được sắp xếp từ doanh thu bán hàng (mã 01), qua lợi nhuận gộp (mã 20), lợi nhuận trước thuế (mã 50) đến lợi nhuận sau thuế (mã 60). Khác với Bảng cân đối kế toán, báo cáo này đo lường kết quả của cả một khoảng thời gian.",
- "lien_quan": ["Doanh thu thuần", "Lợi nhuận gộp", "Lợi nhuận trước thuế", "Lợi nhuận sau thuế", "Cơ sở dồn tích"]},
-{"thuat_ngu": "Báo cáo lưu chuyển tiền tệ", "tieng_anh": "Cash flow statement", "viet_tat": "BCLCTT", "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Báo cáo cho biết tiền và tương đương tiền của doanh nghiệp đã vào và ra như thế nào trong kỳ, chia thành ba nhóm: hoạt động kinh doanh, hoạt động đầu tư và hoạt động tài chính. Báo cáo được lập theo Chuẩn mực kế toán số 24 (VAS 24) và giúp kiểm tra xem lợi nhuận kế toán có thực sự chuyển thành tiền hay không.",
- "lien_quan": ["Lưu chuyển tiền thuần từ hoạt động kinh doanh", "Lưu chuyển tiền thuần từ hoạt động đầu tư", "Lưu chuyển tiền thuần từ hoạt động tài chính", "Phương pháp trực tiếp", "Phương pháp gián tiếp"]},
-{"thuat_ngu": "Phương pháp trực tiếp", "tieng_anh": "Direct method", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Cách lập phần lưu chuyển tiền từ hoạt động kinh doanh bằng cách liệt kê trực tiếp từng dòng tiền thu và chi, ví dụ tiền thu từ bán hàng, tiền chi trả nhà cung cấp, tiền chi trả người lao động. Cách này dễ hiểu với người đọc nhưng đòi hỏi kế toán theo dõi chi tiết dòng tiền. Phần đầu tư và tài chính luôn trình bày theo cách trực tiếp.",
- "lien_quan": ["Báo cáo lưu chuyển tiền tệ", "Phương pháp gián tiếp", "Lưu chuyển tiền thuần từ hoạt động kinh doanh"]},
-{"thuat_ngu": "Phương pháp gián tiếp", "tieng_anh": "Indirect method", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Cách lập phần lưu chuyển tiền từ hoạt động kinh doanh bằng cách bắt đầu từ lợi nhuận trước thuế, rồi cộng lại các khoản không bằng tiền (khấu hao, dự phòng), loại trừ lãi lỗ từ hoạt động đầu tư và điều chỉnh biến động vốn lưu động (phải thu, hàng tồn kho, phải trả). Phần lớn doanh nghiệp niêm yết Việt Nam dùng phương pháp này vì dễ lập từ số liệu kế toán sẵn có.",
- "lien_quan": ["Báo cáo lưu chuyển tiền tệ", "Phương pháp trực tiếp", "Lợi nhuận trước thuế", "Khấu hao tài sản cố định"]},
-{"thuat_ngu": "Thuyết minh báo cáo tài chính", "tieng_anh": "Notes to the financial statements", "viet_tat": "TMBCTC", "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Phần bắt buộc của bộ BCTC (mẫu B09-DN) giải thích chi tiết các con số trên các báo cáo chính, như chính sách kế toán áp dụng, cơ cấu hàng tồn kho, chi tiết khoản vay, giao dịch với bên liên quan. Người phân tích nên đọc thuyết minh vì nhiều rủi ro và thông tin quan trọng chỉ xuất hiện ở đây chứ không thể hiện trên các bảng số.",
- "lien_quan": ["Báo cáo tài chính", "Giao dịch với các bên liên quan", "Sự kiện phát sinh sau ngày kết thúc kỳ kế toán"]},
-{"thuat_ngu": "Báo cáo tài chính hợp nhất", "tieng_anh": "Consolidated financial statements", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "BCTC của cả tập đoàn (công ty mẹ và các công ty con) được trình bày như của một đơn vị kinh tế duy nhất, sau khi loại trừ các giao dịch và số dư nội bộ giữa các công ty trong tập đoàn. Được lập theo VAS 25 và Thông tư 202/2014/TT-BTC. Với các doanh nghiệp VN30 có nhiều công ty con, BCTC hợp nhất phản ánh đúng quy mô và hiệu quả hơn BCTC riêng.",
- "lien_quan": ["Báo cáo tài chính riêng", "Công ty mẹ", "Công ty con", "Lợi ích cổ đông không kiểm soát", "Hợp nhất kinh doanh"]},
-{"thuat_ngu": "Báo cáo tài chính riêng", "tieng_anh": "Separate financial statements", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "BCTC chỉ phản ánh số liệu của bản thân công ty mẹ như một pháp nhân độc lập, trong đó khoản đầu tư vào công ty con và công ty liên kết được ghi theo giá gốc. Lợi nhuận trên BCTC riêng có thể khác nhiều so với BCTC hợp nhất, ví dụ khi công ty mẹ nhận cổ tức lớn từ công ty con.",
- "lien_quan": ["Báo cáo tài chính hợp nhất", "Công ty mẹ", "Nguyên tắc giá gốc"]},
-{"thuat_ngu": "Báo cáo tài chính giữa niên độ", "tieng_anh": "Interim financial statements", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "BCTC lập cho một kỳ ngắn hơn năm tài chính, phổ biến nhất là BCTC quý và BCTC bán niên, theo Chuẩn mực kế toán số 27 (VAS 27). Doanh nghiệp niêm yết phải công bố BCTC quý định kỳ, giúp nhà đầu tư theo dõi biến động kết quả kinh doanh giữa các quý (QoQ).",
- "lien_quan": ["Báo cáo tài chính bán niên", "Kỳ kế toán", "Công bố thông tin", "Soát xét báo cáo tài chính"]},
-{"thuat_ngu": "Báo cáo tài chính bán niên", "tieng_anh": "Semi-annual financial statements", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "BCTC giữa niên độ cho sáu tháng đầu năm tài chính. Với công ty niêm yết, BCTC bán niên phải được công ty kiểm toán được chấp thuận soát xét trước khi công bố, nên độ tin cậy cao hơn BCTC quý nhưng thấp hơn BCTC năm đã kiểm toán.",
- "lien_quan": ["Báo cáo tài chính giữa niên độ", "Soát xét báo cáo tài chính", "Kiểm toán độc lập"]},
-{"thuat_ngu": "Chuẩn mực kế toán Việt Nam", "tieng_anh": "Vietnamese Accounting Standards", "viet_tat": "VAS", "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Hệ thống 26 chuẩn mực kế toán do Bộ Tài chính ban hành trong giai đoạn 2001-2005, quy định nguyên tắc ghi nhận, đo lường và trình bày thông tin trên BCTC (ví dụ VAS 02 Hàng tồn kho, VAS 14 Doanh thu). VAS được xây dựng dựa trên chuẩn mực quốc tế thời đó nhưng chưa cập nhật nhiều, nên vẫn có khác biệt đáng kể so với IFRS hiện hành.",
- "lien_quan": ["Chuẩn mực báo cáo tài chính quốc tế", "Thông tư 200/2014/TT-BTC", "Báo cáo tài chính"]},
-{"thuat_ngu": "Chuẩn mực báo cáo tài chính quốc tế", "tieng_anh": "International Financial Reporting Standards", "viet_tat": "IFRS", "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Bộ chuẩn mực do Hội đồng Chuẩn mực Kế toán Quốc tế (IASB) ban hành, được áp dụng tại hơn 140 quốc gia. Việt Nam có lộ trình áp dụng IFRS theo Quyết định 345/QĐ-BTC năm 2020, bắt đầu từ giai đoạn tự nguyện cho các doanh nghiệp lớn. IFRS nhấn mạnh giá trị hợp lý nhiều hơn VAS, ví dụ lợi thế thương mại không phân bổ mà chỉ kiểm tra suy giảm giá trị.",
- "lien_quan": ["Chuẩn mực kế toán Việt Nam", "Lợi thế thương mại", "Ghi nhận doanh thu"]},
-{"thuat_ngu": "Thông tư 200/2014/TT-BTC", "tieng_anh": "Circular 200/2014/TT-BTC", "viet_tat": "TT200", "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Thông tư của Bộ Tài chính hướng dẫn Chế độ kế toán doanh nghiệp, áp dụng từ năm 2015, quy định hệ thống tài khoản, chứng từ, sổ sách và mẫu BCTC (B01-DN đến B09-DN) cùng mã số chỉ tiêu. Hầu hết BCTC của doanh nghiệp niêm yết giai đoạn 2015-2025 được lập theo thông tư này. Từ năm tài chính 2026, TT200 được thay thế bởi Thông tư 99/2025/TT-BTC.",
- "lien_quan": ["Chuẩn mực kế toán Việt Nam", "Tài khoản kế toán", "Báo cáo tài chính", "Sổ kế toán"]},
-{"thuat_ngu": "Kỳ kế toán", "tieng_anh": "Accounting period", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Khoảng thời gian từ khi bắt đầu đến khi kết thúc việc ghi sổ để khóa sổ và lập BCTC, gồm kỳ kế toán năm, quý và tháng theo Luật Kế toán 2015. Kỳ kế toán năm là 12 tháng, thường trùng năm dương lịch; nhiều doanh nghiệp VN30 có năm tài chính kết thúc ngày 31/12.",
- "lien_quan": ["Báo cáo tài chính giữa niên độ", "Sổ kế toán", "Sự kiện phát sinh sau ngày kết thúc kỳ kế toán"]},
-{"thuat_ngu": "Cơ sở dồn tích", "tieng_anh": "Accrual basis", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Nguyên tắc ghi nhận doanh thu, chi phí, tài sản và nợ vào thời điểm nghiệp vụ phát sinh, không phụ thuộc vào thời điểm thực thu hoặc thực chi tiền. Ví dụ bán chịu hàng trong quý 4 vẫn được ghi doanh thu quý 4 dù tháng sau mới thu tiền. Đây là lý do lợi nhuận và dòng tiền của doanh nghiệp thường không bằng nhau.",
- "lien_quan": ["Nguyên tắc phù hợp", "Ghi nhận doanh thu", "Báo cáo lưu chuyển tiền tệ", "Phải thu khách hàng"]},
-{"thuat_ngu": "Hoạt động liên tục", "tieng_anh": "Going concern", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Giả định rằng doanh nghiệp sẽ tiếp tục hoạt động bình thường trong tương lai gần, không buộc phải giải thể hay thu hẹp đáng kể quy mô; BCTC thông thường được lập dựa trên giả định này. Khi có nghi ngờ đáng kể về khả năng hoạt động liên tục (lỗ kéo dài, nợ quá hạn lớn), kiểm toán viên thường nêu trong báo cáo kiểm toán, và đây là tín hiệu cảnh báo quan trọng với nhà đầu tư.",
- "lien_quan": ["Vấn đề cần nhấn mạnh", "Kiểm toán độc lập", "Nguyên tắc thận trọng"]},
-{"thuat_ngu": "Nguyên tắc nhất quán", "tieng_anh": "Consistency principle", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Các chính sách và phương pháp kế toán doanh nghiệp đã chọn phải được áp dụng thống nhất ít nhất trong một kỳ kế toán năm, để số liệu giữa các kỳ so sánh được với nhau. Nếu thay đổi chính sách (ví dụ đổi phương pháp tính giá hàng tồn kho), doanh nghiệp phải giải trình lý do và ảnh hưởng trong thuyết minh BCTC.",
- "lien_quan": ["Điều chỉnh hồi tố", "Thuyết minh báo cáo tài chính", "Chuẩn mực kế toán Việt Nam"]},
-{"thuat_ngu": "Nguyên tắc thận trọng", "tieng_anh": "Prudence principle", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Nguyên tắc yêu cầu kế toán cân nhắc kỹ khi đưa ra ước tính trong điều kiện không chắc chắn: không đánh giá cao hơn giá trị tài sản và thu nhập, không đánh giá thấp hơn nợ phải trả và chi phí. Theo VAS 01, doanh thu chỉ được ghi khi có bằng chứng chắc chắn, còn chi phí được ghi ngay khi có bằng chứng về khả năng phát sinh. Việc trích lập các khoản dự phòng là biểu hiện rõ nhất của nguyên tắc này.",
- "lien_quan": ["Dự phòng giảm giá hàng tồn kho", "Dự phòng phải thu khó đòi", "Hoạt động liên tục", "Ghi nhận doanh thu"]},
-{"thuat_ngu": "Trọng yếu", "tieng_anh": "Materiality", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Một thông tin được coi là trọng yếu nếu việc bỏ sót hoặc trình bày sai thông tin đó có thể làm thay đổi quyết định của người sử dụng BCTC. Tính trọng yếu được xét cả về độ lớn của số tiền và bản chất của sự việc. Kiểm toán viên dùng mức trọng yếu để quyết định phạm vi kiểm tra và loại ý kiến kiểm toán.",
- "lien_quan": ["Kiểm toán độc lập", "Ý kiến ngoại trừ", "Ý kiến trái ngược", "Thuyết minh báo cáo tài chính"]},
-{"thuat_ngu": "Nguyên tắc giá gốc", "tieng_anh": "Historical cost principle", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Tài sản được ghi nhận theo số tiền hoặc tương đương tiền đã trả, phải trả, hoặc theo giá trị hợp lý tại thời điểm tài sản được ghi nhận. Theo VAS 01, giá gốc không được thay đổi trừ khi chuẩn mực có quy định khác, vì vậy giá trị sổ sách của đất đai hay bất động sản đầu tư trên BCTC Việt Nam có thể thấp hơn nhiều so với giá thị trường.",
- "lien_quan": ["Nguyên giá", "Bất động sản đầu tư", "Chuẩn mực báo cáo tài chính quốc tế"]},
-{"thuat_ngu": "Nguyên tắc phù hợp", "tieng_anh": "Matching principle", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Nguyên tắc yêu cầu khi ghi nhận một khoản doanh thu thì phải ghi nhận đồng thời các chi phí tương ứng tạo ra doanh thu đó trong cùng kỳ. Ví dụ giá vốn của lô hàng được ghi vào kỳ bán lô hàng, còn chi phí mua máy móc được phân bổ dần qua khấu hao trong suốt thời gian máy tạo ra doanh thu.",
- "lien_quan": ["Cơ sở dồn tích", "Giá vốn hàng bán", "Khấu hao tài sản cố định", "Phân bổ chi phí"]},
-{"thuat_ngu": "Sổ kế toán", "tieng_anh": "Accounting books (Ledgers)", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Hệ thống sổ dùng để ghi chép, lưu giữ toàn bộ nghiệp vụ kinh tế phát sinh theo thời gian và theo từng tài khoản, gồm sổ tổng hợp (sổ Nhật ký, Sổ Cái) và sổ chi tiết. Doanh nghiệp có thể chọn các hình thức như Nhật ký chung, Chứng từ ghi sổ hay kế toán trên máy vi tính. Số liệu trên sổ kế toán là căn cứ để lập BCTC cuối kỳ.",
- "lien_quan": ["Bút toán", "Tài khoản kế toán", "Kỳ kế toán", "Thông tư 200/2014/TT-BTC"]},
-{"thuat_ngu": "Tài khoản kế toán", "tieng_anh": "Account (Chart of accounts)", "viet_tat": "TK", "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Công cụ dùng để phân loại và theo dõi riêng từng đối tượng kế toán như tiền, hàng tồn kho, doanh thu, chi phí. Hệ thống tài khoản theo Thông tư 200/2014/TT-BTC gồm 9 loại đánh số từ 1 đến 9, ví dụ TK 111 Tiền mặt, TK 131 Phải thu của khách hàng, TK 511 Doanh thu bán hàng và cung cấp dịch vụ, TK 632 Giá vốn hàng bán.",
- "lien_quan": ["Nợ và Có", "Bút toán", "Sổ kế toán", "Thông tư 200/2014/TT-BTC"]},
-{"thuat_ngu": "Bút toán", "tieng_anh": "Journal entry", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Một lần ghi chép nghiệp vụ kinh tế vào sổ kế toán, xác định rõ tài khoản ghi Nợ, tài khoản ghi Có và số tiền (còn gọi là định khoản). Ví dụ mua hàng hóa trả bằng tiền gửi ngân hàng: Nợ TK 156 / Có TK 112. Theo nguyên tắc ghi sổ kép, tổng số tiền ghi Nợ luôn bằng tổng số tiền ghi Có trong mỗi bút toán.",
- "lien_quan": ["Nợ và Có", "Tài khoản kế toán", "Sổ kế toán"]}
+{
+"thuat_ngu": "Báo cáo tài chính",
+"tieng_anh": "Financial statements",
+"viet_tat": "BCTC",
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Bộ báo cáo tổng hợp tình hình tài chính, kết quả kinh doanh và các dòng tiền của doanh nghiệp trong một kỳ kế toán. Theo Thông tư 99/2025/TT-BTC (áp dụng từ năm tài chính 2026, thay Thông tư 200/2014), bộ BCTC năm gồm Báo cáo tình hình tài chính (B01-DN, trước đây gọi là Bảng cân đối kế toán), Báo cáo kết quả hoạt động kinh doanh (B02-DN), Báo cáo lưu chuyển tiền tệ (B03-DN) và Thuyết minh BCTC (B09-DN). Đây là nguồn dữ liệu chính để nhà đầu tư phân tích doanh nghiệp niêm yết.",
+"lien_quan": [
+"Bảng cân đối kế toán",
+"Báo cáo kết quả hoạt động kinh doanh",
+"Báo cáo lưu chuyển tiền tệ",
+"Thuyết minh báo cáo tài chính"
+]
+},
+{
+"thuat_ngu": "Bảng cân đối kế toán",
+"tieng_anh": "Balance sheet (Statement of financial position)",
+"viet_tat": "BCĐKT",
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Báo cáo phản ánh toàn bộ tài sản và nguồn hình thành tài sản (nợ phải trả và vốn chủ sở hữu) của doanh nghiệp tại một thời điểm, thường là ngày cuối quý hoặc cuối năm, luôn thỏa mãn đẳng thức Tổng tài sản = Tổng nguồn vốn. Từ năm tài chính 2026, Thông tư 99/2025/TT-BTC đổi tên báo cáo này thành Báo cáo tình hình tài chính (mẫu B01-DN), giống cách gọi của IFRS; trên mẫu mới, Tổng tài sản là mã 280 và Tổng nguồn vốn là mã 440 (theo mẫu TT200, Tổng tài sản là mã 270).",
+"lien_quan": [
+"Báo cáo tài chính",
+"Tài sản ngắn hạn",
+"Tài sản dài hạn",
+"Nợ phải trả",
+"Vốn chủ sở hữu"
+]
+},
+{
+"thuat_ngu": "Báo cáo kết quả hoạt động kinh doanh",
+"tieng_anh": "Income statement (Statement of profit or loss)",
+"viet_tat": "BCKQKD",
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Báo cáo trình bày doanh thu, chi phí và lợi nhuận (hoặc lỗ) của doanh nghiệp trong một kỳ, ví dụ một quý hay một năm. Các chỉ tiêu được sắp xếp từ doanh thu bán hàng (mã 01), qua lợi nhuận gộp (mã 20), lợi nhuận trước thuế (mã 50) đến lợi nhuận sau thuế (mã 60). Khác với Bảng cân đối kế toán, báo cáo này đo lường kết quả của cả một khoảng thời gian.",
+"lien_quan": [
+"Doanh thu thuần",
+"Lợi nhuận gộp",
+"Lợi nhuận trước thuế",
+"Lợi nhuận sau thuế",
+"Cơ sở dồn tích"
+]
+},
+{
+"thuat_ngu": "Báo cáo lưu chuyển tiền tệ",
+"tieng_anh": "Cash flow statement",
+"viet_tat": "BCLCTT",
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Báo cáo cho biết tiền và tương đương tiền của doanh nghiệp đã vào và ra như thế nào trong kỳ, chia thành ba nhóm: hoạt động kinh doanh, hoạt động đầu tư và hoạt động tài chính. Báo cáo được lập theo Chuẩn mực kế toán số 24 (VAS 24) và giúp kiểm tra xem lợi nhuận kế toán có thực sự chuyển thành tiền hay không.",
+"lien_quan": [
+"Lưu chuyển tiền thuần từ hoạt động kinh doanh",
+"Lưu chuyển tiền thuần từ hoạt động đầu tư",
+"Lưu chuyển tiền thuần từ hoạt động tài chính",
+"Phương pháp trực tiếp",
+"Phương pháp gián tiếp"
+]
+},
+{
+"thuat_ngu": "Phương pháp trực tiếp",
+"tieng_anh": "Direct method",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Cách lập phần lưu chuyển tiền từ hoạt động kinh doanh bằng cách liệt kê trực tiếp từng dòng tiền thu và chi, ví dụ tiền thu từ bán hàng, tiền chi trả nhà cung cấp, tiền chi trả người lao động. Cách này dễ hiểu với người đọc nhưng đòi hỏi kế toán theo dõi chi tiết dòng tiền. Phần đầu tư và tài chính luôn trình bày theo cách trực tiếp.",
+"lien_quan": [
+"Báo cáo lưu chuyển tiền tệ",
+"Phương pháp gián tiếp",
+"Lưu chuyển tiền thuần từ hoạt động kinh doanh"
+]
+},
+{
+"thuat_ngu": "Phương pháp gián tiếp",
+"tieng_anh": "Indirect method",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Cách lập phần lưu chuyển tiền từ hoạt động kinh doanh bằng cách bắt đầu từ lợi nhuận trước thuế, rồi cộng lại các khoản không bằng tiền (khấu hao, dự phòng), loại trừ lãi lỗ từ hoạt động đầu tư và điều chỉnh biến động vốn lưu động (phải thu, hàng tồn kho, phải trả). Phần lớn doanh nghiệp niêm yết Việt Nam dùng phương pháp này vì dễ lập từ số liệu kế toán sẵn có.",
+"lien_quan": [
+"Báo cáo lưu chuyển tiền tệ",
+"Phương pháp trực tiếp",
+"Lợi nhuận trước thuế",
+"Khấu hao tài sản cố định"
+]
+},
+{
+"thuat_ngu": "Thuyết minh báo cáo tài chính",
+"tieng_anh": "Notes to the financial statements",
+"viet_tat": "TMBCTC",
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Phần bắt buộc của bộ BCTC (mẫu B09-DN) giải thích chi tiết các con số trên các báo cáo chính, như chính sách kế toán áp dụng, cơ cấu hàng tồn kho, chi tiết khoản vay, giao dịch với bên liên quan. Người phân tích nên đọc thuyết minh vì nhiều rủi ro và thông tin quan trọng chỉ xuất hiện ở đây chứ không thể hiện trên các bảng số.",
+"lien_quan": [
+"Báo cáo tài chính",
+"Giao dịch với các bên liên quan",
+"Sự kiện phát sinh sau ngày kết thúc kỳ kế toán"
+]
+},
+{
+"thuat_ngu": "Báo cáo tài chính hợp nhất",
+"tieng_anh": "Consolidated financial statements",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "BCTC của cả tập đoàn (công ty mẹ và các công ty con) được trình bày như của một đơn vị kinh tế duy nhất, sau khi loại trừ các giao dịch và số dư nội bộ giữa các công ty trong tập đoàn. Được lập theo VAS 25 và Thông tư 202/2014/TT-BTC. Với các doanh nghiệp VN30 có nhiều công ty con, BCTC hợp nhất phản ánh đúng quy mô và hiệu quả hơn BCTC riêng.",
+"lien_quan": [
+"Báo cáo tài chính riêng",
+"Công ty mẹ",
+"Công ty con",
+"Lợi ích cổ đông không kiểm soát",
+"Hợp nhất kinh doanh"
+]
+},
+{
+"thuat_ngu": "Báo cáo tài chính riêng",
+"tieng_anh": "Separate financial statements",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "BCTC chỉ phản ánh số liệu của bản thân công ty mẹ như một pháp nhân độc lập, trong đó khoản đầu tư vào công ty con và công ty liên kết được ghi theo giá gốc. Lợi nhuận trên BCTC riêng có thể khác nhiều so với BCTC hợp nhất, ví dụ khi công ty mẹ nhận cổ tức lớn từ công ty con.",
+"lien_quan": [
+"Báo cáo tài chính hợp nhất",
+"Công ty mẹ",
+"Nguyên tắc giá gốc"
+]
+},
+{
+"thuat_ngu": "Báo cáo tài chính giữa niên độ",
+"tieng_anh": "Interim financial statements",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "BCTC lập cho một kỳ ngắn hơn năm tài chính, phổ biến nhất là BCTC quý và BCTC bán niên, theo Chuẩn mực kế toán số 27 (VAS 27). Doanh nghiệp niêm yết phải công bố BCTC quý định kỳ, giúp nhà đầu tư theo dõi biến động kết quả kinh doanh giữa các quý (QoQ).",
+"lien_quan": [
+"Báo cáo tài chính bán niên",
+"Kỳ kế toán",
+"Công bố thông tin",
+"Soát xét báo cáo tài chính"
+]
+},
+{
+"thuat_ngu": "Báo cáo tài chính bán niên",
+"tieng_anh": "Semi-annual financial statements",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "BCTC giữa niên độ cho sáu tháng đầu năm tài chính. Với công ty niêm yết, BCTC bán niên phải được công ty kiểm toán được chấp thuận soát xét trước khi công bố, nên độ tin cậy cao hơn BCTC quý nhưng thấp hơn BCTC năm đã kiểm toán.",
+"lien_quan": [
+"Báo cáo tài chính giữa niên độ",
+"Soát xét báo cáo tài chính",
+"Kiểm toán độc lập"
+]
+},
+{
+"thuat_ngu": "Chuẩn mực kế toán Việt Nam",
+"tieng_anh": "Vietnamese Accounting Standards",
+"viet_tat": "VAS",
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Hệ thống 26 chuẩn mực kế toán do Bộ Tài chính ban hành trong giai đoạn 2001-2005, quy định nguyên tắc ghi nhận, đo lường và trình bày thông tin trên BCTC (ví dụ VAS 02 Hàng tồn kho, VAS 14 Doanh thu). VAS được xây dựng dựa trên chuẩn mực quốc tế thời đó nhưng chưa cập nhật nhiều, nên vẫn có khác biệt đáng kể so với IFRS hiện hành.",
+"lien_quan": [
+"Chuẩn mực báo cáo tài chính quốc tế",
+"Thông tư 200/2014/TT-BTC",
+"Báo cáo tài chính"
+]
+},
+{
+"thuat_ngu": "Chuẩn mực báo cáo tài chính quốc tế",
+"tieng_anh": "International Financial Reporting Standards",
+"viet_tat": "IFRS",
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Bộ chuẩn mực do Hội đồng Chuẩn mực Kế toán Quốc tế (IASB) ban hành, được áp dụng tại hơn 140 quốc gia. Việt Nam có lộ trình áp dụng IFRS theo Quyết định 345/QĐ-BTC năm 2020, bắt đầu từ giai đoạn tự nguyện cho các doanh nghiệp lớn. IFRS nhấn mạnh giá trị hợp lý nhiều hơn VAS, ví dụ lợi thế thương mại không phân bổ mà chỉ kiểm tra suy giảm giá trị.",
+"lien_quan": [
+"Chuẩn mực kế toán Việt Nam",
+"Lợi thế thương mại",
+"Ghi nhận doanh thu"
+]
+},
+{
+"thuat_ngu": "Thông tư 200/2014/TT-BTC",
+"tieng_anh": "Circular 200/2014/TT-BTC",
+"viet_tat": "TT200",
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Thông tư của Bộ Tài chính hướng dẫn Chế độ kế toán doanh nghiệp, áp dụng từ năm 2015, quy định hệ thống tài khoản, chứng từ, sổ sách và mẫu BCTC (B01-DN đến B09-DN) cùng mã số chỉ tiêu. Hầu hết BCTC của doanh nghiệp niêm yết giai đoạn 2015-2025 được lập theo thông tư này. Từ năm tài chính 2026, TT200 được thay thế bởi Thông tư 99/2025/TT-BTC.",
+"lien_quan": [
+"Chuẩn mực kế toán Việt Nam",
+"Tài khoản kế toán",
+"Báo cáo tài chính",
+"Sổ kế toán"
+]
+},
+{
+"thuat_ngu": "Kỳ kế toán",
+"tieng_anh": "Accounting period",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Khoảng thời gian từ khi bắt đầu đến khi kết thúc việc ghi sổ để khóa sổ và lập BCTC, gồm kỳ kế toán năm, quý và tháng theo Luật Kế toán 2015. Kỳ kế toán năm là 12 tháng, thường trùng năm dương lịch; nhiều doanh nghiệp VN30 có năm tài chính kết thúc ngày 31/12.",
+"lien_quan": [
+"Báo cáo tài chính giữa niên độ",
+"Sổ kế toán",
+"Sự kiện phát sinh sau ngày kết thúc kỳ kế toán"
+]
+},
+{
+"thuat_ngu": "Cơ sở dồn tích",
+"tieng_anh": "Accrual basis",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Nguyên tắc ghi nhận doanh thu, chi phí, tài sản và nợ vào thời điểm nghiệp vụ phát sinh, không phụ thuộc vào thời điểm thực thu hoặc thực chi tiền. Ví dụ bán chịu hàng trong quý 4 vẫn được ghi doanh thu quý 4 dù tháng sau mới thu tiền. Đây là lý do lợi nhuận và dòng tiền của doanh nghiệp thường không bằng nhau.",
+"lien_quan": [
+"Nguyên tắc phù hợp",
+"Ghi nhận doanh thu",
+"Báo cáo lưu chuyển tiền tệ",
+"Phải thu khách hàng"
+]
+},
+{
+"thuat_ngu": "Hoạt động liên tục",
+"tieng_anh": "Going concern",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Giả định rằng doanh nghiệp sẽ tiếp tục hoạt động bình thường trong tương lai gần, không buộc phải giải thể hay thu hẹp đáng kể quy mô; BCTC thông thường được lập dựa trên giả định này. Khi có nghi ngờ đáng kể về khả năng hoạt động liên tục (lỗ kéo dài, nợ quá hạn lớn), kiểm toán viên thường nêu trong báo cáo kiểm toán, và đây là tín hiệu cảnh báo quan trọng với nhà đầu tư.",
+"lien_quan": [
+"Vấn đề cần nhấn mạnh",
+"Kiểm toán độc lập",
+"Nguyên tắc thận trọng"
+]
+},
+{
+"thuat_ngu": "Nguyên tắc nhất quán",
+"tieng_anh": "Consistency principle",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Các chính sách và phương pháp kế toán doanh nghiệp đã chọn phải được áp dụng thống nhất ít nhất trong một kỳ kế toán năm, để số liệu giữa các kỳ so sánh được với nhau. Nếu thay đổi chính sách (ví dụ đổi phương pháp tính giá hàng tồn kho), doanh nghiệp phải giải trình lý do và ảnh hưởng trong thuyết minh BCTC.",
+"lien_quan": [
+"Điều chỉnh hồi tố",
+"Thuyết minh báo cáo tài chính",
+"Chuẩn mực kế toán Việt Nam"
+]
+},
+{
+"thuat_ngu": "Nguyên tắc thận trọng",
+"tieng_anh": "Prudence principle",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Nguyên tắc yêu cầu kế toán cân nhắc kỹ khi đưa ra ước tính trong điều kiện không chắc chắn: không đánh giá cao hơn giá trị tài sản và thu nhập, không đánh giá thấp hơn nợ phải trả và chi phí. Theo VAS 01, doanh thu chỉ được ghi khi có bằng chứng chắc chắn, còn chi phí được ghi ngay khi có bằng chứng về khả năng phát sinh. Việc trích lập các khoản dự phòng là biểu hiện rõ nhất của nguyên tắc này.",
+"lien_quan": [
+"Dự phòng giảm giá hàng tồn kho",
+"Dự phòng phải thu khó đòi",
+"Hoạt động liên tục",
+"Ghi nhận doanh thu"
+]
+},
+{
+"thuat_ngu": "Trọng yếu",
+"tieng_anh": "Materiality",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Một thông tin được coi là trọng yếu nếu việc bỏ sót hoặc trình bày sai thông tin đó có thể làm thay đổi quyết định của người sử dụng BCTC. Tính trọng yếu được xét cả về độ lớn của số tiền và bản chất của sự việc. Kiểm toán viên dùng mức trọng yếu để quyết định phạm vi kiểm tra và loại ý kiến kiểm toán.",
+"lien_quan": [
+"Kiểm toán độc lập",
+"Ý kiến ngoại trừ",
+"Ý kiến trái ngược",
+"Thuyết minh báo cáo tài chính"
+]
+},
+{
+"thuat_ngu": "Nguyên tắc giá gốc",
+"tieng_anh": "Historical cost principle",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Tài sản được ghi nhận theo số tiền hoặc tương đương tiền đã trả, phải trả, hoặc theo giá trị hợp lý tại thời điểm tài sản được ghi nhận. Theo VAS 01, giá gốc không được thay đổi trừ khi chuẩn mực có quy định khác, vì vậy giá trị sổ sách của đất đai hay bất động sản đầu tư trên BCTC Việt Nam có thể thấp hơn nhiều so với giá thị trường.",
+"lien_quan": [
+"Nguyên giá",
+"Bất động sản đầu tư",
+"Chuẩn mực báo cáo tài chính quốc tế"
+]
+},
+{
+"thuat_ngu": "Nguyên tắc phù hợp",
+"tieng_anh": "Matching principle",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Nguyên tắc yêu cầu khi ghi nhận một khoản doanh thu thì phải ghi nhận đồng thời các chi phí tương ứng tạo ra doanh thu đó trong cùng kỳ. Ví dụ giá vốn của lô hàng được ghi vào kỳ bán lô hàng, còn chi phí mua máy móc được phân bổ dần qua khấu hao trong suốt thời gian máy tạo ra doanh thu.",
+"lien_quan": [
+"Cơ sở dồn tích",
+"Giá vốn hàng bán",
+"Khấu hao tài sản cố định",
+"Phân bổ chi phí"
+]
+},
+{
+"thuat_ngu": "Sổ kế toán",
+"tieng_anh": "Accounting books (Ledgers)",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Hệ thống sổ dùng để ghi chép, lưu giữ toàn bộ nghiệp vụ kinh tế phát sinh theo thời gian và theo từng tài khoản, gồm sổ tổng hợp (sổ Nhật ký, Sổ Cái) và sổ chi tiết. Doanh nghiệp có thể chọn các hình thức như Nhật ký chung, Chứng từ ghi sổ hay kế toán trên máy vi tính. Số liệu trên sổ kế toán là căn cứ để lập BCTC cuối kỳ.",
+"lien_quan": [
+"Bút toán",
+"Tài khoản kế toán",
+"Kỳ kế toán",
+"Thông tư 200/2014/TT-BTC"
+]
+},
+{
+"thuat_ngu": "Tài khoản kế toán",
+"tieng_anh": "Account (Chart of accounts)",
+"viet_tat": "TK",
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Công cụ dùng để phân loại và theo dõi riêng từng đối tượng kế toán như tiền, hàng tồn kho, doanh thu, chi phí. Từ năm tài chính 2026, hệ thống tài khoản áp dụng theo Thông tư 99/2025/TT-BTC (thay TT200/2014), các tài khoản vẫn đánh số theo 9 loại từ 1 đến 9, ví dụ TK 111 Tiền mặt, TK 131 Phải thu của khách hàng, TK 511 Doanh thu bán hàng và cung cấp dịch vụ, TK 632 Giá vốn hàng bán. Doanh nghiệp được tự mở thêm tài khoản chi tiết theo nhu cầu quản lý.",
+"lien_quan": [
+"Nợ và Có",
+"Bút toán",
+"Sổ kế toán",
+"Thông tư 200/2014/TT-BTC"
+]
+},
+{
+"thuat_ngu": "Bút toán",
+"tieng_anh": "Journal entry",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Một lần ghi chép nghiệp vụ kinh tế vào sổ kế toán, xác định rõ tài khoản ghi Nợ, tài khoản ghi Có và số tiền (còn gọi là định khoản). Ví dụ mua hàng hóa trả bằng tiền gửi ngân hàng: Nợ TK 156 / Có TK 112. Theo nguyên tắc ghi sổ kép, tổng số tiền ghi Nợ luôn bằng tổng số tiền ghi Có trong mỗi bút toán.",
+"lien_quan": [
+"Nợ và Có",
+"Tài khoản kế toán",
+"Sổ kế toán"
+]
+}
 ]

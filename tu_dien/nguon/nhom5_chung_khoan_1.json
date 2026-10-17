@@ -1,77 +1,313 @@
 [
-{"thuat_ngu": "Thị trường chứng khoán", "tieng_anh": "Securities market", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Nơi diễn ra hoạt động phát hành và mua bán các loại chứng khoán như cổ phiếu, trái phiếu, chứng chỉ quỹ, chứng khoán phái sinh. Thị trường giúp doanh nghiệp và Chính phủ huy động vốn trung, dài hạn, đồng thời tạo kênh đầu tư và tính thanh khoản cho nhà đầu tư. Tại Việt Nam, thị trường chính thức vận hành từ phiên giao dịch đầu tiên ngày 28/7/2000 và chịu sự quản lý của Ủy ban Chứng khoán Nhà nước.",
- "lien_quan": ["Thị trường sơ cấp", "Thị trường thứ cấp", "Ủy ban Chứng khoán Nhà nước", "Sở Giao dịch Chứng khoán Việt Nam"]},
-{"thuat_ngu": "Thị trường sơ cấp", "tieng_anh": "Primary market", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Thị trường nơi chứng khoán mới được phát hành và bán lần đầu cho nhà đầu tư, tiền thu được chảy trực tiếp về tổ chức phát hành. Ví dụ: doanh nghiệp IPO, phát hành thêm cổ phiếu cho cổ đông hiện hữu, hay Kho bạc Nhà nước đấu thầu trái phiếu Chính phủ. Đây là kênh huy động vốn thực sự cho nền kinh tế.",
- "lien_quan": ["Thị trường thứ cấp", "Phát hành lần đầu ra công chúng", "Phát hành thêm cổ phiếu", "Phát hành riêng lẻ"]},
-{"thuat_ngu": "Thị trường thứ cấp", "tieng_anh": "Secondary market", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Thị trường nơi nhà đầu tư mua bán lại với nhau các chứng khoán đã phát hành; tiền không chảy về doanh nghiệp phát hành mà chuyển giữa các nhà đầu tư. Ở Việt Nam, thị trường thứ cấp tập trung gồm HOSE, HNX và UPCoM. Thị trường thứ cấp tạo thanh khoản và hình thành giá chứng khoán, từ đó hỗ trợ cho hoạt động huy động vốn trên thị trường sơ cấp.",
- "lien_quan": ["Thị trường sơ cấp", "Sở Giao dịch Chứng khoán TP. Hồ Chí Minh", "Sở Giao dịch Chứng khoán Hà Nội", "Thanh khoản"]},
-{"thuat_ngu": "Ủy ban Chứng khoán Nhà nước", "tieng_anh": "State Securities Commission of Vietnam", "viet_tat": "UBCKNN", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Cơ quan trực thuộc Bộ Tài chính, thực hiện chức năng tham mưu và quản lý nhà nước về chứng khoán và thị trường chứng khoán Việt Nam, thành lập năm 1996. UBCKNN cấp phép chào bán chứng khoán ra công chúng, cấp phép và giám sát công ty chứng khoán, công ty quản lý quỹ, đồng thời thanh tra, xử phạt các vi phạm như thao túng giá, giao dịch nội gián, vi phạm công bố thông tin.",
- "lien_quan": ["Sở Giao dịch Chứng khoán Việt Nam", "Công ty chứng khoán", "Công ty quản lý quỹ", "Công bố thông tin"]},
-{"thuat_ngu": "Sở Giao dịch Chứng khoán Việt Nam", "tieng_anh": "Vietnam Exchange", "viet_tat": "VNX", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Doanh nghiệp do Nhà nước nắm 100% vốn, thành lập theo Quyết định 37/2020/QĐ-TTg, hoạt động theo mô hình công ty mẹ - công ty con với hai công ty con là HOSE và HNX. VNX tổ chức, quản lý và giám sát hoạt động giao dịch chứng khoán trên toàn hệ thống. Theo định hướng phân công, HOSE tập trung vào thị trường cổ phiếu, còn HNX phụ trách thị trường trái phiếu, chứng khoán phái sinh và UPCoM.",
- "lien_quan": ["Sở Giao dịch Chứng khoán TP. Hồ Chí Minh", "Sở Giao dịch Chứng khoán Hà Nội", "Thị trường UPCoM", "Ủy ban Chứng khoán Nhà nước"]},
-{"thuat_ngu": "Sở Giao dịch Chứng khoán TP. Hồ Chí Minh", "tieng_anh": "Ho Chi Minh City Stock Exchange", "viet_tat": "HOSE", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Công ty con của Sở Giao dịch Chứng khoán Việt Nam, tiền thân là Trung tâm Giao dịch Chứng khoán TP.HCM khai trương năm 2000, nơi niêm yết các doanh nghiệp quy mô lớn nhất Việt Nam. HOSE tổ chức giao dịch cổ phiếu, chứng chỉ quỹ, chứng quyền có bảo đảm với biên độ dao động giá ±7% và quản lý các bộ chỉ số như VN-Index, VN30, VN100. Toàn bộ 30 doanh nghiệp thuộc rổ VN30 đều niêm yết tại đây.",
- "lien_quan": ["Chỉ số VN-Index", "Chỉ số VN30", "Biên độ dao động giá", "Niêm yết"]},
-{"thuat_ngu": "Sở Giao dịch Chứng khoán Hà Nội", "tieng_anh": "Hanoi Stock Exchange", "viet_tat": "HNX", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Công ty con của Sở Giao dịch Chứng khoán Việt Nam, tiền thân là Trung tâm Giao dịch Chứng khoán Hà Nội thành lập năm 2005. HNX vận hành sàn niêm yết cổ phiếu (biên độ ±10%), thị trường UPCoM, thị trường trái phiếu Chính phủ, chứng khoán phái sinh và hệ thống giao dịch trái phiếu doanh nghiệp riêng lẻ. Chỉ số đại diện của sàn là HNX-Index.",
- "lien_quan": ["Chỉ số HNX-Index", "Thị trường UPCoM", "Chứng khoán phái sinh", "Trái phiếu doanh nghiệp"]},
-{"thuat_ngu": "Thị trường UPCoM", "tieng_anh": "Unlisted Public Company Market", "viet_tat": "UPCoM", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Thị trường giao dịch cổ phiếu của các công ty đại chúng chưa niêm yết, do HNX vận hành từ năm 2009. Điều kiện đăng ký giao dịch đơn giản hơn niêm yết, biên độ dao động giá ±15% và giá tham chiếu được tính bằng giá bình quân gia quyền của phiên liền trước. UPCoM cũng là nơi tiếp nhận cổ phiếu bị hủy niêm yết bắt buộc từ HOSE, HNX.",
- "lien_quan": ["Sở Giao dịch Chứng khoán Hà Nội", "Hủy niêm yết", "Biên độ dao động giá", "Giá tham chiếu"]},
-{"thuat_ngu": "Tổng công ty Lưu ký và Bù trừ Chứng khoán Việt Nam", "tieng_anh": "Vietnam Securities Depository and Clearing Corporation", "viet_tat": "VSDC", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Doanh nghiệp nhà nước thực hiện đăng ký, lưu ký, bù trừ và thanh toán chứng khoán tập trung tại Việt Nam, chuyển đổi từ Trung tâm Lưu ký Chứng khoán (VSD) theo Luật Chứng khoán 2019. VSDC quản lý sổ cổ đông của công ty đại chúng, lập danh sách người sở hữu tại ngày đăng ký cuối cùng, cấp mã số giao dịch cho nhà đầu tư nước ngoài và làm đối tác bù trừ trung tâm cho thị trường phái sinh.",
- "lien_quan": ["Chu kỳ thanh toán T+2", "Ngày đăng ký cuối cùng", "Tài khoản chứng khoán", "Khối ngoại"]},
-{"thuat_ngu": "Công ty chứng khoán", "tieng_anh": "Securities company", "viet_tat": "CTCK", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Doanh nghiệp được UBCKNN cấp phép thực hiện các nghiệp vụ môi giới, tự doanh, bảo lãnh phát hành và tư vấn đầu tư chứng khoán. Nhà đầu tư phải mở tài khoản tại công ty chứng khoán để đặt lệnh; công ty được cho vay ký quỹ (margin) nhưng tổng dư nợ không vượt quá 200% vốn chủ sở hữu. Một số công ty chứng khoán lớn tại Việt Nam: SSI, VPS, VNDIRECT, HSC.",
- "lien_quan": ["Tài khoản chứng khoán", "Giao dịch ký quỹ", "Phí giao dịch chứng khoán", "Ủy ban Chứng khoán Nhà nước"]},
-{"thuat_ngu": "Công ty quản lý quỹ", "tieng_anh": "Fund management company", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Doanh nghiệp được UBCKNN cấp phép để lập và quản lý quỹ đầu tư chứng khoán, quản lý danh mục đầu tư và tư vấn đầu tư. Công ty quản lý quỹ thay mặt nhà đầu tư ra quyết định đầu tư và thu phí quản lý, còn tài sản của quỹ được ngân hàng giám sát lưu ký tách biệt. Ví dụ: Dragon Capital, VinaCapital, SSIAM, VCBF.",
- "lien_quan": ["Quỹ mở", "Quỹ ETF", "Chứng chỉ quỹ", "Nhà đầu tư tổ chức"]},
-{"thuat_ngu": "Quỹ mở", "tieng_anh": "Open-end fund", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Quỹ đầu tư chứng khoán cho phép nhà đầu tư mua thêm hoặc bán lại chứng chỉ quỹ cho chính công ty quản lý quỹ vào các ngày giao dịch định kỳ, theo giá trị tài sản ròng (NAV) trên mỗi đơn vị quỹ. Quy mô quỹ mở thay đổi liên tục theo dòng tiền vào ra; ngược lại, quỹ đóng chỉ phát hành một lần và nhà đầu tư phải mua bán chứng chỉ quỹ trên sàn. Quỹ mở phù hợp với nhà đầu tư cá nhân muốn ủy thác cho chuyên gia quản lý.",
- "lien_quan": ["Chứng chỉ quỹ", "Công ty quản lý quỹ", "Quỹ ETF", "Đa dạng hóa danh mục"]},
-{"thuat_ngu": "Quỹ ETF", "tieng_anh": "Exchange-Traded Fund", "viet_tat": "ETF", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Quỹ đầu tư thụ động mô phỏng biến động của một chỉ số tham chiếu (như VN30, VNDiamond, VNFinLead), có chứng chỉ quỹ niêm yết và giao dịch trên sàn như cổ phiếu. Nhà đầu tư lớn có thể hoán đổi lô cổ phiếu cơ cấu lấy lô chứng chỉ quỹ và ngược lại, giúp giá ETF bám sát giá trị tài sản ròng. Ví dụ: E1VFVN30, FUEVFVND, FUESSVFL; dòng tiền ETF nội và ngoại tác động mạnh đến cổ phiếu VN30 trong các kỳ review.",
- "lien_quan": ["Đầu tư thụ động", "Review danh mục ETF", "Chỉ số VN30", "Chứng chỉ quỹ"]},
-{"thuat_ngu": "Khối ngoại", "tieng_anh": "Foreign investors", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Cách gọi chung các nhà đầu tư nước ngoài (tổ chức và cá nhân) tham gia thị trường chứng khoán Việt Nam, giao dịch thông qua mã số giao dịch do VSDC cấp. Giá trị mua ròng hoặc bán ròng của khối ngoại được công bố hằng ngày và được xem là chỉ báo tâm lý quan trọng, nhất là với nhóm cổ phiếu VN30. Hoạt động của khối ngoại bị giới hạn bởi room ngoại tại từng doanh nghiệp.",
- "lien_quan": ["Room ngoại", "Mua ròng/Bán ròng", "Nâng hạng thị trường", "Tổng công ty Lưu ký và Bù trừ Chứng khoán Việt Nam"]},
-{"thuat_ngu": "Room ngoại", "tieng_anh": "Foreign ownership limit", "viet_tat": "FOL", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Tỷ lệ sở hữu tối đa mà nhà đầu tư nước ngoài được phép nắm giữ tại một doanh nghiệp, phụ thuộc vào ngành nghề kinh doanh, cam kết quốc tế và điều lệ công ty. Ví dụ: ngân hàng thương mại tối đa 30%, nhiều doanh nghiệp duy trì mức 49%, doanh nghiệp không thuộc ngành hạn chế có thể nâng lên 100%. Cổ phiếu hết room (kín room) thường được khối ngoại sang tay qua giao dịch thỏa thuận với giá cao hơn giá khớp lệnh.",
- "lien_quan": ["Khối ngoại", "Chỉ số VNDiamond", "Giao dịch thỏa thuận", "Nâng hạng thị trường"]},
-{"thuat_ngu": "Nhà đầu tư tổ chức", "tieng_anh": "Institutional investor", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Các pháp nhân đầu tư chứng khoán như quỹ đầu tư, công ty bảo hiểm, ngân hàng, bộ phận tự doanh của công ty chứng khoán, quỹ hưu trí, doanh nghiệp. Khác với nhà đầu tư cá nhân (chiếm hơn 80% giá trị giao dịch tại Việt Nam), nhà đầu tư tổ chức có vốn lớn, đầu tư dài hạn và ra quyết định dựa trên phân tích bài bản. Gia tăng tỷ trọng nhà đầu tư tổ chức giúp thị trường ổn định và chuyên nghiệp hơn.",
- "lien_quan": ["Nhà đầu tư chuyên nghiệp", "Công ty quản lý quỹ", "Khối ngoại", "Nâng hạng thị trường"]},
-{"thuat_ngu": "Nhà đầu tư chuyên nghiệp", "tieng_anh": "Professional securities investor", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Nhà đầu tư có năng lực tài chính hoặc chuyên môn theo Luật Chứng khoán, gồm các tổ chức tài chính (ngân hàng, công ty chứng khoán, quỹ, bảo hiểm), doanh nghiệp có vốn điều lệ đã góp trên 100 tỷ đồng và cá nhân đáp ứng điều kiện như có danh mục chứng khoán bình quân từ 2 tỷ đồng, có thu nhập cao hoặc có chứng chỉ hành nghề chứng khoán. Chỉ nhà đầu tư chuyên nghiệp mới được mua trái phiếu doanh nghiệp phát hành riêng lẻ.",
- "lien_quan": ["Nhà đầu tư tổ chức", "Trái phiếu doanh nghiệp", "Phát hành riêng lẻ"]},
-{"thuat_ngu": "Hệ thống KRX", "tieng_anh": "KRX trading system", "viet_tat": "KRX", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Hệ thống công nghệ giao dịch chứng khoán mới do Sở Giao dịch Hàn Quốc (Korea Exchange) hỗ trợ xây dựng, chính thức vận hành từ ngày 5/5/2025 thay cho hệ thống cũ thường xuyên quá tải. KRX tăng năng lực xử lý lệnh và là nền tảng kỹ thuật để triển khai các nghiệp vụ mới như giao dịch trong ngày, bán khống có kiểm soát, cơ chế đối tác bù trừ trung tâm (CCP) cho chứng khoán cơ sở.",
- "lien_quan": ["Bán khống", "Chu kỳ thanh toán T+2", "Nâng hạng thị trường", "Sở Giao dịch Chứng khoán TP. Hồ Chí Minh"]},
-{"thuat_ngu": "Nâng hạng thị trường", "tieng_anh": "Market upgrade / Market reclassification", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Việc các tổ chức xếp hạng chỉ số quốc tế như FTSE Russell, MSCI chuyển một thị trường từ nhóm cận biên (Frontier) lên mới nổi (Emerging) khi đáp ứng các tiêu chí về quy mô, thanh khoản và khả năng tiếp cận của nhà đầu tư nước ngoài. Tháng 10/2025, FTSE Russell công bố nâng hạng Việt Nam lên thị trường mới nổi thứ cấp với lộ trình hiệu lực bắt đầu từ tháng 9/2026; mục tiêu tiếp theo là được MSCI nâng hạng. Nâng hạng giúp thu hút dòng vốn lớn từ các quỹ chỉ số và quỹ chủ động toàn cầu.",
- "lien_quan": ["Khối ngoại", "Room ngoại", "Hệ thống KRX", "Quỹ ETF"]},
-{"thuat_ngu": "Vốn hóa thị trường", "tieng_anh": "Market capitalization", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Tổng giá trị thị trường của một doanh nghiệp, bằng giá cổ phiếu hiện tại nhân với số lượng cổ phiếu đang lưu hành. Vốn hóa dùng để xếp hạng quy mô doanh nghiệp (vốn hóa lớn, vừa, nhỏ) và làm cơ sở tính trọng số trong các chỉ số như VN-Index, VN30. Tổng vốn hóa toàn thị trường so với GDP là thước đo độ sâu của thị trường chứng khoán một quốc gia.",
- "lien_quan": ["Cổ phiếu vốn hóa lớn", "Tỷ lệ free-float", "Chỉ số VN-Index", "Chỉ số VN30"]},
-{"thuat_ngu": "Tỷ lệ free-float", "tieng_anh": "Free-float ratio", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Tỷ lệ cổ phiếu tự do chuyển nhượng, tức phần cổ phiếu thực sự có thể giao dịch trên thị trường sau khi loại trừ cổ phiếu do Nhà nước, cổ đông chiến lược, cổ đông lớn, người nội bộ nắm giữ, cổ phiếu quỹ và cổ phiếu bị hạn chế chuyển nhượng. Các chỉ số như VN30, VN100 tính trọng số theo vốn hóa đã điều chỉnh free-float. Cổ phiếu có free-float thấp thường dễ biến động mạnh và khó được đưa vào danh mục ETF.",
- "lien_quan": ["Vốn hóa thị trường", "Chỉ số VN30", "Cổ đông lớn", "Review danh mục ETF"]},
-{"thuat_ngu": "Chỉ số VN-Index", "tieng_anh": "VN-Index", "viet_tat": "VNINDEX", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Chỉ số giá đại diện cho toàn bộ cổ phiếu niêm yết trên HOSE, tính theo phương pháp bình quân gia quyền vốn hóa với mốc 100 điểm tại ngày 28/7/2000. VN-Index là thước đo phổ biến nhất về xu hướng thị trường chứng khoán Việt Nam; do tính theo vốn hóa, các cổ phiếu lớn như nhóm ngân hàng, nhóm Vingroup có ảnh hưởng mạnh đến điểm số.",
- "lien_quan": ["Chỉ số VN30", "Sở Giao dịch Chứng khoán TP. Hồ Chí Minh", "Vốn hóa thị trường", "Thị trường giá lên"]},
-{"thuat_ngu": "Chỉ số VN30", "tieng_anh": "VN30 Index", "viet_tat": "VN30", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Chỉ số gồm 30 cổ phiếu niêm yết trên HOSE có vốn hóa và thanh khoản hàng đầu, tính theo vốn hóa điều chỉnh free-float và giới hạn tỷ trọng tối đa 10% mỗi cổ phiếu; danh mục được HOSE xem xét định kỳ 6 tháng/lần (công bố tháng 1 và tháng 7). VN30 là chỉ số cơ sở của hợp đồng tương lai chỉ số và quỹ ETF E1VFVN30, các cổ phiếu trong rổ cũng là tài sản cơ sở chủ yếu của chứng quyền có bảo đảm. Doanh nghiệp VN30 được xem là nhóm blue-chip của thị trường.",
- "lien_quan": ["Chỉ số VN-Index", "Hợp đồng tương lai chỉ số", "Quỹ ETF", "Cổ phiếu blue-chip", "Review danh mục ETF"]},
-{"thuat_ngu": "Chỉ số HNX-Index", "tieng_anh": "HNX-Index", "viet_tat": null, "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Chỉ số đại diện cho toàn bộ cổ phiếu niêm yết trên Sở Giao dịch Chứng khoán Hà Nội, tính theo bình quân gia quyền vốn hóa với giá trị cơ sở 100 điểm. Do quy mô sàn HNX nhỏ hơn HOSE, chỉ số chủ yếu phản ánh nhóm doanh nghiệp vừa và nhỏ cùng một số cổ phiếu ngân hàng, chứng khoán. Ngoài ra HNX còn công bố chỉ số HNX30 và UPCoM-Index.",
- "lien_quan": ["Sở Giao dịch Chứng khoán Hà Nội", "Chỉ số VN-Index", "Thị trường UPCoM"]},
-{"thuat_ngu": "Chỉ số VN100", "tieng_anh": "VN100 Index", "viet_tat": "VN100", "nhom": "Chứng khoán & Đầu tư",
- "dinh_nghia": "Chỉ số gồm 100 cổ phiếu vốn hóa lớn và vừa trên HOSE, bao gồm 30 cổ phiếu của VN30 và 70 cổ phiếu của chỉ số VNMidcap. VN100 tính theo vốn hóa điều chỉnh free-float và là rổ gốc để chọn lọc chỉ số chủ đề VNDiamond.",
- "lien_quan": ["Chỉ số VN30", "Chỉ số VNDiamond", "Cổ phiếu vốn hóa lớn", "Tỷ lệ free-float"]}
+{
+"thuat_ngu": "Thị trường chứng khoán",
+"tieng_anh": "Securities market",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Nơi diễn ra hoạt động phát hành và mua bán các loại chứng khoán như cổ phiếu, trái phiếu, chứng chỉ quỹ, chứng khoán phái sinh. Thị trường giúp doanh nghiệp và Chính phủ huy động vốn trung, dài hạn, đồng thời tạo kênh đầu tư và tính thanh khoản cho nhà đầu tư. Tại Việt Nam, thị trường chính thức vận hành từ phiên giao dịch đầu tiên ngày 28/7/2000 và chịu sự quản lý của Ủy ban Chứng khoán Nhà nước.",
+"lien_quan": [
+"Thị trường sơ cấp",
+"Thị trường thứ cấp",
+"Ủy ban Chứng khoán Nhà nước",
+"Sở Giao dịch Chứng khoán Việt Nam"
+]
+},
+{
+"thuat_ngu": "Thị trường sơ cấp",
+"tieng_anh": "Primary market",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Thị trường nơi chứng khoán mới được phát hành và bán lần đầu cho nhà đầu tư, tiền thu được chảy trực tiếp về tổ chức phát hành. Ví dụ: doanh nghiệp IPO, phát hành thêm cổ phiếu cho cổ đông hiện hữu, hay Kho bạc Nhà nước đấu thầu trái phiếu Chính phủ. Đây là kênh huy động vốn thực sự cho nền kinh tế.",
+"lien_quan": [
+"Thị trường thứ cấp",
+"Phát hành lần đầu ra công chúng",
+"Phát hành thêm cổ phiếu",
+"Phát hành riêng lẻ"
+]
+},
+{
+"thuat_ngu": "Thị trường thứ cấp",
+"tieng_anh": "Secondary market",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Thị trường nơi nhà đầu tư mua bán lại với nhau các chứng khoán đã phát hành; tiền không chảy về doanh nghiệp phát hành mà chuyển giữa các nhà đầu tư. Ở Việt Nam, thị trường thứ cấp tập trung gồm HOSE, HNX và UPCoM. Thị trường thứ cấp tạo thanh khoản và hình thành giá chứng khoán, từ đó hỗ trợ cho hoạt động huy động vốn trên thị trường sơ cấp.",
+"lien_quan": [
+"Thị trường sơ cấp",
+"Sở Giao dịch Chứng khoán TP. Hồ Chí Minh",
+"Sở Giao dịch Chứng khoán Hà Nội",
+"Thanh khoản"
+]
+},
+{
+"thuat_ngu": "Ủy ban Chứng khoán Nhà nước",
+"tieng_anh": "State Securities Commission of Vietnam",
+"viet_tat": "UBCKNN",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Cơ quan trực thuộc Bộ Tài chính, thực hiện chức năng tham mưu và quản lý nhà nước về chứng khoán và thị trường chứng khoán Việt Nam, thành lập năm 1996. UBCKNN cấp phép chào bán chứng khoán ra công chúng, cấp phép và giám sát công ty chứng khoán, công ty quản lý quỹ, đồng thời thanh tra, xử phạt các vi phạm như thao túng giá, giao dịch nội gián, vi phạm công bố thông tin.",
+"lien_quan": [
+"Sở Giao dịch Chứng khoán Việt Nam",
+"Công ty chứng khoán",
+"Công ty quản lý quỹ",
+"Công bố thông tin"
+]
+},
+{
+"thuat_ngu": "Sở Giao dịch Chứng khoán Việt Nam",
+"tieng_anh": "Vietnam Exchange",
+"viet_tat": "VNX",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Doanh nghiệp do Nhà nước nắm 100% vốn, thành lập theo Quyết định 37/2020/QĐ-TTg, hoạt động theo mô hình công ty mẹ - công ty con với hai công ty con là HOSE và HNX. VNX tổ chức, quản lý và giám sát hoạt động giao dịch chứng khoán trên toàn hệ thống. Theo định hướng phân công, HOSE tập trung vào thị trường cổ phiếu, còn HNX phụ trách thị trường trái phiếu, chứng khoán phái sinh và UPCoM.",
+"lien_quan": [
+"Sở Giao dịch Chứng khoán TP. Hồ Chí Minh",
+"Sở Giao dịch Chứng khoán Hà Nội",
+"Thị trường UPCoM",
+"Ủy ban Chứng khoán Nhà nước"
+]
+},
+{
+"thuat_ngu": "Sở Giao dịch Chứng khoán TP. Hồ Chí Minh",
+"tieng_anh": "Ho Chi Minh City Stock Exchange",
+"viet_tat": "HOSE",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Công ty con của Sở Giao dịch Chứng khoán Việt Nam, tiền thân là Trung tâm Giao dịch Chứng khoán TP.HCM khai trương năm 2000, nơi niêm yết các doanh nghiệp quy mô lớn nhất Việt Nam. HOSE tổ chức giao dịch cổ phiếu, chứng chỉ quỹ, chứng quyền có bảo đảm với biên độ dao động giá ±7% và quản lý các bộ chỉ số như VN-Index, VN30, VN100. Toàn bộ 30 doanh nghiệp thuộc rổ VN30 đều niêm yết tại đây.",
+"lien_quan": [
+"Chỉ số VN-Index",
+"Chỉ số VN30",
+"Biên độ dao động giá",
+"Niêm yết"
+]
+},
+{
+"thuat_ngu": "Sở Giao dịch Chứng khoán Hà Nội",
+"tieng_anh": "Hanoi Stock Exchange",
+"viet_tat": "HNX",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Công ty con do Sở Giao dịch Chứng khoán Việt Nam (VNX) sở hữu 100% vốn, tiền thân là Trung tâm Giao dịch Chứng khoán Hà Nội thành lập năm 1998 và chính thức đi vào hoạt động năm 2005. HNX vận hành thị trường cổ phiếu niêm yết (biên độ ±10%, chỉ số HNX-Index), thị trường UPCoM, trái phiếu Chính phủ, chứng khoán phái sinh và hệ thống giao dịch trái phiếu doanh nghiệp riêng lẻ. Theo lộ trình sắp xếp thị trường, HNX ngừng nhận hồ sơ niêm yết cổ phiếu mới từ 1/7/2025 và toàn bộ cổ phiếu niêm yết tại HNX chuyển sang giao dịch tại HOSE từ ngày 28/12/2026.",
+"lien_quan": [
+"Chỉ số HNX-Index",
+"Thị trường UPCoM",
+"Chứng khoán phái sinh",
+"Trái phiếu doanh nghiệp"
+]
+},
+{
+"thuat_ngu": "Thị trường UPCoM",
+"tieng_anh": "Unlisted Public Company Market",
+"viet_tat": "UPCoM",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Thị trường giao dịch cổ phiếu của các công ty đại chúng chưa niêm yết, do HNX vận hành từ năm 2009. Điều kiện đăng ký giao dịch đơn giản hơn niêm yết, biên độ dao động giá ±15% và giá tham chiếu được tính bằng giá bình quân gia quyền của phiên liền trước. UPCoM cũng là nơi tiếp nhận cổ phiếu bị hủy niêm yết bắt buộc từ HOSE, HNX.",
+"lien_quan": [
+"Sở Giao dịch Chứng khoán Hà Nội",
+"Hủy niêm yết",
+"Biên độ dao động giá",
+"Giá tham chiếu"
+]
+},
+{
+"thuat_ngu": "Tổng công ty Lưu ký và Bù trừ Chứng khoán Việt Nam",
+"tieng_anh": "Vietnam Securities Depository and Clearing Corporation",
+"viet_tat": "VSDC",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Doanh nghiệp nhà nước thực hiện đăng ký, lưu ký, bù trừ và thanh toán chứng khoán tập trung tại Việt Nam, chuyển đổi từ Trung tâm Lưu ký Chứng khoán (VSD) theo Luật Chứng khoán 2019. VSDC quản lý sổ cổ đông của công ty đại chúng, lập danh sách người sở hữu tại ngày đăng ký cuối cùng, cấp mã số giao dịch cho nhà đầu tư nước ngoài và làm đối tác bù trừ trung tâm cho thị trường phái sinh.",
+"lien_quan": [
+"Chu kỳ thanh toán T+2",
+"Ngày đăng ký cuối cùng",
+"Tài khoản chứng khoán",
+"Khối ngoại"
+]
+},
+{
+"thuat_ngu": "Công ty chứng khoán",
+"tieng_anh": "Securities company",
+"viet_tat": "CTCK",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Doanh nghiệp được UBCKNN cấp phép thực hiện các nghiệp vụ môi giới, tự doanh, bảo lãnh phát hành và tư vấn đầu tư chứng khoán. Nhà đầu tư phải mở tài khoản tại công ty chứng khoán để đặt lệnh; công ty được cho vay ký quỹ (margin) nhưng tổng dư nợ không vượt quá 200% vốn chủ sở hữu. Một số công ty chứng khoán lớn tại Việt Nam: SSI, VPS, VNDIRECT, HSC.",
+"lien_quan": [
+"Tài khoản chứng khoán",
+"Giao dịch ký quỹ",
+"Phí giao dịch chứng khoán",
+"Ủy ban Chứng khoán Nhà nước"
+]
+},
+{
+"thuat_ngu": "Công ty quản lý quỹ",
+"tieng_anh": "Fund management company",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Doanh nghiệp được UBCKNN cấp phép để lập và quản lý quỹ đầu tư chứng khoán, quản lý danh mục đầu tư và tư vấn đầu tư. Công ty quản lý quỹ thay mặt nhà đầu tư ra quyết định đầu tư và thu phí quản lý, còn tài sản của quỹ được ngân hàng giám sát lưu ký tách biệt. Ví dụ: Dragon Capital, VinaCapital, SSIAM, VCBF.",
+"lien_quan": [
+"Quỹ mở",
+"Quỹ ETF",
+"Chứng chỉ quỹ",
+"Nhà đầu tư tổ chức"
+]
+},
+{
+"thuat_ngu": "Quỹ mở",
+"tieng_anh": "Open-end fund",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Quỹ đầu tư chứng khoán cho phép nhà đầu tư mua thêm hoặc bán lại chứng chỉ quỹ cho chính công ty quản lý quỹ vào các ngày giao dịch định kỳ, theo giá trị tài sản ròng (NAV) trên mỗi đơn vị quỹ. Quy mô quỹ mở thay đổi liên tục theo dòng tiền vào ra; ngược lại, quỹ đóng chỉ phát hành một lần và nhà đầu tư phải mua bán chứng chỉ quỹ trên sàn. Quỹ mở phù hợp với nhà đầu tư cá nhân muốn ủy thác cho chuyên gia quản lý.",
+"lien_quan": [
+"Chứng chỉ quỹ",
+"Công ty quản lý quỹ",
+"Quỹ ETF",
+"Đa dạng hóa danh mục"
+]
+},
+{
+"thuat_ngu": "Quỹ ETF",
+"tieng_anh": "Exchange-Traded Fund",
+"viet_tat": "ETF",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Quỹ đầu tư thụ động mô phỏng biến động của một chỉ số tham chiếu (như VN30, VNDiamond, VNFinLead), có chứng chỉ quỹ niêm yết và giao dịch trên sàn như cổ phiếu. Nhà đầu tư lớn có thể hoán đổi lô cổ phiếu cơ cấu lấy lô chứng chỉ quỹ và ngược lại, giúp giá ETF bám sát giá trị tài sản ròng. Ví dụ: E1VFVN30, FUEVFVND, FUESSVFL; dòng tiền ETF nội và ngoại tác động mạnh đến cổ phiếu VN30 trong các kỳ review.",
+"lien_quan": [
+"Đầu tư thụ động",
+"Review danh mục ETF",
+"Chỉ số VN30",
+"Chứng chỉ quỹ"
+]
+},
+{
+"thuat_ngu": "Khối ngoại",
+"tieng_anh": "Foreign investors",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Cách gọi chung các nhà đầu tư nước ngoài (tổ chức và cá nhân) tham gia thị trường chứng khoán Việt Nam, giao dịch thông qua mã số giao dịch do VSDC cấp. Giá trị mua ròng hoặc bán ròng của khối ngoại được công bố hằng ngày và được xem là chỉ báo tâm lý quan trọng, nhất là với nhóm cổ phiếu VN30. Hoạt động của khối ngoại bị giới hạn bởi room ngoại tại từng doanh nghiệp.",
+"lien_quan": [
+"Room ngoại",
+"Mua ròng/Bán ròng",
+"Nâng hạng thị trường",
+"Tổng công ty Lưu ký và Bù trừ Chứng khoán Việt Nam"
+]
+},
+{
+"thuat_ngu": "Room ngoại",
+"tieng_anh": "Foreign ownership limit",
+"viet_tat": "FOL",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Tỷ lệ sở hữu tối đa mà nhà đầu tư nước ngoài được phép nắm giữ tại một doanh nghiệp, phụ thuộc vào ngành nghề kinh doanh, cam kết quốc tế và điều lệ công ty. Ví dụ: ngân hàng thương mại tối đa 30%, nhiều doanh nghiệp duy trì mức 49%, doanh nghiệp không thuộc ngành hạn chế có thể nâng lên 100%. Cổ phiếu hết room (kín room) thường được khối ngoại sang tay qua giao dịch thỏa thuận với giá cao hơn giá khớp lệnh.",
+"lien_quan": [
+"Khối ngoại",
+"Chỉ số VNDiamond",
+"Giao dịch thỏa thuận",
+"Nâng hạng thị trường"
+]
+},
+{
+"thuat_ngu": "Nhà đầu tư tổ chức",
+"tieng_anh": "Institutional investor",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Các pháp nhân đầu tư chứng khoán như quỹ đầu tư, công ty bảo hiểm, ngân hàng, bộ phận tự doanh của công ty chứng khoán, quỹ hưu trí, doanh nghiệp. Khác với nhà đầu tư cá nhân (chiếm hơn 80% giá trị giao dịch tại Việt Nam), nhà đầu tư tổ chức có vốn lớn, đầu tư dài hạn và ra quyết định dựa trên phân tích bài bản. Gia tăng tỷ trọng nhà đầu tư tổ chức giúp thị trường ổn định và chuyên nghiệp hơn.",
+"lien_quan": [
+"Nhà đầu tư chuyên nghiệp",
+"Công ty quản lý quỹ",
+"Khối ngoại",
+"Nâng hạng thị trường"
+]
+},
+{
+"thuat_ngu": "Nhà đầu tư chuyên nghiệp",
+"tieng_anh": "Professional securities investor",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Nhà đầu tư có năng lực tài chính hoặc chuyên môn theo Luật Chứng khoán, gồm các tổ chức tài chính (ngân hàng, công ty chứng khoán, quỹ, bảo hiểm), doanh nghiệp có vốn điều lệ đã góp trên 100 tỷ đồng và cá nhân đáp ứng điều kiện như có danh mục chứng khoán bình quân từ 2 tỷ đồng, có thu nhập cao hoặc có chứng chỉ hành nghề chứng khoán. Chỉ nhà đầu tư chuyên nghiệp mới được mua trái phiếu doanh nghiệp phát hành riêng lẻ.",
+"lien_quan": [
+"Nhà đầu tư tổ chức",
+"Trái phiếu doanh nghiệp",
+"Phát hành riêng lẻ"
+]
+},
+{
+"thuat_ngu": "Hệ thống KRX",
+"tieng_anh": "KRX trading system",
+"viet_tat": "KRX",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Hệ thống công nghệ giao dịch chứng khoán mới do Sở Giao dịch Hàn Quốc (Korea Exchange) hỗ trợ xây dựng, chính thức vận hành từ ngày 5/5/2025 thay cho hệ thống cũ thường xuyên quá tải. KRX tăng năng lực xử lý lệnh và là nền tảng kỹ thuật để triển khai các nghiệp vụ mới như giao dịch trong ngày, bán khống có kiểm soát, cơ chế đối tác bù trừ trung tâm (CCP) cho chứng khoán cơ sở.",
+"lien_quan": [
+"Bán khống",
+"Chu kỳ thanh toán T+2",
+"Nâng hạng thị trường",
+"Sở Giao dịch Chứng khoán TP. Hồ Chí Minh"
+]
+},
+{
+"thuat_ngu": "Nâng hạng thị trường",
+"tieng_anh": "Market upgrade / Market reclassification",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Việc các tổ chức xếp hạng chỉ số quốc tế như FTSE Russell, MSCI chuyển một thị trường từ nhóm cận biên (Frontier) lên mới nổi (Emerging) khi đáp ứng các tiêu chí về quy mô, thanh khoản và khả năng tiếp cận của nhà đầu tư nước ngoài. Tháng 10/2025, FTSE Russell công bố nâng hạng Việt Nam lên thị trường mới nổi thứ cấp với lộ trình hiệu lực bắt đầu từ tháng 9/2026; mục tiêu tiếp theo là được MSCI nâng hạng. Nâng hạng giúp thu hút dòng vốn lớn từ các quỹ chỉ số và quỹ chủ động toàn cầu.",
+"lien_quan": [
+"Khối ngoại",
+"Room ngoại",
+"Hệ thống KRX",
+"Quỹ ETF"
+]
+},
+{
+"thuat_ngu": "Vốn hóa thị trường",
+"tieng_anh": "Market capitalization",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Tổng giá trị thị trường của một doanh nghiệp, bằng giá cổ phiếu hiện tại nhân với số lượng cổ phiếu đang lưu hành. Vốn hóa dùng để xếp hạng quy mô doanh nghiệp (vốn hóa lớn, vừa, nhỏ) và làm cơ sở tính trọng số trong các chỉ số như VN-Index, VN30. Tổng vốn hóa toàn thị trường so với GDP là thước đo độ sâu của thị trường chứng khoán một quốc gia.",
+"lien_quan": [
+"Cổ phiếu vốn hóa lớn",
+"Tỷ lệ tự do chuyển nhượng",
+"Chỉ số VN-Index",
+"Chỉ số VN30"
+]
+},
+{
+"thuat_ngu": "Chỉ số VN-Index",
+"tieng_anh": "VN-Index",
+"viet_tat": "VNINDEX",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Chỉ số giá đại diện cho toàn bộ cổ phiếu niêm yết trên HOSE, tính theo phương pháp bình quân gia quyền vốn hóa với mốc 100 điểm tại ngày 28/7/2000. VN-Index là thước đo phổ biến nhất về xu hướng thị trường chứng khoán Việt Nam; do tính theo vốn hóa, các cổ phiếu lớn như nhóm ngân hàng, nhóm Vingroup có ảnh hưởng mạnh đến điểm số.",
+"lien_quan": [
+"Chỉ số VN30",
+"Sở Giao dịch Chứng khoán TP. Hồ Chí Minh",
+"Vốn hóa thị trường",
+"Thị trường giá lên"
+]
+},
+{
+"thuat_ngu": "Chỉ số VN30",
+"tieng_anh": "VN30 Index",
+"viet_tat": "VN30",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Chỉ số gồm 30 cổ phiếu niêm yết trên HOSE có vốn hóa và thanh khoản hàng đầu, tính theo vốn hóa điều chỉnh free-float và giới hạn tỷ trọng tối đa 10% mỗi cổ phiếu; danh mục được HOSE xem xét định kỳ 6 tháng/lần (công bố tháng 1 và tháng 7). VN30 là chỉ số cơ sở của hợp đồng tương lai chỉ số và quỹ ETF E1VFVN30, các cổ phiếu trong rổ cũng là tài sản cơ sở chủ yếu của chứng quyền có bảo đảm. Doanh nghiệp VN30 được xem là nhóm blue-chip của thị trường.",
+"lien_quan": [
+"Chỉ số VN-Index",
+"Hợp đồng tương lai chỉ số",
+"Quỹ ETF",
+"Cổ phiếu blue-chip",
+"Review danh mục ETF"
+]
+},
+{
+"thuat_ngu": "Chỉ số HNX-Index",
+"tieng_anh": "HNX-Index",
+"viet_tat": null,
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Chỉ số đại diện cho toàn bộ cổ phiếu niêm yết trên Sở Giao dịch Chứng khoán Hà Nội, tính theo bình quân gia quyền vốn hóa với giá trị cơ sở 100 điểm. Do quy mô sàn HNX nhỏ hơn HOSE, chỉ số chủ yếu phản ánh nhóm doanh nghiệp vừa và nhỏ cùng một số cổ phiếu ngân hàng, chứng khoán. Ngoài ra HNX còn công bố chỉ số HNX30 và UPCoM-Index.",
+"lien_quan": [
+"Sở Giao dịch Chứng khoán Hà Nội",
+"Chỉ số VN-Index",
+"Thị trường UPCoM"
+]
+},
+{
+"thuat_ngu": "Chỉ số VN100",
+"tieng_anh": "VN100 Index",
+"viet_tat": "VN100",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Chỉ số gồm 100 cổ phiếu vốn hóa lớn và vừa trên HOSE, bao gồm 30 cổ phiếu của VN30 và 70 cổ phiếu của chỉ số VNMidcap. VN100 tính theo vốn hóa điều chỉnh free-float và là rổ gốc để chọn lọc chỉ số chủ đề VNDiamond.",
+"lien_quan": [
+"Chỉ số VN30",
+"Chỉ số VNDiamond",
+"Cổ phiếu vốn hóa lớn",
+"Tỷ lệ tự do chuyển nhượng"
+]
+}
 ]

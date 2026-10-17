@@ -135,7 +135,7 @@ def tu_dien_rows() -> list[list]:
         w = it.get("wiki") or {}
         out.append([it["thuat_ngu"], it.get("viet_tat") or "", it.get("tieng_anh", ""), it.get("nhom", ""),
                     it["dinh_nghia"], w.get("title", ""), w.get("url", ""), w.get("extract", ""), it.get("lien_quan", []),
-                    w.get("lang", "vi") if w else ""])
+                    w.get("lang", "vi") if w else "", w.get("muc_khop", "") if w else ""])
     return out
 
 
@@ -683,7 +683,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
       <span class="tag" style="align-self:flex-start">${esc(r[3])}</span>
       <div class="def">${esc(r[4])}</div>
       ${r[7] ? `<div class="wq">${esc(r[7])} <a href="${esc(wiki)}" target="_blank" rel="noopener">Đọc tiếp trên Wikipedia</a>
-        <div class="lic">Trích bài “${esc(r[5])}”, ${wname}${en ? ' (nguyên văn)' : ''}, giấy phép CC BY-SA 4.0</div></div>` : ''}
+        <div class="lic">Trích bài “${esc(r[5])}”, ${wname}${en ? ' (nguyên văn)' : ''}${r[10] === 'gần đúng' ? ' · bài liên quan, nói về khái niệm rộng hơn' : ''}, giấy phép CC BY-SA 4.0</div></div>` : ''}
       ${r[8].length ? `<div class="rel"><span>Các định nghĩa liên quan:</span>${r[8].map(x => `<button data-t="${esc(x)}">${esc(x)}</button>`).join('')}</div>` : ''}
     </article>`;
   }

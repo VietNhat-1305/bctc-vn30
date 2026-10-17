@@ -219,7 +219,7 @@
 "tieng_anh": "Deposit insurance",
 "viet_tat": null,
 "nhom": "Ngân hàng & Tín dụng",
-"dinh_nghia": "Cơ chế bảo vệ người gửi tiền khi tổ chức tín dụng mất khả năng chi trả, do Bảo hiểm tiền gửi Việt Nam (DIV) thực hiện. Theo Quyết định 32/2021/QĐ-TTg, hạn mức chi trả tối đa là 125 triệu đồng cho mỗi người tại một tổ chức tham gia bảo hiểm tiền gửi.",
+"dinh_nghia": "Cơ chế bảo vệ người gửi tiền khi tổ chức tín dụng mất khả năng chi trả, do Bảo hiểm tiền gửi Việt Nam (DIV) thực hiện. Theo Luật Bảo hiểm tiền gửi 2025 và Thông tư 05/2026/TT-NHNN (hiệu lực từ 13/7/2026), hạn mức chi trả tối đa là 350 triệu đồng (gồm cả gốc và lãi) cho mỗi người tại một tổ chức tham gia bảo hiểm tiền gửi.",
 "lien_quan": [
 "Tổ chức tín dụng",
 "Tiền gửi có kỳ hạn"
@@ -265,7 +265,7 @@
 "tieng_anh": "Joint-stock commercial bank",
 "viet_tat": "NHTMCP",
 "nhom": "Ngân hàng & Tín dụng",
-"dinh_nghia": "Ngân hàng thương mại được tổ chức dưới hình thức công ty cổ phần; thông thường chỉ khối ngân hàng tư nhân (Techcombank, ACB, MB, VPBank…) được gọi chung là ngân hàng TMCP. Luật Các TCTD 2024 giới hạn tỷ lệ sở hữu của cổ đông cá nhân và tổ chức tại ngân hàng TMCP.",
+"dinh_nghia": "Ngân hàng thương mại được tổ chức dưới hình thức công ty cổ phần. Về pháp lý, Vietcombank, VietinBank, BIDV (Nhà nước nắm cổ phần chi phối) cũng là ngân hàng TMCP, nhưng trong thống kê và báo chí, 'ngân hàng TMCP' thường chỉ nhóm ngân hàng không do Nhà nước chi phối như Techcombank, ACB, VPBank. Luật Các TCTD 2024 giới hạn sở hữu: cổ đông cá nhân tối đa 5%, cổ đông tổ chức tối đa 10% vốn điều lệ.",
 "lien_quan": [
 "Ngân hàng thương mại",
 "Ngân hàng thương mại nhà nước"
@@ -276,7 +276,7 @@
 "tieng_anh": "Finance company",
 "viet_tat": null,
 "nhom": "Ngân hàng & Tín dụng",
-"dinh_nghia": "Tổ chức tín dụng phi ngân hàng, không được nhận tiền gửi không kỳ hạn từ cá nhân, chủ yếu cho vay tiêu dùng tín chấp với lãi suất cao. Ví dụ FE Credit (thuộc VPBank), HD Saison (thuộc HDBank).",
+"dinh_nghia": "Tổ chức tín dụng phi ngân hàng, theo Luật Các TCTD 2024 không được nhận tiền gửi của cá nhân và không cung ứng dịch vụ thanh toán qua tài khoản khách hàng; hoạt động chủ yếu là cho vay tiêu dùng tín chấp, trả góp với lãi suất cao. Ví dụ FE Credit (thuộc VPBank), HD Saison (thuộc HDBank).",
 "lien_quan": [
 "Tổ chức tín dụng",
 "Cho vay tiêu dùng",

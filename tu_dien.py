@@ -34,6 +34,43 @@ WIKI_BO_QUA = {"Hệ số beta", "Tốc độ tăng trưởng dài hạn", "Đ�
                "Cho vay tiêu dùng", "Công ty tài chính", "Hệ thống KRX"}
 # Bước tra tên tiếng Anh: bài sai nghĩa (VD "Rủi ro phi hệ thống" -> Systematic risk, "Giá trần" -> giá trần do nhà nước áp)
 # hoặc quá chung (Tài sản, Nợ, Lãi suất...) - soát tay sau mỗi lần thêm thuật ngữ
+# Rà soát 17/10/2026 (5 agent đọc đủ 500 từ + 1 agent mở trang thật 20 từ ngẫu nhiên, đã xét lại từng kết luận):
+# chọn đúng bài cho thuật ngữ bị ghép sai (None = không có bài phù hợp, bỏ trích Wikipedia)
+WIKI_CHON: dict[str, tuple[str, str] | None] = {
+    "Biên lợi nhuận hoạt động": ("en", "Operating margin"),          # bài vi cũ định nghĩa biên lợi nhuận RÒNG
+    "Biên lợi nhuận ròng": ("vi", "Tỷ suất lợi nhuận trên doanh thu"),
+    "Nợ và Có": ("en", "Debits and credits"),                         # "Debit and Credit" là tiểu thuyết Đức 1855
+    "Biên độ dao động giá": ("en", "Price limit"),                    # "Trading band" nói về biên độ tỷ giá, Bollinger
+    "Tỷ suất sinh lời": ("en", "Rate of return"),                     # bài vi dịch máy, có câu vô nghĩa
+    "Tỷ suất lợi nhuận trên tổng tài sản": ("en", "Return on assets"),  # bài vi ghi sai tên khác
+    "Tỷ giá hối đoái thực": None,           # đoạn mở đầu bài vi định nghĩa tỷ giá danh nghĩa
+    "Hợp nhất kinh doanh": None,            # "Consolidation (business)" dễ nhầm với lập BCTC hợp nhất
+    "Ngày đăng ký cuối cùng": None,         # "Ex-dividend date" là ngày giao dịch không hưởng quyền, khác ngày ĐKCC
+    "Giá tham chiếu": None,                 # "Reference price" nói về mua sắm, y tế
+    "Thặng dư sản xuất": None,              # đoạn trích chỉ nói về thặng dư tiêu dùng
+    # soát vòng 2: bài thay thế vẫn chưa đạt
+    "Cho vay tiêu dùng": None,              # bài "Tín dụng tiêu dùng" không có câu định nghĩa, có câu lỗi thời, dở dang
+    "Lợi nhuận gộp": None,                  # "Gross income" mở đầu bằng thu nhập gộp cá nhân, gọi sai là credit sales
+}
+# Đúng bài nhưng câu sau của đoạn trích sai/lỗi thời -> chỉ lấy n câu đầu
+WIKI_SO_CAU = {"Nhập siêu": 2, "Cổ phiếu phổ thông": 2, "Cổ phiếu ESOP": 1, "Chỉ số giảm phát GDP": 2,
+               "Báo cáo kết quả hoạt động kinh doanh": 1, "Giá trị còn lại": 2,
+               "Biên lợi nhuận hoạt động": 1, "Tỷ suất lợi nhuận trên tổng tài sản": 1, "GDP danh nghĩa": 1,
+               "Công ty tài chính": 3, "Lệnh thị trường": 3}
+# Bài nói khái niệm rộng hơn / hẹp hơn: vẫn giúp hiểu nhưng ghi rõ "gần đúng" (Excel + web)
+WIKI_GAN_DUNG = {
+    "Chính sách tài khóa mở rộng", "Chính sách tài khóa thắt chặt", "Chính sách tiền tệ nới lỏng", "Chính sách tiền tệ thắt chặt",
+    "Đầu tư công", "GDP bình quân đầu người", "GDP danh nghĩa", "GDP thực tế", "Giá cân bằng", "Lãi suất tái chiết khấu",
+    "Nợ công", "Thặng dư tiêu dùng", "Thiểu phát", "Tổng thu nhập quốc gia", "Tỷ lệ thất nghiệp", "Xếp hạng tín nhiệm quốc gia",
+    "Xuất siêu", "Chi phí trả trước", "Cơ sở dồn tích", "Công ty mẹ", "Hao mòn lũy kế", "Khấu hao đường thẳng", "Nguyên giá",
+    "Sổ kế toán", "Tài khoản kế toán", "Tài sản cố định hữu hình", "Tài sản cố định thuê tài chính", "Biên EBITDA",
+    "Hệ số đòn bẩy tài chính", "Mô hình Gordon", "Phân tích độ nhạy", "Phân tích kịch bản", "Phân tích tỷ số tài chính",
+    "Phân tích xu hướng", "Thu nhập trên mỗi cổ phiếu", "Thu nhập trên mỗi cổ phiếu pha loãng", "Vốn lưu động",
+    "Chấm điểm tín dụng", "Công ty tài chính", "Hiệp ước Basel", "Lãi suất liên ngân hàng", "Tiền gửi tiết kiệm",
+    "Xóa nợ ngoại bảng", "Call margin", "Cổ tức bằng cổ phiếu", "Cổ tức bằng tiền mặt", "Lệnh giới hạn", "Lệnh thị trường",
+    "Phát hành thêm cổ phiếu", "Quyền mua cổ phiếu", "Thanh khoản", "Thị trường giá lên", "Thị trường giá xuống",
+    "Chứng chỉ quỹ", "Công ty chứng khoán", "Cho vay tiêu dùng",
+}
 WIKI_BO_QUA_EN = {"Doanh thu thuần", "Hệ số thanh toán tiền mặt", "Nguyên tắc thận trọng", "Khoản mục bất thường",
                   "Nợ vay ròng", "Khối ngoại", "Lãi suất cho vay", "Lãi suất huy động", "Thị trường liên ngân hàng",
                   "Rủi ro phi hệ thống", "Tỷ lệ khả năng chi trả", "Tỷ lệ nguồn vốn ổn định ròng", "Tài sản ngắn hạn",
@@ -62,14 +99,43 @@ def load_sources() -> list[dict]:
     return items
 
 
-def first_sentences(text: str, limit: int = 600) -> str:
-    """Đoạn mở đầu Wikipedia, cắt ở ranh giới câu, tối đa ~limit ký tự."""
-    text = re.sub(r"\s+", " ", re.sub(r"\(\s*[;,]?\s*\)", "", text)).strip()
+ABBR = re.compile(r"(?:\b[A-ZĐ]|\b(?:Mr|Mrs|Ms|Dr|St|Jr|Sr|Inc|Co|Ltd|Corp|vs|TP|Tp|No|U\.S|e\.g|i\.e))$")
+
+
+def sentence_ends(text: str) -> list[int]:
+    """Vị trí kết thúc câu - bỏ qua chữ viết tắt/tên viết tắt ("Myron J. Gordon", "U.S.", "TP. HCM")."""
+    return [m.end() for m in re.finditer(r"[.!?](?=\s+\(?[A-ZĐÀ-Ỹ0-9]|$)", text) if not ABBR.search(text[:m.start()])]
+
+
+def strip_math(text: str) -> str:
+    """Bỏ khối công thức LaTeX "{\\displaystyle ...}" mà bản chữ thuần của Wikipedia để lại (đếm ngoặc lồng nhau)."""
+    out, i = [], 0
+    while True:
+        j = text.find("{\\displaystyle", i)
+        if j < 0:
+            return "".join(out) + text[i:]
+        out.append(text[i:j])
+        depth, k = 0, j
+        while k < len(text):
+            depth += {"{": 1, "}": -1}.get(text[k], 0)
+            k += 1
+            if depth == 0:
+                break
+        i = k
+
+
+def first_sentences(text: str, limit: int = 700, so_cau: int | None = None) -> str:
+    """Đoạn mở đầu Wikipedia, cắt ở ranh giới câu, tối đa ~limit ký tự (hoặc so_cau câu đầu)."""
+    text = re.sub(r"\s+", " ", re.sub(r"\(\s*[;,]?\s*\)", "", strip_math(text))).strip()
+    text = re.sub(r"\s+([.,;:])", r"\1", text)
+    ends = sentence_ends(text)
+    if so_cau and len(ends) >= so_cau and len(text) > ends[so_cau - 1]:
+        text = text[:ends[so_cau - 1]]
+        ends = ends[:so_cau]
     if len(text) <= limit:
         return text
-    cut = text[:limit]
-    m = list(re.finditer(r"[.!?](?=\s+[A-ZĐÀ-Ỹ0-9])", cut))
-    return cut[: m[-1].end()] if m else cut.rsplit(" ", 1)[0] + "…"
+    ok = [e for e in ends if e <= limit]
+    return text[:ok[-1]] if ok else text[:limit].rsplit(" ", 1)[0] + "…"
 
 
 def en_names(it: dict) -> list[str]:
@@ -185,6 +251,28 @@ def enrich(items: list[dict], refresh: bool = False) -> None:
                 it["wiki"] = {**vi, "lang": "vi"} if vi else {**w, "lang": "en"}
                 break
 
+    # Bước 3: kết quả rà soát thủ công - bài chọn tay, cắt câu sai, đánh dấu mức khớp
+    picks = sorted({v for v in WIKI_CHON.values() if v and f"{v[0]}|{v[1]}" not in cache})
+    if picks:
+        with httpx.Client(headers={"User-Agent": UA}, follow_redirects=True) as client:
+            for lang in ("vi", "en"):
+                titles = [t for lg, t in picks if lg == lang]
+                if titles:
+                    found = wiki_lookup(titles, client, api=API if lang == "vi" else API_EN)
+                    for t in titles:
+                        cache[f"{lang}|{t}"] = found.get(t)
+        cache_path.write_text(json.dumps(cache, ensure_ascii=False, indent=1), encoding="utf-8")
+    for it in items:
+        name = it["thuat_ngu"]
+        if name in WIKI_CHON:
+            spec = WIKI_CHON[name]
+            page = cache.get(f"{spec[0]}|{spec[1]}") if spec else None
+            it["wiki"] = {**page, "lang": spec[0]} if page else None
+        if it["wiki"]:
+            if name in WIKI_SO_CAU:
+                it["wiki"] = {**it["wiki"], "extract": first_sentences(it["wiki"]["extract"], so_cau=WIKI_SO_CAU[name])}
+            it["wiki"]["muc_khop"] = "gần đúng" if name in WIKI_GAN_DUNG else "đúng"
+
 
 def link_related(items: list[dict]) -> None:
     """Chỉ giữ thuật ngữ liên quan có trong từ điển (để bấm được), khớp không phân biệt dấu/hoa thường/viết tắt."""
@@ -210,12 +298,12 @@ def write_excel(items: list[dict], path: Path) -> None:
     ws = wb.active
     ws.title = "Từ điển"
     head = ["STT", "Thuật ngữ", "Viết tắt", "Tiếng Anh", "Nhóm", "Định nghĩa (biên soạn)",
-            "Trích Wikipedia", "Bài Wikipedia", "Ngôn ngữ bài", "Thuật ngữ liên quan"]
+            "Trích Wikipedia", "Bài Wikipedia", "Ngôn ngữ bài", "Mức khớp Wikipedia", "Thuật ngữ liên quan"]
     ws.append(head)
     for i, it in enumerate(items, 1):
         w = it.get("wiki") or {}
         ws.append([i, it["thuat_ngu"], it["viet_tat"] or "", it["tieng_anh"], it["nhom"], it["dinh_nghia"],
-                   w.get("extract", ""), w.get("url", ""), {"vi": "Tiếng Việt", "en": "Tiếng Anh"}.get(w.get("lang"), ""),
+                   w.get("extract", ""), w.get("url", ""), {"vi": "Tiếng Việt", "en": "Tiếng Anh"}.get(w.get("lang"), ""), w.get("muc_khop", ""),
                    ", ".join(it["lien_quan"])])
     for c in ws[1]:
         c.font = Font(bold=True, color="FFFFFF")
@@ -223,11 +311,11 @@ def write_excel(items: list[dict], path: Path) -> None:
         c.alignment = Alignment(vertical="center", wrap_text=True)
     for row in ws.iter_rows(min_row=2):
         for c in row:
-            c.alignment = Alignment(vertical="top", wrap_text=c.column in (6, 7, 10))
+            c.alignment = Alignment(vertical="top", wrap_text=c.column in (6, 7, 11))
         if row[7].value:
             row[7].hyperlink = row[7].value
             row[7].font = Font(color="0563C1", underline="single")
-    for col, w in zip("ABCDEFGHIJ", (5, 30, 10, 28, 24, 70, 70, 34, 12, 40)):
+    for col, w in zip("ABCDEFGHIJK", (5, 30, 10, 28, 24, 70, 70, 34, 12, 14, 40)):
         ws.column_dimensions[col].width = w
     ws.freeze_panes = "C2"
     ws.auto_filter.ref = ws.dimensions

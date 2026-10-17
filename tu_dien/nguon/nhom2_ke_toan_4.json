@@ -1,77 +1,328 @@
 [
-{"thuat_ngu": "Khấu hao đường thẳng", "tieng_anh": "Straight-line depreciation", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Phương pháp khấu hao chia đều nguyên giá tài sản cố định cho số năm sử dụng: mức khấu hao năm = nguyên giá / thời gian sử dụng. Ví dụ máy móc nguyên giá 1 tỷ đồng dùng 10 năm thì mỗi năm trích 100 triệu đồng. Đây là phương pháp phổ biến nhất trên BCTC của doanh nghiệp Việt Nam.",
- "lien_quan": ["Khấu hao tài sản cố định", "Khấu hao theo số dư giảm dần", "Nguyên giá"]},
-{"thuat_ngu": "Khấu hao theo số dư giảm dần", "tieng_anh": "Declining balance depreciation", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Phương pháp khấu hao nhanh, trích nhiều ở những năm đầu và giảm dần về sau: mức khấu hao năm = giá trị còn lại × tỷ lệ khấu hao nhanh. Theo Thông tư 45/2013/TT-BTC, tỷ lệ khấu hao nhanh bằng tỷ lệ đường thẳng nhân hệ số điều chỉnh 1,5; 2,0 hoặc 2,5 tùy thời gian sử dụng. Phương pháp này phù hợp với tài sản công nghệ nhanh lạc hậu.",
- "lien_quan": ["Khấu hao tài sản cố định", "Khấu hao đường thẳng", "Hao mòn lũy kế"]},
-{"thuat_ngu": "Phân bổ chi phí", "tieng_anh": "Cost allocation (Amortisation)", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Việc chia một khoản chi phí liên quan đến nhiều kỳ hoặc nhiều đối tượng vào từng kỳ, từng đối tượng theo một tiêu thức hợp lý. Ví dụ phân bổ chi phí trả trước vào chi phí của các kỳ hưởng lợi, phân bổ chi phí sản xuất chung cho từng loại sản phẩm, hay phân bổ lợi thế thương mại trên BCTC hợp nhất.",
- "lien_quan": ["Chi phí trả trước", "Nguyên tắc phù hợp", "Lợi thế thương mại", "Khấu hao tài sản cố định"]},
-{"thuat_ngu": "Dự phòng giảm giá hàng tồn kho", "tieng_anh": "Allowance for inventory write-down", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Khoản trích lập khi giá trị thuần có thể thực hiện được của hàng tồn kho (giá bán ước tính trừ chi phí để bán) thấp hơn giá gốc, theo dõi trên TK 2294 và ghi tăng giá vốn hàng bán. Trên Bảng cân đối kế toán là chỉ tiêu mã 149 (ghi số âm). Khi giá hàng hóa phục hồi, khoản hoàn nhập dự phòng làm giảm giá vốn và có thể khiến lợi nhuận quý tăng đột biến.",
- "lien_quan": ["Hàng tồn kho", "Giá vốn hàng bán", "Nguyên tắc thận trọng"]},
-{"thuat_ngu": "Dự phòng phải thu khó đòi", "tieng_anh": "Allowance for doubtful debts", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Khoản trích lập cho các khoản phải thu có khả năng không thu hồi được, ví dụ nợ quá hạn hoặc khách hàng lâm vào phá sản, theo dõi trên TK 2293 và ghi vào chi phí quản lý doanh nghiệp. Theo Thông tư 48/2019/TT-BTC, mức trích tăng dần theo thời gian quá hạn: 30%, 50%, 70% đến 100%. Trên Bảng cân đối kế toán, phần ngắn hạn là chỉ tiêu mã 137 (ghi số âm).",
- "lien_quan": ["Phải thu khách hàng", "Chi phí quản lý doanh nghiệp", "Nguyên tắc thận trọng"]},
-{"thuat_ngu": "Ghi nhận doanh thu", "tieng_anh": "Revenue recognition", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Nguyên tắc xác định thời điểm và giá trị doanh thu được ghi vào sổ sách. Theo VAS 14, doanh thu bán hàng được ghi nhận khi doanh nghiệp đã chuyển giao phần lớn rủi ro và lợi ích của hàng hóa cho người mua, không còn kiểm soát hàng hóa, doanh thu và chi phí xác định được đáng tin cậy và chắc chắn thu được lợi ích kinh tế. IFRS 15 dùng mô hình 5 bước dựa trên việc hoàn thành nghĩa vụ thực hiện hợp đồng.",
- "lien_quan": ["Doanh thu bán hàng và cung cấp dịch vụ", "Cơ sở dồn tích", "Người mua trả tiền trước", "Chuẩn mực báo cáo tài chính quốc tế"]},
-{"thuat_ngu": "Hợp nhất kinh doanh", "tieng_anh": "Business combination", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Việc kết hợp các doanh nghiệp hoặc hoạt động kinh doanh riêng biệt thành một đơn vị báo cáo, phổ biến nhất là khi một công ty mua quyền kiểm soát công ty khác (VAS 11, IFRS 3). Bên mua ghi nhận tài sản và nợ của bên bị mua theo giá trị hợp lý; phần giá phí vượt quá giá trị hợp lý tài sản thuần được ghi nhận là lợi thế thương mại.",
- "lien_quan": ["Lợi thế thương mại", "Công ty mẹ", "Công ty con", "Báo cáo tài chính hợp nhất"]},
-{"thuat_ngu": "Lợi thế thương mại", "tieng_anh": "Goodwill", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Phần chênh lệch giữa giá mua một doanh nghiệp và phần sở hữu của bên mua trong giá trị hợp lý tài sản thuần của doanh nghiệp đó, thể hiện các lợi ích như thương hiệu, khách hàng, hiệu ứng cộng hưởng. Theo quy định Việt Nam, lợi thế thương mại trên BCTC hợp nhất được phân bổ dần trong tối đa 10 năm, còn theo IFRS thì không phân bổ mà kiểm tra suy giảm giá trị hằng năm.",
- "lien_quan": ["Hợp nhất kinh doanh", "Báo cáo tài chính hợp nhất", "Phân bổ chi phí", "Chuẩn mực báo cáo tài chính quốc tế"]},
-{"thuat_ngu": "Công ty mẹ", "tieng_anh": "Parent company", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Công ty có quyền kiểm soát một hoặc nhiều công ty con, tức có quyền chi phối chính sách tài chính và hoạt động của các công ty đó. Công ty mẹ phải lập cả BCTC riêng và BCTC hợp nhất; trên BCTC hợp nhất, lợi nhuận sau thuế thuộc cổ đông công ty mẹ được trình bày riêng tại mã 61.",
- "lien_quan": ["Công ty con", "Báo cáo tài chính hợp nhất", "Báo cáo tài chính riêng", "Lợi ích cổ đông không kiểm soát"]},
-{"thuat_ngu": "Công ty con", "tieng_anh": "Subsidiary", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Doanh nghiệp chịu sự kiểm soát của công ty mẹ, thường vì công ty mẹ nắm trên 50% quyền biểu quyết hoặc có quyền bổ nhiệm đa số thành viên hội đồng quản trị. Toàn bộ tài sản, nợ, doanh thu và chi phí của công ty con được cộng vào BCTC hợp nhất, phần không thuộc công ty mẹ được tách thành lợi ích cổ đông không kiểm soát.",
- "lien_quan": ["Công ty mẹ", "Báo cáo tài chính hợp nhất", "Lợi ích cổ đông không kiểm soát", "Hợp nhất kinh doanh"]},
-{"thuat_ngu": "Công ty liên kết", "tieng_anh": "Associate", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Doanh nghiệp mà nhà đầu tư có ảnh hưởng đáng kể nhưng không kiểm soát, thường nắm từ 20% đến dưới 50% quyền biểu quyết (VAS 07). Trên BCTC hợp nhất, khoản đầu tư vào công ty liên kết được kế toán theo phương pháp vốn chủ sở hữu, không cộng gộp từng khoản mục như công ty con.",
- "lien_quan": ["Phương pháp vốn chủ sở hữu", "Công ty con", "Báo cáo tài chính hợp nhất"]},
-{"thuat_ngu": "Phương pháp vốn chủ sở hữu", "tieng_anh": "Equity method", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Phương pháp kế toán khoản đầu tư vào công ty liên kết, liên doanh: ban đầu ghi theo giá gốc, sau đó điều chỉnh tăng giảm theo phần sở hữu của nhà đầu tư trong lãi lỗ của bên nhận đầu tư và giảm khi nhận cổ tức. Trên BCTC hợp nhất, phần lãi hoặc lỗ này trình bày tại mã 24 của Báo cáo kết quả hoạt động kinh doanh.",
- "lien_quan": ["Công ty liên kết", "Báo cáo tài chính hợp nhất", "Lợi nhuận thuần từ hoạt động kinh doanh"]},
-{"thuat_ngu": "Giao dịch với các bên liên quan", "tieng_anh": "Related party transactions", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Giao dịch mua bán, cho vay, chuyển giao nguồn lực giữa doanh nghiệp với các bên có quan hệ đặc biệt như công ty mẹ, công ty con, công ty liên kết, thành viên hội đồng quản trị, ban giám đốc và người thân của họ. Theo VAS 26, doanh nghiệp phải thuyết minh các giao dịch và số dư này. Nhà đầu tư nên chú ý vì đây có thể là kênh chuyển lợi ích không công bằng.",
- "lien_quan": ["Thuyết minh báo cáo tài chính", "Công ty mẹ", "Công ty liên kết", "Công bố thông tin"]},
-{"thuat_ngu": "Sự kiện phát sinh sau ngày kết thúc kỳ kế toán", "tieng_anh": "Events after the reporting period", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Những sự kiện có ảnh hưởng tốt hoặc xấu xảy ra từ sau ngày kết thúc kỳ kế toán đến ngày phát hành BCTC (VAS 23). Sự kiện cung cấp thêm bằng chứng về tình trạng đã có tại ngày kết thúc kỳ (ví dụ khách hàng lớn phá sản) phải điều chỉnh số liệu, còn sự kiện mới phát sinh sau đó (ví dụ phát hành cổ phiếu, hỏa hoạn) chỉ cần thuyết minh.",
- "lien_quan": ["Kỳ kế toán", "Thuyết minh báo cáo tài chính", "Điều chỉnh hồi tố"]},
-{"thuat_ngu": "Điều chỉnh hồi tố", "tieng_anh": "Retrospective restatement", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Việc sửa lại số liệu của các kỳ trước như thể chính sách kế toán mới đã luôn được áp dụng hoặc như thể sai sót trọng yếu chưa từng xảy ra (VAS 29). Khi đó số liệu so sánh trên BCTC được trình bày lại, nên cột số đầu năm hay kỳ trước có thể khác với số đã công bố trước đây.",
- "lien_quan": ["Nguyên tắc nhất quán", "Trọng yếu", "Sự kiện phát sinh sau ngày kết thúc kỳ kế toán"]},
-{"thuat_ngu": "Kiểm toán độc lập", "tieng_anh": "Independent audit", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Hoạt động do kiểm toán viên và doanh nghiệp kiểm toán độc lập thực hiện nhằm kiểm tra và đưa ra ý kiến về việc BCTC có phản ánh trung thực, hợp lý trên các khía cạnh trọng yếu hay không, theo Luật Kiểm toán độc lập 2011 và hệ thống chuẩn mực kiểm toán Việt Nam (VSA). BCTC năm của công ty niêm yết bắt buộc phải được kiểm toán bởi tổ chức kiểm toán được Ủy ban Chứng khoán Nhà nước chấp thuận.",
- "lien_quan": ["Kiểm toán viên", "Ý kiến chấp nhận toàn phần", "Soát xét báo cáo tài chính", "Trọng yếu"]},
-{"thuat_ngu": "Kiểm toán viên", "tieng_anh": "Auditor", "viet_tat": "KTV", "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Người có chứng chỉ kiểm toán viên do Bộ Tài chính cấp (hoặc chứng chỉ nước ngoài được công nhận) và đăng ký hành nghề tại một doanh nghiệp kiểm toán. Kiểm toán viên lập kế hoạch, thu thập bằng chứng và ký báo cáo kiểm toán, đồng thời phải giữ tính độc lập với doanh nghiệp được kiểm toán.",
- "lien_quan": ["Kiểm toán độc lập", "Soát xét báo cáo tài chính", "Kiểm soát nội bộ"]},
-{"thuat_ngu": "Soát xét báo cáo tài chính", "tieng_anh": "Review of financial statements", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Dịch vụ đảm bảo ở mức thấp hơn kiểm toán, chủ yếu gồm phỏng vấn và thủ tục phân tích, thường áp dụng cho BCTC bán niên (VSA 2410). Kết luận soát xét có dạng không thấy có vấn đề gì khiến kiểm toán viên cho rằng BCTC không trung thực, hợp lý, chứ không khẳng định như ý kiến kiểm toán.",
- "lien_quan": ["Báo cáo tài chính bán niên", "Kiểm toán độc lập", "Kiểm toán viên"]},
-{"thuat_ngu": "Ý kiến chấp nhận toàn phần", "tieng_anh": "Unqualified (unmodified) opinion", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Loại ý kiến kiểm toán tốt nhất, khi kiểm toán viên kết luận BCTC đã phản ánh trung thực và hợp lý trên các khía cạnh trọng yếu, phù hợp với chuẩn mực và chế độ kế toán (VSA 700). Ý kiến này vẫn có thể kèm đoạn vấn đề cần nhấn mạnh mà không làm thay đổi bản chất chấp nhận.",
- "lien_quan": ["Kiểm toán độc lập", "Ý kiến ngoại trừ", "Vấn đề cần nhấn mạnh"]},
-{"thuat_ngu": "Ý kiến ngoại trừ", "tieng_anh": "Qualified opinion", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Ý kiến kiểm toán khi BCTC nhìn chung trung thực, hợp lý, ngoại trừ một số vấn đề có sai sót trọng yếu hoặc kiểm toán viên không thu thập đủ bằng chứng, nhưng ảnh hưởng không lan tỏa ra toàn bộ BCTC (VSA 705). Nhà đầu tư nên đọc kỹ đoạn cơ sở của ý kiến ngoại trừ vì có thể làm thay đổi lợi nhuận thực tế; cổ phiếu có thể bị đưa vào diện cảnh báo.",
- "lien_quan": ["Ý kiến chấp nhận toàn phần", "Ý kiến trái ngược", "Từ chối đưa ra ý kiến", "Trọng yếu"]},
-{"thuat_ngu": "Ý kiến trái ngược", "tieng_anh": "Adverse opinion", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Ý kiến kiểm toán khi kiểm toán viên kết luận BCTC có sai sót trọng yếu và lan tỏa, tức BCTC không phản ánh trung thực, hợp lý tình hình tài chính của doanh nghiệp (VSA 705). Đây là ý kiến rất xấu, có thể dẫn đến việc cổ phiếu bị hủy niêm yết bắt buộc theo quy định về chứng khoán.",
- "lien_quan": ["Ý kiến ngoại trừ", "Từ chối đưa ra ý kiến", "Trọng yếu", "Kiểm toán độc lập"]},
-{"thuat_ngu": "Từ chối đưa ra ý kiến", "tieng_anh": "Disclaimer of opinion", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Trường hợp kiểm toán viên không thể đưa ra ý kiến về BCTC vì không thu thập được đầy đủ bằng chứng thích hợp, trong khi ảnh hưởng có thể có là trọng yếu và lan tỏa (VSA 705). Giống ý kiến trái ngược, đây là tín hiệu rủi ro rất cao về độ tin cậy của số liệu và có thể khiến cổ phiếu bị hủy niêm yết.",
- "lien_quan": ["Ý kiến trái ngược", "Ý kiến ngoại trừ", "Kiểm toán độc lập", "Hoạt động liên tục"]},
-{"thuat_ngu": "Vấn đề cần nhấn mạnh", "tieng_anh": "Emphasis of matter", "viet_tat": null, "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Đoạn trong báo cáo kiểm toán dùng để lưu ý người đọc về một vấn đề đã được trình bày trong BCTC mà kiểm toán viên cho là quan trọng, như sự không chắc chắn về khả năng hoạt động liên tục hay một vụ kiện lớn (VSA 706). Đoạn này không làm thay đổi ý kiến kiểm toán nhưng là thông tin cảnh báo đáng chú ý.",
- "lien_quan": ["Ý kiến chấp nhận toàn phần", "Hoạt động liên tục", "Kiểm toán viên"]},
-{"thuat_ngu": "Kiểm soát nội bộ", "tieng_anh": "Internal control", "viet_tat": "KSNB", "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Hệ thống quy trình, chính sách do ban lãnh đạo thiết lập nhằm đảm bảo hợp lý rằng BCTC đáng tin cậy, tài sản được bảo vệ, hoạt động hiệu quả và tuân thủ pháp luật. Theo khung COSO, kiểm soát nội bộ gồm môi trường kiểm soát, đánh giá rủi ro, hoạt động kiểm soát, thông tin và truyền thông, giám sát. Thông tư 99/2025/TT-BTC yêu cầu doanh nghiệp xây dựng hệ thống kiểm soát nội bộ.",
- "lien_quan": ["Kiểm toán độc lập", "Kiểm toán viên", "Báo cáo tài chính"]},
-{"thuat_ngu": "Công bố thông tin", "tieng_anh": "Information disclosure", "viet_tat": "CBTT", "nhom": "Kế toán & Báo cáo tài chính",
- "dinh_nghia": "Nghĩa vụ của công ty đại chúng và niêm yết phải công khai thông tin cho nhà đầu tư một cách đầy đủ, kịp thời, chính xác, gồm thông tin định kỳ (BCTC quý, bán niên, năm, báo cáo thường niên), thông tin bất thường và thông tin theo yêu cầu. Việc công bố thực hiện theo Luật Chứng khoán 2019 và các thông tư hướng dẫn như Thông tư 96/2020/TT-BTC; chậm công bố BCTC có thể khiến cổ phiếu bị cảnh báo.",
- "lien_quan": ["Báo cáo tài chính giữa niên độ", "Báo cáo tài chính bán niên", "Giao dịch với các bên liên quan", "Kiểm toán độc lập"]}
+{
+"thuat_ngu": "Khấu hao đường thẳng",
+"tieng_anh": "Straight-line depreciation",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Phương pháp khấu hao chia đều nguyên giá tài sản cố định cho số năm sử dụng: mức khấu hao năm = nguyên giá / thời gian sử dụng. Ví dụ máy móc nguyên giá 1 tỷ đồng dùng 10 năm thì mỗi năm trích 100 triệu đồng. Đây là phương pháp phổ biến nhất trên BCTC của doanh nghiệp Việt Nam.",
+"lien_quan": [
+"Khấu hao tài sản cố định",
+"Khấu hao theo số dư giảm dần",
+"Nguyên giá"
+]
+},
+{
+"thuat_ngu": "Khấu hao theo số dư giảm dần",
+"tieng_anh": "Declining balance depreciation",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Phương pháp khấu hao nhanh, trích nhiều ở những năm đầu và giảm dần về sau: mức khấu hao năm = giá trị còn lại × tỷ lệ khấu hao nhanh. Theo Thông tư 45/2013/TT-BTC, tỷ lệ khấu hao nhanh bằng tỷ lệ đường thẳng nhân hệ số điều chỉnh 1,5; 2,0 hoặc 2,5 tùy thời gian sử dụng. Phương pháp này phù hợp với tài sản công nghệ nhanh lạc hậu.",
+"lien_quan": [
+"Khấu hao tài sản cố định",
+"Khấu hao đường thẳng",
+"Hao mòn lũy kế"
+]
+},
+{
+"thuat_ngu": "Phân bổ chi phí",
+"tieng_anh": "Cost allocation (Amortisation)",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Việc chia một khoản chi phí liên quan đến nhiều kỳ hoặc nhiều đối tượng vào từng kỳ, từng đối tượng theo một tiêu thức hợp lý. Ví dụ phân bổ chi phí trả trước vào chi phí của các kỳ hưởng lợi, phân bổ chi phí sản xuất chung cho từng loại sản phẩm, hay phân bổ lợi thế thương mại trên BCTC hợp nhất.",
+"lien_quan": [
+"Chi phí trả trước",
+"Nguyên tắc phù hợp",
+"Lợi thế thương mại",
+"Khấu hao tài sản cố định"
+]
+},
+{
+"thuat_ngu": "Dự phòng giảm giá hàng tồn kho",
+"tieng_anh": "Allowance for inventory write-down",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Khoản trích lập khi giá trị thuần có thể thực hiện được của hàng tồn kho (giá bán ước tính trừ chi phí để hoàn thành và chi phí để bán) thấp hơn giá gốc; theo dõi trên TK 2294 và ghi tăng giá vốn hàng bán. Từ năm tài chính 2026, trên Báo cáo tình hình tài chính là chỉ tiêu mã 142, ghi số âm (theo TT200 là mã 149). Khi giá hàng hóa phục hồi, khoản hoàn nhập dự phòng làm giảm giá vốn và có thể khiến lợi nhuận quý tăng đột biến.",
+"lien_quan": [
+"Hàng tồn kho",
+"Giá vốn hàng bán",
+"Nguyên tắc thận trọng"
+]
+},
+{
+"thuat_ngu": "Dự phòng phải thu khó đòi",
+"tieng_anh": "Allowance for doubtful debts",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Khoản trích lập cho các khoản phải thu có khả năng không thu hồi được, ví dụ nợ quá hạn hoặc khách hàng lâm vào phá sản; theo dõi trên TK 2293 và ghi vào chi phí quản lý doanh nghiệp. Theo Thông tư 48/2019/TT-BTC, mức trích là 30% với nợ quá hạn từ 6 tháng đến dưới 1 năm, 50% từ 1 đến dưới 2 năm, 70% từ 2 đến dưới 3 năm và 100% từ 3 năm trở lên. Từ năm tài chính 2026, phần ngắn hạn là chỉ tiêu mã 136 trên Báo cáo tình hình tài chính, ghi số âm (theo TT200 là mã 137).",
+"lien_quan": [
+"Phải thu khách hàng",
+"Chi phí quản lý doanh nghiệp",
+"Nguyên tắc thận trọng"
+]
+},
+{
+"thuat_ngu": "Ghi nhận doanh thu",
+"tieng_anh": "Revenue recognition",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Nguyên tắc xác định thời điểm và giá trị doanh thu được ghi vào sổ sách. Theo VAS 14, doanh thu bán hàng được ghi nhận khi doanh nghiệp đã chuyển giao phần lớn rủi ro và lợi ích của hàng hóa cho người mua, không còn kiểm soát hàng hóa, doanh thu và chi phí xác định được đáng tin cậy và chắc chắn thu được lợi ích kinh tế. IFRS 15 dùng mô hình 5 bước dựa trên việc hoàn thành nghĩa vụ thực hiện hợp đồng.",
+"lien_quan": [
+"Doanh thu bán hàng và cung cấp dịch vụ",
+"Cơ sở dồn tích",
+"Người mua trả tiền trước",
+"Chuẩn mực báo cáo tài chính quốc tế"
+]
+},
+{
+"thuat_ngu": "Hợp nhất kinh doanh",
+"tieng_anh": "Business combination",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Việc kết hợp các doanh nghiệp hoặc hoạt động kinh doanh riêng biệt thành một đơn vị báo cáo, phổ biến nhất là khi một công ty mua quyền kiểm soát công ty khác (VAS 11, IFRS 3). Bên mua ghi nhận tài sản và nợ của bên bị mua theo giá trị hợp lý; phần giá phí vượt quá giá trị hợp lý tài sản thuần được ghi nhận là lợi thế thương mại.",
+"lien_quan": [
+"Lợi thế thương mại",
+"Công ty mẹ",
+"Công ty con",
+"Báo cáo tài chính hợp nhất"
+]
+},
+{
+"thuat_ngu": "Lợi thế thương mại",
+"tieng_anh": "Goodwill",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Phần chênh lệch giữa giá mua một doanh nghiệp và phần sở hữu của bên mua trong giá trị hợp lý tài sản thuần của doanh nghiệp đó, thể hiện các lợi ích như thương hiệu, khách hàng, hiệu ứng cộng hưởng. Theo quy định Việt Nam, lợi thế thương mại trên BCTC hợp nhất được phân bổ dần trong tối đa 10 năm, còn theo IFRS thì không phân bổ mà kiểm tra suy giảm giá trị hằng năm.",
+"lien_quan": [
+"Hợp nhất kinh doanh",
+"Báo cáo tài chính hợp nhất",
+"Phân bổ chi phí",
+"Chuẩn mực báo cáo tài chính quốc tế"
+]
+},
+{
+"thuat_ngu": "Công ty mẹ",
+"tieng_anh": "Parent company",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Công ty có quyền kiểm soát một hoặc nhiều công ty con, tức có quyền chi phối chính sách tài chính và hoạt động của các công ty đó. Công ty mẹ phải lập cả BCTC riêng và BCTC hợp nhất; trên BCTC hợp nhất, lợi nhuận sau thuế thuộc cổ đông công ty mẹ được trình bày riêng tại mã 61.",
+"lien_quan": [
+"Công ty con",
+"Báo cáo tài chính hợp nhất",
+"Báo cáo tài chính riêng",
+"Lợi ích cổ đông không kiểm soát"
+]
+},
+{
+"thuat_ngu": "Công ty con",
+"tieng_anh": "Subsidiary",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Doanh nghiệp chịu sự kiểm soát của công ty mẹ, thường vì công ty mẹ nắm trên 50% quyền biểu quyết hoặc có quyền bổ nhiệm đa số thành viên hội đồng quản trị. Toàn bộ tài sản, nợ, doanh thu và chi phí của công ty con được cộng vào BCTC hợp nhất, phần không thuộc công ty mẹ được tách thành lợi ích cổ đông không kiểm soát.",
+"lien_quan": [
+"Công ty mẹ",
+"Báo cáo tài chính hợp nhất",
+"Lợi ích cổ đông không kiểm soát",
+"Hợp nhất kinh doanh"
+]
+},
+{
+"thuat_ngu": "Công ty liên kết",
+"tieng_anh": "Associate",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Doanh nghiệp mà nhà đầu tư có ảnh hưởng đáng kể nhưng không kiểm soát, thường nắm từ 20% đến dưới 50% quyền biểu quyết (VAS 07). Trên BCTC hợp nhất, khoản đầu tư vào công ty liên kết được kế toán theo phương pháp vốn chủ sở hữu, không cộng gộp từng khoản mục như công ty con.",
+"lien_quan": [
+"Phương pháp vốn chủ sở hữu",
+"Công ty con",
+"Báo cáo tài chính hợp nhất"
+]
+},
+{
+"thuat_ngu": "Phương pháp vốn chủ sở hữu",
+"tieng_anh": "Equity method",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Phương pháp kế toán khoản đầu tư vào công ty liên kết, liên doanh: ban đầu ghi theo giá gốc, sau đó tăng hoặc giảm theo phần sở hữu của nhà đầu tư trong lãi, lỗ của bên nhận đầu tư, và giảm khi nhận cổ tức. Trên BCTC hợp nhất từ năm tài chính 2026, phần lãi hoặc lỗ này trình bày ở mã 27 của Báo cáo kết quả hoạt động kinh doanh (theo mẫu cũ là mã 24).",
+"lien_quan": [
+"Công ty liên kết",
+"Báo cáo tài chính hợp nhất",
+"Lợi nhuận thuần từ hoạt động kinh doanh"
+]
+},
+{
+"thuat_ngu": "Giao dịch với các bên liên quan",
+"tieng_anh": "Related party transactions",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Giao dịch mua bán, cho vay, chuyển giao nguồn lực giữa doanh nghiệp với các bên có quan hệ đặc biệt như công ty mẹ, công ty con, công ty liên kết, thành viên hội đồng quản trị, ban giám đốc và người thân của họ. Theo VAS 26, doanh nghiệp phải thuyết minh các giao dịch và số dư này. Nhà đầu tư nên chú ý vì đây có thể là kênh chuyển lợi ích không công bằng.",
+"lien_quan": [
+"Thuyết minh báo cáo tài chính",
+"Công ty mẹ",
+"Công ty liên kết",
+"Công bố thông tin"
+]
+},
+{
+"thuat_ngu": "Sự kiện phát sinh sau ngày kết thúc kỳ kế toán",
+"tieng_anh": "Events after the reporting period",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Những sự kiện có ảnh hưởng tốt hoặc xấu xảy ra từ sau ngày kết thúc kỳ kế toán đến ngày phát hành BCTC (VAS 23). Sự kiện cung cấp thêm bằng chứng về tình trạng đã có tại ngày kết thúc kỳ (ví dụ khách hàng lớn phá sản) phải điều chỉnh số liệu, còn sự kiện mới phát sinh sau đó (ví dụ phát hành cổ phiếu, hỏa hoạn) chỉ cần thuyết minh.",
+"lien_quan": [
+"Kỳ kế toán",
+"Thuyết minh báo cáo tài chính",
+"Điều chỉnh hồi tố"
+]
+},
+{
+"thuat_ngu": "Điều chỉnh hồi tố",
+"tieng_anh": "Retrospective restatement",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Việc sửa lại số liệu của các kỳ trước như thể chính sách kế toán mới đã luôn được áp dụng hoặc như thể sai sót trọng yếu chưa từng xảy ra (VAS 29). Khi đó số liệu so sánh trên BCTC được trình bày lại, nên cột số đầu năm hay kỳ trước có thể khác với số đã công bố trước đây.",
+"lien_quan": [
+"Nguyên tắc nhất quán",
+"Trọng yếu",
+"Sự kiện phát sinh sau ngày kết thúc kỳ kế toán"
+]
+},
+{
+"thuat_ngu": "Kiểm toán độc lập",
+"tieng_anh": "Independent audit",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Hoạt động do kiểm toán viên và doanh nghiệp kiểm toán độc lập thực hiện nhằm kiểm tra và đưa ra ý kiến về việc BCTC có phản ánh trung thực, hợp lý trên các khía cạnh trọng yếu hay không, theo Luật Kiểm toán độc lập 2011 và hệ thống chuẩn mực kiểm toán Việt Nam (VSA). BCTC năm của công ty niêm yết bắt buộc phải được kiểm toán bởi tổ chức kiểm toán được Ủy ban Chứng khoán Nhà nước chấp thuận.",
+"lien_quan": [
+"Kiểm toán viên",
+"Ý kiến chấp nhận toàn phần",
+"Soát xét báo cáo tài chính",
+"Trọng yếu"
+]
+},
+{
+"thuat_ngu": "Kiểm toán viên",
+"tieng_anh": "Auditor",
+"viet_tat": "KTV",
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Người có chứng chỉ kiểm toán viên do Bộ Tài chính cấp (hoặc chứng chỉ nước ngoài được công nhận) và đăng ký hành nghề tại một doanh nghiệp kiểm toán. Kiểm toán viên lập kế hoạch, thu thập bằng chứng và ký báo cáo kiểm toán, đồng thời phải giữ tính độc lập với doanh nghiệp được kiểm toán.",
+"lien_quan": [
+"Kiểm toán độc lập",
+"Soát xét báo cáo tài chính",
+"Kiểm soát nội bộ"
+]
+},
+{
+"thuat_ngu": "Soát xét báo cáo tài chính",
+"tieng_anh": "Review of financial statements",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Dịch vụ đảm bảo ở mức thấp hơn kiểm toán, chủ yếu gồm phỏng vấn và thủ tục phân tích, thường áp dụng cho BCTC bán niên (VSA 2410). Kết luận soát xét có dạng không thấy có vấn đề gì khiến kiểm toán viên cho rằng BCTC không trung thực, hợp lý, chứ không khẳng định như ý kiến kiểm toán.",
+"lien_quan": [
+"Báo cáo tài chính bán niên",
+"Kiểm toán độc lập",
+"Kiểm toán viên"
+]
+},
+{
+"thuat_ngu": "Ý kiến chấp nhận toàn phần",
+"tieng_anh": "Unqualified (unmodified) opinion",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Loại ý kiến kiểm toán tốt nhất, khi kiểm toán viên kết luận BCTC đã phản ánh trung thực và hợp lý trên các khía cạnh trọng yếu, phù hợp với chuẩn mực và chế độ kế toán (VSA 700). Ý kiến này vẫn có thể kèm đoạn vấn đề cần nhấn mạnh mà không làm thay đổi bản chất chấp nhận.",
+"lien_quan": [
+"Kiểm toán độc lập",
+"Ý kiến ngoại trừ",
+"Vấn đề cần nhấn mạnh"
+]
+},
+{
+"thuat_ngu": "Ý kiến ngoại trừ",
+"tieng_anh": "Qualified opinion",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Ý kiến kiểm toán khi BCTC nhìn chung trung thực, hợp lý, ngoại trừ một số vấn đề có sai sót trọng yếu hoặc kiểm toán viên không thu thập đủ bằng chứng, nhưng ảnh hưởng không lan tỏa ra toàn bộ BCTC (VSA 705). Nhà đầu tư nên đọc kỹ đoạn cơ sở của ý kiến ngoại trừ vì có thể làm thay đổi lợi nhuận thực tế; cổ phiếu có thể bị đưa vào diện cảnh báo.",
+"lien_quan": [
+"Ý kiến chấp nhận toàn phần",
+"Ý kiến trái ngược",
+"Từ chối đưa ra ý kiến",
+"Trọng yếu"
+]
+},
+{
+"thuat_ngu": "Ý kiến trái ngược",
+"tieng_anh": "Adverse opinion",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Ý kiến kiểm toán khi kiểm toán viên kết luận BCTC có sai sót trọng yếu và lan tỏa, tức BCTC không phản ánh trung thực, hợp lý tình hình tài chính của doanh nghiệp (VSA 705). Đây là ý kiến rất xấu, có thể dẫn đến việc cổ phiếu bị hủy niêm yết bắt buộc theo quy định về chứng khoán.",
+"lien_quan": [
+"Ý kiến ngoại trừ",
+"Từ chối đưa ra ý kiến",
+"Trọng yếu",
+"Kiểm toán độc lập"
+]
+},
+{
+"thuat_ngu": "Từ chối đưa ra ý kiến",
+"tieng_anh": "Disclaimer of opinion",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Trường hợp kiểm toán viên không thể đưa ra ý kiến về BCTC vì không thu thập được đầy đủ bằng chứng thích hợp, trong khi ảnh hưởng có thể có là trọng yếu và lan tỏa (VSA 705). Giống ý kiến trái ngược, đây là tín hiệu rủi ro rất cao về độ tin cậy của số liệu và có thể khiến cổ phiếu bị hủy niêm yết.",
+"lien_quan": [
+"Ý kiến trái ngược",
+"Ý kiến ngoại trừ",
+"Kiểm toán độc lập",
+"Hoạt động liên tục"
+]
+},
+{
+"thuat_ngu": "Vấn đề cần nhấn mạnh",
+"tieng_anh": "Emphasis of matter",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Đoạn trong báo cáo kiểm toán dùng để lưu ý người đọc về một vấn đề đã được trình bày trong BCTC mà kiểm toán viên cho là quan trọng, như sự không chắc chắn về khả năng hoạt động liên tục hay một vụ kiện lớn (VSA 706). Đoạn này không làm thay đổi ý kiến kiểm toán nhưng là thông tin cảnh báo đáng chú ý.",
+"lien_quan": [
+"Ý kiến chấp nhận toàn phần",
+"Hoạt động liên tục",
+"Kiểm toán viên"
+]
+},
+{
+"thuat_ngu": "Kiểm soát nội bộ",
+"tieng_anh": "Internal control",
+"viet_tat": "KSNB",
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Hệ thống quy trình, chính sách do ban lãnh đạo thiết lập nhằm đảm bảo hợp lý rằng BCTC đáng tin cậy, tài sản được bảo vệ, hoạt động hiệu quả và tuân thủ pháp luật. Theo khung COSO, kiểm soát nội bộ gồm môi trường kiểm soát, đánh giá rủi ro, hoạt động kiểm soát, thông tin và truyền thông, giám sát. Thông tư 99/2025/TT-BTC yêu cầu doanh nghiệp xây dựng hệ thống kiểm soát nội bộ.",
+"lien_quan": [
+"Kiểm toán độc lập",
+"Kiểm toán viên",
+"Báo cáo tài chính"
+]
+},
+{
+"thuat_ngu": "Công bố thông tin",
+"tieng_anh": "Information disclosure",
+"viet_tat": "CBTT",
+"nhom": "Chứng khoán & Đầu tư",
+"dinh_nghia": "Nghĩa vụ của công ty đại chúng và niêm yết phải công khai thông tin cho nhà đầu tư một cách đầy đủ, kịp thời, chính xác, gồm thông tin định kỳ (BCTC quý, bán niên, năm, báo cáo thường niên), thông tin bất thường và thông tin theo yêu cầu. Việc công bố thực hiện theo Luật Chứng khoán 2019 và các thông tư hướng dẫn như Thông tư 96/2020/TT-BTC; chậm công bố BCTC có thể khiến cổ phiếu bị cảnh báo.",
+"lien_quan": [
+"Báo cáo tài chính giữa niên độ",
+"Báo cáo tài chính bán niên",
+"Giao dịch với các bên liên quan",
+"Kiểm toán độc lập"
+]
+},
+{
+"thuat_ngu": "Giá trị còn lại",
+"tieng_anh": "Net book value (Carrying amount)",
+"viet_tat": null,
+"nhom": "Kế toán & Báo cáo tài chính",
+"dinh_nghia": "Giá trị của tài sản cố định sau khi trừ phần đã khấu hao: Giá trị còn lại = Nguyên giá − Hao mòn lũy kế. Trên Báo cáo tình hình tài chính (Bảng cân đối kế toán), tài sản cố định hữu hình, vô hình và thuê tài chính đều được trình bày theo nguyên giá, giá trị hao mòn lũy kế (ghi số âm) và giá trị còn lại. Giá trị còn lại thấp so với nguyên giá cho thấy tài sản đã cũ, doanh nghiệp có thể sắp phải đầu tư thay thế.",
+"lien_quan": [
+"Nguyên giá",
+"Hao mòn lũy kế",
+"Tài sản cố định",
+"Khấu hao tài sản cố định",
+"Khấu hao đường thẳng"
+]
+}
 ]

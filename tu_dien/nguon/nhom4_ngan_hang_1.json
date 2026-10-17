@@ -1,27 +1,297 @@
 [
-{"thuat_ngu": "Thu nhập lãi thuần", "tieng_anh": "Net interest income", "viet_tat": "NII", "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Phần chênh lệch giữa thu nhập lãi (từ cho vay, đầu tư trái phiếu, tiền gửi tại TCTD khác) và chi phí lãi (trả cho tiền gửi, giấy tờ có giá, vay). Đây là nguồn thu chính của ngân hàng Việt Nam, thường chiếm khoảng 70–80% tổng thu nhập hoạt động.", "lien_quan": ["Biên lãi ròng", "Tổng thu nhập hoạt động", "Tài sản sinh lãi"]},
-{"thuat_ngu": "Biên lãi ròng", "tieng_anh": "Net interest margin", "viet_tat": "NIM", "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Chỉ số đo khả năng sinh lãi từ hoạt động tín dụng: NIM = Thu nhập lãi thuần / Tài sản sinh lãi bình quân. NIM của các ngân hàng Việt Nam thường khoảng 2,5–4,5%; NIM cao cho thấy ngân hàng có nguồn vốn rẻ (CASA cao) hoặc cho vay với lãi suất cao.", "lien_quan": ["Thu nhập lãi thuần", "Tài sản sinh lãi", "Chi phí vốn huy động", "Tỷ lệ tiền gửi không kỳ hạn"]},
-{"thuat_ngu": "Tổng thu nhập hoạt động", "tieng_anh": "Total operating income", "viet_tat": "TOI", "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Tổng các nguồn thu thuần của ngân hàng trong kỳ, gồm thu nhập lãi thuần và thu nhập ngoài lãi (dịch vụ, ngoại hối, chứng khoán, thu nhập khác). Chỉ tiêu này tương đương “doanh thu” khi phân tích ngân hàng, dùng để tính tỷ lệ chi phí trên thu nhập (CIR).", "lien_quan": ["Thu nhập lãi thuần", "Thu nhập ngoài lãi", "Tỷ lệ chi phí trên thu nhập"]},
-{"thuat_ngu": "Thu nhập ngoài lãi", "tieng_anh": "Non-interest income", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Các khoản thu không đến từ chênh lệch lãi, như phí dịch vụ thanh toán, bảo lãnh, phí bán bảo hiểm (bancassurance), lãi kinh doanh ngoại hối, chứng khoán và thu hồi nợ đã xử lý. Tỷ trọng thu nhập ngoài lãi cao giúp lợi nhuận ngân hàng ổn định hơn khi biên lãi thu hẹp.", "lien_quan": ["Lãi thuần từ hoạt động dịch vụ", "Bancassurance", "Thu hồi nợ đã xử lý"]},
-{"thuat_ngu": "Lãi thuần từ hoạt động dịch vụ", "tieng_anh": "Net fee and commission income", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Chênh lệch giữa thu và chi từ các dịch vụ như thanh toán, thẻ, bảo lãnh, tư vấn, đại lý bảo hiểm. Khoản mục này nằm trên báo cáo kết quả hoạt động kinh doanh của ngân hàng và phản ánh mức độ đa dạng hóa nguồn thu.", "lien_quan": ["Thu nhập ngoài lãi", "Bancassurance", "Bảo lãnh ngân hàng"]},
-{"thuat_ngu": "Lãi thuần từ kinh doanh ngoại hối", "tieng_anh": "Net gain from foreign exchange trading", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Lợi nhuận (hoặc lỗ) từ mua bán ngoại tệ giao ngay, kỳ hạn, hoán đổi và đánh giá lại trạng thái ngoại tệ. Khoản này biến động theo tỷ giá và nhu cầu ngoại tệ của doanh nghiệp xuất nhập khẩu.", "lien_quan": ["Thu nhập ngoài lãi", "Rủi ro thị trường"]},
-{"thuat_ngu": "Lãi thuần từ chứng khoán đầu tư", "tieng_anh": "Net gain from investment securities", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Lãi hoặc lỗ từ mua bán và trích lập/hoàn nhập dự phòng các chứng khoán ngân hàng nắm giữ để đầu tư, chủ yếu là trái phiếu chính phủ. Khi lãi suất giảm, giá trái phiếu tăng nên ngân hàng thường ghi nhận lãi lớn ở khoản mục này.", "lien_quan": ["Thu nhập ngoài lãi", "Rủi ro lãi suất"]},
-{"thuat_ngu": "Chi phí hoạt động ngân hàng", "tieng_anh": "Bank operating expenses", "viet_tat": "OPEX", "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Các chi phí để vận hành ngân hàng như lương nhân viên, khấu hao, thuê trụ sở, công nghệ, marketing và phí bảo hiểm tiền gửi. Chi phí này không gồm chi phí lãi và chi phí dự phòng rủi ro tín dụng.", "lien_quan": ["Tỷ lệ chi phí trên thu nhập", "Lợi nhuận trước dự phòng"]},
-{"thuat_ngu": "Tỷ lệ chi phí trên thu nhập", "tieng_anh": "Cost-to-income ratio", "viet_tat": "CIR", "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "CIR = Chi phí hoạt động / Tổng thu nhập hoạt động, đo hiệu quả vận hành của ngân hàng. CIR càng thấp càng tốt; nhiều ngân hàng hiệu quả ở Việt Nam có CIR khoảng 30–35%, trong khi ngân hàng nhỏ có thể trên 50%.", "lien_quan": ["Chi phí hoạt động ngân hàng", "Tổng thu nhập hoạt động", "Ngân hàng số"]},
-{"thuat_ngu": "Lợi nhuận trước dự phòng", "tieng_anh": "Pre-provision operating profit", "viet_tat": "PPOP", "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Lợi nhuận từ hoạt động kinh doanh trước khi trừ chi phí dự phòng rủi ro tín dụng: PPOP = Tổng thu nhập hoạt động − Chi phí hoạt động. Chỉ tiêu này cho thấy “sức kiếm tiền” cốt lõi của ngân hàng, tách khỏi quyết định trích lập dự phòng.", "lien_quan": ["Tổng thu nhập hoạt động", "Chi phí dự phòng rủi ro tín dụng", "Chi phí hoạt động ngân hàng"]},
-{"thuat_ngu": "Chi phí dự phòng rủi ro tín dụng", "tieng_anh": "Credit loss provision expense", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Khoản chi phí ngân hàng trích lập trong kỳ để bù đắp tổn thất có thể xảy ra từ các khoản cho vay, ghi trên báo cáo kết quả kinh doanh. Chi phí dự phòng tăng mạnh thường báo hiệu nợ xấu gia tăng và làm giảm lợi nhuận trước thuế.", "lien_quan": ["Dự phòng cụ thể", "Dự phòng chung", "Chi phí tín dụng", "Nợ xấu"]},
-{"thuat_ngu": "Tài sản sinh lãi", "tieng_anh": "Interest-earning assets", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Các tài sản mang lại thu nhập lãi cho ngân hàng, gồm cho vay khách hàng, tiền gửi và cho vay các TCTD khác, chứng khoán nợ (trái phiếu) và tiền gửi tại NHNN. Đây là mẫu số để tính biên lãi ròng (NIM).", "lien_quan": ["Biên lãi ròng", "Lợi suất tài sản sinh lãi", "Cho vay khách hàng"]},
-{"thuat_ngu": "Lợi suất tài sản sinh lãi", "tieng_anh": "Yield on earning assets", "viet_tat": "YOEA", "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "YOEA = Thu nhập lãi / Tài sản sinh lãi bình quân, cho biết lãi suất bình quân ngân hàng thu được trên tài sản. So sánh YOEA với chi phí vốn huy động giúp giải thích biến động của NIM.", "lien_quan": ["Tài sản sinh lãi", "Chi phí vốn huy động", "Biên lãi ròng"]},
-{"thuat_ngu": "Chi phí vốn huy động", "tieng_anh": "Cost of funds", "viet_tat": "COF", "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Lãi suất bình quân ngân hàng phải trả cho nguồn vốn: COF = Chi phí lãi / Nợ chịu lãi bình quân (tiền gửi, giấy tờ có giá, vay liên ngân hàng). Ngân hàng có tỷ lệ CASA cao thường có COF thấp và lợi thế cạnh tranh về NIM.", "lien_quan": ["Tỷ lệ tiền gửi không kỳ hạn", "Lãi suất huy động", "Biên lãi ròng"]},
-{"thuat_ngu": "Chênh lệch lãi suất huy động – cho vay", "tieng_anh": "Interest rate spread", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Khoảng cách giữa lãi suất cho vay bình quân và lãi suất huy động bình quân của ngân hàng. Chênh lệch này càng lớn thì ngân hàng càng có lãi trên mỗi đồng cho vay, nhưng NHNN thường khuyến khích các ngân hàng giảm chênh lệch để hỗ trợ doanh nghiệp.", "lien_quan": ["Lãi suất cho vay", "Lãi suất huy động", "Biên lãi ròng"]},
-{"thuat_ngu": "Bancassurance", "tieng_anh": "Bancassurance", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Hình thức ngân hàng phân phối sản phẩm bảo hiểm cho khách hàng của mình để nhận hoa hồng, thường qua hợp đồng độc quyền dài hạn với doanh nghiệp bảo hiểm (kèm phí trả trước lớn). Từ năm 2023, việc bán bảo hiểm qua ngân hàng bị siết chặt, như cấm ép mua bảo hiểm khi vay vốn.", "lien_quan": ["Thu nhập ngoài lãi", "Lãi thuần từ hoạt động dịch vụ"]},
-{"thuat_ngu": "Hoàn nhập dự phòng", "tieng_anh": "Provision reversal", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Ghi giảm khoản dự phòng đã trích trước đó khi khoản vay được trả nợ, được nâng nhóm nợ hoặc rủi ro giảm, làm giảm chi phí dự phòng trong kỳ. Hoàn nhập lớn có thể làm lợi nhuận tăng đột biến nên cần xem kỹ khi đánh giá chất lượng lợi nhuận.", "lien_quan": ["Chi phí dự phòng rủi ro tín dụng", "Dự phòng cụ thể"]},
-{"thuat_ngu": "Thu hồi nợ đã xử lý", "tieng_anh": "Recovery of written-off debts", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Khoản tiền ngân hàng thu lại được từ các khoản nợ xấu đã dùng dự phòng xóa khỏi bảng cân đối (theo dõi ngoại bảng). Khoản thu này được ghi vào thu nhập khác và có thể đóng góp đáng kể cho lợi nhuận một số năm.", "lien_quan": ["Xóa nợ ngoại bảng", "Thu nhập ngoài lãi", "Nợ xấu"]},
-{"thuat_ngu": "Chi phí tín dụng", "tieng_anh": "Credit cost", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Chi phí tín dụng = Chi phí dự phòng rủi ro tín dụng / Dư nợ cho vay bình quân, đo mức “hao hụt” do rủi ro tín dụng trên mỗi đồng cho vay. Chỉ số này tăng khi chất lượng tài sản xấu đi và là biến số quan trọng khi dự phóng lợi nhuận ngân hàng.", "lien_quan": ["Chi phí dự phòng rủi ro tín dụng", "Dư nợ tín dụng", "Nợ xấu"]},
-{"thuat_ngu": "Định giá điều chuyển vốn nội bộ", "tieng_anh": "Funds transfer pricing", "viet_tat": "FTP", "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Cơ chế ngân hàng “mua” vốn từ bộ phận huy động và “bán” vốn cho bộ phận cho vay theo một giá nội bộ. FTP giúp đo lợi nhuận của từng chi nhánh, sản phẩm và tách rủi ro lãi suất, thanh khoản về hội sở quản lý tập trung.", "lien_quan": ["Rủi ro lãi suất", "Rủi ro thanh khoản", "Chi phí vốn huy động"]},
-{"thuat_ngu": "Rủi ro lãi suất", "tieng_anh": "Interest rate risk", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Rủi ro thu nhập hoặc giá trị tài sản của ngân hàng bị ảnh hưởng khi lãi suất thị trường thay đổi, do kỳ hạn định lại lãi suất của tài sản và nợ không khớp nhau. Ví dụ ngân hàng huy động ngắn hạn nhưng cho vay lãi suất cố định dài hạn sẽ thiệt khi lãi suất huy động tăng.", "lien_quan": ["Khe hở nhạy cảm lãi suất", "Định giá điều chuyển vốn nội bộ", "Rủi ro thị trường"]},
-{"thuat_ngu": "Khe hở nhạy cảm lãi suất", "tieng_anh": "Interest rate repricing gap", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Chênh lệch giữa tài sản và nợ phải trả được định lại lãi suất trong cùng một khoảng thời gian, thường trình bày trong thuyết minh BCTC ngân hàng. Khe hở dương nghĩa là ngân hàng hưởng lợi khi lãi suất tăng, khe hở âm thì ngược lại.", "lien_quan": ["Rủi ro lãi suất", "Tài sản sinh lãi"]},
-{"thuat_ngu": "Ngân hàng bán lẻ", "tieng_anh": "Retail banking", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Mảng kinh doanh phục vụ khách hàng cá nhân và hộ kinh doanh: tiền gửi, cho vay mua nhà, mua xe, tiêu dùng, thẻ, ngân hàng điện tử. Ngân hàng bán lẻ thường có NIM cao hơn và rủi ro phân tán hơn so với cho vay doanh nghiệp lớn.", "lien_quan": ["Cho vay bán lẻ", "Cho vay tiêu dùng", "Ngân hàng số"]},
-{"thuat_ngu": "Thu nhập từ góp vốn, mua cổ phần", "tieng_anh": "Income from capital contributions and equity investments", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Cổ tức và lãi được chia từ các khoản đầu tư dài hạn của ngân hàng vào doanh nghiệp, công ty liên kết hoặc tổ chức tín dụng khác. Theo quy định, ngân hàng thương mại chỉ được góp vốn, mua cổ phần trong giới hạn so với vốn điều lệ và quỹ dự trữ.", "lien_quan": ["Thu nhập ngoài lãi", "Vốn tự có"]},
-{"thuat_ngu": "Rủi ro tập trung tín dụng", "tieng_anh": "Credit concentration risk", "viet_tat": null, "nhom": "Ngân hàng & Tín dụng", "dinh_nghia": "Rủi ro phát sinh khi ngân hàng cho vay tập trung vào một khách hàng, nhóm khách hàng liên quan hoặc một ngành (như bất động sản). Pháp luật Việt Nam giới hạn tổng dư nợ cấp cho một khách hàng và nhóm khách hàng liên quan theo tỷ lệ phần trăm vốn tự có của ngân hàng.", "lien_quan": ["Giới hạn cấp tín dụng", "Rủi ro tín dụng", "Cho vay bất động sản"]}
+{
+"thuat_ngu": "Thu nhập lãi thuần",
+"tieng_anh": "Net interest income",
+"viet_tat": "NII",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Phần chênh lệch giữa thu nhập lãi (từ cho vay, đầu tư trái phiếu, tiền gửi tại TCTD khác) và chi phí lãi (trả cho tiền gửi, giấy tờ có giá, vay). Đây là nguồn thu chính của ngân hàng Việt Nam, thường chiếm khoảng 70–80% tổng thu nhập hoạt động.",
+"lien_quan": [
+"Biên lãi ròng",
+"Tổng thu nhập hoạt động",
+"Tài sản sinh lãi"
+]
+},
+{
+"thuat_ngu": "Biên lãi ròng",
+"tieng_anh": "Net interest margin",
+"viet_tat": "NIM",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Chỉ số đo khả năng sinh lãi từ hoạt động tín dụng: NIM = Thu nhập lãi thuần / Tài sản sinh lãi bình quân. NIM của các ngân hàng Việt Nam thường khoảng 2,5–4,5%; NIM cao cho thấy ngân hàng có nguồn vốn rẻ (CASA cao) hoặc cho vay với lãi suất cao.",
+"lien_quan": [
+"Thu nhập lãi thuần",
+"Tài sản sinh lãi",
+"Chi phí vốn huy động",
+"Tỷ lệ tiền gửi không kỳ hạn"
+]
+},
+{
+"thuat_ngu": "Tổng thu nhập hoạt động",
+"tieng_anh": "Total operating income",
+"viet_tat": "TOI",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Tổng các nguồn thu thuần của ngân hàng trong kỳ, gồm thu nhập lãi thuần và thu nhập ngoài lãi (dịch vụ, ngoại hối, chứng khoán, thu nhập khác). Chỉ tiêu này tương đương “doanh thu” khi phân tích ngân hàng, dùng để tính tỷ lệ chi phí trên thu nhập (CIR).",
+"lien_quan": [
+"Thu nhập lãi thuần",
+"Thu nhập ngoài lãi",
+"Tỷ lệ chi phí trên thu nhập"
+]
+},
+{
+"thuat_ngu": "Thu nhập ngoài lãi",
+"tieng_anh": "Non-interest income",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Các khoản thu không đến từ chênh lệch lãi, như phí dịch vụ thanh toán, bảo lãnh, phí bán bảo hiểm (bancassurance), lãi kinh doanh ngoại hối, chứng khoán và thu hồi nợ đã xử lý. Tỷ trọng thu nhập ngoài lãi cao giúp lợi nhuận ngân hàng ổn định hơn khi biên lãi thu hẹp.",
+"lien_quan": [
+"Lãi thuần từ hoạt động dịch vụ",
+"Bancassurance",
+"Thu hồi nợ đã xử lý"
+]
+},
+{
+"thuat_ngu": "Lãi thuần từ hoạt động dịch vụ",
+"tieng_anh": "Net fee and commission income",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Chênh lệch giữa thu và chi từ các dịch vụ như thanh toán, thẻ, bảo lãnh, tư vấn, đại lý bảo hiểm. Khoản mục này nằm trên báo cáo kết quả hoạt động kinh doanh của ngân hàng và phản ánh mức độ đa dạng hóa nguồn thu.",
+"lien_quan": [
+"Thu nhập ngoài lãi",
+"Bancassurance",
+"Bảo lãnh ngân hàng"
+]
+},
+{
+"thuat_ngu": "Lãi thuần từ kinh doanh ngoại hối",
+"tieng_anh": "Net gain from foreign exchange trading",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Lợi nhuận (hoặc lỗ) từ mua bán ngoại tệ giao ngay, kỳ hạn, hoán đổi và đánh giá lại trạng thái ngoại tệ. Khoản này biến động theo tỷ giá và nhu cầu ngoại tệ của doanh nghiệp xuất nhập khẩu.",
+"lien_quan": [
+"Thu nhập ngoài lãi",
+"Rủi ro thị trường"
+]
+},
+{
+"thuat_ngu": "Lãi thuần từ chứng khoán đầu tư",
+"tieng_anh": "Net gain from investment securities",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Lãi hoặc lỗ từ mua bán và trích lập/hoàn nhập dự phòng các chứng khoán ngân hàng nắm giữ để đầu tư, chủ yếu là trái phiếu chính phủ. Khi lãi suất giảm, giá trái phiếu tăng nên ngân hàng thường ghi nhận lãi lớn ở khoản mục này.",
+"lien_quan": [
+"Thu nhập ngoài lãi",
+"Rủi ro lãi suất"
+]
+},
+{
+"thuat_ngu": "Chi phí hoạt động ngân hàng",
+"tieng_anh": "Bank operating expenses",
+"viet_tat": "OPEX",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Các chi phí để vận hành ngân hàng như lương nhân viên, khấu hao, thuê trụ sở, công nghệ, marketing và phí bảo hiểm tiền gửi. Chi phí này không gồm chi phí lãi và chi phí dự phòng rủi ro tín dụng. Trên báo cáo kết quả kinh doanh của ngân hàng, chỉ tiêu này có tên “Chi phí hoạt động”.",
+"lien_quan": [
+"Tỷ lệ chi phí trên thu nhập",
+"Lợi nhuận trước dự phòng"
+]
+},
+{
+"thuat_ngu": "Tỷ lệ chi phí trên thu nhập",
+"tieng_anh": "Cost-to-income ratio",
+"viet_tat": "CIR",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "CIR = Chi phí hoạt động / Tổng thu nhập hoạt động, đo hiệu quả vận hành của ngân hàng; CIR càng thấp càng tốt. Ở Việt Nam, CIR bình quân các ngân hàng niêm yết khoảng 30%, ngân hàng hiệu quả nhất dưới 25%, trong khi một số ngân hàng nhỏ có thể trên 50%.",
+"lien_quan": [
+"Chi phí hoạt động ngân hàng",
+"Tổng thu nhập hoạt động",
+"Ngân hàng số"
+]
+},
+{
+"thuat_ngu": "Lợi nhuận trước dự phòng",
+"tieng_anh": "Pre-provision operating profit",
+"viet_tat": "PPOP",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Lợi nhuận từ hoạt động kinh doanh trước khi trừ chi phí dự phòng rủi ro tín dụng: PPOP = Tổng thu nhập hoạt động − Chi phí hoạt động. Chỉ tiêu này cho thấy “sức kiếm tiền” cốt lõi của ngân hàng, tách khỏi quyết định trích lập dự phòng.",
+"lien_quan": [
+"Tổng thu nhập hoạt động",
+"Chi phí dự phòng rủi ro tín dụng",
+"Chi phí hoạt động ngân hàng"
+]
+},
+{
+"thuat_ngu": "Chi phí dự phòng rủi ro tín dụng",
+"tieng_anh": "Credit loss provision expense",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Khoản chi phí ngân hàng trích lập trong kỳ để bù đắp tổn thất có thể xảy ra từ các khoản cho vay, ghi trên báo cáo kết quả kinh doanh. Chi phí dự phòng tăng mạnh thường báo hiệu nợ xấu gia tăng và làm giảm lợi nhuận trước thuế.",
+"lien_quan": [
+"Dự phòng cụ thể",
+"Dự phòng chung",
+"Chi phí tín dụng",
+"Nợ xấu"
+]
+},
+{
+"thuat_ngu": "Tài sản sinh lãi",
+"tieng_anh": "Interest-earning assets",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Các tài sản mang lại thu nhập lãi cho ngân hàng, gồm cho vay khách hàng, tiền gửi và cho vay các TCTD khác, chứng khoán nợ (trái phiếu) và tiền gửi tại NHNN. Đây là mẫu số để tính biên lãi ròng (NIM).",
+"lien_quan": [
+"Biên lãi ròng",
+"Lợi suất tài sản sinh lãi",
+"Cho vay khách hàng"
+]
+},
+{
+"thuat_ngu": "Lợi suất tài sản sinh lãi",
+"tieng_anh": "Yield on earning assets",
+"viet_tat": "YOEA",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "YOEA = Thu nhập lãi / Tài sản sinh lãi bình quân, cho biết lãi suất bình quân ngân hàng thu được trên tài sản. So sánh YOEA với chi phí vốn huy động giúp giải thích biến động của NIM.",
+"lien_quan": [
+"Tài sản sinh lãi",
+"Chi phí vốn huy động",
+"Biên lãi ròng"
+]
+},
+{
+"thuat_ngu": "Chi phí vốn huy động",
+"tieng_anh": "Cost of funds",
+"viet_tat": "COF",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Lãi suất bình quân ngân hàng phải trả cho nguồn vốn: COF = Chi phí lãi / Nợ chịu lãi bình quân (tiền gửi, giấy tờ có giá, vay liên ngân hàng). Ngân hàng có tỷ lệ CASA cao thường có COF thấp và lợi thế cạnh tranh về NIM.",
+"lien_quan": [
+"Tỷ lệ tiền gửi không kỳ hạn",
+"Lãi suất huy động",
+"Biên lãi ròng"
+]
+},
+{
+"thuat_ngu": "Chênh lệch lãi suất huy động – cho vay",
+"tieng_anh": "Interest rate spread",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Khoảng cách giữa lãi suất cho vay bình quân và lãi suất huy động bình quân của ngân hàng. Chênh lệch này càng lớn thì ngân hàng càng có lãi trên mỗi đồng cho vay, nhưng NHNN thường khuyến khích các ngân hàng giảm chênh lệch để hỗ trợ doanh nghiệp.",
+"lien_quan": [
+"Lãi suất cho vay",
+"Lãi suất huy động",
+"Biên lãi ròng"
+]
+},
+{
+"thuat_ngu": "Bancassurance",
+"tieng_anh": "Bancassurance",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Hình thức ngân hàng phân phối sản phẩm bảo hiểm cho khách hàng của mình để nhận hoa hồng, thường qua hợp đồng độc quyền dài hạn với doanh nghiệp bảo hiểm (kèm phí trả trước lớn). Từ năm 2023, việc bán bảo hiểm qua ngân hàng bị siết chặt, như cấm ép mua bảo hiểm khi vay vốn.",
+"lien_quan": [
+"Thu nhập ngoài lãi",
+"Lãi thuần từ hoạt động dịch vụ"
+]
+},
+{
+"thuat_ngu": "Hoàn nhập dự phòng",
+"tieng_anh": "Provision reversal",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Ghi giảm khoản dự phòng đã trích trước đó khi khoản vay được trả nợ, được nâng nhóm nợ hoặc rủi ro giảm, làm giảm chi phí dự phòng trong kỳ. Hoàn nhập lớn có thể làm lợi nhuận tăng đột biến nên cần xem kỹ khi đánh giá chất lượng lợi nhuận.",
+"lien_quan": [
+"Chi phí dự phòng rủi ro tín dụng",
+"Dự phòng cụ thể"
+]
+},
+{
+"thuat_ngu": "Thu hồi nợ đã xử lý",
+"tieng_anh": "Recovery of written-off debts",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Khoản tiền ngân hàng thu lại được từ các khoản nợ xấu đã dùng dự phòng xóa khỏi bảng cân đối (theo dõi ngoại bảng). Khoản thu này được ghi vào thu nhập khác và có thể đóng góp đáng kể cho lợi nhuận một số năm.",
+"lien_quan": [
+"Xóa nợ ngoại bảng",
+"Thu nhập ngoài lãi",
+"Nợ xấu"
+]
+},
+{
+"thuat_ngu": "Chi phí tín dụng",
+"tieng_anh": "Credit cost",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Chi phí tín dụng = Chi phí dự phòng rủi ro tín dụng / Dư nợ cho vay bình quân, đo mức “hao hụt” do rủi ro tín dụng trên mỗi đồng cho vay. Chỉ số này tăng khi chất lượng tài sản xấu đi và là biến số quan trọng khi dự phóng lợi nhuận ngân hàng.",
+"lien_quan": [
+"Chi phí dự phòng rủi ro tín dụng",
+"Dư nợ tín dụng",
+"Nợ xấu"
+]
+},
+{
+"thuat_ngu": "Định giá điều chuyển vốn nội bộ",
+"tieng_anh": "Funds transfer pricing",
+"viet_tat": "FTP",
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Cơ chế ngân hàng “mua” vốn từ bộ phận huy động và “bán” vốn cho bộ phận cho vay theo một giá nội bộ. FTP giúp đo lợi nhuận của từng chi nhánh, sản phẩm và tách rủi ro lãi suất, thanh khoản về hội sở quản lý tập trung.",
+"lien_quan": [
+"Rủi ro lãi suất",
+"Rủi ro thanh khoản",
+"Chi phí vốn huy động"
+]
+},
+{
+"thuat_ngu": "Rủi ro lãi suất",
+"tieng_anh": "Interest rate risk",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Rủi ro thu nhập hoặc giá trị tài sản của ngân hàng bị ảnh hưởng khi lãi suất thị trường thay đổi, do kỳ hạn định lại lãi suất của tài sản và nợ không khớp nhau. Ví dụ ngân hàng huy động ngắn hạn nhưng cho vay lãi suất cố định dài hạn sẽ thiệt khi lãi suất huy động tăng.",
+"lien_quan": [
+"Khe hở nhạy cảm lãi suất",
+"Định giá điều chuyển vốn nội bộ",
+"Rủi ro thị trường"
+]
+},
+{
+"thuat_ngu": "Khe hở nhạy cảm lãi suất",
+"tieng_anh": "Interest rate repricing gap",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Chênh lệch giữa tài sản và nợ phải trả được định lại lãi suất trong cùng một khoảng thời gian, thường trình bày trong thuyết minh BCTC ngân hàng. Khe hở dương nghĩa là ngân hàng hưởng lợi khi lãi suất tăng, khe hở âm thì ngược lại.",
+"lien_quan": [
+"Rủi ro lãi suất",
+"Tài sản sinh lãi"
+]
+},
+{
+"thuat_ngu": "Ngân hàng bán lẻ",
+"tieng_anh": "Retail banking",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Mảng kinh doanh phục vụ khách hàng cá nhân và hộ kinh doanh: tiền gửi, cho vay mua nhà, mua xe, tiêu dùng, thẻ, ngân hàng điện tử. Ngân hàng bán lẻ thường có NIM cao hơn và rủi ro phân tán hơn so với cho vay doanh nghiệp lớn.",
+"lien_quan": [
+"Cho vay bán lẻ",
+"Cho vay tiêu dùng",
+"Ngân hàng số"
+]
+},
+{
+"thuat_ngu": "Thu nhập từ góp vốn, mua cổ phần",
+"tieng_anh": "Income from capital contributions and equity investments",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Cổ tức và lãi được chia từ các khoản đầu tư dài hạn của ngân hàng vào doanh nghiệp, công ty liên kết hoặc tổ chức tín dụng khác. Theo quy định, ngân hàng thương mại chỉ được góp vốn, mua cổ phần trong giới hạn so với vốn điều lệ và quỹ dự trữ.",
+"lien_quan": [
+"Thu nhập ngoài lãi",
+"Vốn tự có"
+]
+},
+{
+"thuat_ngu": "Rủi ro tập trung tín dụng",
+"tieng_anh": "Credit concentration risk",
+"viet_tat": null,
+"nhom": "Ngân hàng & Tín dụng",
+"dinh_nghia": "Rủi ro phát sinh khi ngân hàng cho vay tập trung vào một khách hàng, nhóm khách hàng liên quan hoặc một ngành (như bất động sản). Pháp luật Việt Nam giới hạn tổng dư nợ cấp cho một khách hàng và nhóm khách hàng liên quan theo tỷ lệ phần trăm vốn tự có của ngân hàng.",
+"lien_quan": [
+"Giới hạn cấp tín dụng",
+"Rủi ro tín dụng",
+"Cho vay bất động sản"
+]
+}
 ]
