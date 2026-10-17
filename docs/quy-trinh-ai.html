@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quy trình AI đọc BCTC</title>
+<meta name="description" content="Workflow AI ra số liệu trên Bảng điểm BCTC và cách xử lý BCTC dạng scan: OCR 2 tầng, AI trích số, kiểm tra 4 lớp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: báo cáo quy trình một cột - tóm tắt trước, rồi luồng tổng thể, chi tiết AI, xử lý scan, kiểm soát chất lượng. */
+:root {
+  --bg: #f4f6f5; --surface: #ffffff; --fg: #17201c; --fg-2: #4c5a54; --line: #d9e0dc;
+  --accent: #1d5f78; --accent-soft: #e3eef2;
+  --ok: #23774a; --ok-soft: #e2f1e8; --warn: #9a6512; --warn-soft: #f8edd8;
+  --bad: #b03a2e; --bad-soft: #f8e3e0; --def: #566573; --def-soft: #e7ebee;
+  --sans: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #101513; --surface: #171e1b; --fg: #e4ebe7; --fg-2: #9fb0a8; --line: #2b3632;
+  --accent: #6fb6d3; --accent-soft: #1a2c34;
+  --ok: #6cc893; --ok-soft: #173024; --warn: #e2b05a; --warn-soft: #33291a;
+  --bad: #f08a7c; --bad-soft: #3a1f1c; --def: #a9b6c2; --def-soft: #242c33; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #101513; --surface: #171e1b; --fg: #e4ebe7; --fg-2: #9fb0a8; --line: #2b3632;
+  --accent: #6fb6d3; --accent-soft: #1a2c34;
+  --ok: #6cc893; --ok-soft: #173024; --warn: #e2b05a; --warn-soft: #33291a;
+  --bad: #f08a7c; --bad-soft: #3a1f1c; --def: #a9b6c2; --def-soft: #242c33; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 15px/1.6 var(--sans); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 32px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 44px; }
+.wrap > *, section > * { min-width: 0; }
+h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.25; }
+h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 21px; font-weight: 700; } h3 { font-size: 16px; font-weight: 600; }
+p { margin: 0; max-width: 76ch; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.head { display: grid; gap: 12px; } .lede { color: var(--fg-2); font-size: 16px; }
+.verdict { background: var(--ok-soft); border: 1px solid color-mix(in srgb, var(--ok) 35%, transparent); border-radius: 10px;
+  padding: 14px 18px; display: grid; gap: 6px; max-width: 920px; }
+.verdict b { color: var(--ok); }
+section { display: grid; gap: 16px; }
+.prose ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; max-width: 84ch; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 2px; }
+.tile .n { font: 600 24px/1.2 var(--mono); font-variant-numeric: tabular-nums; } .tile .l { font-size: 13px; color: var(--fg-2); }
+.tile.ok .n { color: var(--ok); } .tile.warn .n { color: var(--warn); }
+.flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; counter-reset: s; }
+.flow div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; gap: 4px; }
+.flow div::before { counter-increment: s; content: "Bước " counter(s); font: 600 11px/1 var(--mono); color: var(--accent); letter-spacing: .05em; text-transform: uppercase; }
+.flow b { font-size: 14px; } .flow span { font-size: 13px; color: var(--fg-2); }
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { font-size: 12px; font-weight: 600; color: var(--fg-2); background: var(--bg); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.t { font-weight: 600; min-width: 170px; } td.why { color: var(--fg-2); min-width: 220px; max-width: 460px; }
+.chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.chip.ok { color: var(--ok); background: var(--ok-soft); } .chip.warn { color: var(--warn); background: var(--warn-soft); }
+.chip.bad { color: var(--bad); background: var(--bad-soft); } .chip.def { color: var(--def); background: var(--def-soft); }
+.bars { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; }
+.bar-row { display: grid; grid-template-columns: 170px 1fr 120px; gap: 12px; align-items: center; font-size: 13.5px; }
+.bar { height: 16px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.bar span { display: block; height: 100%; border-radius: 4px; }
+.bar-row .v { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; color: var(--fg-2); }
+.note { font-size: 13px; color: var(--fg-2); }
+.foot { font-size: 13px; color: var(--fg-2); display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 16px; }
+.foot p { max-width: none; } code { font: 13px var(--mono); background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
+a { color: var(--accent); }
+@media (max-width: 560px) { .bar-row { grid-template-columns: 1fr; } .bar-row .v { text-align: left; } }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.box { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 8px; align-content: start; }
+.box ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; }
+.flow div .who { font: 600 11px/1 var(--mono); }
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="head">
+  <div class="eyebrow">Báo cáo quy trình · 18/10/2026</div>
+  <h1>Workflow AI ra số liệu BCTC và cách xử lý file scan</h1>
+  <p class="lede">Báo cáo mô tả từng bước từ file PDF trên web công ty đến thẻ điểm trên <a href="./">Bảng điểm</a>: bước nào AI làm,
+  bước nào code làm, số liệu được kiểm thế nào. Phần sau đi sâu vào BCTC dạng scan, loại file chiếm khoảng 90% BCTC VN30.</p>
+  <div class="verdict">
+    <div><b>Nguyên tắc chính:</b> AI chỉ làm một việc là <b>đọc và chép số</b> từ trang báo cáo vào biểu mẫu 34 trường. Mọi việc
+    kiểm chứng được đều do code làm: OCR, kiểm tra cân đối, đối chiếu nguồn ngoài, chấm điểm, dựng web. AI không tự cho điểm.</div>
+    <div><b>File scan:</b> OCR 2 tầng. Tesseract đọc nhanh cả file để tìm trang báo cáo, PP-OCRv6 đọc lại trang báo cáo để lấy số chính xác.
+    AI đọc ảnh trang kèm chữ OCR; ảnh là nguồn đúng.</div>
+  </div>
+</header>
+
+<section>
+  <div class="tiles">
+    <div class="tile"><span class="n">8</span><span class="l">bước, từ tải file đến dựng web</span></div>
+    <div class="tile"><span class="n">34</span><span class="l">trường số liệu AI chép từ mỗi BCTC</span></div>
+    <div class="tile ok"><span class="n">170/170</span><span class="l">trường khớp ảnh trang, 5 BCTC scan, kiểm độc lập</span></div>
+    <div class="tile ok"><span class="n">145/145</span><span class="l">số PP-OCRv6 đọc đúng (Tesseract 134/145)</span></div>
+    <div class="tile"><span class="n">~8 phút</span><span class="l">cho 5 BCTC scan, từ OCR đến kiểm xong</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>1. Luồng tổng thể</h2>
+  <div class="flow">
+    <div><span class="who">CODE</span><b>Thu thập</b><span>Quét 30 web IR mỗi 6 giờ (0h, 6h, 12h, 18h); so danh mục + mã băm sha256 để biết file nào mới. CafeF chỉ để dự phòng</span></div>
+    <div><span class="who">CODE</span><b>Đọc PDF, tìm trang</b><span>Trang có lớp chữ thì lấy chữ; trang scan thì OCR. Quét vùng tiêu đề để chọn 3 báo cáo: CĐKT, KQKD, LCTT</span></div>
+    <div><span class="who">CODE</span><b>OCR tầng 2</b><span>PP-OCRv6 đọc lại riêng các trang báo cáo dạng scan, giữ hàng/cột của bảng số</span></div>
+    <div><span class="who">AI</span><b>Trích số</b><span>AI xem ảnh trang + chữ OCR, chép 34 trường theo hướng dẫn và sổ bài học</span></div>
+    <div><span class="who">CODE</span><b>Kiểm cân đối</b><span>TS = Nợ + VCSH; LCTT thuần = KD + ĐT + TC; đúng số tháng lũy kế. Sai thì AI phải đọc lại</span></div>
+    <div><span class="who">AI + CODE</span><b>Kiểm độc lập</b><span>Một AI khác chỉ đọc ảnh, so từng chữ số; code đối chiếu Vietcap, lệch &gt; 1% thì ghi lại để xét</span></div>
+    <div><span class="who">CODE</span><b>Chấm điểm</b><span>Công thức cố định thang 10 theo loại hình (doanh nghiệp, ngân hàng, chứng khoán)</span></div>
+    <div><span class="who">CODE</span><b>Dựng web</b><span>Một file HTML tĩnh, tự đẩy lên GitHub Pages</span></div>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Bước</th><th>Ai làm</th><th>Đầu vào → đầu ra</th><th>Chặn lỗi bằng cách nào</th></tr></thead>
+    <tbody>
+      <tr><td class="t">1. Thu thập</td><td><span class="chip def">Code</span></td><td class="why">30 web IR → file PDF + danh mục (mã, kỳ, hợp nhất/riêng, sha256)</td><td class="why">File cũ không đổi sha256 thì bỏ qua, không phân tích lại. Web lỗi thì lấy CafeF và ghi rõ là dự phòng</td></tr>
+      <tr><td class="t">2. Tìm trang</td><td><span class="chip def">Code</span></td><td class="why">PDF 30–97 trang → 4–16 trang của 3 báo cáo</td><td class="why">Bỏ trang mục lục; dừng khi gặp Thuyết minh; trang nằm ngang tự xoay lại</td></tr>
+      <tr><td class="t">3. OCR</td><td><span class="chip def">Code</span></td><td class="why">Ảnh trang → chữ theo hàng/cột (2 tầng, xem mục 3)</td><td class="why">Kiểm chất lượng chữ bằng tỷ lệ âm tiết tiếng Việt hợp lệ; chữ OCR chỉ là gợi ý, AI phải so với ảnh</td></tr>
+      <tr><td class="t">4. Trích số</td><td><span class="chip ok">AI</span></td><td class="why">Ảnh trang + chữ OCR + hướng dẫn → JSON 34 trường</td><td class="why">Biểu mẫu cố định (schema), sổ bài học 13 quy tắc + lưu ý riêng 24 mã; không chắc thì để trống, không đoán</td></tr>
+      <tr><td class="t">5. Kiểm cân đối</td><td><span class="chip def">Code</span></td><td class="why">JSON → OK hoặc CẢNH BÁO</td><td class="why">Có cảnh báo thì AI xem lại ảnh và sửa, tối đa 3 lần; không được bịa số cho khớp</td></tr>
+      <tr><td class="t">6. Kiểm độc lập</td><td><span class="chip ok">AI</span> <span class="chip def">Code</span></td><td class="why">JSON + ảnh trang → bảng OK/SAI từng trường; số Vietcap IQ → khớp/lệch</td><td class="why">AI kiểm không dùng chữ OCR, không xem cách AI trích đã làm; lệch Vietcap được xét đến khi ra nguyên nhân</td></tr>
+      <tr><td class="t">7. Chấm điểm</td><td><span class="chip def">Code</span></td><td class="why">34 trường → chỉ số tăng trưởng, biên, dòng tiền, đòn bẩy, ROE → điểm /10</td><td class="why">Mỗi tiêu chí là phép so sánh kiểm lại được; thiếu số thì 0 điểm và ghi "thiếu dữ liệu"</td></tr>
+      <tr><td class="t">8. Dựng web</td><td><span class="chip def">Code</span></td><td class="why">Kết quả → thẻ điểm, bộ lọc, timeline quét</td><td class="why">Mỗi thẻ có link PDF gốc để người xem tự đối chiếu; điểm bất thường hiện thành cảnh báo trên thẻ</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>2. AI làm gì, code làm gì</h2>
+  <div class="cols">
+    <div class="box"><h3>AI (Claude Opus 5.5)</h3><ul>
+      <li>Đọc ảnh trang báo cáo, tìm đúng dòng chỉ tiêu theo <b>tên</b> (mẫu TT99/2025 đổi mã số nên không dựa vào mã số).</li>
+      <li>Chọn đúng cột: quý này, cùng quý năm trước, lũy kế, đầu năm.</li>
+      <li>Xử lý khác biệt giữa các mẫu: ngân hàng lấy Tổng thu nhập hoạt động, chứng khoán lấy Tổng doanh thu hoạt động.</li>
+      <li>Ghi lại điểm bất thường của chính báo cáo (VD báo cáo tự cộng sai).</li>
+      <li>Ở bước kiểm độc lập: một AI khác đọc lại ảnh, phóng to vùng số, so từng chữ số và tự cộng các dòng con.</li>
+    </ul></div>
+    <div class="box"><h3>Code (Python, chạy giống nhau mọi lần)</h3><ul>
+      <li>Tải file, phát hiện file mới, OCR, chọn trang, cắt ảnh trang.</li>
+      <li>Kiểm biểu mẫu và kiểm cân đối kế toán sau mỗi lần AI ghi.</li>
+      <li>Tự sửa lỗi đã biết: dòng in "-" thì là 0; không tách LNST công ty mẹ thì bằng LNST.</li>
+      <li>Đối chiếu Vietcap IQ, chấm điểm theo công thức, dựng web, đẩy GitHub.</li>
+      <li>Lưu kết quả theo mã băm file + phiên bản sổ bài học: file không đổi thì không hỏi AI lại.</li>
+    </ul></div>
+  </div>
+  <p class="note">Các BCTC trên web hiện do Claude trích. Mỗi BCTC giao cho 1 agent riêng, nhiều agent chạy song song. Luồng có sẵn đường Gemini 3.5
+  Flash-Lite (structured output, temperature 0) để chạy hoàn toàn tự động theo lịch, nhưng cần API key.</p>
+</section>
+
+<section>
+  <h2>3. Cách xử lý BCTC dạng scan</h2>
+  <div class="prose"><p>Khoảng 90% BCTC VN30 là file scan (427/473 file đã đo): trang là ảnh chụp, không có chữ để copy. Các khó khăn gặp thực tế:</p>
+  <ul>
+    <li>Không có lớp chữ, hoặc có lớp chữ nhưng hỏng: font cũ TCVN3/VNI làm mất dấu ("h p nh t"), hoặc công ty tự OCR kém.</li>
+    <li>Trang scan nằm ngang hoặc ngược mà file không ghi thuộc tính xoay (VD file của Vinhomes).</li>
+    <li>OCR đọc sai chữ số trong bảng: 1 thành 4, 6 thành 8, mất dấu chấm phân cách, cắt cụt số dài. Đây là lỗi nguy hiểm nhất vì
+    số sai nhìn vẫn hợp lý.</li>
+  </ul></div>
+  <h3>Xử lý từng trang</h3>
+  <div class="flow">
+    <div><b>Kiểm lớp chữ</b><span>Đếm tỷ lệ âm tiết tiếng Việt hợp lệ; dưới 0,8 thì coi như trang scan</span></div>
+    <div><b>Tesseract tầng 1</b><span>Đọc vùng tiêu đề mọi trang (~0,25 s/trang) để tìm 3 báo cáo; chữ ra rác thì thử xoay 90°/270°/180°</span></div>
+    <div><b>PP-OCRv6 tầng 2</b><span>Chỉ đọc lại 4–16 trang báo cáo, ảnh 200 dpi; ra chữ theo hàng/cột</span></div>
+    <div><b>Ảnh trang cho AI</b><span>Trang scan xuất thành ảnh để AI đọc trực tiếp; chữ OCR đi kèm làm gợi ý</span></div>
+    <div><b>AI đối chiếu</b><span>Mọi số lấy từ chữ OCR phải khớp ảnh; số lớn (TS, DT, LNST) luôn đọc trên ảnh (quy tắc R8)</span></div>
+  </div>
+  <h3>Vì sao dùng 2 tầng OCR</h3>
+  <div class="prose"><p>Đã khảo sát 12 dự án OCR mã nguồn mở có tiếng Việt chạy được trên CPU (máy không có GPU). Chọn <b>PP-OCRv6</b> của PaddleOCR
+  (Apache-2.0, có tiếng Việt chính thức từ 06/2026), chạy qua RapidOCR + ONNX Runtime. Các mô hình VLM (SenOCR-Vi, Vintern, Surya) bị loại
+  vì mất 1–5 phút/trang trên CPU và có rủi ro "bịa" số. Đo trên 5 BCTC scan, đáp án là các số đã kiểm độc lập trên ảnh:</p></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Engine</th><th class="num">Số đúng</th><th class="num">Tốc độ</th><th>Điểm mạnh</th><th>Điểm yếu</th><th>Dùng để</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Tesseract <code>vie</code></td><td class="num">134/145</td><td class="num">~1,6 s/trang</td><td class="why">Nhanh, dấu tiếng Việt tốt</td><td class="why">Sai chữ số, sai dấu phân cách, có số không đọc ra</td><td>Tìm trang báo cáo trong cả file</td></tr>
+      <tr><td class="t">PP-OCRv6 small, <code>vi</code></td><td class="num"><b>145/145</b></td><td class="num">5–10 s/trang</td><td class="why">Chữ số chính xác, ổn định (chạy lại ra giống hệt)</td><td class="why">Chữ hay mất dấu ("Tài sn ngn hn"); bảng 4 cột có lúc xếp số nhầm dòng</td><td>Đọc số trên trang báo cáo</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Bản PP-OCRv6 medium chậm gấp 16 lần (81 s/trang) mà không đúng thêm số nào nên không dùng. Không cài thư viện PP-OCR thì luồng tự quay về
+  chỉ dùng Tesseract. Chi tiết và danh sách số Tesseract đọc sai: <a href="bctc-scan.html">báo cáo thử nghiệm BCTC scan</a>.</p>
+  <h3>Điểm yếu của OCR được chặn thế nào</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Rủi ro</th><th>Cách chặn</th></tr></thead>
+    <tbody>
+      <tr><td class="t">OCR đọc sai chữ số</td><td class="why">PP-OCRv6 cho số; AI đọc ảnh; kiểm cân đối bắt sai lệch; AI kiểm độc lập không dùng OCR</td></tr>
+      <tr><td class="t">Số bị xếp nhầm dòng</td><td class="why">AI khớp dòng và cột theo ảnh (đã ghi vào hướng dẫn sau khi gặp ở KQKD của PNJ)</td></tr>
+      <tr><td class="t">Trang xoay ngang</td><td class="why">Thử các góc xoay, giữ góc cho chữ giống tiếng Việt nhất; trang không dò được theo góc đa số của file</td></tr>
+      <tr><td class="t">Chọn nhầm trang</td><td class="why">Bỏ mục lục, dừng ở Thuyết minh; PDF nhỏ các trang đã chọn được lưu lại để người xem kiểm</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>4. Kiểm soát chất lượng: 4 lớp</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Lớp</th><th>Kiểm gì</th><th>Kết quả gần nhất</th></tr></thead>
+    <tbody>
+      <tr><td class="t">1. Cân đối tự động</td><td class="why">TS = Nợ + VCSH (cuối kỳ, đầu năm); LCTT thuần = KD + ĐT + TC (năm nay, năm trước)</td><td class="why">5/5 BCTC scan qua ngay lần ghi đầu</td></tr>
+      <tr><td class="t">2. Kiểm độc lập trên ảnh</td><td class="why">AI thứ hai so từng chữ số của 34 trường với ảnh, kiểm đúng dòng, đúng cột, dấu âm, đơn vị, tự cộng các dòng con</td><td class="why">170/170 trường khớp; phát hiện thêm DGC tự cộng sai 100 tỷ ở LCTT kinh doanh</td></tr>
+      <tr><td class="t">3. Đối chiếu Vietcap IQ</td><td class="why">So với dữ liệu công bố trên Vietcap; lệch &gt; 1% ghi vào danh sách cần xét</td><td class="why">OCB 22/22 khớp. Chỗ lệch ở PNJ, HCM, DGC: đã tải bản bán niên soát xét để tìm nguyên nhân (Vietcap lấy theo bản soát xét đã điều chỉnh)</td></tr>
+      <tr><td class="t">4. Sổ bài học</td><td class="why">Mỗi lỗi hoặc điểm lạ thành quy tắc chung hoặc lưu ý riêng từng mã, đưa vào hướng dẫn cho lần trích sau</td><td class="why">13 quy tắc, lưu ý cho 24 mã, 110 mục lệch đã xét xong</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Ví dụ lớp 3 + 4: PNJ lệch Vietcap 61% ở LNST quý 2. Bản bán niên soát xét in LNST 6 tháng 728,4 tỷ (báo cáo quý: 1.184,4 tỷ);
+  trừ quý 1 ra −739,0 tỷ, đúng số Vietcap. Kết luận: số mình khớp báo cáo quý, Vietcap theo bản soát xét. Điểm này đã thành lưu ý riêng của PNJ.</p>
+</section>
+
+<section>
+  <h2>5. Thời gian và tài nguyên (5 BCTC scan, 18/10/2026)</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Bước</th><th class="num">Thời gian</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Tìm trang + OCR 2 tầng</td><td class="num">3 phút 58 giây</td><td class="why">Cả 5 BCTC, 29 trang báo cáo, chưa có cache; máy 6 nhân, không GPU</td></tr>
+      <tr><td class="t">AI trích số</td><td class="num">65–100 giây/BCTC</td><td class="why">5 agent chạy song song; khoảng 66–95 nghìn token mỗi BCTC</td></tr>
+      <tr><td class="t">AI kiểm độc lập</td><td class="num">88–142 giây/BCTC</td><td class="why">5 agent song song; khoảng 68–89 nghìn token mỗi BCTC</td></tr>
+      <tr><td class="t">Đối chiếu, chấm điểm, dựng web</td><td class="num">không đáng kể</td><td class="why">Chạy bằng code trong 1 lệnh tổng hợp</td></tr>
+      <tr><td class="t">Tổng</td><td class="num"><b>~8 phút</b></td><td class="why">Cộng các bước; bước chạy song song tính theo agent chậm nhất (238 + 100 + 142 giây)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>6. Giới hạn hiện tại</h2>
+  <div class="prose"><ul>
+    <li><b>Trích số tự động theo lịch cần API key Gemini.</b> Lịch quét 6 giờ đang tự tìm và tải BCTC mới. Bước AI trích hiện chạy bằng Claude trong
+    phiên làm việc; chạy Claude ngầm không người trông chưa được xác nhận ổn định trên Windows.</li>
+    <li><b>Chữ PP-OCRv6 mất dấu và có thể lệch dòng</b>, nên vẫn cần AI đọc ảnh. Không bỏ được bước đọc ảnh.</li>
+    <li><b>Số quý 2, quý 4 có thể khác Vietcap/Vietstock</b> vì họ lấy theo bản soát xét/kiểm toán. Thẻ dùng báo cáo quý vì công bố sớm hơn.</li>
+    <li><b>Máy phải bật</b> để lịch quét chạy. Lượt bị lỡ khi máy ngủ sẽ chạy bù khi máy thức.</li>
+  </ul></div>
+</section>
+
+<footer class="foot">
+  <p>Báo cáo liên quan: <a href="bctc-scan.html">Thử nghiệm 5 BCTC scan</a> · <a href="doi-chieu.html">Đối chiếu số liệu với Vietcap</a> ·
+  <a href="kiem-thu.html">Kiểm thử luồng quét</a>. Mã nguồn: <a href="https://github.com/VietNhat-1305/bctc-vn30" target="_blank" rel="noopener">github.com/VietNhat-1305/bctc-vn30</a>
+  (các file chính: <code>bctc.py</code>, <code>pdf2txt.py</code>, <code>ocr_so.py</code>, <code>phan_tich.py</code>, <code>claude_trich.py</code>,
+  <code>doi_chieu.py</code>, <code>cham_diem.py</code>, <code>dashboard.py</code>, sổ bài học <code>tri_thuc/bai_hoc.json</code>).</p>
+</footer>
+</main>
+</body>
+</html>
