@@ -32,8 +32,10 @@ def main() -> int:
         import kiem_tra_ir
         kiem_tra_ir.main([])
     import dashboard
+    import tai_lieu_cham_diem
     dashboard.build()
-    paths = ["docs", "ket_qua/ir_check.json", "website_30cty.xlsx", "LINKS.md", "tu_dien", "tu_dien_500.xlsx", "ket_qua/json", "ket_qua/doi_chieu.json", "tri_thuc", "ket_qua/lich_su_quet.json"]
+    tai_lieu_cham_diem.main()           # trang bộ tiêu chí + báo cáo chấm điểm, sinh từ cham_diem.TIEU_CHI
+    paths = ["docs", "ket_qua/diem_bo_cu_Q2_2026.json", "ket_qua/ir_check.json", "website_30cty.xlsx", "LINKS.md", "tu_dien", "tu_dien_500.xlsx", "ket_qua/json", "ket_qua/doi_chieu.json", "tri_thuc", "ket_qua/lich_su_quet.json"]
     paths = [x for x in paths if (ROOT / x).exists()]
     git("add", *paths)
     if not git("status", "--porcelain", "--", *paths):

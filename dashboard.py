@@ -29,7 +29,7 @@ LOAI_VI = {"doanh_nghiep": "Doanh nghiệp", "ngan_hang": "Ngân hàng", "chung_
            "bao_hiem": "Bảo hiểm"}
 # Loại hình mặc định khi chưa có kết quả Gemini (Gemini tự nhận loại hình khi đọc BCTC)
 LOAI_MAC_DINH = {**{t: "ngan_hang" for t in "ACB BID CTG HDB LPB MBB SHB SSB STB TCB VCB VIB VPB OCB".split()},
-                 **{t: "chung_khoan" for t in ("SSI", "TCX", "HCM")}}
+                 **{t: "chung_khoan" for t in ("SSI", "TCX", "HCM")}, **{t: "bao_hiem" for t in ("MIG", "PGI")}}
 
 
 def all_companies() -> list[dict]:
@@ -68,6 +68,38 @@ def _file_urls() -> dict[str, str]:
     return out
 
 
+# Chỉ số riêng hiện trên thẻ: (nhãn, khoá trong cham_diem.metrics, định dạng, khoá kỳ so sánh hoặc None)
+CHI_SO_THE = {
+    "ngan_hang": [("ROE (năm hoá)", "roe", "pct", None), ("ROA (năm hoá)", "roa", "pct", None),
+                  ("CIR (chi phí / thu nhập)", "cir", "pct", "cir_truoc"),
+                  ("Chi phí tín dụng / dư nợ", "chi_phi_tin_dung", "pct", None),
+                  ("Dự phòng / dư nợ", "llr", "pct", "llr_truoc"), ("LDR (cho vay / vốn huy động)", "ldr", "pct", "ldr_truoc"),
+                  ("Cho vay / tiền gửi khách hàng", "ldr_don", "pct", None),
+                  ("VCSH / tổng tài sản", "vcsh_ts", "pct", "vcsh_ts_truoc")],
+    "chung_khoan": [("ROE (năm hoá)", "roe", "pct", None), ("Biên LNST lũy kế", "bien_lnst", "pct", None),
+                    ("Thu nhập ổn định / DT", "ty_trong_on_dinh", "pct", None),
+                    ("Lãi FVTPL / DT", "ty_trong_fvtpl", "pct", None),
+                    ("Dư nợ cho vay / VCSH", "margin_vcsh", "pct", None), ("Nợ phải trả / VCSH", "no_vcsh_ck", "x", None)],
+    "bao_hiem": [("Combined ratio", "combined", "pct", "combined_truoc"),
+                 ("Loss ratio (bồi thường / phí)", "loss_ratio", "pct", "loss_ratio_truoc"),
+                 ("Lợi suất đầu tư (năm hoá)", "loi_suat_dau_tu", "pct", None), ("ROE (năm hoá)", "roe", "pct", None),
+                 ("VCSH / biên KNTT tối thiểu", "vcsh_bknt", "x", None), ("Phí BH thuần lũy kế", "phi_thuan_pct", None, None)],
+}
+
+
+def chi_so_the(m: dict, kind: str) -> list[list]:
+    """[[nhãn, giá trị đã định dạng, kỳ so sánh đã định dạng hoặc ''], ...] cho phần 'Chỉ số riêng' của thẻ."""
+    out = []
+    for ten, k, fmt, k_truoc in CHI_SO_THE.get(kind, []):
+        if m.get(k) is None:
+            out.append([ten, "–", ""])
+            continue
+        truoc = m.get(k_truoc) if k_truoc else None
+        vi = lambda x: cham_diem._fmt(x, fmt).replace(".", ",")              # noqa: E731 - số kiểu Việt: 20,3%
+        out.append([ten, vi(m[k]), vi(truoc) if truoc is not None else ""])
+    return out
+
+
 def build_cards(results: dict) -> list[dict]:
     """Mỗi mã 1 thẻ từ 1 BCTC (quý mới nhất): năm nay so với kỳ so sánh có sẵn trong báo cáo đó."""
     companies = {c["ticker"]: c for c in all_companies()}
@@ -80,11 +112,7 @@ def build_cards(results: dict) -> list[dict]:
         cur, r = lt
         n = phan_tich.normalize(r)
         v, kind = n["v"], n["loai_hinh"]
-        now = {f: v[f] for f in CARD_FIELDS}
-        now["lnst_lk"] = v["lnst_luy_ke"]
-        cmp = {f: v[f + ("_dau_nam" if f in phan_tich.BS else "_cung_ky")] for f in CARD_FIELDS}
-        cmp["lnst_lk"] = v["lnst_cung_ky_luy_ke"]
-        m = cham_diem.metrics(now, cmp, kind, cur[1])
+        m = cham_diem.tu_bctc(v, kind, cur[1])
         s = cham_diem.score(m, kind)
         lab = phan_tich.ky_so_sanh(cur)
         co = companies.get(tk, {})
@@ -93,6 +121,9 @@ def build_cards(results: dict) -> list[dict]:
             "ky": lab["q"][0], "ky_truoc": lab["q"][1], "ky_lk": lab["lk"], "ky_bs": lab["bs"],
             "diem": s["diem"], "xep_loai": s["xep_loai"], "thieu": s["thieu"],
             "tieu_chi": [list(t) for t in s["tieu_chi"]],
+            "nhom_diem": {k: list(x) for k, x in s["nhom"].items()},
+            "ma_tc": [tc["ma"] for tc in cham_diem.TIEU_CHI.get(kind, cham_diem.TIEU_CHI["doanh_nghiep"])],
+            "chi_so": chi_so_the(m, kind),
             "m": {k: (round(x, 6) if isinstance(x, float) else x) for k, x in m.items()},
             "canh_bao": n["warn"], "file": r.get("file"),
             "file_url": urls.get(r.get("file") or ""), "ir": co.get("bctc_url"),
@@ -402,8 +433,9 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
       <label class="f">Tìm mã / tên<input type="search" id="q" placeholder="VNM, ngân hàng..."></label>
       <label class="f">Loại hình
         <select id="loai"><option value="">Tất cả</option><option value="doanh_nghiep">Doanh nghiệp</option>
-        <option value="ngan_hang">Ngân hàng</option><option value="chung_khoan">Chứng khoán</option></select></label>
-      <label class="f sc">Điểm tối thiểu: <b id="diemOut">0</b><input type="range" id="diem" min="0" max="10" step="1" value="0"></label>
+        <option value="ngan_hang">Ngân hàng</option><option value="chung_khoan">Chứng khoán</option>
+        <option value="bao_hiem">Bảo hiểm</option></select></label>
+      <label class="f sc">Điểm tối thiểu: <b id="diemOut">0</b><input type="range" id="diem" min="0" max="10" step="0.5" value="0"></label>
       <label class="f sc">DT tăng so cùng kỳ ≥ (%)<input type="number" id="dt" step="1" placeholder="VD 20"></label>
       <label class="f sc">LNST tăng so cùng kỳ ≥ (%)<input type="number" id="lnst" step="1" placeholder="VD 10"></label>
       <label class="f sc">Nợ vay giảm so đầu năm ≥ (%)<input type="number" id="no" step="1" min="0" placeholder="VD 10"></label>
@@ -426,6 +458,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     <p class="count" id="count" aria-live="polite"></p>
     <div id="list"></div>
     <section id="scanSec" hidden></section>
+    <section id="bhSec" hidden></section>
   </section>
 
   <!-- ============ THƯ VIỆN ============ -->
@@ -481,9 +514,12 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
       <li><b>So sánh và chấm điểm (chỉ cần 1 BCTC):</b> kết quả kinh doanh quý này so với cùng quý năm trước và lũy kế so với cùng kỳ; bảng cân đối cuối quý so với đầu năm; lưu chuyển tiền lũy kế từ đầu năm.</li>
     </ol>
     <h2>Công thức chấm điểm (thang 10)</h2>
-    <p class="sub">Điểm do công thức tính từ số liệu, không do AI tự cho. Mỗi loại hình có bộ tiêu chí riêng vì cấu trúc BCTC khác nhau:
-      dòng tiền của ngân hàng và công ty chứng khoán phản ánh luồng tiền gửi/cho vay chứ không đo chất lượng lợi nhuận, nên được thay
-      bằng ROE và quy mô. Thiếu số liệu thì tiêu chí đó được 0 điểm và thẻ ghi rõ. Xếp loại: 9–10 Rất tốt · 7–8 Tốt · 4–6 Trung bình · 0–3 Yếu.</p>
+    <p class="sub">Điểm do công thức tính từ số liệu, không do AI tự cho. Bốn loại hình có bốn bộ tiêu chí riêng vì BCTC khác nhau về
+      mẫu biểu, tên khoản mục và chế độ pháp lý: doanh nghiệp (TT 99/2025), ngân hàng (TT 49/2014/TT-NHNN, khung CAMELS), công ty chứng
+      khoán (TT 210/2014 + 334/2016) và bảo hiểm phi nhân thọ (TT 232/2012, khung CARAMELS). Mỗi bộ đúng 10 điểm, cho phép nửa điểm.
+      Thiếu số liệu thì tiêu chí đó được 0 điểm và thẻ ghi rõ. Xếp loại: 9–10 Rất tốt · 7–8,5 Tốt · 4–6,5 Trung bình · 0–3,5 Yếu.</p>
+    <p class="sub" style="margin-top:8px"><a href="cham-diem.html">Bộ tiêu chí chuẩn hoá 4 loại hình</a> (công thức, ngưỡng, khoản mục
+      lấy từ BCTC) · <a href="bao-cao-cham-diem.html">Báo cáo: vì sao chọn bộ tiêu chí này, nguồn tham chiếu</a></p>
     <div class="methods" id="methods" style="margin-top:12px"></div>
     <h2>Lưu ý</h2>
     <p class="sub">Điểm phản ánh sức khỏe của <b>một quý BCTC</b>, không phải khuyến nghị mua bán. Nên xem kèm định giá và xu hướng nhiều quý.
@@ -505,6 +541,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
   const ty = x => x == null ? '–' : (Math.abs(x) >= 1e6 ? nf2.format(x / 1e6) + ' triệu tỷ' : nf0.format(x) + ' tỷ');
   const pct = x => x == null ? '–' : (x > 0 ? '+' : x < 0 ? '−' : '') + nf1.format(Math.abs(x * 100)) + '%';
   const tierVar = d => d >= 9 ? 'var(--tier-1)' : d >= 7 ? 'var(--tier-2)' : d >= 4 ? 'var(--tier-3)' : 'var(--tier-4)';
+  const dfmt = d => Number.isInteger(d) ? String(d) : nf1.format(d);      // 7.5 -> "7,5"
   const vnDate = s => s ? s.split('-').reverse().join('/') : '';
   const KY = {Q1: 'Quý 1', Q2: 'Quý 2', Q3: 'Quý 3', Q4: 'Quý 4', '6T': 'Bán niên', NAM: 'Cả năm', NA: '?'};
   const PV = {HN: 'Hợp nhất', RIENG: 'Riêng', CHUNG: 'Chung'};
@@ -518,8 +555,9 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     return {ma: co.ma, ten: co.ten, loai: c ? c.loai : co.loai, bctc_url: co.bctc_url, nhom: co.nhom, c, ir,
             m: c ? c.m : {}, diem: c ? c.diem : null};
   });
-  const vn30 = items.filter(x => x.nhom !== 'mo_rong');          // task chính: 30 mã VN30
+  const vn30 = items.filter(x => (x.nhom || 'vn30') === 'vn30'); // task chính: 30 mã VN30
   const scan = items.filter(x => x.nhom === 'mo_rong');          // task riêng: BCTC dạng scan ngoài VN30
+  const bhMau = items.filter(x => x.nhom === 'bao_hiem_mau');    // mã mẫu thử bộ chấm điểm bảo hiểm (VN30 không có bảo hiểm)
   const cardsVn = D.cards.filter(c => vn30.some(it => it.ma === c.ma));
   const hasScore = D.cards.length > 0;
   const debt = it => it.m.vay_pct != null ? it.m.vay_pct : it.m.no_pct;
@@ -597,7 +635,8 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
   }
   function latestBlock(it) {
     const ir = it.ir;
-    if (it.nhom === 'mo_rong') return `<div class="latest"><span>Mã bổ sung thử nghiệm BCTC dạng scan · nguồn CafeF</span>`
+    if (it.nhom === 'mo_rong' || it.nhom === 'bao_hiem_mau') return `<div class="latest"><span>${it.nhom === 'mo_rong'
+      ? 'Mã bổ sung thử nghiệm BCTC dạng scan' : 'Mã mẫu thử bộ chấm điểm bảo hiểm'} · nguồn CafeF</span>`
       + `${it.c && it.c.file_url ? `<span><a href="${esc(it.c.file_url)}" target="_blank" rel="noopener">Mở PDF</a></span>` : ''}</div>`;
     if (!ir || !ir.ir) return `<div class="latest"><span>BCTC mới nhất: chưa đọc được từ web công ty${it.bctc_url ? ` · <a href="${esc(it.bctc_url)}" target="_blank" rel="noopener">Mở trang BCTC</a>` : ''}</span></div>`;
     const d = ir.ir;
@@ -607,15 +646,15 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
     </div>`;
   }
   function card(it) {
-    const c = it.c, m = it.m, bank = it.loai === 'ngan_hang';
+    const c = it.c, m = it.m, bank = it.loai === 'ngan_hang', bh = it.loai === 'bao_hiem';
     let body = '', head = `<div class="score"><div class="none">Chưa chấm điểm</div></div>`;
     if (c) {
-      head = `<div class="score"><div class="big">${c.diem}<small>/10</small></div>
+      head = `<div class="score"><div class="big">${dfmt(c.diem)}<small>/10</small></div>
         <div class="tier" style="color:${tierVar(c.diem)}">● ${esc(c.xep_loai)}</div></div>`;
       const rows = [
         [`Quý ${c.ky} so với ${c.ky_truoc}`],
-        [bank ? 'Tổng thu nhập HĐ' : 'Doanh thu', m.dt, delta(m.dt_pct)],
-        [bank ? 'Thu nhập lãi thuần' : it.loai === 'chung_khoan' ? 'LN hoạt động' : 'Lợi nhuận gộp', m.lng, delta(m.lng_pct)],
+        [bank ? 'Tổng thu nhập HĐ' : bh ? 'Doanh thu thuần KDBH' : 'Doanh thu', m.dt, delta(m.dt_pct)],
+        [bank ? 'Thu nhập lãi thuần' : it.loai === 'chung_khoan' ? 'LN hoạt động' : bh ? 'LN gộp KDBH' : 'Lợi nhuận gộp', m.lng, delta(m.lng_pct)],
         ['LNST', m.lnst, delta(m.lnst_pct)],
         [`LNST lũy kế ${c.ky_lk[0]}`, m.lnst_lk, delta(m.lnst_lk_pct)],
         [`Cuối quý so với ${c.ky_bs[1]}`],
@@ -625,22 +664,26 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
       ];
       if (!bank) rows.push([`LCTT kinh doanh ${c.ky_lk[0]}`, m.cfo, m.cfo == null ? '<span class="d flat">–</span>' :
         `<span class="d ${m.cfo > 0 ? 'up' : 'down'}">${m.cfo > 0 ? 'dương' : 'âm'}</span>`]);
+      if ((c.chi_so || []).length) {          // chỉ số riêng loại hình: giá trị kỳ này, kỳ so sánh ghi nhỏ bên phải
+        rows.push(['Chỉ số riêng ' + (LOAI[it.loai] || '').toLowerCase()]);
+        c.chi_so.forEach(([k, v, t]) => rows.push([esc(k), {s: v}, `<span class="d flat">${t ? 'trước ' + esc(t) : ''}</span>`]));
+      }
       const crit = c.tieu_chi.map(([t, p, mx, d]) =>
-        `<li><span aria-hidden="true">${p === mx ? '✓' : p > 0 ? '◐' : '✗'}</span><span>${esc(t)}</span><span class="pt">${p}/${mx}</span><span class="dt">${esc(d)}</span></li>`).join('');
+        `<li><span aria-hidden="true">${p === mx ? '✓' : p > 0 ? '◐' : '✗'}</span><span>${esc(t)}</span><span class="pt">${dfmt(p)}/${dfmt(mx)}</span><span class="dt">${esc(d)}</span></li>`).join('');
       body = `<div class="meter" role="img" aria-label="${c.diem} trên 10 điểm"><i style="width:${c.diem * 10}%;background:${tierVar(c.diem)}"></i></div>
         <div class="rows">${rows.map(([k, v, d]) => d === undefined ? `<span class="sec">${esc(k)}</span>`
-          : `<span class="k">${k}</span><span class="v">${v == null ? '' : ty(v)}</span>${d}`).join('')}</div>
-        <details><summary>Chi tiết điểm${c.thieu ? ` · thiếu dữ liệu ${c.thieu}đ` : ''}</summary><ul class="crit">${crit}</ul></details>
+          : `<span class="k">${k}</span><span class="v">${v == null ? '' : v.s != null ? esc(v.s) : ty(v)}</span>${d}`).join('')}</div>
+        <details><summary>Chi tiết điểm${c.thieu ? ` · thiếu dữ liệu ${dfmt(c.thieu)}đ` : ''}</summary><ul class="crit">${crit}</ul></details>
         ${c.canh_bao.length ? `<div class="warn">⚠ ${c.canh_bao.map(esc).join('<br>⚠ ')}</div>` : ''}`;
     }
     return `<article class="card" aria-label="${esc(it.ma)}">
       <div class="card-top"><div><div class="tk">${esc(it.ma)}</div><div class="name">${esc(it.ten)}</div>
-        <span class="tag">${esc(LOAI[it.loai] || it.loai)}${c ? ` · ${esc(c.ky)} vs ${esc(c.ky_truoc)}` : ''}</span>${it.nhom === 'mo_rong' ? ' <span class="tag">Bổ sung · BCTC scan</span>' : ''}</div>${head}</div>
+        <span class="tag">${esc(LOAI[it.loai] || it.loai)}${c ? ` · ${esc(c.ky)} vs ${esc(c.ky_truoc)}` : ''}</span>${it.nhom === 'mo_rong' ? ' <span class="tag">Bổ sung · BCTC scan</span>' : it.nhom === 'bao_hiem_mau' ? ' <span class="tag">Mẫu bảo hiểm</span>' : ''}</div>${head}</div>
       ${body}${latestBlock(it)}
     </article>`;
   }
   function scoreTable(list) {
-    const cols = [['Mã', it => it.ma], ['Loại hình', it => LOAI[it.loai]], ['Điểm', it => it.diem ?? '–'],
+    const cols = [['Mã', it => it.ma], ['Loại hình', it => LOAI[it.loai]], ['Điểm', it => it.diem == null ? '–' : dfmt(it.diem)],
       ['DT', it => pct(it.m.dt_pct)], ['LNST', it => pct(it.m.lnst_pct)], ['LNST lũy kế', it => pct(it.m.lnst_lk_pct)],
       ['Nợ vay (so đầu năm)', it => pct(debt(it))], ['VCSH', it => pct(it.m.vcsh_pct)],
       ['LCTT KD (tỷ)', it => it.m.cfo == null ? '–' : nf0.format(it.m.cfo)],
@@ -651,10 +694,11 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
   let asTable = false;
   function renderScores() {
     const s = state();
-    $('diemOut').textContent = s.diem;
+    $('diemOut').textContent = dfmt(s.diem);
     const list = filtered(s);
     $('count').innerHTML = `Đang hiện ${list.length}/${vn30.length} công ty VN30`
-      + (scan.length ? ` · <a href="#scanSec">Task riêng: ${scan.length} BCTC dạng scan ↓</a>` : '');
+      + (scan.length ? ` · <a href="#scanSec">Task riêng: ${scan.length} BCTC dạng scan ↓</a>` : '')
+      + (bhMau.length ? ` · <a href="#bhSec">Mẫu bảo hiểm: ${bhMau.length} mã ↓</a>` : '');
     $('list').innerHTML = !list.length ? '<div class="empty">Không có công ty nào khớp bộ lọc.</div>'
       : asTable ? scoreTable(list) : `<div class="grid">${list.map(card).join('')}</div>`;
     if (scan.length) {             // task riêng: không lọc, không tính vào số tổng hợp VN30 ở trên
@@ -665,6 +709,15 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
         + `trên ảnh trang 170/170 trường khớp báo cáo. Không tính vào số tổng hợp và bộ lọc VN30 ở trên. `
         + `<a href="bctc-scan.html">Xem báo cáo kiểm tra</a></p>`
         + (asTable ? scoreTable(sl) : `<div class="grid">${sl.map(card).join('')}</div>`);
+    }
+    if (bhMau.length) {            // VN30 không có công ty bảo hiểm: 2 mã mẫu để thử bộ tiêu chí bảo hiểm, không tính vào VN30
+      const bl = filtered({...s, q: '', loai: '', diem: 0, dt: null, lnst: null, no: null, cfo: false}, bhMau);
+      $('bhSec').hidden = false;
+      $('bhSec').innerHTML = `<h2>Mẫu bảo hiểm: ${bhMau.length} doanh nghiệp bảo hiểm phi nhân thọ (ngoài VN30)</h2>`
+        + `<p class="count">Rổ VN30 không có công ty bảo hiểm, nên 2 mã này dùng để chạy thử bộ tiêu chí bảo hiểm (combined ratio, `
+        + `loss ratio, lợi suất đầu tư...). Không tính vào số tổng hợp và bộ lọc VN30 ở trên. `
+        + `<a href="cham-diem.html#bao_hiem">Xem bộ tiêu chí bảo hiểm</a></p>`
+        + (asTable ? scoreTable(bl) : `<div class="grid">${bl.map(card).join('')}</div>`);
     }
   }
   ['q', 'loai', 'diem', 'dt', 'lnst', 'no', 'cfo', 'sort'].forEach(id => $(id).addEventListener('input', renderScores));
@@ -789,7 +842,8 @@ footer { margin-top: 36px; color: var(--muted); font-size: 12.5px; border-top: 1
   }
 
   // ---------- PHƯƠNG PHÁP ----------
-  const names = {doanh_nghiep: 'Doanh nghiệp, bảo hiểm', ngan_hang: 'Ngân hàng', chung_khoan: 'Công ty chứng khoán'};
+  const names = {doanh_nghiep: 'Doanh nghiệp (sản xuất, thương mại, dịch vụ)', ngan_hang: 'Ngân hàng', chung_khoan: 'Công ty chứng khoán',
+                 bao_hiem: 'Bảo hiểm phi nhân thọ'};
   $('methods').innerHTML = Object.entries(D.criteria).map(([k, rows]) =>
     `<div class="tablewrap"><table><thead><tr><th>${names[k]}</th><th>Điểm</th></tr></thead><tbody>${rows.map(([t, p]) =>
       `<tr><td>${esc(t)}</td><td>${esc(p)}</td></tr>`).join('')}<tr><td><b>Tổng tối đa</b></td><td><b>10đ</b></td></tr></tbody></table></div>`).join('');

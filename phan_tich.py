@@ -45,7 +45,7 @@ ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 TXT = ROOT / "txt"
 OUT = ROOT / "ket_qua"
-PROMPT_VERSION = 3          # đổi prompt/schema -> tăng số để bỏ cache cũ (3: trường lũy kế, thong_tin, sổ bài học)
+PROMPT_VERSION = 4          # đổi prompt/schema -> tăng số để bỏ cache cũ (4: khoản mục riêng NH/CK/BH cho bộ chấm điểm riêng)
 UNIT = {"dong": 1e-9, "nghin_dong": 1e-6, "trieu_dong": 1e-3, "ty_dong": 1.0}   # -> tỷ đồng
 TOKENS_PER_PAGE = {"low": 280, "medium": 560, "high": 1120}
 
@@ -95,6 +95,44 @@ class BCTC(BaseModel):
     lnst_luy_ke: Optional[float] = Field(None)
     lnst_cung_ky_luy_ke: Optional[float] = Field(None)
     lnst_cong_ty_me_luy_ke: Optional[float] = Field(None)
+    # ---- Khoản mục riêng theo loại hình (dùng cho bộ chấm điểm riêng, cham_diem.TIEU_CHI). Không có -> null.
+    # Ngân hàng (BCTC TCTD - TT 49/2014/TT-NHNN): số dương, giá trị tuyệt đối.
+    nh_cho_vay_kh: Optional[float] = Field(None, description="NH: 'Cho vay khách hàng' (dư nợ gốc, TRƯỚC dự phòng) cuối kỳ")
+    nh_cho_vay_kh_dau_nam: Optional[float] = Field(None, description="NH: Cho vay khách hàng cột số đầu năm")
+    nh_du_phong_cho_vay: Optional[float] = Field(None, description="NH: 'Dự phòng rủi ro cho vay khách hàng' cuối kỳ (số dương)")
+    nh_du_phong_cho_vay_dau_nam: Optional[float] = Field(None, description="NH: Dự phòng rủi ro cho vay KH số đầu năm (số dương)")
+    nh_tien_gui_kh: Optional[float] = Field(None, description="NH: 'Tiền gửi của khách hàng' cuối kỳ")
+    nh_tien_gui_kh_dau_nam: Optional[float] = Field(None, description="NH: Tiền gửi của khách hàng số đầu năm")
+    nh_giay_to_co_gia: Optional[float] = Field(None, description="NH: 'Phát hành giấy tờ có giá' (nợ phải trả) cuối kỳ")
+    nh_giay_to_co_gia_dau_nam: Optional[float] = Field(None, description="NH: Phát hành giấy tờ có giá số đầu năm")
+    nh_chi_phi_hd_luy_ke: Optional[float] = Field(None, description="NH: 'Chi phí hoạt động' LŨY KẾ năm nay (số dương)")
+    nh_chi_phi_hd_cung_ky_luy_ke: Optional[float] = Field(None, description="NH: Chi phí hoạt động lũy kế cùng kỳ năm trước")
+    nh_chi_phi_du_phong_luy_ke: Optional[float] = Field(None, description="NH: 'Chi phí dự phòng rủi ro tín dụng' LŨY KẾ năm nay (số dương)")
+    nh_chi_phi_du_phong_cung_ky_luy_ke: Optional[float] = Field(None, description="NH: Chi phí dự phòng rủi ro tín dụng lũy kế cùng kỳ")
+    # Công ty chứng khoán (TT 210/2014 + 334/2016/TT-BTC, mẫu B02-CTCK): lũy kế từ đầu năm.
+    ck_dt_moi_gioi_luy_ke: Optional[float] = Field(None, description="CK: 'Doanh thu nghiệp vụ môi giới chứng khoán' lũy kế năm nay")
+    ck_dt_moi_gioi_cung_ky_luy_ke: Optional[float] = Field(None, description="CK: Doanh thu môi giới lũy kế cùng kỳ năm trước")
+    ck_lai_cho_vay_luy_ke: Optional[float] = Field(None, description="CK: 'Lãi từ các khoản cho vay và phải thu' lũy kế năm nay")
+    ck_lai_cho_vay_cung_ky_luy_ke: Optional[float] = Field(None, description="CK: Lãi từ các khoản cho vay và phải thu lũy kế cùng kỳ")
+    ck_lai_fvtpl_luy_ke: Optional[float] = Field(None, description="CK: 'Lãi từ các tài sản tài chính ghi nhận thông qua lãi/lỗ (FVTPL)' lũy kế năm nay")
+    ck_lai_fvtpl_cung_ky_luy_ke: Optional[float] = Field(None, description="CK: Lãi FVTPL lũy kế cùng kỳ năm trước")
+    ck_cho_vay: Optional[float] = Field(None, description="CK: 'Các khoản cho vay' (ký quỹ + ứng trước) cuối kỳ, trước dự phòng")
+    ck_cho_vay_dau_nam: Optional[float] = Field(None, description="CK: Các khoản cho vay số đầu năm")
+    # Doanh nghiệp bảo hiểm phi nhân thọ (TT 232/2012/TT-BTC, mẫu B02-DNPNT): lũy kế từ đầu năm, chi phí số dương.
+    bh_phi_thuan_luy_ke: Optional[float] = Field(None, description="BH: 'Doanh thu phí bảo hiểm thuần' lũy kế năm nay")
+    bh_phi_thuan_cung_ky_luy_ke: Optional[float] = Field(None, description="BH: Doanh thu phí bảo hiểm thuần lũy kế cùng kỳ")
+    bh_boi_thuong_thuan_luy_ke: Optional[float] = Field(None, description="BH: 'Tổng chi bồi thường bảo hiểm' (B02-DNPNT mã 15 = chi bồi thường − thu bồi thường nhượng tái ± tăng/giảm dự phòng bồi thường) lũy kế năm nay")
+    bh_boi_thuong_thuan_cung_ky_luy_ke: Optional[float] = Field(None, description="BH: Tổng chi bồi thường bảo hiểm (mã 15) lũy kế cùng kỳ")
+    bh_chi_phi_kdbh_luy_ke: Optional[float] = Field(None, description="BH: 'Tổng chi phí hoạt động kinh doanh bảo hiểm' lũy kế năm nay")
+    bh_chi_phi_kdbh_cung_ky_luy_ke: Optional[float] = Field(None, description="BH: Tổng chi phí hoạt động KDBH lũy kế cùng kỳ")
+    bh_chi_phi_qldn_luy_ke: Optional[float] = Field(None, description="BH: 'Chi phí quản lý doanh nghiệp' lũy kế năm nay")
+    bh_chi_phi_qldn_cung_ky_luy_ke: Optional[float] = Field(None, description="BH: Chi phí quản lý doanh nghiệp lũy kế cùng kỳ")
+    bh_ln_hdtc_luy_ke: Optional[float] = Field(None, description="BH: 'Lợi nhuận hoạt động tài chính' (DT tài chính − CP tài chính) lũy kế năm nay")
+    bh_ln_hdtc_cung_ky_luy_ke: Optional[float] = Field(None, description="BH: Lợi nhuận hoạt động tài chính lũy kế cùng kỳ")
+    bh_dau_tu: Optional[float] = Field(None, description="BH: Đầu tư tài chính ngắn hạn + dài hạn cuối kỳ (gồm tiền gửi có kỳ hạn trình bày trong đầu tư)")
+    bh_dau_tu_dau_nam: Optional[float] = Field(None, description="BH: Đầu tư tài chính ngắn + dài hạn số đầu năm")
+    bh_du_phong_nv: Optional[float] = Field(None, description="BH: 'Dự phòng nghiệp vụ' (tổng) cuối kỳ")
+    bh_du_phong_nv_dau_nam: Optional[float] = Field(None, description="BH: Dự phòng nghiệp vụ số đầu năm")
     trang_cdkt: Optional[int] = Field(description="Trang (trong file đính kèm, bắt đầu từ 1) có Bảng cân đối kế toán")
     trang_kqkd: Optional[int]
     trang_lctt: Optional[int]
@@ -126,7 +164,9 @@ Quy tắc bắt buộc:
    - chung_khoan: doanh_thu_thuan = "Cộng doanh thu hoạt động"; gia_von = "Cộng chi phí hoạt động"; loi_nhuan_gop = null;
      vay_no = "Vay và nợ thuê tài sản tài chính ngắn hạn" + "dài hạn".
    - bao_hiem: doanh_thu_thuan = "Doanh thu thuần hoạt động kinh doanh bảo hiểm";
-     loi_nhuan_gop = "Lợi nhuận gộp hoạt động kinh doanh bảo hiểm".
+     loi_nhuan_gop = "Lợi nhuận gộp hoạt động kinh doanh bảo hiểm"; gia_von = "Tổng chi phí hoạt động kinh doanh bảo hiểm".
+   - Khoản mục riêng (trường nh_*, ck_*, bh_*): CHỈ điền cho đúng loại hình, theo đúng tên dòng trong mô tả trường; các
+     trường *_luy_ke lấy cột lũy kế từ đầu năm (quý 1: cột quý); chi phí/dự phòng ghi số dương (giá trị tuyệt đối).
    - Lưu chuyển tiền: lctt_hdkd = mã 20, lctt_hddt = mã 30, lctt_hdtc = mã 40, lctt_thuan = mã 50.
 6. Không thấy chỉ tiêu thì để null, KHÔNG đoán. Có văn bản OCR kèm theo: dùng để đọc chữ số; nếu khác ảnh thì nhìn kỹ ảnh."""
 
@@ -417,6 +457,8 @@ CF = ["lctt_hdkd", "lctt_hddt", "lctt_hdtc", "lctt_thuan"]
 FIELDS = (["doanh_thu_thuan", "doanh_thu_thuan_cung_ky", "gia_von", "gia_von_cung_ky", "loi_nhuan_gop",
            "loi_nhuan_gop_cung_ky", "lnst", "lnst_cung_ky", "lnst_cong_ty_me", "lnst_cong_ty_me_cung_ky"]
           + BS + [f + "_dau_nam" for f in BS] + CF + [f + "_cung_ky" for f in CF] + [f + "_luy_ke" for f in LUY_KE])
+RIENG = [f for f in BCTC.model_fields if f[:3] in ("nh_", "ck_", "bh_")]       # khoản mục riêng từng loại hình
+FIELDS = FIELDS + RIENG
 CF_TEN = {"lctt_hdkd": "LCTT kinh doanh", "lctt_hddt": "LCTT đầu tư", "lctt_hdtc": "LCTT tài chính"}
 
 

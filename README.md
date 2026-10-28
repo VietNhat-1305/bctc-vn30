@@ -196,28 +196,26 @@ Dashboard gồm:
 - **Thẻ từng công ty**: điểm /10, xếp loại, KQKD quý và lũy kế kèm % so với cùng kỳ năm trước, bảng cân đối kèm % so với đầu năm (▲▼ có dấu, không chỉ dựa vào màu), chi tiết từng tiêu chí, cảnh báo, ghi chú cách lấy số, kết quả đối chiếu Vietcap, link BCTC gốc và web IR.
 - Có thể chuyển sang dạng bảng, và đổi giao diện sáng/tối.
 
-### Công thức chấm điểm (thang 10)
+### Công thức chấm điểm (thang 10): 4 bộ riêng theo loại hình
 
-Điểm do code tính từ số liệu nên kiểm chứng lại được, không phải AI tự cho. BCTC ngân hàng và công ty chứng khoán khác doanh nghiệp: dòng tiền của họ phản ánh tiền gửi và cho vay chứ không đo chất lượng lợi nhuận. Vì vậy mỗi loại hình có một bộ tiêu chí riêng, bộ nào cũng tối đa 10 điểm.
+BCTC của ngân hàng, công ty chứng khoán, bảo hiểm và doanh nghiệp thường khác nhau về mẫu biểu, tên khoản mục và giới hạn an toàn pháp lý. Vì vậy mỗi loại hình có một bộ tiêu chí riêng. Bộ nào cũng tối đa 10 điểm và cho phép nửa điểm. Điểm do code tính từ số liệu, không phải AI tự cho.
 
-KQKD so với **cùng kỳ năm trước**, bảng cân đối so với **đầu năm**, dòng tiền **lũy kế từ đầu năm** - tất cả lấy từ 1 BCTC.
+| Loại hình | Khung tham chiếu | Chế độ BCTC | Nhóm (điểm tối đa) |
+|---|---|---|---|
+| Doanh nghiệp | Piotroski F-score | TT 99/2025/TT-BTC | Tăng trưởng 4 · Lợi nhuận 1 · Hiệu quả 1 · Dòng tiền 2 · Đòn bẩy & vốn 2 |
+| Ngân hàng | CAMELS + IMF FSI | QĐ 16/2007/QĐ-NHNN (sửa bởi TT 49/2014, 22/2017, 27/2021) | C Vốn 1,5 · A Chất lượng tài sản 2 · E Hiệu quả 3,5 · L Thanh khoản 1 · Tăng trưởng 2 |
+| Chứng khoán | Trần pháp lý (TT 121/2020, QĐ 87/QĐ-UBCK), IOSCO | TT 210/2014 + 334/2016/TT-BTC | Hiệu quả 3 · Tăng trưởng 2 · Chất lượng thu nhập 2 · Đòn bẩy & rủi ro 2 · Vốn 1 |
+| Bảo hiểm phi nhân thọ | CARAMELS (IMF) + combined ratio | TT 232/2012/TT-BTC | Nghiệp vụ 3 · Đầu tư 2 · Hiệu quả 2 · Tăng trưởng 1,5 · Vốn & dự phòng 1,5 |
 
-| Doanh nghiệp, bảo hiểm | Điểm | Ngân hàng | Điểm | Chứng khoán | Điểm |
-|---|---|---|---|---|---|
-| DT thuần quý tăng so với cùng quý năm trước | tăng 1, ≥20% thì 2 | Tổng thu nhập HĐ quý tăng so cùng kỳ | tăng 1, ≥15% thì 2 | DT hoạt động quý tăng so cùng kỳ | tăng 1, ≥20% thì 2 |
-| LNST quý tăng so với cùng quý năm trước | tăng 1, ≥20% hoặc lỗ → lãi thì 2 | LNST quý tăng so cùng kỳ | tăng 1, ≥15% hoặc lỗ → lãi thì 2 | LNST quý tăng so cùng kỳ | tăng 1, ≥20% hoặc lỗ → lãi thì 2 |
-| LNST lũy kế từ đầu năm tăng so cùng kỳ | 1 | LNST lũy kế tăng so cùng kỳ | 1 | LNST lũy kế tăng so cùng kỳ | 1 |
-| Biên LN gộp cải thiện so cùng kỳ | 1 | Thu nhập lãi thuần tăng so cùng kỳ | 1 | Biên LN hoạt động cải thiện so cùng kỳ | 1 |
-| Dòng tiền kinh doanh lũy kế dương | 1 | Tổng tài sản tăng so đầu năm | 1 | ROE quy năm ≥12% | 1 |
-| LCTT kinh doanh lũy kế ≥ LNST lũy kế | 1 | ROE quy năm ≥15% | 1 | VCSH tăng so đầu năm | 1 |
-| Đòn bẩy Nợ vay/VCSH không tăng so đầu năm | 1 | VCSH tăng so đầu năm | 1 | Đòn bẩy không tăng so đầu năm | 1 |
-| VCSH tăng so đầu năm | 1 | Đòn bẩy Nợ/VCSH không tăng so đầu năm | 1 | Tổng tài sản tăng so đầu năm | 1 |
-
-- Xếp loại: **9–10 Rất tốt**, 7–8 Tốt, 4–6 Trung bình, 0–3 Yếu.
-- Thiếu số liệu thì tiêu chí đó được 0 điểm và thẻ ghi rõ số điểm bị thiếu dữ liệu.
-- **10/10** nghĩa là so với cùng kỳ năm trước, công ty tăng mạnh cả doanh thu lẫn lợi nhuận (quý và lũy kế), biên lợi nhuận tốt lên, lợi nhuận thu về bằng tiền; so với đầu năm, đòn bẩy không tăng và vốn chủ sở hữu tăng.
-- Đây là điểm sức khỏe của **một quý BCTC**, chưa phải khuyến nghị đầu tư. Nên xem kèm định giá và xu hướng nhiều quý.
-- Muốn đổi ngưỡng hay trọng số thì sửa `cham_diem.py`.
+- Tiêu chí lưu dưới dạng dữ liệu trong `cham_diem.TIEU_CHI`: mã, nhóm, công thức, ngưỡng, điểm, lý do, nguồn. Danh mục nguồn đã kiểm chứng nằm trong `cham_diem.NGUON`.
+- `python tai_lieu_cham_diem.py` sinh 2 trang từ chính dữ liệu đó. `dang_web.py` tự gọi lệnh này mỗi lần dựng web.
+  - `docs/cham-diem.html`: bộ tiêu chí chuẩn hoá. Gồm khoản mục lấy từ BCTC, công thức, thang điểm, lý do, nguồn, kèm ví dụ thật.
+  - `docs/bao-cao-cham-diem.html`: báo cáo vì sao chọn bộ tiêu chí này. Gồm so sánh bộ cũ và bộ mới, ngưỡng so với phân bố thực tế, các giới hạn còn lại, nguồn tham chiếu.
+- Ngân hàng, chứng khoán, bảo hiểm cần thêm khoản mục riêng (trường `nh_*`, `ck_*`, `bh_*` trong schema). Với BCTC đã trích phần chung, bổ sung bằng `python claude_trich.py bo_sung MÃ NĂM QUÝ file.json`.
+- Tỷ lệ năm hoá = số lũy kế × 4 / số quý, chia cho bình quân đầu năm và cuối quý. Thiếu số liệu thì tiêu chí đó được 0 điểm, thẻ ghi rõ.
+- Xếp loại: **9–10 Rất tốt**, 7–8,5 Tốt, 4–6,5 Trung bình, 0–3,5 Yếu.
+- Điểm theo bộ cũ (2 bộ dùng chung, kỳ Q2/2026) được lưu ở `ket_qua/diem_bo_cu_Q2_2026.json` để báo cáo so sánh.
+- Đây là điểm sức khỏe của **một quý BCTC**, chưa phải khuyến nghị đầu tư.
 
 ## Từ điển 500 thuật ngữ (tu_dien.py)
 

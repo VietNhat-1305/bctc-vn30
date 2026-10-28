@@ -8,6 +8,7 @@ Mỗi mã chỉ 1 BCTC (quý mới nhất): báo cáo đã có sẵn cùng kỳ 
     python claude_trich.py anh VCB 2026 2            # ảnh PNG từng trang -> ket_qua/debug/anh/ (xem bằng tool Read)
     python claude_trich.py ghi VCB 2026 2 a.json     # kiểm tra schema + cân đối, lưu ket_qua/json/
     python claude_trich.py ghi VCB 2026 2 - < a.json # như trên, đọc JSON từ stdin
+    python claude_trich.py bo_sung VCB 2026 2 b.json # chỉ ghép khoản mục riêng loại hình (nh_*/ck_*/bh_*) vào kết quả đã có
 
 Kết quả lưu cùng định dạng cache của phan_tich.py (model = claude) -> `python phan_tich.py --tong-hop` chấm điểm,
 tự đối chiếu Vietcap và dựng web.
@@ -52,7 +53,7 @@ def reports() -> list[dict]:
             c = json.loads(done.read_text(encoding="utf-8")) if done.exists() else {}
             rows.append({"ma": tk, "nam": y, "quy": q, "scope": rec["scope"], "file": rec["path"], "sha256": rec["sha256"],
                          "pdf_nho": str(pt.OUT / "debug" / f"{tk}_{y}_Q{q}.pdf"), "trang": sent.get((tk, y, q)),
-                         "da_trich": c.get("sha256") == rec["sha256"] and c.get("prompt_version") == pt.prompt_version()})
+                         "da_trich": c.get("sha256") == rec["sha256"] and bool(c.get("data"))})
     return rows
 
 
@@ -128,6 +129,50 @@ def save(tk: str, y: int, q: int, path: str) -> int:
     return 0 if not n["warn"] else 1
 
 
+TIEN_TO = {"ngan_hang": "nh_", "chung_khoan": "ck_", "bao_hiem": "bh_"}
+# Khoảng hợp lý của tỷ lệ: ra ngoài -> nhiều khả năng đọc nhầm dòng/cột/đơn vị, cần xem lại ảnh
+KHOANG = {"ngan_hang": {"ldr": (0.4, 1.3), "cir": (0.1, 0.8), "chi_phi_tin_dung": (0, 0.06), "llr": (0.003, 0.08)},
+          "chung_khoan": {"ty_trong_on_dinh": (0, 1.0), "margin_vcsh": (0, 2.5), "ty_trong_fvtpl": (-0.5, 1.0)},
+          "bao_hiem": {"combined": (0.6, 1.4), "loss_ratio": (0.1, 1.2), "loi_suat_dau_tu": (0, 0.2)}}
+
+
+def bo_sung(tk: str, y: int, q: int, path: str) -> int:
+    """Ghép khoản mục riêng của loại hình (nh_*/ck_*/bh_*) vào kết quả trích đã có (đã kiểm), không đụng số cũ."""
+    import cham_diem
+    r = find(tk, y, q)
+    out = pt.OUT / "json" / f"{tk}_{y}_Q{q}.json"
+    if not out.exists():
+        raise SystemExit("Chưa có kết quả trích chính của BCTC này: dùng lệnh ghi trước")
+    res = json.loads(out.read_text(encoding="utf-8"))
+    if res.get("sha256") != r["sha256"]:
+        raise SystemExit("File BCTC đã đổi so với lần trích trước: trích lại toàn bộ bằng lệnh ghi")
+    kind = res["data"]["loai_hinh"]
+    tien_to = TIEN_TO.get(kind)
+    if not tien_to:
+        raise SystemExit(f"Loại hình {kind} không có khoản mục riêng")
+    raw = sys.stdin.read() if path == "-" else Path(path).read_text(encoding="utf-8")
+    moi = json.loads(raw)
+    sai = [k for k in moi if k not in pt.RIENG or not k.startswith(tien_to)]
+    if sai:
+        raise SystemExit(f"Trường không hợp lệ cho {kind}: {sai}. Chỉ nhận: {[f for f in pt.RIENG if f.startswith(tien_to)]}")
+    res["data"] = pt.BCTC.model_validate({**res["data"], **moi}).model_dump()
+    res.update(prompt_version=pt.prompt_version(), bo_sung_at=datetime.now().isoformat(timespec="seconds"), bo_sung_model=MODEL)
+    out.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    n = pt.normalize(res)
+    m = cham_diem.tu_bctc(n["v"], kind, q)
+    s = cham_diem.score(m, kind)
+    thieu = [f for f in pt.RIENG if f.startswith(tien_to) and res["data"].get(f) is None]
+    print(f"Đã bổ sung {out.name}: {len(moi)} trường | điểm mới {s['diem']}/10")
+    for ten, diem, mx, ct in s["tieu_chi"]:
+        print(f"  {diem}/{mx}  {ten}: {ct}")
+    canh = [f"{k} = {m[k]:.1%} ngoài khoảng hợp lý {a:.0%}-{b:.0%}" for k, (a, b) in KHOANG[kind].items()
+            if m.get(k) is not None and not a <= m[k] <= b]
+    if thieu:
+        print("CÒN THIẾU: " + ", ".join(thieu))
+    print("KIỂM TRA: " + ("OK" if not canh else "CẢNH BÁO (xem lại ảnh): " + " | ".join(canh)))
+    return 1 if canh else 0
+
+
 def main(argv: list[str]) -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -148,6 +193,8 @@ def main(argv: list[str]) -> int:
         return 0
     if cmd == "ghi":
         return save(argv[1].upper(), int(argv[2]), int(argv[3]), argv[4])
+    if cmd == "bo_sung":
+        return bo_sung(argv[1].upper(), int(argv[2]), int(argv[3]), argv[4])
     print(__doc__)
     return 2
 

@@ -70,6 +70,7 @@ Chỉ điền nhóm trường đúng loại hình của báo cáo. Nhận diện
   - `nh_cho_vay_kh` (+ `_dau_nam`): dòng "Cho vay khách hàng", tức dư nợ gốc **trước** dự phòng.
   - `nh_du_phong_cho_vay` (+ `_dau_nam`): dòng "Dự phòng rủi ro cho vay khách hàng".
   - `nh_tien_gui_kh` (+ `_dau_nam`): dòng "Tiền gửi của khách hàng".
+  - `nh_giay_to_co_gia` (+ `_dau_nam`): dòng "Phát hành giấy tờ có giá" bên nợ phải trả (không có thì ghi 0 nếu dòng in "-").
   - `nh_chi_phi_hd_luy_ke` / `nh_chi_phi_hd_cung_ky_luy_ke`: dòng "Chi phí hoạt động" trên KQKD, cột lũy kế.
   - `nh_chi_phi_du_phong_luy_ke` / `nh_chi_phi_du_phong_cung_ky_luy_ke`: dòng "Chi phí dự phòng rủi ro tín dụng", cột lũy kế.
 - **Chứng khoán (ck_), mẫu B02-CTCK:**
@@ -79,8 +80,8 @@ Chỉ điền nhóm trường đúng loại hình của báo cáo. Nhận diện
   - `ck_cho_vay` (+ `_dau_nam`): dòng "Các khoản cho vay" trên CĐKT (ký quỹ + ứng trước tiền bán), **trước** dự phòng.
 - **Bảo hiểm (bh_), mẫu B02-DNPNT:**
   - `bh_phi_thuan_luy_ke` / `_cung_ky_luy_ke`: dòng "Doanh thu phí bảo hiểm thuần".
-  - `bh_boi_thuong_thuan_luy_ke` / `_cung_ky_luy_ke`: bồi thường thuộc phần trách nhiệm giữ lại, tức tổng chi bồi thường
-    sau khi trừ thu bồi thường nhượng tái (dòng "Tổng chi bồi thường" hoặc "Chi bồi thường thuộc phần trách nhiệm giữ lại").
+  - `bh_boi_thuong_thuan_luy_ke` / `_cung_ky_luy_ke`: dòng "Tổng chi bồi thường bảo hiểm" (mã 15 = chi bồi thường − thu bồi
+    thường nhượng tái ± tăng/giảm dự phòng bồi thường), tức bồi thường phát sinh thuần như định nghĩa của IMF.
   - `bh_chi_phi_kdbh_luy_ke` / `_cung_ky_luy_ke`: dòng "Tổng chi phí hoạt động kinh doanh bảo hiểm".
   - `bh_chi_phi_qldn_luy_ke` / `_cung_ky_luy_ke`: dòng "Chi phí quản lý doanh nghiệp".
   - `bh_ln_hdtc_luy_ke` / `_cung_ky_luy_ke`: dòng "Lợi nhuận hoạt động tài chính", bằng doanh thu HĐTC trừ chi phí HĐTC.
