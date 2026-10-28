@@ -61,6 +61,8 @@
   "nh_du_phong_cho_vay_dau_nam": 3266690.0,
   "nh_tien_gui_kh": 199777344.0,
   "nh_tien_gui_kh_dau_nam": 191807215.0,
+  "nh_giay_to_co_gia": 40001983.0,
+  "nh_giay_to_co_gia_dau_nam": 29984050.0,
   "nh_chi_phi_hd_luy_ke": 1939420.0,
   "nh_chi_phi_hd_cung_ky_luy_ke": 2074758.0,
   "nh_chi_phi_du_phong_luy_ke": 837981.0,
@@ -93,6 +95,6 @@
   "ghi_chu": "",
   "thong_tin": "BCTC hợp nhất giữa niên độ Q2/2026 (triệu đồng), đọc từ ảnh trang. KQKD 4 cột: quý II năm nay/năm trước, lũy kế 6T năm nay/năm trước. Báo cáo không in Tổng thu nhập hoạt động (R3): doanh thu = tổng mục I-VII (lãi thuần + dịch vụ + ngoại hối + CK kinh doanh + CK đầu tư + hoạt động khác + góp vốn), khớp với LN thuần trước dự phòng + chi phí hoạt động ở cả 4 cột (Q2/26 1.482.612+1.006.619; Q2/25 1.651.653+1.040.824; 6T/26 3.463.370+1.939.420; 6T/25 6.437.566+2.074.758). LN gộp = Thu nhập lãi thuần. Lũy kế 6T/2025 có thu nhập góp vốn, mua cổ phần 2.614.862 (nên DT và LNST lũy kế năm trước cao). LNST cổ đông ngân hàng mẹ = LNST (cổ đông không kiểm soát '-'). CĐKT: đầu năm = cột 31.12.2025; tổng nợ phải trả in sẵn. LCTT trực tiếp 6T: hoạt động tài chính 2026 in '-' nên = 0 (R5); 6T/2025 TC 100.000 (phát hành cổ phiếu); KD + ĐT + TC = LCTT thuần ở cả 2 cột."
  },
- "bo_sung_at": "2026-10-28T23:59:14",
+ "bo_sung_at": "2026-10-29T00:08:16",
  "bo_sung_model": "claude-opus-5-5"
 }

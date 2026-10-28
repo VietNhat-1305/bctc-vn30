@@ -1,7 +1,7 @@
 {
  "ghi_chu": "Sổ bài học của luồng trích BCTC. 'quy_tac' và 'theo_ma' được đưa vào prompt của Gemini/Claude mỗi lần trích; 'can_xem_xet' do doi_chieu.py tự ghi khi số lệch Vietcap > 1%, xét xong thì chuyển thành quy tắc/lưu ý (python tri_thuc.py). Tăng 'phien_ban' khi quy tắc đổi để Gemini trích lại.",
  "phien_ban": 3,
- "cap_nhat": "2026-10-18",
+ "cap_nhat": "2026-10-29",
  "quy_tac": [
   {
    "id": "R1",
@@ -1805,6 +1805,104 @@
    "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
    "ngay": "2026-10-18",
    "trang_thai": "da_xet"
+  },
+  {
+   "ma": "MIG",
+   "ky": "cuối Q2/2026",
+   "chi_tieu": "Tổng tài sản",
+   "so_minh": 12542.505617289,
+   "so_nguon": 12386.134309892,
+   "chenh_lech_pct": 1.26,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-29",
+   "trang_thai": "mo"
+  },
+  {
+   "ma": "MIG",
+   "ky": "cuối Q2/2026",
+   "chi_tieu": "Nợ phải trả",
+   "so_minh": 9739.886662160001,
+   "so_nguon": 9583.515354763,
+   "chenh_lech_pct": 1.63,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-29",
+   "trang_thai": "mo"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT kinh doanh (lũy kế)",
+   "so_minh": 116.01668355300001,
+   "so_nguon": 285.764318972,
+   "chenh_lech_pct": -59.4,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-29",
+   "trang_thai": "mo"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2025",
+   "chi_tieu": "LCTT kinh doanh (lũy kế)",
+   "so_minh": 61.869550389000004,
+   "so_nguon": -38.130449611,
+   "chenh_lech_pct": 262.26,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Cột so sánh: BCTC năm nay có thể đã trình bày lại số năm trước (R7, R13) - xem nhãn trên báo cáo",
+   "ngay": "2026-10-29",
+   "trang_thai": "mo"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT đầu tư (lũy kế)",
+   "so_minh": -304.84373730000004,
+   "so_nguon": -352.7775711,
+   "chenh_lech_pct": 13.59,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-29",
+   "trang_thai": "mo"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2025",
+   "chi_tieu": "LCTT đầu tư (lũy kế)",
+   "so_minh": 135.35626854,
+   "so_nguon": 235.35626854,
+   "chenh_lech_pct": -42.49,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Cột so sánh: BCTC năm nay có thể đã trình bày lại số năm trước (R7, R13) - xem nhãn trên báo cáo",
+   "ngay": "2026-10-29",
+   "trang_thai": "mo"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT tài chính (lũy kế)",
+   "so_minh": 216.624067542,
+   "so_nguon": 94.810265923,
+   "chenh_lech_pct": 128.48,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026",
+   "nguon": "Vietcap IQ",
+   "goi_y": "Vietcap lấy quý 2/quý 4 từ bản soát xét/kiểm toán (R1): nếu ảnh trang khớp số mình thì đóng mục này",
+   "ngay": "2026-10-29",
+   "trang_thai": "mo"
   }
  ]
 }

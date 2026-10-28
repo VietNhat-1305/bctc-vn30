@@ -62,6 +62,8 @@
   "nh_du_phong_cho_vay_dau_nam": 24975679.0,
   "nh_tien_gui_kh": 1728820567.0,
   "nh_tien_gui_kh_dau_nam": 1672534846.0,
+  "nh_giay_to_co_gia": 39345465.0,
+  "nh_giay_to_co_gia_dau_nam": 27101221.0,
   "nh_chi_phi_hd_luy_ke": 15333306.0,
   "nh_chi_phi_hd_cung_ky_luy_ke": 11677169.0,
   "nh_chi_phi_du_phong_luy_ke": 2995727.0,
@@ -94,6 +96,6 @@
   "ghi_chu": "",
   "thong_tin": "BCTC hợp nhất giữa niên độ Q2/2026, đơn vị triệu VND, số đọc từ ảnh trang. Doanh thu = Tổng thu nhập hoạt động tự cộng các mục I-VII (lãi thuần + dịch vụ + ngoại hối + CK kinh doanh + CK đầu tư + hoạt động khác + góp vốn mua cổ phần) vì KQKD không in dòng này (R3); khớp với LN thuần trước dự phòng + Chi phí hoạt động ở cả 4 cột (Q2/2026 26.371.601 = 17.922.350 + 8.449.251; Q2/2025 17.868.237; lũy kế 47.551.411 / 35.132.963). Lợi nhuận gộp = Thu nhập lãi thuần. LNST công ty mẹ = Lợi nhuận thuần phân bổ cho cổ đông của Ngân hàng. Nợ phải trả lấy dòng TỔNG NỢ PHẢI TRẢ; VCSH = TỔNG VỐN CHỦ SỞ HỮU (gồm lợi ích CĐ không kiểm soát); cân đối khớp 2 cột. LCTT phương pháp trực tiếp, không có phần hoạt động tài chính (đánh số II sang IV) nên lctt_hdtc = 0 (R5); KD + ĐT = LCTT thuần ở cả 2 cột. Giá vốn, nợ vay để null theo quy tắc ngân hàng."
  },
- "bo_sung_at": "2026-10-29T00:00:31",
+ "bo_sung_at": "2026-10-29T00:08:19",
  "bo_sung_model": "claude-opus-5-5"
 }

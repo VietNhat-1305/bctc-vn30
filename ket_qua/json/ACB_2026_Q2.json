@@ -61,6 +61,8 @@
   "nh_du_phong_cho_vay_dau_nam": 7624729.0,
   "nh_tien_gui_kh": 576603602.0,
   "nh_tien_gui_kh_dau_nam": 585180175.0,
+  "nh_giay_to_co_gia": 199012993.0,
+  "nh_giay_to_co_gia_dau_nam": 133294422.0,
   "nh_chi_phi_hd_luy_ke": 5566330.0,
   "nh_chi_phi_hd_cung_ky_luy_ke": 5428052.0,
   "nh_chi_phi_du_phong_luy_ke": 1746196.0,
@@ -93,6 +95,6 @@
   "ghi_chu": "",
   "thong_tin": "Ngân hàng (R3): doanh thu = tổng thu nhập hoạt động I–VII (lãi thuần + dịch vụ + ngoại hối + CK kinh doanh + CK đầu tư + hoạt động khác + góp vốn mua cổ phần); khớp 'LN thuần trước dự phòng' + 'Chi phí hoạt động' ở cả 4 cột (Q2/26 6.427.073+2.715.827; Q2/25 6.556.384+2.736.160; 6T/26 12.481.235+5.566.330; 6T/25 11.779.120+5.428.052). Lợi nhuận gộp = thu nhập lãi thuần. Không có cổ đông không kiểm soát: LNST cổ đông mẹ = LNST (R6). Nợ phải trả lấy dòng 'Tổng nợ phải trả'; đầu năm = cột 31.12.2025. LCTT trang 5-6, lũy kế 6 tháng 2026 và 2025. Quý 2 + quý 1 (đã trích) = lũy kế ở cả DT, LN lãi thuần, LNST, hai năm."
  },
- "bo_sung_at": "2026-10-28T23:36:17",
+ "bo_sung_at": "2026-10-29T00:08:13",
  "bo_sung_model": "claude-opus-5-5"
 }

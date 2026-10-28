@@ -61,6 +61,8 @@
   "nh_du_phong_cho_vay_dau_nam": 13150593.0,
   "nh_tien_gui_kh": 963815357.0,
   "nh_tien_gui_kh_dau_nam": 921368132.0,
+  "nh_giay_to_co_gia": 233503962.0,
+  "nh_giay_to_co_gia_dau_nam": 187236104.0,
   "nh_chi_phi_hd_luy_ke": 9974361.0,
   "nh_chi_phi_hd_cung_ky_luy_ke": 8906428.0,
   "nh_chi_phi_du_phong_luy_ke": 7701901.0,
@@ -93,6 +95,6 @@
   "ghi_chu": "",
   "thong_tin": "BCTC hợp nhất Q2/2026 MBB, đơn vị triệu đồng, đọc từ ảnh trang. Ngân hàng: doanh thu = dòng TỔNG THU NHẬP HOẠT ĐỘNG có in (đã cộng lại 7 mục thu nhập thuần I-VII khớp cả 4 cột); lợi nhuận gộp = Thu nhập lãi thuần; giá vốn và nợ vay để null. LNST công ty mẹ = 'Lợi nhuận sau thuế của Ngân hàng'. CĐKT: cột 30/06/2026 và cột 31/12/2025 đã kiểm toán làm số đầu năm; nợ phải trả = dòng TỔNG NỢ PHẢI TRẢ; VCSH = TỔNG VỐN CHỦ SỞ HỮU (gồm lợi ích CĐKKS). LCTT trực tiếp, lũy kế 01/01-30/06 năm nay và năm trước (HĐTC 2025 chỉ có phát hành giấy tờ có giá 5.698.563). Đã kiểm: LNTT - thuế = LNST cả 4 cột; quý 2 + quý 1 = lũy kế 6 tháng (doanh thu, lãi thuần, LNST, LNST mẹ)."
  },
- "bo_sung_at": "2026-10-29T00:02:32",
+ "bo_sung_at": "2026-10-29T00:08:17",
  "bo_sung_model": "claude-opus-5-5"
 }

@@ -61,6 +61,8 @@
   "nh_du_phong_cho_vay_dau_nam": 34945553.0,
   "nh_tien_gui_kh": 2261720394.0,
   "nh_tien_gui_kh_dau_nam": 2222991628.0,
+  "nh_giay_to_co_gia": 301731655.0,
+  "nh_giay_to_co_gia_dau_nam": 225407774.0,
   "nh_chi_phi_hd_luy_ke": 14112685.0,
   "nh_chi_phi_hd_cung_ky_luy_ke": 13272410.0,
   "nh_chi_phi_du_phong_luy_ke": 11318261.0,
@@ -93,6 +95,6 @@
   "ghi_chu": "",
   "thong_tin": "Ngân hàng: doanh thu = tổng thu nhập hoạt động tự cộng các mục I-VII (lãi thuần, dịch vụ, ngoại hối, CK kinh doanh, CK đầu tư, hoạt động khác, góp vốn mua cổ phần) cho cả 4 cột; đã khớp với LN thuần trước dự phòng + chi phí hoạt động (Q2/26 16.153.206+7.484.712; Q2/25 14.723.603+7.365.592; 6T/26 30.222.795+14.112.685; 6T/25 26.715.195+13.272.410 triệu). LN gộp = thu nhập lãi thuần. Báo cáo không in tổng nợ phải trả: nợ = Tổng tài sản - 'VIII. Vốn và các quỹ' (đã gồm lợi ích cổ đông không kiểm soát), cả cuối quý lẫn đầu năm. Số đầu năm 31/12/2025 là số BCTC hợp nhất đã kiểm toán. Quý 2 + quý 1 khớp cột lũy kế."
  },
- "bo_sung_at": "2026-10-28T23:59:07",
+ "bo_sung_at": "2026-10-29T00:08:14",
  "bo_sung_model": "claude-opus-5-5"
 }

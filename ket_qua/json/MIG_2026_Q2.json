@@ -64,6 +64,8 @@
   "nh_du_phong_cho_vay_dau_nam": null,
   "nh_tien_gui_kh": null,
   "nh_tien_gui_kh_dau_nam": null,
+  "nh_giay_to_co_gia": null,
+  "nh_giay_to_co_gia_dau_nam": null,
   "nh_chi_phi_hd_luy_ke": null,
   "nh_chi_phi_hd_cung_ky_luy_ke": null,
   "nh_chi_phi_du_phong_luy_ke": null,
@@ -78,8 +80,8 @@
   "ck_cho_vay_dau_nam": null,
   "bh_phi_thuan_luy_ke": 1695137304099.0,
   "bh_phi_thuan_cung_ky_luy_ke": 1304929736947.0,
-  "bh_boi_thuong_thuan_luy_ke": 377871108940.0,
-  "bh_boi_thuong_thuan_cung_ky_luy_ke": 382710302736.0,
+  "bh_boi_thuong_thuan_luy_ke": 320189443127.0,
+  "bh_boi_thuong_thuan_cung_ky_luy_ke": 358282045545.0,
   "bh_chi_phi_kdbh_luy_ke": 1987416450661.0,
   "bh_chi_phi_kdbh_cung_ky_luy_ke": 1613762599702.0,
   "bh_chi_phi_qldn_luy_ke": 290833373222.0,
@@ -96,6 +98,6 @@
   "ghi_chu": "",
   "thong_tin": "BCTC chung Q2/2026 (TT 232, mẫu B01/B02/B09-DNPNT), đơn vị VND. DT thuần = 'Doanh thu thuần hoạt động kinh doanh bảo hiểm' (mã 10); giá vốn = 'Tổng chi phí hoạt động kinh doanh bảo hiểm' (mã 18/20); LN gộp = mã 19 (DT − giá vốn khớp). LNST lấy Phần I mã 60, không có cổ đông không kiểm soát nên LNST công ty mẹ = LNST. Nợ phải trả = mục C (ngắn hạn + dài hạn khớp). Dòng 'Vay và nợ ngắn hạn' in '-' cả hai kỳ, không có khoản vay nên vay_no để null. Phần tài sản CĐKT (trang 7-8 file gốc, không nằm trong PDF nhỏ) đọc từ file gốc: Tổng TS 12.542.505.617.289 = TS ngắn hạn 11.998.425.980.775 + dài hạn 544.079.636.514, khớp Tổng nguồn vốn. LCTT trực tiếp lũy kế 6 tháng; KD + ĐT + TC = lưu chuyển thuần cả hai năm."
  },
- "bo_sung_at": "2026-10-28T23:38:58",
+ "bo_sung_at": "2026-10-29T00:08:12",
  "bo_sung_model": "claude-opus-5-5"
 }

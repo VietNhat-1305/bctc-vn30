@@ -61,6 +61,8 @@
   "nh_du_phong_cho_vay_dau_nam": 10498378.0,
   "nh_tien_gui_kh": 662447730.0,
   "nh_tien_gui_kh_dau_nam": 618911535.0,
+  "nh_giay_to_co_gia": 212079904.0,
+  "nh_giay_to_co_gia_dau_nam": 215330128.0,
   "nh_chi_phi_hd_luy_ke": 8489139.0,
   "nh_chi_phi_hd_cung_ky_luy_ke": 7115608.0,
   "nh_chi_phi_du_phong_luy_ke": 1586930.0,
@@ -93,6 +95,6 @@
   "ghi_chu": "",
   "thong_tin": "Đọc từ ảnh trang (khớp lớp chữ gốc). KQKD in sẵn dòng 'Tổng thu nhập hoạt động' (= tổng các mục thu nhập thuần, đã cộng kiểm 4 cột); lợi nhuận gộp = Thu nhập lãi thuần. LNST cổ đông mẹ = 'Lợi nhuận thuần của cổ đông của Ngân hàng'. CĐKT cột đầu năm = 31/12/2025. VCSH = 'Tổng vốn chủ sở hữu' (gồm lợi ích cổ đông không kiểm soát). Quý + lũy kế Q1 khớp cột lũy kế cả 2 năm."
  },
- "bo_sung_at": "2026-10-29T00:00:02",
+ "bo_sung_at": "2026-10-29T00:08:18",
  "bo_sung_model": "claude-opus-5-5"
 }

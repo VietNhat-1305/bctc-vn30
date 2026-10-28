@@ -1,0 +1,1892 @@
+{
+ "ACB": {
+  "loai": "ngan_hang",
+  "diem": 6,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    0,
+    2,
+    "-1.6%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    0,
+    2,
+    "-12.1%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+0.6%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    1,
+    1,
+    "+16.5%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+4.1%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    1,
+    1,
+    "17.8%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+5.1%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "9.75x so với 9.85x"
+   ]
+  ]
+ },
+ "BID": {
+  "loai": "ngan_hang",
+  "diem": 9,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    1,
+    2,
+    "+7.0%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+20.2%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+18.1%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    1,
+    1,
+    "+18.8%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+3.3%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    1,
+    1,
+    "16.3%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+14.5%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "16.31x so với 18.19x"
+   ]
+  ]
+ },
+ "BSR": {
+  "loai": "doanh_nghiep",
+  "diem": 9,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+59.7%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+781.2%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+1162.0%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "14.7% so với 2.8%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "6,831 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "6,831 tỷ vs 15,727 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "0.17x so với 0.17x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+22.9%"
+   ]
+  ]
+ },
+ "CTG": {
+  "loai": "ngan_hang",
+  "diem": 10,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+26.1%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+20.8%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+36.0%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    1,
+    1,
+    "+30.9%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+7.0%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    1,
+    1,
+    "21.8%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+11.4%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "13.79x so với 14.41x"
+   ]
+  ]
+ },
+ "DGC": {
+  "loai": "doanh_nghiep",
+  "diem": 1,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    0,
+    2,
+    "-16.5%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    0,
+    2,
+    "-50.5%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    0,
+    1,
+    "-49.6%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    0,
+    1,
+    "18.9% so với 33.9%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    0,
+    1,
+    "-10 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "-10 tỷ vs 871 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    0,
+    1,
+    "0.12x so với 0.10x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+5.7%"
+   ]
+  ]
+ },
+ "FPT": {
+  "loai": "doanh_nghiep",
+  "diem": 4,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+16.4%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+14.2%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+14.0%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    0,
+    1,
+    "thiếu dữ liệu"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    0,
+    1,
+    "-1,145 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "-1,145 tỷ vs 5,047 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "0.45x so với 0.48x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    0,
+    1,
+    "-6.3%"
+   ]
+  ]
+ },
+ "GAS": {
+  "loai": "doanh_nghiep",
+  "diem": 9,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+43.8%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+25.2%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+19.2%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "18.0% so với 16.5%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "7,039 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "7,039 tỷ vs 9,026 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "0.04x so với 0.04x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+3.8%"
+   ]
+  ]
+ },
+ "GVR": {
+  "loai": "doanh_nghiep",
+  "diem": 9,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+18.0%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+67.8%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+72.8%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "30.5% so với 27.0%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "5,152 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    1,
+    1,
+    "5,152 tỷ vs 5,070 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "0.04x so với 0.05x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+7.6%"
+   ]
+  ]
+ },
+ "HCM": {
+  "loai": "chung_khoan",
+  "diem": 7,
+  "tieu_chi": [
+   [
+    "Doanh thu hoạt động tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+15.1%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+42.0%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+34.6%"
+   ],
+   [
+    "Biên lợi nhuận hoạt động cải thiện so với cùng kỳ",
+    1,
+    1,
+    "37.2% so với 33.3%"
+   ],
+   [
+    "ROE (quy năm) ≥ 12%",
+    0,
+    1,
+    "7.7%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+0.7%"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "1.78x so với 2.12x"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    0,
+    1,
+    "-11.3%"
+   ]
+  ]
+ },
+ "HDB": {
+  "loai": "ngan_hang",
+  "diem": 8,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    1,
+    2,
+    "+9.4%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+57.7%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+33.2%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    0,
+    1,
+    "-0.7%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+12.3%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    1,
+    1,
+    "25.4%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+15.3%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "10.59x so với 10.89x"
+   ]
+  ]
+ },
+ "HPG": {
+  "loai": "doanh_nghiep",
+  "diem": 9,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+53.6%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+50.6%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+103.3%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "19.0% so với 18.4%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "12,070 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "12,070 tỷ vs 15,480 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "0.70x so với 0.70x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+7.8%"
+   ]
+  ]
+ },
+ "KDH": {
+  "loai": "doanh_nghiep",
+  "diem": 4,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    0,
+    2,
+    "-84.7%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+292.9%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+248.3%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "50.2% so với 38.7%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    0,
+    1,
+    "-1,480 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "-1,480 tỷ vs 1,097 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    0,
+    1,
+    "0.83x so với 0.48x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    0,
+    1,
+    "-5.6%"
+   ]
+  ]
+ },
+ "LPB": {
+  "loai": "ngan_hang",
+  "diem": 6,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+23.3%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    1,
+    2,
+    "+5.2%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    0,
+    1,
+    "-2.6%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    1,
+    1,
+    "+4.1%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+1.6%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    1,
+    1,
+    "21.3%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    0,
+    1,
+    "-8.8%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    0,
+    1,
+    "13.30x so với 11.83x"
+   ]
+  ]
+ },
+ "MBB": {
+  "loai": "ngan_hang",
+  "diem": 10,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+18.5%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+40.6%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+27.4%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    1,
+    1,
+    "+36.5%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+7.3%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    1,
+    1,
+    "21.6%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+10.4%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "10.06x so với 10.38x"
+   ]
+  ]
+ },
+ "MCH": {
+  "loai": "doanh_nghiep",
+  "diem": 7,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+14.2%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+10.2%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+10.9%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "44.6% so với 44.1%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "2,243 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "2,243 tỷ vs 3,284 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "0.46x so với 0.51x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+3.4%"
+   ]
+  ]
+ },
+ "MSN": {
+  "loai": "doanh_nghiep",
+  "diem": 9,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+53.5%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+134.7%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+121.9%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "31.7% so với 31.1%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "3,185 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "3,185 tỷ vs 5,773 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "1.39x so với 1.42x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+10.0%"
+   ]
+  ]
+ },
+ "MWG": {
+  "loai": "doanh_nghiep",
+  "diem": 10,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+29.6%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+102.4%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+90.7%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "22.2% so với 20.1%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "18,180 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    1,
+    1,
+    "18,180 tỷ vs 6,112 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "0.80x so với 0.90x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+9.6%"
+   ]
+  ]
+ },
+ "OCB": {
+  "loai": "ngan_hang",
+  "diem": 8,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+21.3%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+22.7%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+29.4%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    1,
+    1,
+    "+15.9%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+8.9%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    0,
+    1,
+    "11.2%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+5.6%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    0,
+    1,
+    "8.82x so với 8.52x"
+   ]
+  ]
+ },
+ "PNJ": {
+  "loai": "doanh_nghiep",
+  "diem": 6,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+11.9%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    0,
+    2,
+    "-164.8%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+6.2%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    0,
+    1,
+    "18.4% so với 21.5%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "1,990 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    1,
+    1,
+    "1,990 tỷ vs 1,184 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "0.29x so với 0.32x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+4.8%"
+   ]
+  ]
+ },
+ "SAB": {
+  "loai": "doanh_nghiep",
+  "diem": 5,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+1.2%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    0,
+    2,
+    "-0.6%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+21.4%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "38.7% so với 36.0%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "1,476 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "1,476 tỷ vs 2,489 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "0.02x so với 0.02x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    0,
+    1,
+    "-6.7%"
+   ]
+  ]
+ },
+ "SHB": {
+  "loai": "ngan_hang",
+  "diem": 5,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    0,
+    2,
+    "-6.0%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    0,
+    2,
+    "-2.3%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+2.0%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    0,
+    1,
+    "-26.8%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+7.9%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    1,
+    1,
+    "20.3%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+10.3%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "11.81x so với 12.09x"
+   ]
+  ]
+ },
+ "SSB": {
+  "loai": "ngan_hang",
+  "diem": 2,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    0,
+    2,
+    "-7.5%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    0,
+    2,
+    "-12.6%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    0,
+    1,
+    "-54.6%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    0,
+    1,
+    "-8.7%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+7.7%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    0,
+    1,
+    "10.2%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+4.5%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    0,
+    1,
+    "9.12x so với 8.82x"
+   ]
+  ]
+ },
+ "SSI": {
+  "loai": "chung_khoan",
+  "diem": 9,
+  "tieu_chi": [
+   [
+    "Doanh thu hoạt động tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+10.9%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+27.3%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+38.5%"
+   ],
+   [
+    "Biên lợi nhuận hoạt động cải thiện so với cùng kỳ",
+    1,
+    1,
+    "73.1% so với 62.7%"
+   ],
+   [
+    "ROE (quy năm) ≥ 12%",
+    1,
+    1,
+    "13.8%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+27.0%"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "1.33x so với 1.88x"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+2.6%"
+   ]
+  ]
+ },
+ "STB": {
+  "loai": "ngan_hang",
+  "diem": 4,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+28.1%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    0,
+    2,
+    "-53.5%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    0,
+    1,
+    "-49.4%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    0,
+    1,
+    "-5.1%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    0,
+    1,
+    "-2.7%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    0,
+    1,
+    "9.6%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+4.9%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "13.20x so với 14.32x"
+   ]
+  ]
+ },
+ "TCB": {
+  "loai": "ngan_hang",
+  "diem": 9,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+17.3%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+21.7%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+18.7%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    1,
+    1,
+    "+17.8%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+6.8%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    1,
+    1,
+    "15.9%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+5.3%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    0,
+    1,
+    "5.74x so với 5.64x"
+   ]
+  ]
+ },
+ "TCX": {
+  "loai": "chung_khoan",
+  "diem": 7,
+  "tieu_chi": [
+   [
+    "Doanh thu hoạt động tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+40.8%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+19.1%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+16.8%"
+   ],
+   [
+    "Biên lợi nhuận hoạt động cải thiện so với cùng kỳ",
+    0,
+    1,
+    "86.8% so với 91.8%"
+   ],
+   [
+    "ROE (quy năm) ≥ 12%",
+    1,
+    1,
+    "12.6%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+3.8%"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    0,
+    1,
+    "1.08x so với 0.70x"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+24.8%"
+   ]
+  ]
+ },
+ "VCB": {
+  "loai": "ngan_hang",
+  "diem": 10,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+47.6%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+64.7%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+36.9%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    1,
+    1,
+    "+35.2%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+8.8%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    1,
+    1,
+    "20.3%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+10.7%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "9.69x so với 9.88x"
+   ]
+  ]
+ },
+ "VHM": {
+  "loai": "doanh_nghiep",
+  "diem": 9,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+187.9%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+221.8%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+378.9%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "65.9% so với 20.9%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "89,468 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    1,
+    1,
+    "89,468 tỷ vs 52,092 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    0,
+    1,
+    "0.79x so với 0.59x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+9.9%"
+   ]
+  ]
+ },
+ "VIB": {
+  "loai": "ngan_hang",
+  "diem": 6,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    1,
+    2,
+    "+4.9%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    0,
+    2,
+    "-8.2%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+3.3%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    1,
+    1,
+    "+10.1%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+4.5%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    1,
+    1,
+    "17.5%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+2.0%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    0,
+    1,
+    "11.15x so với 10.86x"
+   ]
+  ]
+ },
+ "VIC": {
+  "loai": "doanh_nghiep",
+  "diem": 10,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+162.0%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+542.9%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+348.8%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "23.3% so với 19.8%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "76,637 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    1,
+    1,
+    "76,637 tỷ vs 20,375 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "1.97x so với 2.23x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+19.3%"
+   ]
+  ]
+ },
+ "VJC": {
+  "loai": "doanh_nghiep",
+  "diem": 6,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+70.5%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    0,
+    2,
+    "-46.5%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+6.1%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    0,
+    1,
+    "5.6% so với 13.5%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "993 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "993 tỷ vs 1,372 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "2.74x so với 2.78x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+6.4%"
+   ]
+  ]
+ },
+ "VNM": {
+  "loai": "doanh_nghiep",
+  "diem": 8,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+12.5%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+28.0%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+38.4%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "43.5% so với 41.8%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "3,474 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "3,474 tỷ vs 5,643 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "0.24x so với 0.27x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+3.4%"
+   ]
+  ]
+ },
+ "VPB": {
+  "loai": "ngan_hang",
+  "diem": 9,
+  "tieu_chi": [
+   [
+    "Tổng thu nhập hoạt động tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+43.7%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥15%: 2đ)",
+    2,
+    2,
+    "+77.7%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+70.3%"
+   ],
+   [
+    "Thu nhập lãi thuần tăng so với cùng kỳ",
+    1,
+    1,
+    "+33.6%"
+   ],
+   [
+    "Tổng tài sản tăng so với đầu năm",
+    1,
+    1,
+    "+19.2%"
+   ],
+   [
+    "ROE (quy năm) ≥ 15%",
+    1,
+    1,
+    "16.3%"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+6.1%"
+   ],
+   [
+    "Đòn bẩy (Nợ phải trả/VCSH) không tăng so với đầu năm",
+    0,
+    1,
+    "6.86x so với 5.99x"
+   ]
+  ]
+ },
+ "VPL": {
+  "loai": "doanh_nghiep",
+  "diem": 6,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+12.5%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+275.2%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+726.9%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "35.0% so với 26.1%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    0,
+    1,
+    "-7,335 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "-7,335 tỷ vs 2,140 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    0,
+    1,
+    "0.46x so với 0.32x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+23.9%"
+   ]
+  ]
+ },
+ "VRE": {
+  "loai": "doanh_nghiep",
+  "diem": 8,
+  "tieu_chi": [
+   [
+    "Doanh thu thuần tăng so với cùng kỳ (≥20%: 2đ)",
+    1,
+    2,
+    "+10.8%"
+   ],
+   [
+    "LNST quý tăng so với cùng kỳ (≥20%: 2đ)",
+    2,
+    2,
+    "+30.4%"
+   ],
+   [
+    "LNST lũy kế từ đầu năm tăng so với cùng kỳ",
+    1,
+    1,
+    "+33.4%"
+   ],
+   [
+    "Biên lợi nhuận gộp cải thiện so với cùng kỳ",
+    1,
+    1,
+    "58.9% so với 55.2%"
+   ],
+   [
+    "Dòng tiền kinh doanh lũy kế dương",
+    1,
+    1,
+    "1,556 tỷ"
+   ],
+   [
+    "Lợi nhuận ra tiền: LCTT kinh doanh lũy kế ≥ LNST lũy kế",
+    0,
+    1,
+    "1,556 tỷ vs 3,215 tỷ"
+   ],
+   [
+    "Đòn bẩy (Nợ vay/VCSH) không tăng so với đầu năm",
+    1,
+    1,
+    "0.13x so với 0.13x"
+   ],
+   [
+    "Vốn chủ sở hữu tăng so với đầu năm",
+    1,
+    1,
+    "+1.9%"
+   ]
+  ]
+ }
+}

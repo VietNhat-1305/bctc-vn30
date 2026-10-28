@@ -62,6 +62,8 @@
   "nh_du_phong_cho_vay_dau_nam": 4879449.0,
   "nh_tien_gui_kh": 353513314.0,
   "nh_tien_gui_kh_dau_nam": 337583366.0,
+  "nh_giay_to_co_gia": 78967906.0,
+  "nh_giay_to_co_gia_dau_nam": 64097013.0,
   "nh_chi_phi_hd_luy_ke": 3687337.0,
   "nh_chi_phi_hd_cung_ky_luy_ke": 2776477.0,
   "nh_chi_phi_du_phong_luy_ke": 1551993.0,
@@ -94,6 +96,6 @@
   "ghi_chu": "",
   "thong_tin": "BCTC riêng (chung) Q2/2026 của ngân hàng, triệu đồng, đọc từ ảnh trang. KQKD không in 'Tổng thu nhập hoạt động' (R3): tự cộng I–VII (lãi thuần + dịch vụ + ngoại hối + CK kinh doanh + CK đầu tư + hoạt động khác + góp vốn mua cổ phần) cho cả 4 cột: Q2/26 6.058.192, Q2/25 4.912.653, 6T/26 11.212.403, 6T/25 9.600.896; mỗi cột khớp 'LN thuần trước dự phòng' (IX) + 'Chi phí hoạt động' (VIII). Không có công ty con nên LNST cổ đông mẹ = LNST (R6). Quý 2 + quý 1 = lũy kế 6T khớp cho TNHĐ, lãi thuần, LNST cả 2 năm. CĐKT: cột đầu năm là 31/12/2025. LCTT trực tiếp, lấy dòng I, II, III, IV của 6T/2026 và 6T/2025."
  },
- "bo_sung_at": "2026-10-29T00:01:51",
+ "bo_sung_at": "2026-10-29T00:08:16",
  "bo_sung_model": "claude-opus-5-5"
 }

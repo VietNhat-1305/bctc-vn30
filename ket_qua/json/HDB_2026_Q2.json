@@ -63,6 +63,8 @@
   "nh_du_phong_cho_vay_dau_nam": 7299445.0,
   "nh_tien_gui_kh": 674058701.0,
   "nh_tien_gui_kh_dau_nam": 560714282.0,
+  "nh_giay_to_co_gia": 107347997.0,
+  "nh_giay_to_co_gia_dau_nam": 87434265.0,
   "nh_chi_phi_hd_luy_ke": 5654071.0,
   "nh_chi_phi_hd_cung_ky_luy_ke": 5306552.0,
   "nh_chi_phi_du_phong_luy_ke": 3828013.0,
@@ -95,6 +97,6 @@
   "ghi_chu": "",
   "thong_tin": "BCTC hợp nhất Q2/2026 mẫu B02a/B03a/B04a-TCTD-HN (triệu VND), đọc từ ảnh trang. KQKD không in 'Tổng thu nhập hoạt động' (R3): doanh thu = tổng mục I–VII (lãi thuần + dịch vụ + ngoại hối + CK kinh doanh + CK đầu tư + hoạt động khác + góp vốn mua cổ phần); kiểm tra bằng LN thuần trước dự phòng + chi phí hoạt động: Q2/26 9.664.204+3.067.056=12.731.260, Q2/25 8.853.858+2.782.029=11.635.887, 6T/26 17.030.031+5.654.071=22.684.102, 6T/25 15.533.888+5.306.552=20.840.440 (khớp). Lợi nhuận gộp = thu nhập lãi thuần; LNST mẹ = 'Lợi nhuận thuần của chủ sở hữu'. CĐKT: cột số cuối kỳ 30/06/2026 và số đầu kỳ (01/01/2026), Tổng nợ phải trả in sẵn. LCTT (trực tiếp): cột kỳ trước ghi 'Trình bày lại' (R7), dùng số đã trình bày lại cho *_cung_ky. Q1 + Q2 = lũy kế khớp (DT, LNG, LNST, LNST mẹ)."
  },
- "bo_sung_at": "2026-10-29T00:01:03",
+ "bo_sung_at": "2026-10-29T00:08:16",
  "bo_sung_model": "claude-opus-5-5"
 }

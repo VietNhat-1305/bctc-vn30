@@ -1,5 +1,5 @@
 {
- "luc": "2026-10-18T01:32:33",
+ "luc": "2026-10-29T00:12:02",
  "nguon": "Vietcap IQ (iq.vietcap.com.vn)",
  "ma": {
   "ACB": {
@@ -484,6 +484,24 @@
     }
    ]
   },
+  "MIG": {
+   "khop": 16,
+   "tong": 18,
+   "lech": [
+    {
+     "ky": "cuối Q2/2026",
+     "chi_tieu": "Tổng tài sản",
+     "pct": 1.26,
+     "ket_luan": "Lệch"
+    },
+    {
+     "ky": "cuối Q2/2026",
+     "chi_tieu": "Nợ phải trả",
+     "pct": 1.63,
+     "ket_luan": "Lệch"
+    }
+   ]
+  },
   "MSN": {
    "khop": 21,
    "tong": 24,
@@ -536,6 +554,42 @@
    "khop": 22,
    "tong": 22,
    "lech": []
+  },
+  "PGI": {
+   "khop": 15,
+   "tong": 20,
+   "lech": [
+    {
+     "ky": "6T/2026",
+     "chi_tieu": "LCTT kinh doanh (lũy kế)",
+     "pct": -59.4,
+     "ket_luan": "Lệch"
+    },
+    {
+     "ky": "6T/2025",
+     "chi_tieu": "LCTT kinh doanh (lũy kế)",
+     "pct": 262.26,
+     "ket_luan": "Lệch"
+    },
+    {
+     "ky": "6T/2026",
+     "chi_tieu": "LCTT đầu tư (lũy kế)",
+     "pct": 13.59,
+     "ket_luan": "Lệch"
+    },
+    {
+     "ky": "6T/2025",
+     "chi_tieu": "LCTT đầu tư (lũy kế)",
+     "pct": -42.49,
+     "ket_luan": "Lệch"
+    },
+    {
+     "ky": "6T/2026",
+     "chi_tieu": "LCTT tài chính (lũy kế)",
+     "pct": 128.48,
+     "ket_luan": "Lệch"
+    }
+   ]
   },
   "PNJ": {
    "khop": 16,
@@ -4452,6 +4506,226 @@
    "bctc": "Q2/2026"
   },
   {
+   "ma": "MIG",
+   "ky": "Q2/2026",
+   "chi_tieu": "Doanh thu thuần",
+   "so_minh": 1349.744048744,
+   "so_nguon": 0.0,
+   "chenh_lech_pct": null,
+   "ket_luan": "Nguồn không có",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "Q2/2025",
+   "chi_tieu": "Doanh thu thuần",
+   "so_minh": 981.0414518250001,
+   "so_nguon": 0.0,
+   "chenh_lech_pct": null,
+   "ket_luan": "Nguồn không có",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "Q2/2026",
+   "chi_tieu": "Lợi nhuận gộp",
+   "so_minh": 171.511596327,
+   "so_nguon": 0.0,
+   "chenh_lech_pct": null,
+   "ket_luan": "Nguồn không có",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "Q2/2025",
+   "chi_tieu": "Lợi nhuận gộp",
+   "so_minh": 152.109115556,
+   "so_nguon": 0.0,
+   "chenh_lech_pct": null,
+   "ket_luan": "Nguồn không có",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "Q2/2026",
+   "chi_tieu": "LNST",
+   "so_minh": 92.15718146200001,
+   "so_nguon": 92.157181462,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "Q2/2025",
+   "chi_tieu": "LNST",
+   "so_minh": 84.029642212,
+   "so_nguon": 84.029642212,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "Q2/2026",
+   "chi_tieu": "LNST cổ đông mẹ",
+   "so_minh": 92.15718146200001,
+   "so_nguon": 92.157181462,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "Q2/2025",
+   "chi_tieu": "LNST cổ đông mẹ",
+   "so_minh": 84.029642212,
+   "so_nguon": 84.029642212,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "cuối Q2/2026",
+   "chi_tieu": "Tổng tài sản",
+   "so_minh": 12542.505617289,
+   "so_nguon": 12386.134309892,
+   "chenh_lech_pct": 1.26,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "31/12/2025",
+   "chi_tieu": "Tổng tài sản",
+   "so_minh": 11274.247401543,
+   "so_nguon": 11274.247401543,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "cuối Q2/2026",
+   "chi_tieu": "Nợ phải trả",
+   "so_minh": 9739.886662160001,
+   "so_nguon": 9583.515354763,
+   "chenh_lech_pct": 1.63,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "31/12/2025",
+   "chi_tieu": "Nợ phải trả",
+   "so_minh": 8646.523449523,
+   "so_nguon": 8646.523449523,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "cuối Q2/2026",
+   "chi_tieu": "Vốn chủ sở hữu",
+   "so_minh": 2802.6189551290004,
+   "so_nguon": 2802.618955129,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "31/12/2025",
+   "chi_tieu": "Vốn chủ sở hữu",
+   "so_minh": 2627.72395202,
+   "so_nguon": 2627.72395202,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT kinh doanh (lũy kế)",
+   "so_minh": 775.958538886,
+   "so_nguon": 775.958538886,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "6T/2025",
+   "chi_tieu": "LCTT kinh doanh (lũy kế)",
+   "so_minh": 118.37866937700001,
+   "so_nguon": 118.378669377,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT đầu tư (lũy kế)",
+   "so_minh": -587.0831287860001,
+   "so_nguon": -587.083128786,
+   "chenh_lech_pct": -0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "6T/2025",
+   "chi_tieu": "LCTT đầu tư (lũy kế)",
+   "so_minh": -361.79846666900005,
+   "so_nguon": -361.798466669,
+   "chenh_lech_pct": -0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT tài chính (lũy kế)",
+   "so_minh": -0.10193547500000001,
+   "so_nguon": -0.101935475,
+   "chenh_lech_pct": -0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "6T/2025",
+   "chi_tieu": "LCTT tài chính (lũy kế)",
+   "so_minh": 110.08855823,
+   "so_nguon": 110.08855823,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT thuần (lũy kế)",
+   "so_minh": 188.773474625,
+   "so_nguon": 188.773474625,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "MIG",
+   "ky": "6T/2025",
+   "chi_tieu": "LCTT thuần (lũy kế)",
+   "so_minh": -133.331239062,
+   "so_nguon": -133.331239062,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
    "ma": "MSN",
    "ky": "Q2/2026",
    "chi_tieu": "Doanh thu thuần",
@@ -5147,6 +5421,246 @@
    "chi_tieu": "LCTT thuần (lũy kế)",
    "so_minh": 10415.179057450001,
    "so_nguon": 10415.17905745,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "Q2/2026",
+   "chi_tieu": "Doanh thu thuần",
+   "so_minh": 1010.667933528,
+   "so_nguon": 0.0,
+   "chenh_lech_pct": null,
+   "ket_luan": "Nguồn không có",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "Q2/2025",
+   "chi_tieu": "Doanh thu thuần",
+   "so_minh": 936.962815983,
+   "so_nguon": 0.0,
+   "chenh_lech_pct": null,
+   "ket_luan": "Nguồn không có",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "Q2/2026",
+   "chi_tieu": "Lợi nhuận gộp",
+   "so_minh": 247.10132969100002,
+   "so_nguon": 0.0,
+   "chenh_lech_pct": null,
+   "ket_luan": "Nguồn không có",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "Q2/2025",
+   "chi_tieu": "Lợi nhuận gộp",
+   "so_minh": 270.17014559300003,
+   "so_nguon": 0.0,
+   "chenh_lech_pct": null,
+   "ket_luan": "Nguồn không có",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "Q2/2026",
+   "chi_tieu": "LNST",
+   "so_minh": 95.009900219,
+   "so_nguon": 95.009900218,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "Q2/2025",
+   "chi_tieu": "LNST",
+   "so_minh": 87.399771779,
+   "so_nguon": 87.399771779,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "Q2/2026",
+   "chi_tieu": "LNST cổ đông mẹ",
+   "so_minh": 95.009900219,
+   "so_nguon": 95.009900218,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "Q2/2025",
+   "chi_tieu": "LNST cổ đông mẹ",
+   "so_minh": 87.399771779,
+   "so_nguon": 87.399771779,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "cuối Q2/2026",
+   "chi_tieu": "Tổng tài sản",
+   "so_minh": 10198.456182031001,
+   "so_nguon": 10198.456182031,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "31/12/2025",
+   "chi_tieu": "Tổng tài sản",
+   "so_minh": 9227.720831852,
+   "so_nguon": 9227.720831852,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "cuối Q2/2026",
+   "chi_tieu": "Nợ phải trả",
+   "so_minh": 8281.825933763,
+   "so_nguon": 8281.825933764,
+   "chenh_lech_pct": -0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "31/12/2025",
+   "chi_tieu": "Nợ phải trả",
+   "so_minh": 7274.517991443,
+   "so_nguon": 7274.517991443,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "cuối Q2/2026",
+   "chi_tieu": "Nợ vay",
+   "so_minh": 1130.176188251,
+   "so_nguon": 1130.176188251,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "31/12/2025",
+   "chi_tieu": "Nợ vay",
+   "so_minh": 906.287686118,
+   "so_nguon": 906.287686118,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "cuối Q2/2026",
+   "chi_tieu": "Vốn chủ sở hữu",
+   "so_minh": 1916.630248267,
+   "so_nguon": 1916.630248267,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "31/12/2025",
+   "chi_tieu": "Vốn chủ sở hữu",
+   "so_minh": 1953.2028404090001,
+   "so_nguon": 1953.202840409,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT kinh doanh (lũy kế)",
+   "so_minh": 116.01668355300001,
+   "so_nguon": 285.764318972,
+   "chenh_lech_pct": -59.4,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2025",
+   "chi_tieu": "LCTT kinh doanh (lũy kế)",
+   "so_minh": 61.869550389000004,
+   "so_nguon": -38.130449611,
+   "chenh_lech_pct": 262.26,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT đầu tư (lũy kế)",
+   "so_minh": -304.84373730000004,
+   "so_nguon": -352.7775711,
+   "chenh_lech_pct": 13.59,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2025",
+   "chi_tieu": "LCTT đầu tư (lũy kế)",
+   "so_minh": 135.35626854,
+   "so_nguon": 235.35626854,
+   "chenh_lech_pct": -42.49,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT tài chính (lũy kế)",
+   "so_minh": 216.624067542,
+   "so_nguon": 94.810265923,
+   "chenh_lech_pct": 128.48,
+   "ket_luan": "Lệch",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2025",
+   "chi_tieu": "LCTT tài chính (lũy kế)",
+   "so_minh": -147.842663425,
+   "so_nguon": -147.842663425,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2026",
+   "chi_tieu": "LCTT thuần (lũy kế)",
+   "so_minh": 27.797013795,
+   "so_nguon": 27.797013795,
+   "chenh_lech_pct": 0.0,
+   "ket_luan": "Khớp",
+   "bctc": "Q2/2026"
+  },
+  {
+   "ma": "PGI",
+   "ky": "6T/2025",
+   "chi_tieu": "LCTT thuần (lũy kế)",
+   "so_minh": 49.383155504,
+   "so_nguon": 49.383155504,
    "chenh_lech_pct": 0.0,
    "ket_luan": "Khớp",
    "bctc": "Q2/2026"
