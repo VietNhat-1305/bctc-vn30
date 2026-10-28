@@ -32,6 +32,7 @@ Ghi đủ tất cả trường; trường không có thì để null.
  "lctt_hdkd_cung_ky": null, "lctt_hddt_cung_ky": null, "lctt_hdtc_cung_ky": null, "lctt_thuan_cung_ky": null,
  "trang_cdkt": 1, "trang_kqkd": 4, "trang_lctt": 6, "ghi_chu": "", "thong_tin": ""}
 ```
+Ngân hàng, chứng khoán, bảo hiểm: thêm vào cùng JSON các trường khoản mục riêng của đúng loại hình (`nh_*`, `ck_*` hoặc `bh_*`, xem mục "Khoản mục riêng theo loại hình"); doanh nghiệp thường không cần.
 
 ## Quy tắc cột
 - **Đơn vị:** ghi `don_vi` đúng đơn vị của báo cáo: "dong", "nghin_dong", "trieu_dong" hoặc "ty_dong". Không đổi đơn vị, không làm tròn.
@@ -58,6 +59,38 @@ Ghi đủ tất cả trường; trường không có thì để null.
 - **Chứng khoán** (SSI, TCX, mã bổ sung HCM):
   - Doanh thu = Cộng doanh thu hoạt động; giá vốn = Cộng chi phí hoạt động; lợi nhuận gộp để null.
   - Nợ vay = vay và nợ thuê tài sản tài chính ngắn hạn + dài hạn.
+- **Bảo hiểm phi nhân thọ** (mã bổ sung MIG, PGI; BCTC theo TT 232/2012/TT-BTC, mẫu B02-DNPNT):
+  - Doanh thu = Doanh thu thuần hoạt động kinh doanh bảo hiểm; giá vốn = Tổng chi phí hoạt động kinh doanh bảo hiểm;
+    lợi nhuận gộp = Lợi nhuận gộp hoạt động kinh doanh bảo hiểm; nợ vay để null nếu không có dòng vay.
+
+## Khoản mục riêng theo loại hình (dùng cho bộ chấm điểm riêng)
+Chỉ điền nhóm trường đúng loại hình của báo cáo. Nhận diện theo **tên dòng**. Chi phí và dự phòng ghi **số dương**
+(giá trị tuyệt đối). Trường `*_luy_ke` lấy cột lũy kế từ đầu năm (riêng nhóm này: quý 1 thì lũy kế chính là cột quý, ghi luôn). Trường `*_dau_nam` lấy cột số đầu năm.
+- **Ngân hàng (nh_):**
+  - `nh_cho_vay_kh` (+ `_dau_nam`): dòng "Cho vay khách hàng", tức dư nợ gốc **trước** dự phòng.
+  - `nh_du_phong_cho_vay` (+ `_dau_nam`): dòng "Dự phòng rủi ro cho vay khách hàng".
+  - `nh_tien_gui_kh` (+ `_dau_nam`): dòng "Tiền gửi của khách hàng".
+  - `nh_chi_phi_hd_luy_ke` / `nh_chi_phi_hd_cung_ky_luy_ke`: dòng "Chi phí hoạt động" trên KQKD, cột lũy kế.
+  - `nh_chi_phi_du_phong_luy_ke` / `nh_chi_phi_du_phong_cung_ky_luy_ke`: dòng "Chi phí dự phòng rủi ro tín dụng", cột lũy kế.
+- **Chứng khoán (ck_), mẫu B02-CTCK:**
+  - `ck_dt_moi_gioi_luy_ke` / `_cung_ky_luy_ke`: dòng "Doanh thu nghiệp vụ môi giới chứng khoán".
+  - `ck_lai_cho_vay_luy_ke` / `_cung_ky_luy_ke`: dòng "Lãi từ các khoản cho vay và phải thu".
+  - `ck_lai_fvtpl_luy_ke` / `_cung_ky_luy_ke`: dòng "Lãi từ các tài sản tài chính ghi nhận thông qua lãi/lỗ (FVTPL)".
+  - `ck_cho_vay` (+ `_dau_nam`): dòng "Các khoản cho vay" trên CĐKT (ký quỹ + ứng trước tiền bán), **trước** dự phòng.
+- **Bảo hiểm (bh_), mẫu B02-DNPNT:**
+  - `bh_phi_thuan_luy_ke` / `_cung_ky_luy_ke`: dòng "Doanh thu phí bảo hiểm thuần".
+  - `bh_boi_thuong_thuan_luy_ke` / `_cung_ky_luy_ke`: bồi thường thuộc phần trách nhiệm giữ lại, tức tổng chi bồi thường
+    sau khi trừ thu bồi thường nhượng tái (dòng "Tổng chi bồi thường" hoặc "Chi bồi thường thuộc phần trách nhiệm giữ lại").
+  - `bh_chi_phi_kdbh_luy_ke` / `_cung_ky_luy_ke`: dòng "Tổng chi phí hoạt động kinh doanh bảo hiểm".
+  - `bh_chi_phi_qldn_luy_ke` / `_cung_ky_luy_ke`: dòng "Chi phí quản lý doanh nghiệp".
+  - `bh_ln_hdtc_luy_ke` / `_cung_ky_luy_ke`: dòng "Lợi nhuận hoạt động tài chính", bằng doanh thu HĐTC trừ chi phí HĐTC.
+  - `bh_dau_tu` (+ `_dau_nam`): "Đầu tư tài chính ngắn hạn" cộng "Đầu tư tài chính dài hạn" trên CĐKT.
+  - `bh_du_phong_nv` (+ `_dau_nam`): dòng "Dự phòng nghiệp vụ" (tổng) trên CĐKT.
+- **Quý 2 trở đi mà báo cáo không có cột lũy kế** (chỉ có cột quý): để null, không tự cộng.
+- **Lệnh ghi:**
+  - BCTC đã trích đủ phần chung, chỉ thiếu khoản mục riêng: ghi JSON chỉ gồm các trường riêng, rồi chạy
+    `python claude_trich.py bo_sung <MÃ> <NĂM> <QUÝ> <file.json>`.
+  - Lệnh in điểm mới và các tỷ lệ. Nếu báo **CẢNH BÁO** (ví dụ LDR, CIR, tỷ lệ kết hợp nằm ngoài khoảng hợp lý) thì xem lại ảnh.
 
 Lệnh `python claude_trich.py huong_dan <MÃ...>` in hướng dẫn này kèm **sổ bài học**, gồm quy tắc rút ra từ các lần sai trước và lưu ý riêng từng mã. Phải áp dụng đủ các quy tắc đó.
 
