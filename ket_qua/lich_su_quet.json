@@ -898,5 +898,40 @@
   "ket_thuc": "2026-10-29T00:05:20",
   "thoi_gian_s": 304.4,
   "trang_thai": "không có BCTC mới"
+ },
+ {
+  "id": "20261029-134306",
+  "khung": "thủ công 13:43",
+  "bat_dau": "2026-10-29T13:43:06",
+  "so_web": 30,
+  "ky_quet": "Q2/2026",
+  "giai_doan": {
+   "kham_pha_tai": 313.4,
+   "tim_can_trich": 1.4,
+   "tong_hop": 17.3
+  },
+  "loi": [],
+  "web_doc_duoc": 29,
+  "web_loi": [
+   "MBB"
+  ],
+  "du_phong_cafef": [
+   "MBB"
+  ],
+  "bctc_moi": [
+   {
+    "ma": "VCB",
+    "ky": "Q2/2026",
+    "pham_vi": "HN",
+    "file": "VCB/2026/VCB_2026_Q2_HN_f8251e.pdf",
+    "nguon": "CafeF"
+   }
+  ],
+  "bo_qua_bai_cu": 30,
+  "loi_tai": 0,
+  "can_trich": [],
+  "ket_thuc": "2026-10-29T13:48:38",
+  "thoi_gian_s": 332.1,
+  "trang_thai": "có BCTC mới"
  }
 ]
