@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hướng dẫn luồng video</title>
+<meta name="description" content="Hướng dẫn dùng luồng tự động video Từ điển tài chính Wealbee: từ điển, kịch bản, video, người duyệt, tự đăng TikTok và Facebook.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mali:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg: #0b1020; --surface: #121a2e; --surface-2: #17213a; --fg: #eef2f8; --fg-2: #a9b6cc; --line: #24314f;
+  --accent: #7aa2ff; --red: #f08a7c; --yellow: #f6d67a; --green: #6cc893; --navy: #2b3990;
+  --sans: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif; --hand: "Mali", "Be Vietnam Pro", sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --bg: #f4efe4; --surface: #fffdf8; --surface-2: #f6f0e3; --fg: #1d2547; --fg-2: #4f5878; --line: #e2d8c4;
+  --accent: #2b3990; --red: #c44234; --yellow: #f6d67a; --green: #23774a; color-scheme: light } }
+:root[data-theme="light"] {
+  --bg: #f4efe4; --surface: #fffdf8; --surface-2: #f6f0e3; --fg: #1d2547; --fg-2: #4f5878; --line: #e2d8c4;
+  --accent: #2b3990; --red: #c44234; --yellow: #f6d67a; --green: #23774a; color-scheme: light }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 var(--sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 36px max(16px, env(safe-area-inset-left)) 72px; display: grid; gap: 40px; }
+.wrap > * { min-width: 0; }
+h1, h2, h3 { margin: 0; line-height: 1.25; text-wrap: balance; }
+h1 { font: 700 clamp(28px, 4.4vw, 44px)/1.15 var(--hand); }
+h1 mark { background: linear-gradient(transparent 55%, color-mix(in srgb, var(--yellow) 85%, transparent) 55%); color: var(--red); padding: 0 4px; }
+h2 { font: 700 24px/1.3 var(--hand); }
+p { margin: 0; max-width: 72ch; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.head { display: grid; gap: 14px; }
+.lede { color: var(--fg-2); font-size: 17px; }
+.player { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 10px; }
+video { display: block; width: 100%; height: auto; aspect-ratio: 16/9; border-radius: 12px; background: #000; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--fg-2); padding: 10px 6px 2px; }
+.flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.flow div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: grid; gap: 4px; position: relative; }
+.flow b { font-family: var(--hand); font-size: 17px; }
+.flow span { font-size: 14px; color: var(--fg-2); }
+.flow .dung { border-color: var(--red); }
+.flow .dung b { color: var(--red); }
+.flow div::before { content: attr(data-n); font-size: 12px; font-weight: 700; color: var(--accent); }
+.steps { counter-reset: s; display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.steps li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px 14px 62px; position: relative; }
+.steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 16px; top: 14px; width: 32px; height: 32px;
+  border-radius: 50%; background: var(--surface-2); border: 2px solid var(--accent); color: var(--accent); font-weight: 700;
+  display: grid; place-items: center; font-size: 15px; }
+.steps b { display: block; font-size: 17px; margin-bottom: 2px; }
+.steps span { color: var(--fg-2); }
+.btn { display: inline-block; font-size: 13px; font-weight: 600; padding: 1px 8px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface-2); white-space: nowrap; }
+.btn.ok { border-color: var(--green); color: var(--green); }
+.btn.bad { border-color: var(--red); color: var(--red); }
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.rules div { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--green); border-radius: 12px; padding: 14px 16px; }
+.rules div.warn { border-left-color: var(--red); }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+details + details { margin-top: 10px; }
+summary { cursor: pointer; font-weight: 600; }
+details p { margin-top: 8px; color: var(--fg-2); }
+code { font: 14px ui-monospace, "Cascadia Mono", Consolas, monospace; background: var(--surface-2); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; overflow-wrap: anywhere; }
+section { display: grid; gap: 16px; }
+footer { color: var(--fg-2); font-size: 14px; border-top: 1px solid var(--line); padding-top: 18px; }
+a { color: var(--accent); }
+@media (max-width: 760px) { .flow { grid-template-columns: 1fr 1fr; } .steps li { padding-left: 56px; } }
+@media (max-width: 420px) { .flow { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="head">
+  <div class="eyebrow">Wealbee · Hướng dẫn nội bộ</div>
+  <h1>Luồng tự động <mark>Video Từ điển tài chính</mark></h1>
+  <p class="lede">Hệ thống tự tạo video ngắn giải thích 1 thuật ngữ tài chính mỗi ngày từ bộ Từ điển của Wealbee, dừng lại chờ người duyệt,
+    rồi tự đăng lên TikTok và Facebook đúng giờ. Xem video 3 phút dưới đây hoặc đọc các bước bên dưới.</p>
+</header>
+
+<div class="player">
+  <video src="huong-dan-luong-video.mp4" poster="huong-dan-luong-video.jpg" controls preload="metadata" playsinline></video>
+  <div class="meta"><span>Thời lượng ~3 phút</span><span>Không có tiếng: chữ hướng dẫn trên màn hình</span><span>Cập nhật 31/10/2026</span></div>
+</div>
+
+<section>
+  <h2>Luồng chạy thế nào</h2>
+  <div class="flow">
+    <div data-n="1"><b>Từ điển</b><span>500 thuật ngữ của Wealbee, lần lượt theo 5 nhóm</span></div>
+    <div data-n="2"><b>Kịch bản</b><span>Claude viết theo dàn ý, phần "là gì" bám đúng định nghĩa trong từ điển</span></div>
+    <div data-n="3"><b>Video</b><span>Vẽ tay phong cách Wealbee, chữ chạy theo giọng đọc</span></div>
+    <div data-n="4" class="dung"><b>Người duyệt</b><span>Video DỪNG ở đây. Chưa duyệt thì không bao giờ đăng</span></div>
+    <div data-n="5"><b>Tự đăng</b><span>TikTok và Facebook theo giờ đã chọn</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Duyệt video: 12 bước</h2>
+  <ol class="steps">
+    <li><b>Mở trang duyệt</b><span>Trên máy chạy luồng, mở trình duyệt vào <code>http://localhost:8765</code>. Trang tự bật khi đăng nhập Windows.</span></li>
+    <li><b>Nhập tên người duyệt</b><span>Gõ tên vào ô đầu tiên trên cùng. Lịch sử ghi lại ai duyệt, lúc nào.</span></li>
+    <li><b>Xem video và kiểm tra lời đọc</b><span>Bấm ▶ xem video. Mở mục <b style="display:inline">Lời đọc</b> để kiểm tra số liệu trong câu chuyện (năm, con số) trước khi duyệt.</span></li>
+    <li><b>Sửa caption nếu cần</b><span>Caption theo mẫu "[TỪ ĐIỂN TÀI CHÍNH] … là gì? Cùng học qua câu chuyện … nhé!", có sẵn hashtag. Sửa thẳng trong ô.</span></li>
+    <li><b>Chọn nền tảng và giờ đăng</b><span>Tick TikTok / Facebook. Mỗi nền tảng 1 giờ riêng; hệ thống tự gợi ý khung giờ còn trống.</span></li>
+    <li><b>Tuỳ chọn TikTok</b><span>Chọn "Ai có thể xem video" (bắt buộc), bình luận / Duet / Stitch. Video có tài trợ thì tick "Công bố nội dung thương mại".</span></li>
+    <li><b>Duyệt</b><span><span class="btn ok">Duyệt &amp; lên lịch</span> đăng đúng giờ đã chọn · <span class="btn">Duyệt &amp; đăng ngay</span> đăng luôn ·
+      <span class="btn bad">Từ chối</span> bỏ video · <span class="btn">Tạo lại</span> tạo video mới cho thuật ngữ đó.</span></li>
+    <li><b>Tạo video mới bằng tay</b><span>Gõ 1 thuật ngữ có trong từ điển vào ô "Thuật ngữ trong từ điển" rồi bấm <span class="btn">Tạo video</span>. Để trống thì lấy thuật ngữ kế tiếp. Đợi 3-6 phút.</span></li>
+    <li><b>Tab Lịch đăng</b><span>Bảng các lượt đăng sắp tới. Đổi giờ rồi bấm "Lưu giờ mới", hoặc "Đăng ngay". "Huỷ duyệt" đưa video về Chờ duyệt.</span></li>
+    <li><b>Tab Đã đăng / Từ chối</b><span>Lịch sử từng video: ai duyệt, lúc nào, kết quả đăng. Đăng lỗi thì tự thử lại tối đa 3 lần.</span></li>
+    <li><b>Tab Cài đặt</b><span>Giờ tự tạo video và số video mỗi ngày; lịch đăng riêng TikTok và Facebook (thứ trong tuần, khung giờ); tên kênh, hashtag. Nhớ bấm "Lưu cài đặt".</span></li>
+    <li><b>Tab Kết nối</b><span>Liên kết 1 Fanpage Facebook và 1 tài khoản TikTok bằng nút đăng nhập. TikTok chỉ đăng công khai sau khi app được TikTok duyệt.</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Nhớ 4 điều</h2>
+  <div class="rules">
+    <div><b>Luôn đọc Lời đọc</b><br><span style="color:var(--fg-2)">Câu chuyện minh hoạ có số liệu thật; kiểm tra trước khi duyệt.</span></div>
+    <div><b>Chỉ dùng Từ điển Wealbee</b><br><span style="color:var(--fg-2)">Thuật ngữ và định nghĩa đều lấy từ từ điển của mình.</span></div>
+    <div><b>Máy phải bật</b><br><span style="color:var(--fg-2)">Lịch chạy trên máy chạy luồng; máy tắt thì lượt đăng chạy bù khi bật lại.</span></div>
+    <div class="warn"><b>Không gửi token, mật khẩu qua chat</b><br><span style="color:var(--fg-2)">Khoá chỉ lưu trong file .env trên máy chạy luồng.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Câu hỏi thường gặp</h2>
+  <div>
+    <details><summary>Bao lâu có video mới?</summary><p>Mặc định 07:00 mỗi ngày, 1 video. Đổi giờ và số lượng ở tab Cài đặt.</p></details>
+    <details><summary>Video có tiếng không?</summary><p>Giọng đọc dùng ElevenLabs (voice Tony Hoang, tốc độ 1,3x). Khi khoá ElevenLabs được thêm vào máy chạy luồng, video tạo ra có giọng; video đang chờ duyệt có thể lồng giọng lại mà không cần viết lại kịch bản. Nhạc nền TikTok thêm trong app khi cần.</p></details>
+    <details><summary>Ảnh trong video lấy từ đâu?</summary><p>Ảnh người, đất nước, đồ vật lấy từ kho ảnh giấy phép tự do (Openverse, chủ yếu Flickr), không lấy từ Wikipedia. Tác giả và giấy phép ảnh được ghi tự động ở cuối caption.</p></details>
+    <details><summary>Thấy sai trong video thì làm gì?</summary><p>Bấm "Tạo lại" để tạo video mới cho thuật ngữ đó, hoặc "Từ chối" kèm lý do. Video bị từ chối không bao giờ được đăng.</p></details>
+    <details><summary>Người khác trong văn phòng có vào trang duyệt được không?</summary><p>Được, khi máy chạy luồng bật chế độ mạng LAN có đặt mật khẩu. Hỏi người phụ trách máy để lấy địa chỉ và mật khẩu.</p></details>
+  </div>
+</section>
+
+<footer>Wealbee · Hướng dẫn nội bộ luồng video Từ điển tài chính · <a href="../privacy.html">Chính sách quyền riêng tư</a></footer>
+</main>
+</body>
+</html>
