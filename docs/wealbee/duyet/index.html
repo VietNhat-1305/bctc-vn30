@@ -2,17 +2,21 @@
 <html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow"><title>Trang duyệt video</title>
 <style>:root{color-scheme:dark}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b1020;color:#eef2f8;
-font:16px/1.6 "Segoe UI",system-ui,sans-serif;text-align:center;padding:16px}.m{color:#a9b6cc;font-size:14px}</style>
+font:16px/1.6 "Segoe UI",system-ui,sans-serif;text-align:center;padding:16px}.m{color:#a9b6cc;font-size:14px}
+button{margin-top:10px;background:#1e2a45;color:#eef2f8;border:1px solid #2b3a5c;border-radius:10px;padding:8px 16px;font:inherit;cursor:pointer}</style>
 </head><body><main><p id="tt">Đang mở trang duyệt video…</p>
-<p class="m">Trang hỏi mật khẩu: xin người phụ trách luồng video.</p></main><script>
-const dich = "https://belle-jobs-rocks-entertainment.trycloudflare.com/#cho_duyet";
+<p class="m">Trang hỏi mật khẩu: xin người phụ trách luồng video.</p></main>
+<script>
+const RAW = "https://raw.githubusercontent.com/VietNhat-1305/bctc-vn30/main/docs/wealbee/duyet/url.txt";
+const TAT = 'Trang duyệt đang tắt: máy chạy luồng chưa bật hoặc đường hầm đang khởi động lại.<br>Thử lại sau vài phút.'
+  + '<br><button onclick="location.reload()">Thử lại</button>';
 const bao = t => document.getElementById('tt').innerHTML = t;
-if (!dich.startsWith('https://')) bao('Trang duyệt đang tắt. Thử lại sau.');
-else {
-  const h = setTimeout(() => bao(tat), 8000);
-  const tat = 'Trang duyệt đang tắt: máy chạy luồng chưa bật hoặc đường hầm đang khởi động lại.<br>Thử lại sau vài phút.';
-  fetch(dich.split('/#')[0] + '/', {mode: 'no-cors', cache: 'no-store'})
-    .then(() => { clearTimeout(h); location.replace(dich); })
-    .catch(() => { clearTimeout(h); bao(tat); });
-}
+const hetGio = (ms, p) => Promise.race([p, new Promise((_, r) => setTimeout(() => r(new Error('het gio')), ms))]);
+hetGio(10000, fetch(RAW + '?t=' + Date.now(), {cache: 'no-store'}).then(r => r.text()))
+  .then(t => {
+    const u = t.trim();
+    if (!/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(u)) throw new Error('chua co dia chi');
+    return hetGio(8000, fetch(u + '/', {mode: 'no-cors', cache: 'no-store'})).then(() => location.replace(u + '/#cho_duyet'));
+  })
+  .catch(() => bao(TAT));
 </script></body></html>
