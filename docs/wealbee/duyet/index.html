@@ -7,16 +7,26 @@ button{margin-top:10px;background:#1e2a45;color:#eef2f8;border:1px solid #2b3a5c
 </head><body><main><p id="tt">Đang mở trang duyệt video…</p>
 <p class="m">Trang hỏi mật khẩu: xin người phụ trách luồng video.</p></main>
 <script>
-const RAW = "https://raw.githubusercontent.com/VietNhat-1305/bctc-vn30/main/docs/wealbee/duyet/url.txt";
-const TAT = 'Trang duyệt đang tắt: máy chạy luồng chưa bật hoặc đường hầm đang khởi động lại.<br>Thử lại sau vài phút.'
-  + '<br><button onclick="location.reload()">Thử lại</button>';
+const API = "https://api.github.com/repos/VietNhat-1305/bctc-vn30/contents/docs/wealbee/duyet/url.txt", RAW = "https://raw.githubusercontent.com/VietNhat-1305/bctc-vn30/main/docs/wealbee/duyet/url.txt", HOP = /^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/;
 const bao = t => document.getElementById('tt').innerHTML = t;
 const hetGio = (ms, p) => Promise.race([p, new Promise((_, r) => setTimeout(() => r(new Error('het gio')), ms))]);
-hetGio(10000, fetch(RAW + '?t=' + Date.now(), {cache: 'no-store'}).then(r => r.text()))
-  .then(t => {
-    const u = t.trim();
-    if (!/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(u)) throw new Error('chua co dia chi');
-    return hetGio(8000, fetch(u + '/', {mode: 'no-cors', cache: 'no-store'})).then(() => location.replace(u + '/#cho_duyet'));
-  })
-  .catch(() => bao(TAT));
+const lay = (url, h) => hetGio(10000, fetch(url, {cache: 'no-store', headers: h || {}}).then(r => r.ok ? r.text() : ''))
+  .then(t => t.trim()).catch(() => '');
+let hen = null;
+async function thu() {
+  clearInterval(hen);
+  bao('Đang mở trang duyệt video…');
+  const ds = [...new Set(await Promise.all([lay(API, {Accept: 'application/vnd.github.raw'}), lay(RAW + '?t=' + Date.now())]))]
+    .filter(u => HOP.test(u));
+  for (const u of ds) {
+    try { await hetGio(8000, fetch(u + '/', {mode: 'no-cors', cache: 'no-store'})); return location.replace(u + '/#cho_duyet'); }
+    catch (e) {}
+  }
+  let s = 20;
+  const ve = () => bao('Trang duyệt đang khởi động lại đường hầm (thường 1-2 phút) hoặc máy chạy luồng đang tắt.'
+    + `<br>Tự thử lại sau <b>${s}</b> giây…<br><button onclick="thu()">Thử lại ngay</button>`);
+  ve();
+  hen = setInterval(() => { if (--s <= 0) thu(); else ve(); }, 1000);
+}
+thu();
 </script></body></html>
