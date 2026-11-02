@@ -19,7 +19,10 @@ async function thu() {
   const ds = [...new Set(await Promise.all([lay(API, {Accept: 'application/vnd.github.raw'}), lay(RAW + '?t=' + Date.now())]))]
     .filter(u => HOP.test(u));
   for (const u of ds) {
-    try { await hetGio(8000, fetch(u + '/', {mode: 'no-cors', cache: 'no-store'})); return location.replace(u + '/#cho_duyet'); }
+    try {                                    // /song trả 204 kèm CORS -> đọc được mã thật (tunnel chết: 530 / lỗi mạng)
+      const r = await hetGio(8000, fetch(u + '/song', {cache: 'no-store'}));
+      if (r.ok) return location.replace(u + '/#cho_duyet');
+    }
     catch (e) {}
   }
   let s = 20;
