@@ -1,1 +1,1 @@
-https://identification-yields-yacht-beth.trycloudflare.com
+https://api.trycloudflare.com
