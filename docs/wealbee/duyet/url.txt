@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://enrolled-recommend-usd-subjective.trycloudflare.com
