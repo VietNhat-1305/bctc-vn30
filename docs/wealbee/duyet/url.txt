@@ -1,1 +1,1 @@
-https://study-awareness-warned-briefly.trycloudflare.com
+https://api.trycloudflare.com
