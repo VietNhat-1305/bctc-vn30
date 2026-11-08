@@ -1681,5 +1681,31 @@
   "ket_thuc": "2026-11-08T12:00:16",
   "thoi_gian_s": 15.3,
   "trang_thai": "không có BCTC mới"
+ },
+ {
+  "id": "20261108-224856",
+  "khung": "thủ công 22:48",
+  "bat_dau": "2026-11-08T22:48:56",
+  "so_web": 30,
+  "ky_quet": "Q2/2026",
+  "giai_doan": {
+   "kham_pha_tai": 48.7,
+   "tim_can_trich": 2.7
+  },
+  "loi": [],
+  "web_doc_duoc": 29,
+  "web_loi": [
+   "MBB"
+  ],
+  "du_phong_cafef": [
+   "MBB"
+  ],
+  "bctc_moi": [],
+  "bo_qua_bai_cu": 31,
+  "loi_tai": 0,
+  "can_trich": [],
+  "ket_thuc": "2026-11-08T22:49:48",
+  "thoi_gian_s": 51.4,
+  "trang_thai": "không có BCTC mới"
  }
 ]
