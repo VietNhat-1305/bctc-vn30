@@ -1811,5 +1811,31 @@
   "ket_thuc": "2026-11-10T13:51:04",
   "thoi_gian_s": 15.3,
   "trang_thai": "không có BCTC mới"
+ },
+ {
+  "id": "20261110-180001",
+  "khung": "18:00",
+  "bat_dau": "2026-11-10T18:00:01",
+  "so_web": 30,
+  "ky_quet": "Q2/2026",
+  "giai_doan": {
+   "kham_pha_tai": 22.1,
+   "tim_can_trich": 1.1
+  },
+  "loi": [],
+  "web_doc_duoc": 29,
+  "web_loi": [
+   "MBB"
+  ],
+  "du_phong_cafef": [
+   "MBB"
+  ],
+  "bctc_moi": [],
+  "bo_qua_bai_cu": 31,
+  "loi_tai": 0,
+  "can_trich": [],
+  "ket_thuc": "2026-11-10T18:00:25",
+  "thoi_gian_s": 23.2,
+  "trang_thai": "không có BCTC mới"
  }
 ]
