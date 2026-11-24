@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>Trang duyệt blog Wealbee</title>
+<style>:root{color-scheme:dark}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b1020;color:#eef2f8;
+font:16px/1.6 -apple-system,"Segoe UI",system-ui,sans-serif;text-align:center;padding:16px}.m{color:#a9b6cc;font-size:14px}
+button{margin-top:10px;background:#1e2a45;color:#eef2f8;border:1px solid #2b3a5c;border-radius:10px;padding:8px 16px;font:inherit;cursor:pointer}</style>
+</head><body><main><p id="tt">Đang mở trang duyệt blog…</p>
+<p class="m">Trang hỏi mật khẩu: xin người phụ trách luồng blog.</p></main>
+<script>
+const API = "https://api.github.com/repos/VietNhat-1305/bctc-vn30/contents/docs/wealbee/blog-duyet/url.txt", RAW = "https://raw.githubusercontent.com/VietNhat-1305/bctc-vn30/main/docs/wealbee/blog-duyet/url.txt", HOP = /^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/;
+const bao = t => document.getElementById('tt').innerHTML = t;
+const hetGio = (ms, p) => Promise.race([p, new Promise((_, r) => setTimeout(() => r(new Error('het gio')), ms))]);
+const lay = (url, h) => hetGio(10000, fetch(url, {cache: 'no-store', headers: h || {}}).then(r => r.ok ? r.text() : ''))
+  .then(t => t.trim()).catch(() => '');
+let hen = null;
+async function thu() {
+  clearInterval(hen);
+  bao('Đang mở trang duyệt blog…');
+  const ds = [...new Set(await Promise.all([lay(API, {Accept: 'application/vnd.github.raw'}), lay(RAW + '?t=' + Date.now())]))]
+    .filter(u => HOP.test(u));
+  for (const u of ds) {
+    try {
+      const r = await hetGio(8000, fetch(u + '/song', {cache: 'no-store'}));
+      if (r.ok) return location.replace(u + '/');
+    }
+    catch (e) {}
+  }
+  let s = 20;
+  const ve = () => bao('Trang duyệt đang khởi động lại đường hầm (thường 1-2 phút) hoặc máy chạy luồng đang tắt.'
+    + `<br>Tự thử lại sau <b>${s}</b> giây…<br><button onclick="thu()">Thử lại ngay</button>`);
+  ve();
+  hen = setInterval(() => { if (--s <= 0) thu(); else ve(); }, 1000);
+}
+thu();
+</script></body></html>
