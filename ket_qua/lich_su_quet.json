@@ -2887,5 +2887,34 @@
   "ket_thuc": "2026-11-25T18:04:28",
   "thoi_gian_s": 82.1,
   "trang_thai": "không có BCTC mới"
+ },
+ {
+  "id": "20261126-000000",
+  "khung": "00:00",
+  "bat_dau": "2026-11-26T00:00:00",
+  "so_web": 30,
+  "ky_quet": "Q2/2026",
+  "giai_doan": {
+   "kham_pha_tai": 121.9,
+   "tim_can_trich": 0.2
+  },
+  "loi": [],
+  "web_doc_duoc": 26,
+  "web_loi": [
+   "MBB",
+   "MSN",
+   "TCX",
+   "VPL"
+  ],
+  "du_phong_cafef": [
+   "MBB"
+  ],
+  "bctc_moi": [],
+  "bo_qua_bai_cu": 28,
+  "loi_tai": 0,
+  "can_trich": [],
+  "ket_thuc": "2026-11-26T00:02:02",
+  "thoi_gian_s": 122.1,
+  "trang_thai": "không có BCTC mới"
  }
 ]
