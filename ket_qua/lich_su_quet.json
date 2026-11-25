@@ -2853,5 +2853,39 @@
   "ket_thuc": "2026-11-25T12:15:48",
   "thoi_gian_s": 93.7,
   "trang_thai": "không có BCTC mới"
+ },
+ {
+  "id": "20261125-180225",
+  "khung": "18:00",
+  "bat_dau": "2026-11-25T18:02:25",
+  "so_web": 30,
+  "ky_quet": "Q2/2026",
+  "giai_doan": {
+   "kham_pha_tai": 81.9,
+   "tim_can_trich": 0.2
+  },
+  "loi": [],
+  "web_doc_duoc": 21,
+  "web_loi": [
+   "BSR",
+   "FPT",
+   "GAS",
+   "MBB",
+   "MCH",
+   "MSN",
+   "SSI",
+   "STB",
+   "VHM"
+  ],
+  "du_phong_cafef": [
+   "MBB"
+  ],
+  "bctc_moi": [],
+  "bo_qua_bai_cu": 22,
+  "loi_tai": 0,
+  "can_trich": [],
+  "ket_thuc": "2026-11-25T18:04:28",
+  "thoi_gian_s": 82.1,
+  "trang_thai": "không có BCTC mới"
  }
 ]
