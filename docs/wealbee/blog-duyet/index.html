@@ -21,7 +21,7 @@ async function thu() {
   for (const u of ds) {
     try {
       const r = await hetGio(8000, fetch(u + '/song', {cache: 'no-store'}));
-      if (r.ok) return location.replace(u + '/');
+      if (r.ok) return location.replace(/[#&]k=[0-9a-f]{40}/.test(location.hash) ? u + '/vao' + location.hash : u + '/');
     }
     catch (e) {}
   }
